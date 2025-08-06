@@ -9,14 +9,25 @@ import { useState } from "react";
 //   description: "Ready to dominate search results? Contact Beach Bird Studios for a complete SEO website that outranks competitors and maximizes local visibility.",
 // };
 
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  website: string;
+  services: string[];
+  budget: string;
+  message: string;
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     company: "",
     phone: "",
     website: "",
-    services: [],
+    services: [] as string[],
     budget: "",
     message: ""
   });
@@ -37,7 +48,7 @@ export default function ContactPage() {
         company: "",
         phone: "",
         website: "",
-        services: [],
+        services: [] as string[],
         budget: "",
         message: ""
       });
