@@ -3,7 +3,7 @@ import DataForSEOClient from '@/lib/dataforseo';
 
 export async function POST(request: NextRequest) {
   try {
-    const { keyword, location, type, url } = await request.json();
+    const { keyword, location, type, url, industry, competitors } = await request.json();
 
     const client = new DataForSEOClient({
       login: process.env.DATAFORSEO_LOGIN || '',
@@ -28,6 +28,22 @@ export async function POST(request: NextRequest) {
       }
       const serp = await client.getSerpResults(keyword, location);
       return NextResponse.json({ serp });
+    } else if (type === 'local-market-research') {
+      if (!location || !industry) {
+        return NextResponse.json({ error: 'Location and industry are required' }, { status: 400 });
+      }
+      const localMarket = await client.getLocalMarketResearch(location, industry);
+      return NextResponse.json({ localMarket });
+    } else if (type === 'keyword-gap-analysis') {
+      if (!url || !competitors) {
+        return NextResponse.json({ error: 'URL and competitors are required' }, { status: 400 });
+      }
+      const domain = new URL(url).hostname;
+      const keywordGaps = await client.getKeywordGapAnalysis(domain, competitors, []);
+      return NextResponse.json({ keywordGaps });
+    } else if (type === 'competitor-research') {
+      const competitorData = await client.getBeachBirdCompetitorResearch();
+      return NextResponse.json({ competitors: competitorData });
     }
 
     return NextResponse.json({ error: 'Invalid type' }, { status: 400 });

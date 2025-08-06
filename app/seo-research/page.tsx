@@ -153,7 +153,7 @@ export default function WebsiteAnalysisPage() {
                       value={websiteUrl}
                       onChange={(e) => setWebsiteUrl(e.target.value)}
                       placeholder="https://yourwebsite.com"
-                      className="flex-grow px-4 py-3 border border-beach-light/30 rounded-lg focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                      className="flex-grow px-4 py-3 border border-beach-light/30 rounded-lg focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20 text-beach-teal placeholder:text-beach-teal/50"
                       required
                     />
                     <button

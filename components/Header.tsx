@@ -10,6 +10,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/seo-research", label: "SEO Analysis" },
+    { href: "/research-dashboard", label: "Intelligence" },
     { href: "/contact", label: "Get Started" },
   ];
 
