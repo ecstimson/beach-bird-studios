@@ -217,7 +217,7 @@ export default function SEOResearchPage() {
                 {activeTab === "serp" && serpResults.length > 0 && (
                   <div>
                     <h2 className="font-heading text-2xl font-bold text-beach-teal mb-6">
-                      SERP Analysis Results for "{keyword}"
+                      SERP Analysis Results for &quot;{keyword}&quot;
                     </h2>
                     <div className="space-y-4">
                       {serpResults.map((result, index) => (
