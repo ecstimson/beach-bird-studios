@@ -1,34 +1,42 @@
+import Link from "next/link";
+
 const features = [
   {
     title: "Complete SEO Packages",
     description: "Full website build with 20-50 optimized pages targeting your entire service area and offerings",
     icon: "📦",
-    highlight: true
+    highlight: true,
+    href: "/services/complete-seo-websites"
   },
   {
     title: "Service Pages & Topical Relevance",
     description: "Deep content structure that establishes your business as the topical authority in your industry",
-    icon: "📝"
+    icon: "📝",
+    href: "/industries/restaurant-seo"
   },
   {
     title: "Geographic SEO & Local Domination",
     description: "City-specific pages for every location you serve, maximizing local search visibility",
-    icon: "🗺️"
+    icon: "🗺️",
+    href: "/services/local-seo"
   },
   {
     title: "AI Search Optimization",
     description: "Content structured for ChatGPT, Perplexity, and other AI platforms to recommend your business",
-    icon: "🤖"
+    icon: "🤖",
+    href: "/services/ai-search-optimization"
   },
   {
     title: "Google Business Profile Optimization",
     description: "Complete GBP setup with posts, Q&A, and ongoing management to dominate the map pack",
-    icon: "📍"
+    icon: "📍",
+    href: "/services/local-seo"
   },
   {
     title: "Citation Building & Review Management",
     description: "Build authority with consistent NAP citations and systematic review generation strategies",
-    icon: "⭐"
+    icon: "⭐",
+    href: "/services/local-seo"
   }
 ];
 
@@ -51,9 +59,10 @@ export default function Features() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div
+            <Link
               key={index}
-              className={`relative bg-white p-8 rounded-2xl transition-all hover:transform hover:-translate-y-2 ${
+              href={feature.href}
+              className={`relative bg-white p-8 rounded-2xl transition-all hover:transform hover:-translate-y-2 group cursor-pointer ${
                 feature.highlight 
                   ? 'border-2 border-beach-gold shadow-premium-hover' 
                   : 'border border-beach-light/30 shadow-premium hover:shadow-premium-hover'
@@ -64,14 +73,17 @@ export default function Features() {
                   Most Popular
                 </span>
               )}
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="font-heading text-2xl font-semibold mb-3 text-beach-teal">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
+              <h3 className="font-heading text-2xl font-semibold mb-3 text-beach-teal group-hover:text-beach-blue transition-colors">
                 {feature.title}
               </h3>
-              <p className="font-body text-beach-teal/70 leading-relaxed">
+              <p className="font-body text-beach-teal/70 leading-relaxed mb-4">
                 {feature.description}
               </p>
-            </div>
+              <div className="text-beach-blue font-semibold text-sm group-hover:text-beach-gold transition-colors">
+                Learn More →
+              </div>
+            </Link>
           ))}
         </div>
         
