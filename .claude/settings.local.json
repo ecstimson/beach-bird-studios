@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude auth login)",
+      "Bash(git init:*)"
+    ],
+    "deny": []
+  }
+}
