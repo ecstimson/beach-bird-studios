@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(claude auth login)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)"
     ],
     "deny": []
   }

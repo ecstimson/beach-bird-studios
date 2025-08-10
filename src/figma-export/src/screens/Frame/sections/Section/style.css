@@ -1,0 +1,223 @@
+.section {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 252, 255, 1) 0%,
+    rgba(71, 167, 235, 0.03) 100%
+  );
+  height: 870px;
+  left: 0;
+  position: absolute;
+  top: 144px;
+  width: 1920px;
+}
+
+.section .container {
+  height: 600px;
+  left: 304px;
+  position: relative;
+  top: 140px;
+  width: 1312px;
+}
+
+.section .overlay-border {
+  background-color: #e6b84c1a;
+  border: 1px solid;
+  border-color: #e6b84c4c;
+  border-radius: 100px;
+  height: 35px;
+  left: 0;
+  position: absolute;
+  top: 87px;
+  width: 250px;
+}
+
+.section .text-wrapper {
+  color: #b08a3a;
+  font-family: "Inter", Helvetica;
+  font-size: 13.5px;
+  font-weight: 700;
+  height: 16px;
+  left: 21px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 8px;
+  white-space: nowrap;
+  width: 208px;
+}
+
+.section .transform-your {
+  color: #5a7a8c;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 18.6px;
+  font-weight: 500;
+  height: 54px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 32px;
+  position: absolute;
+  top: 359px;
+  width: 615px;
+}
+
+.section .link {
+  background: linear-gradient(
+    165deg,
+    rgba(71, 167, 235, 1) 0%,
+    rgba(91, 181, 245, 1) 100%
+  );
+  border-radius: 100px;
+  box-shadow: 0px 4px 16px #47a7eb40;
+  height: 54px;
+  left: 0;
+  position: absolute;
+  top: 459px;
+  width: 237px;
+}
+
+.section .div {
+  color: #ffffff;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 15.6px;
+  font-weight: 500;
+  height: 17px;
+  left: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15px;
+  white-space: nowrap;
+  width: 157px;
+}
+
+.section .link-2 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #e5f2fc;
+  border-radius: 100px;
+  height: 54px;
+  left: 253px;
+  position: absolute;
+  top: 459px;
+  width: 197px;
+}
+
+.section .text-wrapper-2 {
+  color: #0c3745;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 15.4px;
+  font-weight: 500;
+  height: 17px;
+  left: 42px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 16px;
+  white-space: nowrap;
+  width: 113px;
+}
+
+.section .overlap-group {
+  height: 600px;
+  left: 636px;
+  position: absolute;
+  top: 0;
+  width: 736px;
+}
+
+.section .gradient-shadow {
+  background: linear-gradient(
+    145deg,
+    rgba(71, 167, 235, 1) 0%,
+    rgba(230, 184, 76, 1) 100%
+  );
+  border-radius: 24px;
+  box-shadow: 0px 32px 64px #47a7eb26;
+  height: 600px;
+  left: 60px;
+  position: absolute;
+  top: 0;
+  width: 616px;
+}
+
+.section .paragraph-background {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #47a7eb1a;
+  border-radius: 16px;
+  box-shadow: 0px 16px 48px #00000014;
+  height: 116px;
+  left: 564px;
+  position: absolute;
+  top: 60px;
+  width: 172px;
+}
+
+.section .text-wrapper-3 {
+  color: #47a7eb;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 32.5px;
+  font-weight: 500;
+  height: 41px;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 24px;
+  width: 81px;
+}
+
+.section .text-wrapper-4 {
+  color: #5a7a8c;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 13.1px;
+  font-weight: 500;
+  height: 16px;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 74px;
+  width: 122px;
+}
+
+.section .paragraph-background-2 {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #47a7eb1a;
+  border-radius: 16px;
+  box-shadow: 0px 16px 48px #00000014;
+  height: 116px;
+  left: 0;
+  position: absolute;
+  top: 424px;
+  width: 196px;
+}
+
+.section .text-wrapper-5 {
+  color: #47a7eb;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 33px;
+  font-weight: 500;
+  height: 41px;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 24px;
+  width: 72px;
+}
+
+.section .text-wrapper-6 {
+  color: #5a7a8c;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 13.2px;
+  font-weight: 500;
+  height: 16px;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 74px;
+  width: 146px;
+}

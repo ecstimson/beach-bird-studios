@@ -1,0 +1,14 @@
+.frame {
+  background-color: #ffffff;
+  height: 2847px;
+  position: relative;
+  width: 1920px;
+}
+
+.frame .overlap {
+  height: 702px;
+  left: 3px;
+  position: absolute;
+  top: 1938px;
+  width: 1920px;
+}

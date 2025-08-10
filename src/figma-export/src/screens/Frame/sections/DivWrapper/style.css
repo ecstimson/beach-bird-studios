@@ -1,0 +1,75 @@
+.div-wrapper {
+  background: linear-gradient(
+    165deg,
+    rgba(12, 55, 69, 1) 0%,
+    rgba(26, 90, 122, 1) 100%
+  );
+  height: 463px;
+  left: 0;
+  position: absolute;
+  top: 239px;
+  width: 1920px;
+}
+
+.div-wrapper .heading-ready-to {
+  color: #ffffff;
+  font-family: "Chillax-Bold", Helvetica;
+  font-size: 47.2px;
+  font-weight: 700;
+  height: 61px;
+  left: 467px;
+  letter-spacing: 0;
+  line-height: 57.6px;
+  position: absolute;
+  text-align: center;
+  top: 129px;
+  white-space: nowrap;
+  width: 986px;
+}
+
+.div-wrapper .let-s-discuss-how-we {
+  color: #ffffffd9;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 18.8px;
+  font-weight: 500;
+  height: 32px;
+  left: 508px;
+  letter-spacing: 0;
+  line-height: 32px;
+  position: absolute;
+  text-align: center;
+  top: 207px;
+  white-space: nowrap;
+  width: 905px;
+}
+
+.div-wrapper .link-3 {
+  background: linear-gradient(
+    170deg,
+    rgba(230, 184, 76, 1) 0%,
+    rgba(244, 196, 68, 1) 100%
+  );
+  border-radius: 100px;
+  box-shadow: 0px 8px 24px #e6b84c4c;
+  height: 57px;
+  left: 759px;
+  position: absolute;
+  top: 278px;
+  width: 401px;
+}
+
+.div-wrapper .p {
+  color: #0c3745;
+  font-family: "Synonym-Medium", Helvetica;
+  font-size: 17.7px;
+  font-weight: 500;
+  height: 20px;
+  left: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  white-space: nowrap;
+  width: 306px;
+}

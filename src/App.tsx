@@ -1,11 +1,15 @@
 import React from 'react';
 import './index.css';
-import { Box } from './components/Box';
+import { Navigation } from './components/Navigation';
+import { HeroSection } from './components/HeroSection';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Box />
+    <div className="App bg-white min-h-screen">
+      <Navigation />
+      <HeroSection />
+      <Footer />
     </div>
   );
 }

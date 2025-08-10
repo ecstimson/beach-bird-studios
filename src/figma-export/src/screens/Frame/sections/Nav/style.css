@@ -1,0 +1,142 @@
+.nav {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 0px #47a7eb1a;
+  height: 144px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1920px;
+}
+
+.nav .link-16 {
+  height: 18px;
+  left: 803px;
+  position: absolute;
+  top: 93px;
+  width: 61px;
+}
+
+.nav .text-wrapper-32 {
+  color: #0c3745;
+  font-family: "Inter", Helvetica;
+  font-size: 14.9px;
+  font-weight: 500;
+  height: 17px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+  width: 62px;
+}
+
+.nav .link-17 {
+  height: 18px;
+  left: 904px;
+  position: absolute;
+  top: 93px;
+  width: 59px;
+}
+
+.nav .text-wrapper-33 {
+  color: #0c3745;
+  font-family: "Inter", Helvetica;
+  font-size: 14.4px;
+  font-weight: 500;
+  height: 17px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+  width: 59px;
+}
+
+.nav .link-18 {
+  height: 18px;
+  left: 1003px;
+  position: absolute;
+  top: 93px;
+  width: 42px;
+}
+
+.nav .text-wrapper-34 {
+  color: #0c3745;
+  font-family: "Inter", Helvetica;
+  font-size: 14.5px;
+  font-weight: 500;
+  height: 17px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+  width: 42px;
+}
+
+.nav .link-19 {
+  height: 18px;
+  left: 1085px;
+  position: absolute;
+  top: 93px;
+  width: 32px;
+}
+
+.nav .text-wrapper-35 {
+  color: #0c3745;
+  font-family: "Inter", Helvetica;
+  font-size: 15.1px;
+  font-weight: 500;
+  height: 17px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+  width: 32px;
+}
+
+.nav .link-20 {
+  background: linear-gradient(
+    167deg,
+    rgba(71, 167, 235, 1) 0%,
+    rgba(91, 181, 245, 1) 100%
+  );
+  border-radius: 100px;
+  box-shadow: 0px 4px 16px #47a7eb40;
+  height: 42px;
+  left: 1637px;
+  position: absolute;
+  top: 51px;
+  width: 219px;
+}
+
+.nav .text-wrapper-36 {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 15.8px;
+  font-weight: 700;
+  height: 17px;
+  left: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+  width: 155px;
+}
+
+.nav .frame-2 {
+  background-image: url(../../../../../static/img/frame-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 66px;
+  left: 693px;
+  position: absolute;
+  top: 12px;
+  width: 534px;
+}
