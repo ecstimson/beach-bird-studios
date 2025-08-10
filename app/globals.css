@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Beach Bird Studios Brand Colors */
+  --primary-blue: #47A7EB;
+  --accent-gold: #E6B84C;
+  --dark-teal: #0C3745;
+  --light-blue: #B6DCF7;
+  --off-white: #ECF7FF;
+  
+  --background: #ECF7FF;
+  --foreground: #0C3745;
+  --card-background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0C3745;
+    --foreground: #ECF7FF;
+    --card-background: #1a4a5c;
+  }
+}
+
+/* Custom Font Classes - Using Inter as fallback for Chillax and Synonym */
+.font-heading {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Utility Classes */
+.text-primary-blue { color: #47A7EB; }
+.text-accent-gold { color: #E6B84C; }
+.text-dark-teal { color: #0C3745; }
+.text-light-blue { color: #B6DCF7; }
+.bg-primary-blue { background-color: #47A7EB; }
+.bg-accent-gold { background-color: #E6B84C; }
+.bg-dark-teal { background-color: #0C3745; }
+.bg-light-blue { background-color: #B6DCF7; }
+.bg-off-white { background-color: #ECF7FF; }
+
+/* Premium Shadow Effects */
+.shadow-premium {
+  box-shadow: 0 10px 40px -10px rgba(71, 167, 235, 0.15);
+}
+
+.shadow-premium-hover {
+  box-shadow: 0 20px 60px -15px rgba(71, 167, 235, 0.25);
+}
