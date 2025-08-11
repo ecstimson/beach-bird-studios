@@ -9,41 +9,39 @@ export const HeroSection = () => {
           {/* Status Badge */}
           <div className="absolute left-0 top-[87px] w-[250px] h-[35px] bg-[rgba(230,184,76,0.1)] border border-[rgba(230,184,76,0.3)] rounded-full flex items-center justify-center">
             <span className="text-[#b08a3a] font-inter text-[13.5px] font-bold">
-              ✨ Now Accepting New Projects
+              ✨ Free SEO Analysis Tool
             </span>
           </div>
           
           {/* Hero Title - positioned to match Figma */}
           <div className="absolute left-0 top-[150px] w-[615px]">
             <h1 className="text-[#0c3745] font-bold text-5xl leading-tight mb-8">
-              Transform your vision into stunning websites that captivate audiences
+              Dominate Search, AI Results & Local Maps with Complete SEO Websites
             </h1>
           </div>
           
           {/* Subtitle */}
           <p className="absolute left-0 top-[359px] w-[615px] h-[54px] text-[#5a7a8c] font-medium text-[18.6px] leading-[32px]">
-            Transform your vision into stunning websites that captivate audiences
-            <br />
-            and convert visitors. Let's build something extraordinary together.
+            Years of SEO work delivered in one complete website with all pages needed to outrank competitors, dominate AI search results, and maximize Google Business Profile visibility.
           </p>
           
           {/* CTA Buttons */}
           <div className="absolute left-0 top-[459px] flex gap-4">
             <a 
-              href="#get-started" 
+              href="#get-seo-website" 
               className="w-[237px] h-[54px] bg-gradient-to-r from-[#47a7eb] to-[#5bb5f5] rounded-full shadow-[0px_4px_16px_rgba(71,167,235,0.25)] flex items-center justify-center hover:shadow-[0px_6px_20px_rgba(71,167,235,0.35)] transition-all"
             >
               <span className="text-white font-medium text-[15.6px]">
-                Get Started Today →
+                Get Your SEO Website →
               </span>
             </a>
             
             <a 
-              href="#our-work" 
+              href="#free-analysis" 
               className="w-[197px] h-[54px] bg-white border-2 border-[#e5f2fc] rounded-full flex items-center justify-center hover:border-[#47a7eb] transition-colors"
             >
               <span className="text-[#0c3745] font-medium text-[15.4px]">
-                View Our Work
+                Free SEO Analysis
               </span>
             </a>
           </div>
@@ -57,20 +55,20 @@ export const HeroSection = () => {
           {/* Stats Card 1 */}
           <div className="absolute left-[564px] top-[60px] w-[172px] h-[116px] bg-white border border-[rgba(71,167,235,0.1)] rounded-2xl shadow-[0px_16px_48px_rgba(0,0,0,0.08)] flex flex-col justify-center items-start pl-6">
             <div className="text-[#47a7eb] font-medium text-[32.5px] leading-[41px] mb-2">
-              150+
+              #1
             </div>
             <div className="text-[#5a7a8c] font-medium text-[13.1px] leading-[16px]">
-              Projects Completed
+              Rankings Achieved
             </div>
           </div>
           
           {/* Stats Card 2 */}
           <div className="absolute left-0 top-[424px] w-[196px] h-[116px] bg-white border border-[rgba(71,167,235,0.1)] rounded-2xl shadow-[0px_16px_48px_rgba(0,0,0,0.08)] flex flex-col justify-center items-start pl-6">
             <div className="text-[#47a7eb] font-medium text-[33px] leading-[41px] mb-2">
-              98%
+              500%
             </div>
             <div className="text-[#5a7a8c] font-medium text-[13.2px] leading-[16px]">
-              Client Satisfaction Rate
+              Traffic Increase Average
             </div>
           </div>
         </div>
