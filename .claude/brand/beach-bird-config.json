@@ -1,0 +1,131 @@
+{
+  "brand": {
+    "name": "Beach Bird Studios",
+    "tagline": "We Partner With Your Success",
+    "logo": {
+      "primary": ".claude/brand/beach-bird-logo.png",
+      "icon": ".claude/brand/beach-bird-icon.png"
+    },
+    "colors": {
+      "primary": "#47A7EB",
+      "secondary": "#E6B84C", 
+      "accent": "#0C3745",
+      "light": "#B6DCF7",
+      "white": "#ECF7FF",
+      "gray": {
+        "50": "#F8FAFC",
+        "100": "#F1F5F9",
+        "200": "#E2E8F0",
+        "300": "#CBD5E1",
+        "400": "#94A3B8",
+        "500": "#64748B",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1E293B",
+        "900": "#0F172A"
+      }
+    },
+    "fonts": {
+      "headings": "Chillax-Variable, Chillax-Semibold, system-ui, sans-serif",
+      "body": "Synonym-Variable, Synonym-Regular, system-ui, sans-serif",
+      "weights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "sizes": {
+        "xs": "0.75rem",
+        "sm": "0.875rem", 
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "3.75rem"
+      }
+    },
+    "spacing": {
+      "xs": "0.5rem",
+      "sm": "1rem",
+      "md": "1.5rem", 
+      "lg": "2rem",
+      "xl": "3rem",
+      "2xl": "4rem",
+      "3xl": "6rem"
+    },
+    "voice": {
+      "tone": ["professional", "approachable", "results-driven"],
+      "style": "Clear, direct, focusing on ROI and results",
+      "personality": [
+        "Results-focused",
+        "Partnership-oriented", 
+        "Innovative",
+        "Rural market champion",
+        "Technology expert"
+      ],
+      "messaging_pillars": [
+        "We partner with your success",
+        "Results over aesthetics",
+        "Serving underserved markets",
+        "Speed and efficiency",
+        "Innovation in web development"
+      ]
+    }
+  },
+  "unique_value": {
+    "performance_partnerships": "Share in your success with % of customers acquired",
+    "rural_focus": "Serving underserved rural NC businesses", 
+    "speed": "Websites in weeks, not months",
+    "dual_market": "From $10M companies to local service businesses",
+    "geographic": "Wilmington-based, serving all of North Carolina",
+    "innovation": "Performance-based partnerships that no one else offers"
+  },
+  "target_markets": {
+    "rural_services": {
+      "description": "Rural NC service businesses",
+      "examples": ["Tree removal companies", "Diesel mechanics", "Contractors", "HVAC companies", "Landscaping businesses"],
+      "pain_points": ["No website or poor website", "Limited marketing budget", "Need customers not just online presence"],
+      "value_proposition": "Performance partnerships - we share in your success",
+      "business_model": "Percentage of customers acquired through website"
+    },
+    "mid_market": {
+      "description": "Mid-market businesses ($10M-$50M revenue)", 
+      "examples": ["Manufacturing companies", "Professional services", "Healthcare organizations", "Financial services"],
+      "pain_points": ["Need professional web presence", "Want lead generation", "Limited capital for upfront costs"],
+      "value_proposition": "Professional development with flexible payment plans",
+      "business_model": "Traditional project-based with monthly payments"
+    }
+  },
+  "competitive_advantages": [
+    "Zero competition in rural performance partnerships",
+    "First-mover advantage in innovative business models",
+    "Geographic advantage serving underserved eastern NC",
+    "Dual-market expertise",
+    "Proven success with case studies",
+    "Rapid deployment capability"
+  ],
+  "content_guidelines": {
+    "headlines": {
+      "style": "Clear, benefit-focused, action-oriented",
+      "examples": [
+        "We Partner With Your Success",
+        "Get More Customers, Pay As You Grow", 
+        "Websites That Generate Leads, Not Just Look Pretty"
+      ]
+    },
+    "calls_to_action": {
+      "primary": ["Get Started", "Apply for Partnership", "Get Your Quote"],
+      "secondary": ["Learn More", "See Case Studies", "Contact Us"]
+    },
+    "messaging_framework": {
+      "problem": "Most web agencies just build websites and disappear",
+      "solution": "We partner with your success and share in your growth",
+      "proof": "Proven results with Diesel Dudes and other rural businesses",
+      "action": "Apply for our performance partnership program"
+    }
+  }
+}

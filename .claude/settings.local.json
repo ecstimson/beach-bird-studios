@@ -9,7 +9,11 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(node:*)",
+      "Bash(npx ts-node:*)"
     ],
     "deny": []
   }

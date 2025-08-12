@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "templateVersion": "1.0.0",
+    "createdDate": "2024-08-11",
+    "lastUpdated": "2024-08-11",
+    "workflowVersion": "1.0.0"
+  },
+  "client": {
+    "name": "Beach Bird Studios Team",
+    "businessName": "Beach Bird Studios",
+    "industry": "Web Development & Digital Marketing",
+    "businessType": "Limited Liability Company",
+    "location": {
+      "city": "Wilmington",
+      "state": "North Carolina",
+      "country": "United States",
+      "timezone": "EST"
+    },
+    "contact": {
+      "email": "hello@beachbirdstudios.com",
+      "phone": "(555) 123-4567",
+      "website": "https://beachbirdstudios.com",
+      "preferredCommunication": "Email"
+    },
+    "businessDetails": {
+      "yearsInBusiness": "1",
+      "employees": "2-5",
+      "annualRevenue": "Startup",
+      "businessModel": "B2B"
+    },
+    "serviceAreas": [
+      "All of North Carolina",
+      "Primary focus: Rural NC markets",
+      "Secondary: Mid-market businesses statewide",
+      "Eastern NC specialty coverage"
+    ]
+  },
+  "services": [
+    {
+      "name": "Performance-Based Marketing Partnerships",
+      "description": "UNIQUE SERVICE: Partner with rural service businesses and earn percentage of customers acquired through website",
+      "isOffered": true,
+      "experienceLevel": "expert",
+      "yearsOffering": "2",
+      "hasExamples": true,
+      "caseStudies": [
+        {
+          "title": "Diesel Dudes Partnership",
+          "description": "Performance-based partnership with rural diesel mechanic business",
+          "results": "Ongoing revenue sharing, doubled their customer base",
+          "isPublic": true
+        }
+      ],
+      "keywords": [
+        "performance based web design",
+        "web design partnership North Carolina",
+        "rural business web partnerships"
+      ],
+      "pricingModel": "percentage",
+      "averageProjectValue": "% of customer acquisition",
+      "monthlyDemand": "medium",
+      "competitionLevel": "none",
+      "profitability": "very high"
+    },
+    {
+      "name": "Custom Web Development",
+      "description": "Professional web development for mid-market businesses ($10M-$50M revenue) with monthly payment plans available",
+      "isOffered": true,
+      "experienceLevel": "expert",
+      "yearsOffering": "5+",
+      "hasExamples": true,
+      "caseStudies": [
+        {
+          "title": "Diesel Dudes Website",
+          "description": "Performance-based partnership with diesel mechanic business",
+          "results": "Doubled customer calls, ongoing partnership revenue",
+          "isPublic": true
+        }
+      ],
+      "keywords": [
+        "custom web development North Carolina",
+        "professional web design $10M companies",
+        "enterprise web development NC"
+      ],
+      "pricingModel": "project",
+      "averageProjectValue": "$15,000-$50,000",
+      "monthlyDemand": "high",
+      "competitionLevel": "medium",
+      "profitability": "high"
+    }
+  ],
+  "targetAudience": {
+    "primary": {
+      "description": "Rural service businesses (tree removal, diesel mechanics, contractors) in underserved NC markets",
+      "demographics": {
+        "businessSize": "1-20 employees",
+        "industry": "Service businesses (tree removal, diesel repair, contractors)",
+        "budget": "Performance-based partnership model",
+        "location": "Rural North Carolina counties",
+        "decisionMaker": "Business Owner"
+      },
+      "painPoints": [
+        "No current website or very poor website",
+        "Limited marketing budget",
+        "Don't understand web development",
+        "Need customers, not just online presence"
+      ],
+      "goals": [
+        "Get more customers through website",
+        "Professional online presence",
+        "Compete with larger companies",
+        "Grow business without upfront investment"
+      ]
+    },
+    "secondary": {
+      "description": "Mid-market businesses with $10M-$50M annual revenue needing professional web presence and lead generation",
+      "demographics": {
+        "businessSize": "50-200 employees",
+        "industry": "Various industries statewide",
+        "budget": "$15,000-$50,000 for projects",
+        "location": "All of North Carolina",
+        "decisionMaker": "Marketing Director/CEO/Operations Manager"
+      },
+      "percentage": "60% of target market"
+    }
+  },
+  "workflowStatus": {
+    "currentStep": 6,
+    "completedSteps": [
+      "requirements-gathering",
+      "competitor-research-complete",
+      "content-strategy-developed",
+      "market-analysis-complete"
+    ],
+    "nextActions": [
+      "Begin content creation for homepage",
+      "Create performance partnership landing page",
+      "Develop case study content for Diesel Dudes",
+      "Create location pages for major NC cities"
+    ],
+    "blockers": [],
+    "estimatedCompletion": "2024-09-15"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "client": {
+    "name": "Beach Bird Studios",
+    "businessName": "Beach Bird Studios",
+    "industry": "Web Development & Design",
+    "location": "To be confirmed",
+    "website": "https://beachbirdstudios.com (in development)",
+    "email": "To be provided",
+    "phone": "To be provided",
+    "serviceAreas": [
+      "Web Development",
+      "Design to Code",
+      "React/Next.js",
+      "E-commerce"
+    ],
+    "yearsInBusiness": "To be confirmed",
+    "employees": "To be confirmed"
+  },
+  "services": [
+    {
+      "name": "Figma to Code Conversion",
+      "description": "Expert conversion of Figma designs to production-ready code",
+      "isOffered": true,
+      "experienceLevel": "expert",
+      "hasExamples": true,
+      "keywords": [
+        "Figma to code",
+        "Design to code",
+        "Pixel perfect"
+      ]
+    },
+    {
+      "name": "React/Next.js Development",
+      "description": "Modern React and Next.js application development",
+      "isOffered": true,
+      "experienceLevel": "expert",
+      "hasExamples": true,
+      "keywords": [
+        "React development",
+        "Next.js",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Custom Website Development",
+      "description": "Custom websites built with modern technologies",
+      "isOffered": true,
+      "experienceLevel": "expert",
+      "hasExamples": true,
+      "keywords": [
+        "Custom website",
+        "Web development",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "E-commerce Development",
+      "description": "E-commerce solutions and online stores",
+      "isOffered": true,
+      "experienceLevel": "intermediate",
+      "hasExamples": true,
+      "keywords": [
+        "E-commerce",
+        "Online store",
+        "Shopping cart"
+      ]
+    }
+  ],
+  "workflowStatus": {
+    "currentStep": 1,
+    "completedSteps": [
+      "directory-structure",
+      "intake-form",
+      "asset-checklist",
+      "competitor-research",
+      "service-confirmation",
+      "content-strategy"
+    ],
+    "nextActions": [],
+    "blockers": [],
+    "estimatedCompletion": ""
+  }
+}

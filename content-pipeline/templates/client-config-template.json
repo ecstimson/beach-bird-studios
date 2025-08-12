@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "templateVersion": "1.0.0",
+    "createdDate": "2024-08-11",
+    "lastUpdated": "2024-08-11",
+    "workflowVersion": "1.0.0"
+  },
+  "client": {
+    "name": "[CLIENT_CONTACT_NAME]",
+    "businessName": "[BUSINESS_LEGAL_NAME]",
+    "industry": "[PRIMARY_INDUSTRY]",
+    "businessType": "[LLC/Corporation/Sole Proprietorship/etc]",
+    "location": {
+      "city": "[CITY]",
+      "state": "[STATE]",
+      "country": "[COUNTRY]",
+      "timezone": "[TIMEZONE]"
+    },
+    "contact": {
+      "email": "[PRIMARY_EMAIL]",
+      "phone": "[PHONE_NUMBER]",
+      "website": "[CURRENT_WEBSITE_URL]",
+      "preferredCommunication": "[Email/Phone/Slack/etc]"
+    },
+    "businessDetails": {
+      "yearsInBusiness": "[NUMBER_OF_YEARS]",
+      "employees": "[NUMBER_OF_EMPLOYEES]",
+      "annualRevenue": "[REVENUE_RANGE]",
+      "businessModel": "[B2B/B2C/B2B2C]"
+    },
+    "serviceAreas": [
+      "[GEOGRAPHIC_AREA_1]",
+      "[GEOGRAPHIC_AREA_2]",
+      "[GEOGRAPHIC_AREA_3]"
+    ]
+  },
+  "services": [
+    {
+      "name": "[SERVICE_NAME]",
+      "description": "[SERVICE_DESCRIPTION]",
+      "isOffered": true,
+      "experienceLevel": "[beginner/intermediate/expert]",
+      "yearsOffering": "[NUMBER_OF_YEARS]",
+      "hasExamples": true,
+      "caseStudies": [
+        {
+          "title": "[CASE_STUDY_TITLE]",
+          "description": "[BRIEF_DESCRIPTION]",
+          "results": "[MEASURABLE_OUTCOMES]",
+          "isPublic": true
+        }
+      ],
+      "keywords": [
+        "[PRIMARY_KEYWORD]",
+        "[SECONDARY_KEYWORD]",
+        "[LONG_TAIL_KEYWORD]"
+      ],
+      "pricingModel": "[hourly/project/package/retainer]",
+      "averageProjectValue": "[DOLLAR_RANGE]",
+      "monthlyDemand": "[high/medium/low]",
+      "competitionLevel": "[high/medium/low]",
+      "profitability": "[high/medium/low]"
+    }
+  ],
+  "targetAudience": {
+    "primary": {
+      "description": "[PRIMARY_TARGET_DESCRIPTION]",
+      "demographics": {
+        "businessSize": "[1-10/10-50/50-200/200+ employees]",
+        "industry": "[TARGET_INDUSTRY]",
+        "budget": "[TYPICAL_BUDGET_RANGE]",
+        "location": "[GEOGRAPHIC_FOCUS]",
+        "decisionMaker": "[CEO/Marketing Director/IT Manager/etc]"
+      },
+      "painPoints": [
+        "[PAIN_POINT_1]",
+        "[PAIN_POINT_2]",
+        "[PAIN_POINT_3]"
+      ],
+      "goals": [
+        "[GOAL_1]",
+        "[GOAL_2]",
+        "[GOAL_3]"
+      ],
+      "objections": [
+        "[COMMON_OBJECTION_1]",
+        "[COMMON_OBJECTION_2]"
+      ]
+    },
+    "secondary": {
+      "description": "[SECONDARY_TARGET_DESCRIPTION]",
+      "percentage": "[PERCENTAGE_OF_BUSINESS]"
+    }
+  },
+  "competitors": [
+    {
+      "name": "[COMPETITOR_NAME]",
+      "website": "[COMPETITOR_URL]",
+      "type": "[direct/indirect/aspirational]",
+      "location": "[COMPETITOR_LOCATION]",
+      "strengths": [
+        "[COMPETITOR_STRENGTH_1]",
+        "[COMPETITOR_STRENGTH_2]"
+      ],
+      "weaknesses": [
+        "[COMPETITOR_WEAKNESS_1]",
+        "[COMPETITOR_WEAKNESS_2]"
+      ],
+      "services": [
+        "[SERVICE_1]",
+        "[SERVICE_2]"
+      ],
+      "pricing": "[PRICING_TRANSPARENCY_LEVEL]",
+      "marketPosition": "[PREMIUM/MID_MARKET/BUDGET]",
+      "yearsInBusiness": "[ESTIMATED_YEARS]",
+      "teamSize": "[ESTIMATED_SIZE]",
+      "uniqueSellingProp": "[THEIR_MAIN_USP]"
+    }
+  ],
+  "brandAssets": {
+    "hasLogo": false,
+    "logoDetails": {
+      "formats": ["[SVG/PNG/JPG]"],
+      "variations": ["[horizontal/vertical/icon]"],
+      "quality": "[high/medium/low]",
+      "filePath": "[PATH_TO_LOGO_FILES]"
+    },
+    "hasColorPalette": false,
+    "colorPalette": {
+      "primary": "[HEX_CODE]",
+      "secondary": "[HEX_CODE]",
+      "accent": "[HEX_CODE]",
+      "neutral": "[HEX_CODE]",
+      "error": "[HEX_CODE]",
+      "success": "[HEX_CODE]"
+    },
+    "hasFonts": false,
+    "typography": {
+      "primary": "[FONT_NAME]",
+      "secondary": "[FONT_NAME]",
+      "hasWebLicenses": false,
+      "filePath": "[PATH_TO_FONT_FILES]"
+    },
+    "hasFigmaDesigns": false,
+    "figmaDetails": {
+      "files": [
+        {
+          "name": "[FIGMA_FILE_NAME]",
+          "url": "[FIGMA_FILE_URL]",
+          "pages": ["[PAGE_1]", "[PAGE_2]"],
+          "completeness": "[complete/partial/wireframes]",
+          "responsive": "[yes/no/partial]"
+        }
+      ],
+      "designSystem": {
+        "exists": false,
+        "organized": false,
+        "components": false
+      }
+    },
+    "hasPhotography": false,
+    "photographyDetails": {
+      "professional": false,
+      "quantity": "[NUMBER_OF_IMAGES]",
+      "quality": "[high/medium/low]",
+      "style": "[PHOTOGRAPHY_STYLE]",
+      "rights": "[owned/licensed/stock]"
+    },
+    "brandGuidelines": {
+      "exists": false,
+      "voice": "[BRAND_VOICE_DESCRIPTION]",
+      "tone": "[professional/casual/friendly/technical]",
+      "personality": "[BRAND_PERSONALITY_TRAITS]"
+    }
+  },
+  "technicalRequirements": {
+    "websiteType": "[business/ecommerce/portfolio/saas]",
+    "features": {
+      "ecommerce": false,
+      "booking": false,
+      "membershipArea": false,
+      "multiLanguage": false,
+      "blog": true,
+      "portfolio": false,
+      "contactForms": true,
+      "newsletter": false,
+      "analytics": true,
+      "chatbot": false
+    },
+    "integrations": [
+      {
+        "name": "[INTEGRATION_NAME]",
+        "purpose": "[PURPOSE]",
+        "priority": "[high/medium/low]",
+        "hasAccess": false
+      }
+    ],
+    "hosting": {
+      "current": "[CURRENT_HOSTING_PROVIDER]",
+      "access": false,
+      "preferred": "[PREFERRED_HOSTING]"
+    },
+    "domain": {
+      "current": "[CURRENT_DOMAIN]",
+      "registrar": "[DOMAIN_REGISTRAR]",
+      "access": false
+    },
+    "analytics": {
+      "googleAnalytics": false,
+      "googleSearchConsole": false,
+      "facebookPixel": false,
+      "other": "[OTHER_TRACKING_TOOLS]"
+    }
+  },
+  "projectDetails": {
+    "budget": {
+      "range": "[BUDGET_RANGE]",
+      "breakdown": {
+        "design": "[PERCENTAGE]%",
+        "development": "[PERCENTAGE]%",
+        "content": "[PERCENTAGE]%",
+        "ongoing": "[MONTHLY_BUDGET]"
+      },
+      "paymentTerms": "[PAYMENT_PREFERENCES]"
+    },
+    "timeline": {
+      "desiredLaunch": "[TARGET_LAUNCH_DATE]",
+      "isFlexible": true,
+      "urgentReasons": "[REASONS_FOR_URGENCY]",
+      "phases": [
+        {
+          "name": "[PHASE_NAME]",
+          "duration": "[ESTIMATED_WEEKS]",
+          "deliverables": ["[DELIVERABLE_1]", "[DELIVERABLE_2]"]
+        }
+      ]
+    },
+    "successMetrics": [
+      {
+        "metric": "[METRIC_NAME]",
+        "currentValue": "[CURRENT_VALUE]",
+        "targetValue": "[TARGET_VALUE]",
+        "timeframe": "[TIMEFRAME]"
+      }
+    ],
+    "constraints": [
+      "[CONSTRAINT_1]",
+      "[CONSTRAINT_2]"
+    ]
+  },
+  "contentStrategy": {
+    "approved": false,
+    "approvedDate": null,
+    "pages": {
+      "homepage": {
+        "priority": "high",
+        "status": "planned",
+        "keywords": [],
+        "estimatedHours": 4
+      },
+      "about": {
+        "priority": "high", 
+        "status": "planned",
+        "keywords": [],
+        "estimatedHours": 3
+      },
+      "contact": {
+        "priority": "high",
+        "status": "planned", 
+        "keywords": [],
+        "estimatedHours": 2
+      },
+      "services": [],
+      "locations": [],
+      "blog": {
+        "strategy": "[BLOG_STRATEGY]",
+        "frequency": "[POSTING_FREQUENCY]",
+        "topics": []
+      }
+    },
+    "seoTargets": {
+      "primaryKeywords": [],
+      "localKeywords": [],
+      "longTailKeywords": []
+    }
+  },
+  "workflowStatus": {
+    "currentStep": 1,
+    "completedSteps": [],
+    "nextActions": [
+      "Client needs to complete intake form",
+      "Schedule discovery call"
+    ],
+    "blockers": [],
+    "estimatedCompletion": "",
+    "milestones": [
+      {
+        "name": "Requirements Gathering",
+        "dueDate": "[DATE]",
+        "status": "pending",
+        "deliverables": ["Intake form", "Asset checklist"]
+      },
+      {
+        "name": "Research Phase",
+        "dueDate": "[DATE]",
+        "status": "pending", 
+        "deliverables": ["Competitor analysis", "Service confirmation"]
+      },
+      {
+        "name": "Strategy Development",
+        "dueDate": "[DATE]",
+        "status": "pending",
+        "deliverables": ["Content strategy", "SEO plan"]
+      },
+      {
+        "name": "Content Creation", 
+        "dueDate": "[DATE]",
+        "status": "pending",
+        "deliverables": ["Website copy", "SEO content"]
+      },
+      {
+        "name": "Design & Development",
+        "dueDate": "[DATE]",
+        "status": "pending",
+        "deliverables": ["Website build", "Testing"]
+      },
+      {
+        "name": "Launch",
+        "dueDate": "[DATE]",
+        "status": "pending",
+        "deliverables": ["Go live", "Training"]
+      }
+    ]
+  },
+  "notes": {
+    "clientPreferences": [
+      "[PREFERENCE_1]",
+      "[PREFERENCE_2]"
+    ],
+    "specialRequirements": [
+      "[REQUIREMENT_1]",
+      "[REQUIREMENT_2]"
+    ],
+    "riskFactors": [
+      "[RISK_FACTOR_1]",
+      "[RISK_FACTOR_2]"
+    ],
+    "opportunities": [
+      "[OPPORTUNITY_1]",
+      "[OPPORTUNITY_2]"
+    ]
+  }
+}

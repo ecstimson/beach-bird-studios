@@ -1,0 +1,102 @@
+{
+  "business": {
+    "name": "Beach Bird Studios",
+    "description": "Premium web development and design studio specializing in converting Figma designs to production-ready websites",
+    "tagline": "From Design to Reality - Fast, Beautiful, Optimized",
+    "industry": "Web Development & Design",
+    "founded": "2024",
+    "location": {
+      "headquarters": "California",
+      "serviceAreas": [
+        "San Francisco, CA",
+        "Los Angeles, CA", 
+        "San Diego, CA",
+        "Austin, TX",
+        "Miami, FL"
+      ]
+    },
+    "contact": {
+      "email": "hello@beachbirdstudios.com",
+      "phone": "(555) 123-4567",
+      "website": "https://beachbirdstudios.com"
+    }
+  },
+  "services": {
+    "primary": [
+      {
+        "name": "Figma to Code Conversion",
+        "description": "Transform your Figma designs into pixel-perfect, responsive websites",
+        "keywords": ["figma to code", "figma to react", "design to development"]
+      },
+      {
+        "name": "Web Development",
+        "description": "Custom websites built with modern technologies like React, Next.js, and TypeScript",
+        "keywords": ["web development", "react development", "nextjs development"]
+      },
+      {
+        "name": "SEO Services", 
+        "description": "Technical SEO optimization and content strategy to improve search rankings",
+        "keywords": ["seo services", "technical seo", "local seo"]
+      },
+      {
+        "name": "Website Maintenance",
+        "description": "Ongoing support, updates, and optimization for existing websites",
+        "keywords": ["website maintenance", "wordpress maintenance", "site updates"]
+      },
+      {
+        "name": "Digital Consulting",
+        "description": "Strategic guidance for digital transformation and web strategy",
+        "keywords": ["digital consulting", "web strategy", "digital transformation"]
+      }
+    ]
+  },
+  "targetAudience": {
+    "primary": [
+      "Small to medium businesses",
+      "Startups and entrepreneurs", 
+      "Design agencies",
+      "Marketing agencies",
+      "E-commerce businesses"
+    ],
+    "demographics": {
+      "businessSize": "1-100 employees",
+      "budget": "$5,000 - $50,000",
+      "industries": ["SaaS", "E-commerce", "Professional Services", "Creative Agencies"]
+    }
+  },
+  "contentStrategy": {
+    "toneOfVoice": "Professional yet approachable, expert but not intimidating",
+    "keyMessages": [
+      "Fast, high-quality development",
+      "Design-focused approach",
+      "SEO and performance optimized",
+      "Reliable ongoing support"
+    ],
+    "contentPillars": [
+      "Web Development Best Practices",
+      "Design to Code Workflows", 
+      "SEO and Performance",
+      "Small Business Growth"
+    ]
+  },
+  "competitors": {
+    "direct": [
+      "Webflow developers",
+      "Freelance React developers", 
+      "Design-to-code services",
+      "Small web development agencies"
+    ],
+    "keywords": [
+      "figma to react conversion",
+      "custom web development",
+      "responsive web design",
+      "seo optimization services"
+    ]
+  },
+  "technology": {
+    "frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    "backend": ["Node.js", "Python", "Serverless"],
+    "tools": ["Figma", "Git", "Vercel", "DataForSEO"],
+    "cms": ["Headless CMS", "Sanity", "Contentful"]
+  }
+}
