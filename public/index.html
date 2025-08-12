@@ -1,18 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Beach Bird Studios"
-    />
-    <title>Beach Bird Studios</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beach Bird Studios - 100+ Page Websites in Weeks, Not Months</title>
+  <meta name="description" content="Comprehensive websites with 100+ pages built in weeks, not months. Custom solutions $15K-$50K with flexible payment plans. Serving all of North Carolina.">
+  <style>
+    :root {
+      --primary: #47A7EB;
+      --secondary: #E6B84C;
+      --accent: #0C3745;
+      --light: #F5F5F5;
+      --white: #FFFFFF;
+      --gray: #6B7280;
+      --success: #10B981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #1F2937;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #D4A543;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--accent);
+    }
+
+    /* Sections */
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* Problem Section */
+    .problem {
+      background: #FEF2F2;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .problem-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid #EF4444;
+    }
+
+    .problem-card h3 {
+      color: #EF4444;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* Solution Section */
+    .solution {
+      background: #F0F9FF;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .solution-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--success);
+    }
+
+    .solution-card h3 {
+      color: var(--success);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 2px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(71, 167, 235, 0.2);
+    }
+
+    .service-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .service-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .service-list li {
+      padding: 0.25rem 0;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .service-list li:before {
+      content: "→ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Process Section */
+    .process {
+      background: var(--light);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      background: var(--primary);
+      color: var(--white);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Locations Grid */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .location-card {
+      background: var(--white);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #E5E7EB;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .location-card:hover {
+      border-color: var(--primary);
+      background: #F0F9FF;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    /* Footer */
+    footer {
+      background: #1F2937;
+      color: var(--white);
+      padding: 3rem 2rem 1rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      padding: 0.25rem 0;
+      opacity: 0.8;
+    }
+
+    .footer-section a {
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    .footer-section a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #374151;
+      opacity: 0.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">🏖️ Beach Bird Studios</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/locations.html">Locations</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>100+ Page Websites in Weeks, Not Months</h1>
+    <p class="tagline">Comprehensive Web Solutions for North Carolina Businesses</p>
+    <div class="hero-buttons">
+      <a href="/services.html" class="btn btn-primary">See Our Work</a>
+      <a href="#pricing" class="btn btn-secondary">Custom Pricing</a>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section problem">
+    <h2 class="section-title">The Problem With Most Web Agencies</h2>
+    <p class="section-subtitle">While your competitors dominate with comprehensive sites, you're stuck with basic pages</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>❌ Small Sites Get Lost</h3>
+        <p>Most agencies build 10-20 page websites that barely scratch the surface of what you offer. Your competitors with 100+ pages are dominating search results while your small site gets lost in the crowd.</p>
+      </div>
+      <div class="problem-card">
+        <h3>❌ Takes Forever to Build</h3>
+        <p>TheeDigital takes 6-8 months to build comprehensive sites. Other agencies simply don't have the capability to create content at scale, leaving you waiting while competitors gain ground.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="section solution">
+    <h2 class="section-title">The Beach Bird Solution</h2>
+    <p class="section-subtitle">AI-powered content generation with human oversight</p>
+    <div class="solution-grid">
+      <div class="solution-card">
+        <h3>✅ 100+ Pages in Weeks</h3>
+        <p>We build comprehensive websites in 3-4 weeks using AI-powered content generation with human oversight. Every service you offer, every location you serve, every question your customers ask - all covered.</p>
+      </div>
+      <div class="solution-card">
+        <h3>✅ Complete Coverage</h3>
+        <p>Service businesses get pages for each service + each service area. Medical practices get pages for each procedure and condition. Professional firms get pages for each practice area and industry served.</p>
+      </div>
+      <div class="solution-card">
+        <h3>✅ Outrank Competitors</h3>
+        <p>While competitors argue about whether you need 10 or 20 pages, we're building 100+ pages that cover everything your business offers. Capture searches they miss, establish market authority.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <h2 class="section-title">Industries We Serve</h2>
+    <p class="section-subtitle">Comprehensive websites for every type of business</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>🏠 Home Services</h3>
+        <ul class="service-list">
+          <li>HVAC Companies</li>
+          <li>Plumbing Services</li>
+          <li>Electrical Contractors</li>
+          <li>Roofing Companies</li>
+          <li>Landscaping Services</li>
+          <li>Tree Services</li>
+          <li>Pest Control</li>
+          <li>Pressure Washing</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>🏥 Medical & Healthcare</h3>
+        <ul class="service-list">
+          <li>Dental Practices</li>
+          <li>Veterinary Clinics</li>
+          <li>Dermatology</li>
+          <li>Orthodontics</li>
+          <li>Urgent Care Centers</li>
+          <li>Physical Therapy</li>
+          <li>Optometry</li>
+          <li>Med Spas</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>💼 Professional Services</h3>
+        <ul class="service-list">
+          <li>Law Firms</li>
+          <li>Accounting Firms</li>
+          <li>Insurance Agencies</li>
+          <li>Real Estate Agencies</li>
+          <li>Financial Advisors</li>
+          <li>Marketing Agencies</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>🏗️ Specialty Services</h3>
+        <ul class="service-list">
+          <li>Custom Home Builders</li>
+          <li>Interior Design</li>
+          <li>Landscape Architecture</li>
+          <li>Luxury Real Estate</li>
+          <li>Marine Services</li>
+          <li>Auto Dealerships</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/services.html" class="btn btn-primary">View All 30 Services</a>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="section process">
+    <h2 class="section-title">Our 4-Week Process</h2>
+    <p class="section-subtitle">From discovery to launch in record time</p>
+    <div class="process-steps">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Discovery & Strategy</h3>
+        <p>Analyze your competition, map out your services and locations, plan your custom site architecture.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Content Creation</h3>
+        <p>Generate 100+ pages of content, optimize for search engines, ensure brand consistency.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Design & Development</h3>
+        <p>Apply professional design, build on modern platform, test and optimize performance.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Launch & Training</h3>
+        <p>Deploy your comprehensive site, submit to search engines, train your team on updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section pricing">
+    <h2 class="section-title">Flexible Investment Options</h2>
+    <p class="section-subtitle">Custom solutions based on your specific needs</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Starter Package</h3>
+        <div class="price">$15,000 - $25,000</div>
+        <ul style="list-style: none; text-align: left;">
+          <li>✓ 50-75 pages</li>
+          <li>✓ Basic service coverage</li>
+          <li>✓ Local area focus</li>
+          <li>✓ 3-week delivery</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Professional Package</h3>
+        <div class="price">$25,000 - $40,000</div>
+        <ul style="list-style: none; text-align: left;">
+          <li>✓ 75-125 pages</li>
+          <li>✓ Comprehensive coverage</li>
+          <li>✓ Multi-location focus</li>
+          <li>✓ 4-week delivery</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise Package</h3>
+        <div class="price">$40,000 - $50,000</div>
+        <ul style="list-style: none; text-align: left;">
+          <li>✓ 125+ pages</li>
+          <li>✓ Complete market domination</li>
+          <li>✓ Advanced features</li>
+          <li>✓ 4-week delivery</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <p><strong>Monthly Payment Options:</strong> $2,000 - $4,000/month over 6-18 months</p>
+      <p><strong>Maintenance:</strong> $500 - $1,500/month after launch</p>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section id="locations" class="section">
+    <h2 class="section-title">Serving All of North Carolina</h2>
+    <p class="section-subtitle">Based in Wilmington, serving businesses statewide</p>
+    <div class="locations-grid">
+      <div class="location-card"><h4>🌊 Wilmington</h4></div>
+      <div class="location-card"><h4>🏖️ Wrightsville Beach</h4></div>
+      <div class="location-card"><h4>🌴 Carolina Beach</h4></div>
+      <div class="location-card"><h4>🏠 Leland</h4></div>
+      <div class="location-card"><h4>⚓ Southport</h4></div>
+      <div class="location-card"><h4>🏛️ Raleigh</h4></div>
+      <div class="location-card"><h4>🏙️ Charlotte</h4></div>
+      <div class="location-card"><h4>🏭 Greensboro</h4></div>
+      <div class="location-card"><h4>🎓 Durham</h4></div>
+      <div class="location-card"><h4>🏔️ Asheville</h4></div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/locations.html" class="btn btn-primary">View All 25 Locations</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="section cta">
+    <h2>Ready to Dominate Your Market?</h2>
+    <p>Get 100+ pages built in weeks while competitors wait months</p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary" onclick="showContact()">Schedule Strategy Call</button>
+      <button class="btn btn-secondary" onclick="showPricing()">Get Custom Quote</button>
+    </div>
+    <div style="margin-top: 2rem;">
+      <p>📧 hello@beachbirdstudios.com</p>
+      <p>📞 (910) 555-0123</p>
+      <p>📍 Wilmington, North Carolina</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/services.html">All Services</a></li>
+          <li>100+ Page Websites</li>
+          <li>Comprehensive Content</li>
+          <li>Search Optimization</li>
+          <li>Fast Delivery</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Industries</h3>
+        <ul>
+          <li>Home Services</li>
+          <li>Medical & Healthcare</li>
+          <li>Professional Services</li>
+          <li>Specialty Businesses</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Locations</h3>
+        <ul>
+          <li><a href="/locations.html">All Locations</a></li>
+          <li>Wilmington Area</li>
+          <li>NC Beach Communities</li>
+          <li>Major NC Cities</li>
+          <li>Statewide Service</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li>📧 hello@beachbirdstudios.com</li>
+          <li>📞 (910) 555-0123</li>
+          <li>📍 Wilmington, NC</li>
+          <li><a href="/about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Beach Bird Studios. 100+ Page Websites Built Fast.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Contact functions
+    function showContact() {
+      alert('Schedule Strategy Call\n\nEmail: hello@beachbirdstudios.com\nPhone: (910) 555-0123\n\nWe\'ll show you how we build 100+ pages in weeks and discuss your specific needs.');
+    }
+
+    function showPricing() {
+      alert('Custom Quote Request\n\nEmail: hello@beachbirdstudios.com\n\nTell us about:\n- Your business type\n- Services you offer\n- Areas you serve\n- Timeline needs\n\nWe\'ll provide a custom quote within 24 hours.');
+    }
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards
+    document.querySelectorAll('.service-card, .solution-card, .pricing-card, .location-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
+    });
+  </script>
+</body>
 </html>

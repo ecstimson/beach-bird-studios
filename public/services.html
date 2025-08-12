@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Services - Beach Bird Studios</title>
+  <meta name="description" content="Comprehensive websites for 30+ industries. 100+ pages built in weeks for home services, medical, professional services, and specialty businesses.">
+  <style>
+    :root {
+      --primary: #47A7EB;
+      --secondary: #E6B84C;
+      --accent: #0C3745;
+      --light: #F5F5F5;
+      --white: #FFFFFF;
+      --gray: #6B7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #1F2937;
+      background: var(--light);
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .header p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .category {
+      margin-bottom: 3rem;
+    }
+
+    .category-title {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+
+    .category-desc {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+      border-color: var(--primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features li {
+      padding: 0.25rem 0;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .service-features li:before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .service-investment {
+      background: var(--light);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .service-investment strong {
+      color: var(--accent);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #3B96DB;
+      transform: translateY(-2px);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: #D4A543;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">🏖️ Beach Bird Studios</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html" class="active">Services</a></li>
+        <li><a href="/locations.html">Locations</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="header">
+    <h1>All 30 Services We Offer</h1>
+    <p>Comprehensive 100+ page websites for every industry</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Home Services -->
+    <div class="category">
+      <h2 class="category-title">🏠 Home Services (10 Industries)</h2>
+      <p class="category-desc">Comprehensive websites for residential service businesses across North Carolina</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>HVAC Companies</h3>
+          <p>Complete websites covering heating, cooling, installation, and maintenance services.</p>
+          <ul class="service-features">
+            <li>Seasonal service optimization</li>
+            <li>Emergency HVAC response</li>
+            <li>Commercial & residential</li>
+            <li>Equipment showcase pages</li>
+            <li>Service area coverage</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $20,000 - $45,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=HVAC Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Plumbing Services</h3>
+          <p>Professional websites for emergency plumbing, drain cleaning, and water heater services.</p>
+          <ul class="service-features">
+            <li>24/7 emergency service pages</li>
+            <li>Drain & sewer specialization</li>
+            <li>Water heater services</li>
+            <li>Commercial plumbing</li>
+            <li>Before/after galleries</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $18,000 - $40,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Plumbing Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Electrical Contractors</h3>
+          <p>Comprehensive sites for electrical repair, installation, and emergency services.</p>
+          <ul class="service-features">
+            <li>Emergency electrical response</li>
+            <li>Panel upgrades & service</li>
+            <li>Commercial electrical</li>
+            <li>Generator installation</li>
+            <li>Safety & code compliance</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $22,000 - $42,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Electrical Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Roofing Companies</h3>
+          <p>Professional websites showcasing roof repair, replacement, and storm damage services.</p>
+          <ul class="service-features">
+            <li>Storm damage documentation</li>
+            <li>Roof replacement process</li>
+            <li>Commercial roofing</li>
+            <li>Insurance claim assistance</li>
+            <li>Material showcase</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $20,000 - $38,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Roofing Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Landscaping Services</h3>
+          <p>Complete websites for landscape design, maintenance, and commercial properties.</p>
+          <ul class="service-features">
+            <li>Seasonal service management</li>
+            <li>Design portfolio galleries</li>
+            <li>Maintenance contracts</li>
+            <li>Commercial landscaping</li>
+            <li>Irrigation systems</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $18,000 - $35,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Landscaping Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Pest Control</h3>
+          <p>Professional websites for pest control, termite treatment, and prevention services.</p>
+          <ul class="service-features">
+            <li>Treatment specializations</li>
+            <li>Prevention education</li>
+            <li>Commercial pest control</li>
+            <li>Seasonal pest management</li>
+            <li>Service guarantees</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $16,000 - $32,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Pest Control Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Garage Door Services</h3>
+          <p>Comprehensive websites for garage door repair, installation, and maintenance.</p>
+          <ul class="service-features">
+            <li>Emergency repair services</li>
+            <li>Installation showcase</li>
+            <li>Opener repair/replacement</li>
+            <li>Commercial garage doors</li>
+            <li>Maintenance programs</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $15,000 - $28,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Garage Door Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Pressure Washing</h3>
+          <p>Professional websites showcasing house washing, concrete cleaning, and commercial services.</p>
+          <ul class="service-features">
+            <li>Before/after photo galleries</li>
+            <li>Surface specializations</li>
+            <li>Commercial cleaning</li>
+            <li>Seasonal services</li>
+            <li>Equipment capabilities</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $14,000 - $25,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Pressure Washing Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Tree Services</h3>
+          <p>Complete websites for tree removal, trimming, and emergency storm cleanup.</p>
+          <ul class="service-features">
+            <li>Emergency storm response</li>
+            <li>Tree health services</li>
+            <li>Stump grinding</li>
+            <li>Commercial tree care</li>
+            <li>Insurance work</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $16,000 - $30,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Tree Service Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Home Cleaning</h3>
+          <p>Professional websites for residential cleaning, deep cleaning, and recurring services.</p>
+          <ul class="service-features">
+            <li>Service packages</li>
+            <li>Recurring cleaning programs</li>
+            <li>Deep cleaning specialties</li>
+            <li>Move-in/move-out cleaning</li>
+            <li>Quality guarantees</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $14,000 - $26,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Cleaning Service Website Quote" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Medical & Healthcare -->
+    <div class="category">
+      <h2 class="category-title">🏥 Medical & Healthcare (8 Industries)</h2>
+      <p class="category-desc">Professional websites for healthcare practices with patient-focused content</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Dental Practices</h3>
+          <p>Comprehensive websites for general dentistry, cosmetic procedures, and patient care.</p>
+          <ul class="service-features">
+            <li>Service procedure pages</li>
+            <li>Patient education content</li>
+            <li>Online appointment booking</li>
+            <li>Insurance information</li>
+            <li>Before/after galleries</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $25,000 - $45,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Dental Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Veterinary Clinics</h3>
+          <p>Professional websites for animal care, emergency services, and pet health education.</p>
+          <ul class="service-features">
+            <li>Pet care services</li>
+            <li>Emergency veterinary care</li>
+            <li>Pet health education</li>
+            <li>Appointment scheduling</li>
+            <li>Team introductions</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $22,000 - $40,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Veterinary Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Dermatology</h3>
+          <p>Specialized websites for skin care, cosmetic procedures, and medical dermatology.</p>
+          <ul class="service-features">
+            <li>Treatment specializations</li>
+            <li>Cosmetic procedures</li>
+            <li>Skin condition education</li>
+            <li>Before/after results</li>
+            <li>Online consultations</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $28,000 - $48,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Dermatology Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Orthodontics</h3>
+          <p>Complete websites for braces, Invisalign, and orthodontic treatment options.</p>
+          <ul class="service-features">
+            <li>Treatment options</li>
+            <li>Age-specific care</li>
+            <li>Progress tracking</li>
+            <li>Payment plan options</li>
+            <li>Virtual consultations</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $26,000 - $44,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Orthodontic Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Urgent Care Centers</h3>
+          <p>Professional websites for urgent care services, walk-in appointments, and health education.</p>
+          <ul class="service-features">
+            <li>Service capabilities</li>
+            <li>Wait time updates</li>
+            <li>Insurance acceptance</li>
+            <li>Location information</li>
+            <li>Health education</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $24,000 - $42,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Urgent Care Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Physical Therapy</h3>
+          <p>Comprehensive websites for rehabilitation, sports therapy, and pain management.</p>
+          <ul class="service-features">
+            <li>Treatment specializations</li>
+            <li>Injury rehabilitation</li>
+            <li>Exercise programs</li>
+            <li>Insurance coverage</li>
+            <li>Recovery tracking</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $22,000 - $38,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Physical Therapy Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Optometry</h3>
+          <p>Professional websites for eye care, vision testing, and eyewear services.</p>
+          <ul class="service-features">
+            <li>Vision services</li>
+            <li>Eyewear selection</li>
+            <li>Eye health education</li>
+            <li>Insurance information</li>
+            <li>Appointment booking</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $20,000 - $36,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Optometry Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Med Spas</h3>
+          <p>Luxury websites for aesthetic treatments, anti-aging, and cosmetic procedures.</p>
+          <ul class="service-features">
+            <li>Treatment menus</li>
+            <li>Before/after galleries</li>
+            <li>Online booking</li>
+            <li>Package deals</li>
+            <li>Consultation requests</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $28,000 - $50,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Med Spa Website Quote" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Services -->
+    <div class="category">
+      <h2 class="category-title">💼 Professional Services (6 Industries)</h2>
+      <p class="category-desc">Authoritative websites for professional service firms and consultants</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Law Firms</h3>
+          <p>Professional websites for legal practices with practice area specializations.</p>
+          <ul class="service-features">
+            <li>Practice area pages</li>
+            <li>Attorney profiles</li>
+            <li>Case results</li>
+            <li>Legal resources</li>
+            <li>Consultation requests</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $30,000 - $50,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Law Firm Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Accounting Firms</h3>
+          <p>Comprehensive websites for tax preparation, bookkeeping, and business consulting.</p>
+          <ul class="service-features">
+            <li>Service offerings</li>
+            <li>Industry specializations</li>
+            <li>Tax resources</li>
+            <li>Client portals</li>
+            <li>Consultation booking</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $25,000 - $42,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Accounting Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Insurance Agencies</h3>
+          <p>Professional websites for insurance sales, claims assistance, and policy management.</p>
+          <ul class="service-features">
+            <li>Insurance types</li>
+            <li>Quote requests</li>
+            <li>Claims assistance</li>
+            <li>Policy management</li>
+            <li>Educational resources</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $22,000 - $38,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Insurance Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Real Estate Agencies</h3>
+          <p>Complete websites for home buying/selling, property search, and market analysis.</p>
+          <ul class="service-features">
+            <li>Property listings</li>
+            <li>Market reports</li>
+            <li>Agent profiles</li>
+            <li>Buyer/seller resources</li>
+            <li>Valuation tools</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $28,000 - $45,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Real Estate Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Financial Advisors</h3>
+          <p>Professional websites for investment management, retirement planning, and financial services.</p>
+          <ul class="service-features">
+            <li>Service specializations</li>
+            <li>Investment philosophy</li>
+            <li>Planning resources</li>
+            <li>Client testimonials</li>
+            <li>Consultation scheduling</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $26,000 - $44,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Financial Advisor Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Marketing Agencies</h3>
+          <p>Dynamic websites showcasing marketing services, case studies, and results.</p>
+          <ul class="service-features">
+            <li>Service portfolios</li>
+            <li>Case study galleries</li>
+            <li>Results tracking</li>
+            <li>Industry specializations</li>
+            <li>Strategy consultations</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $28,000 - $48,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Marketing Agency Website Quote" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specialty Services -->
+    <div class="category">
+      <h2 class="category-title">🏗️ Specialty & High-End Services (6 Industries)</h2>
+      <p class="category-desc">Premium websites for luxury services and specialized businesses</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Custom Home Builders</h3>
+          <p>Luxury websites showcasing custom home construction and high-end building services.</p>
+          <ul class="service-features">
+            <li>Project portfolios</li>
+            <li>Construction process</li>
+            <li>Design galleries</li>
+            <li>Client testimonials</li>
+            <li>Consultation requests</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $35,000 - $50,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Custom Builder Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Interior Design</h3>
+          <p>Professional websites for interior design services with stunning visual portfolios.</p>
+          <ul class="service-features">
+            <li>Design portfolios</li>
+            <li>Service packages</li>
+            <li>Before/after galleries</li>
+            <li>Style guides</li>
+            <li>Consultation booking</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $30,000 - $46,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Interior Design Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Landscape Architecture</h3>
+          <p>Professional websites for landscape design, site planning, and outdoor space development.</p>
+          <ul class="service-features">
+            <li>Design portfolios</li>
+            <li>Project case studies</li>
+            <li>Service specializations</li>
+            <li>Sustainability focus</li>
+            <li>Project consultations</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $32,000 - $48,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Landscape Architecture Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Luxury Real Estate</h3>
+          <p>High-end websites for luxury property sales and exclusive real estate services.</p>
+          <ul class="service-features">
+            <li>Luxury property showcases</li>
+            <li>High-end marketing</li>
+            <li>Exclusive listings</li>
+            <li>Market expertise</li>
+            <li>VIP services</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $35,000 - $50,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Luxury Real Estate Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Marine Services</h3>
+          <p>Comprehensive websites for boat repair, marina services, and yacht maintenance.</p>
+          <ul class="service-features">
+            <li>Service specializations</li>
+            <li>Marina amenities</li>
+            <li>Boat storage</li>
+            <li>Repair capabilities</li>
+            <li>Seasonal services</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $26,000 - $42,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Marine Services Website Quote" class="btn">Get Quote</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Auto Dealerships</h3>
+          <p>Professional websites for car sales, financing, service departments, and inventory management.</p>
+          <ul class="service-features">
+            <li>Vehicle inventory</li>
+            <li>Financing options</li>
+            <li>Service department</li>
+            <li>Parts department</li>
+            <li>Trade-in valuations</li>
+          </ul>
+          <div class="service-investment">
+            <strong>Investment:</strong> $32,000 - $50,000
+          </div>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Auto Dealership Website Quote" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <h2>Ready to Get Your 100+ Page Website?</h2>
+      <p>Choose your industry above or contact us for a custom solution</p>
+      <a href="mailto:hello@beachbirdstudios.com?subject=Custom Website Quote" class="btn btn-secondary">Get Custom Quote</a>
+      <div style="margin-top: 1rem;">
+        <p>📧 hello@beachbirdstudios.com | 📞 (910) 555-0123</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

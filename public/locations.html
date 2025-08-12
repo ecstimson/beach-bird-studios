@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Locations - Beach Bird Studios</title>
+  <meta name="description" content="Web design services across 25+ North Carolina locations. From Wilmington beaches to major cities - comprehensive 100+ page websites built fast.">
+  <style>
+    :root {
+      --primary: #47A7EB;
+      --secondary: #E6B84C;
+      --accent: #0C3745;
+      --light: #F5F5F5;
+      --white: #FFFFFF;
+      --gray: #6B7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #1F2937;
+      background: var(--light);
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .header p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .region {
+      margin-bottom: 3rem;
+    }
+
+    .region-title {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+
+    .region-desc {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .location-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+      border-color: var(--primary);
+    }
+
+    .location-card h3 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .location-card .type {
+      font-size: 0.9rem;
+      color: var(--primary);
+      background: #F0F9FF;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .location-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .location-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .location-features li {
+      padding: 0.25rem 0;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .location-features li:before {
+      content: "→ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #3B96DB;
+      transform: translateY(-2px);
+    }
+
+    .coverage-stats {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      color: var(--gray);
+      margin-top: 0.5rem;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+      border-radius: 12px;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: #D4A543;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">🏖️ Beach Bird Studios</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/locations.html" class="active">Locations</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="header">
+    <h1>All 25 Locations We Serve</h1>
+    <p>Comprehensive web design across North Carolina</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Coverage Stats -->
+    <div class="coverage-stats">
+      <h2>Statewide Coverage</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Cities & Towns</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Counties Served</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3-4</div>
+          <div class="stat-label">Weeks to Launch</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Pages per Website</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wilmington Beach Communities -->
+    <div class="region">
+      <h2 class="region-title">🏖️ Wilmington Beach Communities</h2>
+      <p class="region-desc">Coastal businesses serving residents and tourists in North Carolina's premier beach destinations</p>
+      
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3>🌊 Wrightsville Beach</h3>
+          <span class="type">Beach Community</span>
+          <p>Popular beach destination with vacation rentals, restaurants, surf shops, and real estate services serving both locals and visitors.</p>
+          <ul class="location-features">
+            <li>Vacation rental management</li>
+            <li>Beach restaurant services</li>
+            <li>Surf & water sports</li>
+            <li>Luxury real estate</li>
+            <li>Tourism services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Wrightsville Beach Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🌴 Carolina Beach</h3>
+          <span class="type">Beach Town</span>
+          <p>Family-friendly beach town with boardwalk businesses, hotels, restaurants, and fishing charter services.</p>
+          <ul class="location-features">
+            <li>Hotel & hospitality</li>
+            <li>Boardwalk restaurants</li>
+            <li>Fishing charters</li>
+            <li>Retail & gift shops</li>
+            <li>Event venues</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Carolina Beach Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🐚 Kure Beach</h3>
+          <span class="type">Small Beach Town</span>
+          <p>Quiet beach community with fishing pier, vacation rentals, and local restaurant businesses.</p>
+          <ul class="location-features">
+            <li>Vacation rental properties</li>
+            <li>Fishing pier services</li>
+            <li>Local restaurants</li>
+            <li>Beach services</li>
+            <li>Small retail</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Kure Beach Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏄 Topsail Beach</h3>
+          <span class="type">Beach Community</span>
+          <p>Small beach town known for sea turtle nesting, vacation rentals, restaurants, and marine services.</p>
+          <ul class="location-features">
+            <li>Vacation rentals</li>
+            <li>Marine services</li>
+            <li>Beach restaurants</li>
+            <li>Eco-tourism</li>
+            <li>Fishing services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Topsail Beach Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🌊 Surf City</h3>
+          <span class="type">Beach Town</span>
+          <p>Beach town on Topsail Island with vacation rentals, restaurants, surf shops, and fishing services.</p>
+          <ul class="location-features">
+            <li>Vacation rental management</li>
+            <li>Surf shops & lessons</li>
+            <li>Island restaurants</li>
+            <li>Fishing charters</li>
+            <li>Beach equipment rental</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Surf City Web Design" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wilmington Metro Areas -->
+    <div class="region">
+      <h2 class="region-title">🏢 Wilmington Metro Areas</h2>
+      <p class="region-desc">Urban and suburban Wilmington neighborhoods with diverse business communities</p>
+      
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3>🏛️ Downtown Wilmington</h3>
+          <span class="type">Historic Downtown</span>
+          <p>Historic downtown with riverwalk businesses, restaurants, law firms, medical practices, and retail.</p>
+          <ul class="location-features">
+            <li>Historic district restaurants</li>
+            <li>Law firms & professional services</li>
+            <li>Medical practices</li>
+            <li>Retail & specialty shops</li>
+            <li>Event venues & tourism</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Downtown Wilmington Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>⛳ Landfall</h3>
+          <span class="type">Upscale Community</span>
+          <p>Luxury golf community with high-end services, medical practices, and professional businesses.</p>
+          <ul class="location-features">
+            <li>Luxury service providers</li>
+            <li>Medical specialists</li>
+            <li>Professional services</li>
+            <li>Golf & country club services</li>
+            <li>High-end retail</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Landfall Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏘️ Porter's Neck</h3>
+          <span class="type">Suburban Community</span>
+          <p>Growing suburban area north of Wilmington with home services, medical practices, and retail.</p>
+          <ul class="location-features">
+            <li>Home service businesses</li>
+            <li>Medical & dental practices</li>
+            <li>Retail & restaurants</li>
+            <li>Professional services</li>
+            <li>Family services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Porter's Neck Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🛍️ Mayfaire</h3>
+          <span class="type">Shopping District</span>
+          <p>Upscale shopping and residential area with retail, restaurants, professional services, and medical.</p>
+          <ul class="location-features">
+            <li>Retail & specialty stores</li>
+            <li>Upscale restaurants</li>
+            <li>Professional service firms</li>
+            <li>Medical & dental practices</li>
+            <li>Personal services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Mayfaire Web Design" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nearby Communities -->
+    <div class="region">
+      <h2 class="region-title">🌳 Nearby Communities</h2>
+      <p class="region-desc">Growing towns and coastal communities around the Wilmington area</p>
+      
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3>🏠 Leland</h3>
+          <span class="type">Growing Town</span>
+          <p>Fast-growing town near Wilmington with home services, retail, restaurants, and professional services.</p>
+          <ul class="location-features">
+            <li>Home service contractors</li>
+            <li>Retail & shopping centers</li>
+            <li>Restaurants & food services</li>
+            <li>Professional service firms</li>
+            <li>Healthcare providers</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Leland Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>⚓ Southport</h3>
+          <span class="type">Historic Port Town</span>
+          <p>Historic waterfront town with restaurants, tourism, marine services, and real estate.</p>
+          <ul class="location-features">
+            <li>Waterfront restaurants</li>
+            <li>Tourism & hospitality</li>
+            <li>Marine services & boating</li>
+            <li>Real estate services</li>
+            <li>Historic tours & events</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Southport Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🌊 Hampstead</h3>
+          <span class="type">Coastal Town</span>
+          <p>Growing coastal community with home services, retail, restaurants, and marine services.</p>
+          <ul class="location-features">
+            <li>Home service businesses</li>
+            <li>Coastal retail & restaurants</li>
+            <li>Marine & boating services</li>
+            <li>Real estate & property management</li>
+            <li>Healthcare services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Hampstead Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏝️ Oak Island</h3>
+          <span class="type">Beach Town</span>
+          <p>Family beach destination near Southport with vacation rentals, restaurants, and marine services.</p>
+          <ul class="location-features">
+            <li>Vacation rental management</li>
+            <li>Beach restaurants</li>
+            <li>Real estate services</li>
+            <li>Marine & fishing services</li>
+            <li>Tourism services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Oak Island Web Design" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Major NC Cities -->
+    <div class="region">
+      <h2 class="region-title">🏙️ Major North Carolina Cities</h2>
+      <p class="region-desc">Comprehensive web services for businesses in North Carolina's major metropolitan areas</p>
+      
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3>🏛️ Raleigh</h3>
+          <span class="type">State Capital</span>
+          <p>North Carolina's state capital and tech hub with government, healthcare, and professional services.</p>
+          <ul class="location-features">
+            <li>Technology companies</li>
+            <li>Government contractors</li>
+            <li>Healthcare systems</li>
+            <li>Professional service firms</li>
+            <li>Educational institutions</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Raleigh Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏙️ Charlotte</h3>
+          <span class="type">Major City</span>
+          <p>North Carolina's largest city and banking center with financial services and corporate headquarters.</p>
+          <ul class="location-features">
+            <li>Financial services</li>
+            <li>Corporate headquarters</li>
+            <li>Healthcare systems</li>
+            <li>Manufacturing companies</li>
+            <li>Professional services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Charlotte Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏭 Greensboro</h3>
+          <span class="type">Triad City</span>
+          <p>Major city in the Piedmont Triad with manufacturing, healthcare, education, and logistics.</p>
+          <ul class="location-features">
+            <li>Manufacturing companies</li>
+            <li>Healthcare providers</li>
+            <li>Educational institutions</li>
+            <li>Logistics & distribution</li>
+            <li>Professional services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Greensboro Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🎓 Durham</h3>
+          <span class="type">Research Triangle</span>
+          <p>Part of Research Triangle with Duke University, tech companies, healthcare, and research.</p>
+          <ul class="location-features">
+            <li>Technology & research</li>
+            <li>Healthcare & biotech</li>
+            <li>Educational institutions</li>
+            <li>Professional services</li>
+            <li>Startup companies</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Durham Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏘️ Cary</h3>
+          <span class="type">Suburban City</span>
+          <p>Affluent suburb of Raleigh with tech companies, professional services, healthcare, and retail.</p>
+          <ul class="location-features">
+            <li>Technology companies</li>
+            <li>Professional service firms</li>
+            <li>Healthcare providers</li>
+            <li>Retail & restaurants</li>
+            <li>Family services</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Cary Web Design" class="btn">Get Quote</a>
+        </div>
+
+        <div class="location-card">
+          <h3>🏔️ Asheville</h3>
+          <span class="type">Mountain City</span>
+          <p>Mountain city known for arts, breweries, tourism, healthcare, and real estate.</p>
+          <ul class="location-features">
+            <li>Tourism & hospitality</li>
+            <li>Breweries & restaurants</li>
+            <li>Arts & creative services</li>
+            <li>Healthcare systems</li>
+            <li>Real estate & property management</li>
+          </ul>
+          <a href="mailto:hello@beachbirdstudios.com?subject=Asheville Web Design" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <h2>Serve Your Location with a Comprehensive Website</h2>
+      <p>100+ pages covering every service, every question, every customer need</p>
+      <a href="mailto:hello@beachbirdstudios.com?subject=Location-Specific Website Quote" class="btn btn-secondary">Get Location Quote</a>
+      <div style="margin-top: 1rem;">
+        <p>📧 hello@beachbirdstudios.com | 📞 (910) 555-0123</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
