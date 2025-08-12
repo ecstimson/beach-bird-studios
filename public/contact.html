@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Beach Bird Studios - Get Your 100+ Page Website</title>
+    <meta name="description" content="Contact Beach Bird Studios for your 100+ page website. Free consultation, custom quotes, and 3-4 week delivery. Serving all of North Carolina.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: system-ui, sans-serif; 
+            line-height: 1.6;
+            color: #1F2937;
+        }
+        
+        /* Navigation */
+        nav { 
+            background: #47A7EB; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo { 
+            color: white; 
+            font-size: 20px; 
+            font-weight: bold; 
+            text-decoration: none;
+        }
+        nav .nav-links { 
+            display: flex; 
+            gap: 20px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        nav a:hover { background: rgba(255,255,255,0.1); }
+        
+        /* Header */
+        .header { 
+            background: linear-gradient(135deg, #47A7EB, #0C3745); 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+        }
+        .header h1 { 
+            font-size: 36px; 
+            margin-bottom: 16px; 
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .header p { 
+            font-size: 18px; 
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content */
+        .content { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h2 {
+            color: #0C3745;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #47A7EB;
+            padding-bottom: 8px;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            border-left: 4px solid #47A7EB;
+        }
+        
+        .contact-item h3 {
+            color: #0C3745;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .contact-item p {
+            color: #374151;
+            font-size: 16px;
+        }
+        
+        .contact-item a {
+            color: #47A7EB;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .quote-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .quote-form h2 {
+            color: #0C3745;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #47A7EB;
+            padding-bottom: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #0C3745;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #47A7EB;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .cta-button { 
+            background: #E6B84C; 
+            color: #0C3745; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin: 20px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .cta-button:hover { 
+            background: #D4A543; 
+            transform: translateY(-2px);
+        }
+        
+        .process-section {
+            background: #F9FAFB;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 12px;
+        }
+        
+        .process-section h2 {
+            color: #0C3745;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .process-step .step-number {
+            background: #47A7EB;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 auto 15px auto;
+        }
+        
+        .process-step h3 {
+            color: #0C3745;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .process-step p {
+            color: #374151;
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        .footer { 
+            background: #0C3745; 
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin-top: 60px;
+        }
+        .footer h3 { 
+            color: #47A7EB; 
+            margin-bottom: 16px; 
+        }
+        .footer p { 
+            margin: 8px 0; 
+            opacity: 0.9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .header h1 { font-size: 28px; }
+            .content { padding: 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .contact-grid { grid-template-columns: 1fr; gap: 20px; }
+            .process-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">🏖️ Beach Bird Studios</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="header">
+        <h1>Get Your 100+ Page Website in 3-4 Weeks</h1>
+        <p>Free consultation, custom quote, and fast delivery. No long waits, no endless revisions.</p>
+    </div>
+    
+    <div class="content">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                
+                <div class="contact-item">
+                    <h3>📧 Email Us</h3>
+                    <p><a href="mailto:hello@beachbirdstudios.com">hello@beachbirdstudios.com</a></p>
+                    <p>We respond within 2 hours during business hours</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:+19105550123">(910) 555-0123</a></p>
+                    <p>Monday - Friday: 9am - 6pm EST</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📍 Service Area</h3>
+                    <p>Based in Wilmington, NC</p>
+                    <p>Serving all of North Carolina</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>💰 Investment Range</h3>
+                    <p>$15,000 - $50,000</p>
+                    <p>Payment plans: $2,000 - $4,000/month</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>⚡ Delivery Timeline</h3>
+                    <p>3-4 weeks from start to launch</p>
+                    <p>Not 6-8 months like other agencies</p>
+                </div>
+            </div>
+            
+            <div class="quote-form">
+                <h2>Get Your Custom Quote</h2>
+                
+                <form action="mailto:hello@beachbirdstudios.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="industry">What industry are you in?</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select your industry...</option>
+                            <option value="hvac">HVAC Services</option>
+                            <option value="plumbing">Plumbing Services</option>
+                            <option value="electrical">Electrical Services</option>
+                            <option value="roofing">Roofing Services</option>
+                            <option value="landscaping">Landscaping</option>
+                            <option value="dental">Dental Practice</option>
+                            <option value="veterinary">Veterinary Clinic</option>
+                            <option value="law-firm">Law Firm</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="medical">Medical Practice</option>
+                            <option value="construction">Construction/Home Builder</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">What's your primary service area?</label>
+                        <select id="location" name="location" required>
+                            <option value="">Select your location...</option>
+                            <option value="wilmington">Wilmington Area</option>
+                            <option value="raleigh">Raleigh Area</option>
+                            <option value="charlotte">Charlotte Area</option>
+                            <option value="greensboro">Greensboro Area</option>
+                            <option value="durham">Durham Area</option>
+                            <option value="asheville">Asheville Area</option>
+                            <option value="fayetteville">Fayetteville Area</option>
+                            <option value="other-nc">Other NC Location</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="details">Tell us about your business and what you need:</label>
+                        <textarea id="details" name="details" placeholder="What services do you offer? How many locations do you serve? What's your biggest website challenge? Any specific features you need?" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Get My Custom Quote</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="process-section">
+            <h2>How We Work</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>We discuss your business, goals, and create a custom plan for your 100+ page website</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Content & Design</h3>
+                    <p>Our team creates comprehensive content covering every service and location you offer</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>We build your website on a modern platform with all the features your business needs</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Support</h3>
+                    <p>Your site goes live in 3-4 weeks with ongoing support and maintenance available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h3>Ready to Get Your 100+ Page Website?</h3>
+        <p>📧 hello@beachbirdstudios.com</p>
+        <p>📞 (910) 555-0123</p>
+        <p>Serving all of North Carolina</p>
+        <a href="mailto:hello@beachbirdstudios.com" class="cta-button">Get Quote</a>
+    </div>
+</body>
+</html>
