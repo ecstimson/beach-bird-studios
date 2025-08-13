@@ -1,0 +1,337 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Beach Bird Studios - Premium Websites & SEO That Actually Work",
+  description = "Beach Bird Studios delivers premium web design, AI development, and SEO services that drive real results. Custom solutions for businesses ready to grow online.",
+  keywords = "web design, SEO services, AI development, custom websites, digital marketing, business growth",
+  ogImage = "/beach-bird-og.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --primary-color: #47A7EB;
+        --secondary-color: #E6B84C;
+        --accent-color: #0C3745;
+        --text-dark: #1a1a1a;
+        --text-light: #666666;
+        --background-light: #ffffff;
+        --background-gray: #f8f9fa;
+        --border-light: #e5e5e5;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--background-light);
+      }
+
+      /* Header Styles */
+      .header {
+        background: var(--background-light);
+        border-bottom: 1px solid var(--border-light);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        padding: 0.5rem 0;
+      }
+
+      .nav a:hover {
+        color: var(--primary-color);
+      }
+
+      .cta-button {
+        background: var(--primary-color);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background: var(--accent-color);
+        transform: translateY(-2px);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-dark);
+      }
+
+      /* Main Content */
+      .main-content {
+        min-height: calc(100vh - 140px);
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: var(--accent-color);
+        color: white;
+        padding: 3rem 0 2rem;
+        margin-top: 4rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-about h3 {
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .footer-about p {
+        line-height: 1.7;
+        opacity: 0.9;
+      }
+
+      .footer-section h4 {
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        opacity: 1;
+        color: var(--secondary-color);
+      }
+
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .footer-contact a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .footer-contact a:hover {
+        opacity: 1;
+        color: var(--secondary-color);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 2rem;
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="/" class="logo">
+          🏖️ Beach Bird Studios
+        </a>
+        
+        <nav class="nav">
+          <a href="/services/web-design">Web Design</a>
+          <a href="/services/ai-development">AI Development</a>
+          <a href="/services/seo">SEO Services</a>
+          <a href="/process">Process</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+
+        <a href="/contact" class="cta-button">Get Started</a>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <h3>Beach Bird Studios</h3>
+            <p>We deliver premium websites and SEO that actually work. Our custom solutions help businesses grow their online presence with measurable results.</p>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/web-design">Web Design</a></li>
+              <li><a href="/services/ai-development">AI Development</a></li>
+              <li><a href="/services/seo">SEO Services</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/process">Our Process</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="footer-contact">
+              <a href="mailto:eric@beachbirdstudios.com">eric@beachbirdstudios.com</a>
+              <a href="tel:+19105126990">910-512-6990</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2024 Beach Bird Studios. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu functionality (basic implementation)
+      document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+        const nav = document.querySelector('.nav');
+        if (nav) {
+          nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+      });
+    </script>
+  </body>
+</html>

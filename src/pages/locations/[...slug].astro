@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={`Web Design & SEO in ${entry.data.city}, ${entry.data.state} | Beach Bird Studios`}
+  description={`Premium web design, AI development, and SEO services for ${entry.data.city} businesses. ${entry.data.description}`}
+>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Web Design & SEO in {entry.data.city}, {entry.data.state}
+        </h1>
+        <p class="text-xl opacity-95 max-w-3xl mx-auto">{entry.data.description}</p>
+      </div>
+    </section>
+
+    <!-- Location Info -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+          <div>
+            <h3 class="font-semibold text-primary mb-2">Population</h3>
+            <p class="text-gray-600">{entry.data.population}</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-2">Region</h3>
+            <p class="text-gray-600 capitalize">{entry.data.region.replace('-', ' ')}</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-2">Competition</h3>
+            <p class="text-gray-600 capitalize">{entry.data.competitionLevel}</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-2">State</h3>
+            <p class="text-gray-600">{entry.data.state}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="prose prose-lg max-w-none">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Services -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-accent">
+          Our Services for {entry.data.city} Businesses
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-accent">Custom Web Design</h3>
+            <p class="text-gray-600 mb-4">Beautiful, professional websites built specifically for {entry.data.city} businesses. 4-6 week delivery.</p>
+            <a href="/services/web-design" class="text-primary font-semibold hover:underline">Learn More →</a>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-accent">AI Development</h3>
+            <p class="text-gray-600 mb-4">100+ page websites to dominate {entry.data.city} search results. 3-4 week delivery.</p>
+            <a href="/services/ai-development" class="text-primary font-semibold hover:underline">Learn More →</a>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-accent">SEO Services</h3>
+            <p class="text-gray-600 mb-4">Improve your rankings in {entry.data.city} without rebuilding your website.</p>
+            <a href="/services/seo" class="text-primary font-semibold hover:underline">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Industries -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-accent">
+          Industries We Serve in {entry.data.city}
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {entry.data.keyIndustries.map((industry) => (
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <span class="text-primary font-semibold">•</span> {industry}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    {entry.data.serviceAreas.length > 0 && (
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12 text-accent">
+            {entry.data.city} Areas We Serve
+          </h2>
+          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {entry.data.serviceAreas.map((area) => (
+              <div class="text-center p-3 bg-white rounded shadow-sm">
+                {area}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-accent to-primary text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Grow Your {entry.data.city} Business?</h2>
+        <p class="text-xl mb-8 opacity-95">Get a free consultation and see how we can help</p>
+        <a href="/contact" class="inline-block bg-secondary text-accent px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition">
+          Get Your Free Consultation
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  }
+  
+  .prose h2 {
+    color: var(--color-accent);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose h3 {
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+</style>

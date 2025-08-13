@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const industries = await getCollection('industries');
+  return industries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={`${entry.data.title} | Beach Bird Studios`}
+  description={entry.data.description}
+>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+      <div class="container mx-auto px-6 text-center">
+        <div class="text-5xl mb-4">{entry.data.icon}</div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{entry.data.title}</h1>
+        <p class="text-xl opacity-95 max-w-3xl mx-auto">{entry.data.description}</p>
+      </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <h3 class="font-semibold text-primary mb-2">Timeline</h3>
+            <p class="text-gray-600">{entry.data.timeline}</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-2">Investment</h3>
+            <p class="text-gray-600">{entry.data.priceRange}</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-2">Category</h3>
+            <p class="text-gray-600 capitalize">{entry.data.category.replace('-', ' ')}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="prose prose-lg max-w-none">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Offered -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-accent">Services We Cover</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {entry.data.services.map((service) => (
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <span class="text-primary font-semibold">→</span> {service}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-accent">Why Choose Us for {entry.data.title}</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {entry.data.keyBenefits.map((benefit) => (
+            <div class="flex items-start">
+              <span class="text-2xl text-primary mr-4">✓</span>
+              <p class="text-gray-700">{benefit}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-accent to-primary text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Grow Your {entry.data.title.split(' ')[0]} Business?</h2>
+        <p class="text-xl mb-8 opacity-95">Get a free consultation and custom quote</p>
+        <a href="/contact" class="inline-block bg-secondary text-accent px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition">
+          Start Your Project
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  }
+  
+  .prose h2 {
+    color: var(--color-accent);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose h3 {
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+</style>
