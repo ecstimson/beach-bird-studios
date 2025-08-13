@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Services | Works with ANY Platform | Beach Bird Studios</title>
+    <meta name="description" content="Professional SEO services in Wilmington, NC. Works with WordPress, Wix, Squarespace, or any platform. 36+ content pages, link building, and monthly reporting. No website rebuild required.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+        }
+        
+        /* Navigation */
+        nav { 
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0C3745;
+            text-decoration: none;
+        }
+        nav .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        nav a { 
+            color: #0C3745;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav .current { color: #47A7EB; }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(135deg, #47A7EB, #0C3745);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 { 
+            font-size: 48px;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .subtitle { 
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-highlight {
+            background: rgba(230, 184, 76, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 1px solid rgba(230, 184, 76, 0.3);
+        }
+        .hero-highlight h3 {
+            color: #E6B84C;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .cta { 
+            background: #E6B84C;
+            color: #0C3745;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .cta:hover {
+            background: #D4A543;
+            transform: translateY(-2px);
+        }
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .cta-secondary:hover {
+            background: white;
+            color: #0C3745;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content-section.alt {
+            background: #F9FAFB;
+            padding: 80px 0;
+        }
+        .content-section.alt .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #0C3745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #6B7280;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        
+        /* Problem/Solution Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .problem-list h3 {
+            color: #EF4444;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .solution-list h3 {
+            color: #47A7EB;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .problem-list ul, .solution-list ul {
+            list-style: none;
+        }
+        .problem-list li, .solution-list li {
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .problem-list li:before {
+            content: "❌ ";
+            margin-right: 10px;
+        }
+        .solution-list li:before {
+            content: "✅ ";
+            margin-right: 10px;
+        }
+        
+        /* Platform Support */
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .platform-item {
+            background: white;
+            border: 2px solid #E5E7EB;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .platform-item:hover {
+            border-color: #47A7EB;
+            transform: translateY(-5px);
+        }
+        .platform-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .platform-item h3 {
+            color: #0C3745;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .platform-item p {
+            color: #6B7280;
+            font-size: 14px;
+        }
+        
+        /* SEO Features */
+        .seo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .seo-feature {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .seo-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .seo-feature h3 {
+            color: #0C3745;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .seo-feature p {
+            color: #6B7280;
+            margin-bottom: 15px;
+        }
+        .seo-metric {
+            color: #47A7EB;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* Timeline */
+        .timeline {
+            background: white;
+            border: 2px solid #E5E7EB;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        .timeline h3 {
+            color: #0C3745;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .timeline-item {
+            text-align: center;
+            position: relative;
+        }
+        .timeline-month {
+            background: #47A7EB;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px auto;
+        }
+        .timeline-item h4 {
+            color: #0C3745;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .timeline-item p {
+            color: #6B7280;
+            font-size: 14px;
+        }
+        
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .process-step {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+        .process-number {
+            background: #47A7EB;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 auto 20px auto;
+        }
+        .process-step h3 {
+            color: #0C3745;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .process-step p {
+            color: #6B7280;
+        }
+        
+        /* Perfect For Section */
+        .perfect-for {
+            background: white;
+            border: 2px solid #E5E7EB;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .perfect-for h3 {
+            color: #0C3745;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .perfect-for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .perfect-for-item {
+            background: #F9FAFB;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+        }
+        .perfect-for-item h4 {
+            color: #47A7EB;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .perfect-for-item p {
+            color: #6B7280;
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0C3745, #47A7EB);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0C3745;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .footer-column h3 {
+            color: #47A7EB;
+            margin-bottom: 15px;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column li {
+            padding: 5px 0;
+        }
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        .footer-column a:hover {
+            opacity: 1;
+        }
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero .subtitle { font-size: 18px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .problems-grid { grid-template-columns: 1fr; gap: 40px; }
+            .process-grid { grid-template-columns: 1fr; }
+            .timeline-grid { grid-template-columns: 1fr; }
+            .nav-links { flex-direction: column; gap: 10px; }
+            .nav-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">🏖️ Beach Bird Studios</a>
+            <div class="nav-links">
+                <a href="/services/web-design">Web Design</a>
+                <a href="/services/ai-development">AI Development</a>
+                <a href="/services/seo" class="current">SEO Services</a>
+                <a href="/portfolio.html">Portfolio</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>SEO That Works with ANY Website Platform</h1>
+        <p class="subtitle">Keep your existing website. We'll optimize it for search engines with 36+ content pages, link building, and monthly reporting.</p>
+        
+        <div class="hero-highlight">
+            <h3>No Website Rebuild Required</h3>
+            <p>Works with WordPress, Wix, Squarespace, Shopify, or any custom platform</p>
+        </div>
+        
+        <div class="hero-buttons">
+            <a href="/contact.html" class="cta">Get Your Custom Quote</a>
+            <a href="/portfolio.html" class="cta-secondary">See SEO Results</a>
+        </div>
+    </div>
+    
+    <!-- Problem/Solution Section -->
+    <div class="content-section alt">
+        <div class="section-content">
+            <h2 class="section-title">Stop Being Told You Need a New Website</h2>
+            <div class="problems-grid">
+                <div class="problem-list">
+                    <h3>Tired of These SEO Problems?</h3>
+                    <ul>
+                        <li>"You need a complete rebuild"</li>
+                        <li>Can't find you on Google</li>
+                        <li>Competitors outrank you</li>
+                        <li>One-time fixes that don't last</li>
+                        <li>No ongoing content strategy</li>
+                        <li>Confusing technical reports</li>
+                    </ul>
+                </div>
+                <div class="solution-list">
+                    <h3>Our SEO Approach</h3>
+                    <ul>
+                        <li>Keep your existing website</li>
+                        <li>Rank for your target keywords</li>
+                        <li>Outrank your competition</li>
+                        <li>Ongoing optimization strategy</li>
+                        <li>36+ new content pages</li>
+                        <li>Clear, understandable reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Platform Support -->
+    <div class="content-section">
+        <h2 class="section-title">We Work with ANY Platform</h2>
+        <p class="section-subtitle">Our SEO strategies work regardless of how your website was built</p>
+        
+        <div class="platforms">
+            <div class="platform-item">
+                <div class="platform-icon">📝</div>
+                <h3>WordPress</h3>
+                <p>Most popular CMS platform</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon">🎨</div>
+                <h3>Wix</h3>
+                <p>Drag & drop website builder</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon">📐</div>
+                <h3>Squarespace</h3>
+                <p>Design-focused platform</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon">🛍️</div>
+                <h3>Shopify</h3>
+                <p>E-commerce platform</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon">💻</div>
+                <h3>Custom Sites</h3>
+                <p>Hand-coded websites</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon">⚙️</div>
+                <h3>Any Platform</h3>
+                <p>We adapt to your setup</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SEO Features -->
+    <div class="content-section alt">
+        <div class="section-content">
+            <h2 class="section-title">Complete SEO Solution</h2>
+            <p class="section-subtitle">Everything you need for search engine success in one package</p>
+            
+            <div class="seo-features">
+                <div class="seo-feature">
+                    <div class="seo-icon">📄</div>
+                    <h3>Content Creation</h3>
+                    <p>36+ new pages targeting your most valuable keywords and local searches.</p>
+                    <div class="seo-metric">36+ pages</div>
+                </div>
+                <div class="seo-feature">
+                    <div class="seo-icon">🔗</div>
+                    <h3>Link Building</h3>
+                    <p>High-quality backlinks from relevant, authoritative websites in your industry.</p>
+                    <div class="seo-metric">Quality links</div>
+                </div>
+                <div class="seo-feature">
+                    <div class="seo-icon">📊</div>
+                    <h3>Monthly Reporting</h3>
+                    <p>Clear, easy-to-understand reports showing your progress and results.</p>
+                    <div class="seo-metric">Monthly updates</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Timeline -->
+    <div class="content-section">
+        <div class="timeline">
+            <h3>SEO Results Timeline</h3>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <div class="timeline-month">1</div>
+                    <h4>Foundation & Setup</h4>
+                    <p>Technical optimization and content strategy planning</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">2</div>
+                    <h4>Content & Links</h4>
+                    <p>12 new pages published and link building begins</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">3</div>
+                    <h4>Full Coverage</h4>
+                    <p>36+ pages completed with comprehensive market coverage</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Process Section -->
+    <div class="content-section alt">
+        <div class="section-content">
+            <h2 class="section-title">Our SEO Process</h2>
+            <p class="section-subtitle">Systematic approach to improving your search engine rankings</p>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>SEO Audit & Strategy</h3>
+                    <p>Complete analysis of your current site and competition to create a winning strategy.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Technical Optimization</h3>
+                    <p>Fix any technical issues preventing your site from ranking well in search engines.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Content & Link Building</h3>
+                    <p>Create valuable content and build high-quality links to establish your authority.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Monitor & Optimize</h3>
+                    <p>Track results and continuously optimize for better rankings and more traffic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Perfect For Section -->
+    <div class="content-section">
+        <div class="perfect-for">
+            <h3>Perfect for Businesses That Want to Keep Their Website</h3>
+            <p>SEO services work great when you like your current website but need better search engine visibility</p>
+            
+            <div class="perfect-for-grid">
+                <div class="perfect-for-item">
+                    <h4>Happy with Design</h4>
+                    <p>Love your website but need more traffic</p>
+                </div>
+                <div class="perfect-for-item">
+                    <h4>Recent Investment</h4>
+                    <p>Recently built site that needs optimization</p>
+                </div>
+                <div class="perfect-for-item">
+                    <h4>Limited Budget</h4>
+                    <p>Want results without rebuilding everything</p>
+                </div>
+                <div class="perfect-for-item">
+                    <h4>Platform Locked</h4>
+                    <p>Must stay on current platform for business reasons</p>
+                </div>
+                <div class="perfect-for-item">
+                    <h4>Gradual Improvement</h4>
+                    <p>Prefer steady growth over complete overhaul</p>
+                </div>
+                <div class="perfect-for-item">
+                    <h4>Local Businesses</h4>
+                    <p>Need to dominate local search results</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>Ready to Improve Your Search Rankings?</h2>
+        <p>Get SEO that works with your existing website - no rebuild required</p>
+        <div style="margin-top: 30px;">
+            <a href="/contact.html" class="cta" style="margin-right: 20px;">Start Your SEO</a>
+            <p style="margin-top: 20px; opacity: 0.9;">📧 eric@beachbirdstudios.com | 📞 910-512-6990</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/services/web-design">Custom Web Design</a></li>
+                        <li><a href="/services/ai-development">AI Development</a></li>
+                        <li><a href="/services/seo">SEO Services</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/process.html">Our Process</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 eric@beachbirdstudios.com</li>
+                        <li>📞 910-512-6990</li>
+                        <li>📍 Wilmington, NC</li>
+                        <li>Serving all of North Carolina</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Beach Bird Studios. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
