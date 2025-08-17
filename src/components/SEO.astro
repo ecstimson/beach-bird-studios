@@ -1,0 +1,74 @@
+---
+import { SEO } from 'astro-seo';
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-image.jpg',
+  canonical,
+  noindex = false,
+  nofollow = false,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() || 'https://beachbirdstudios.com';
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageURL = new URL(ogImage, siteUrl).toString();
+---
+
+<SEO
+  title={title}
+  description={description}
+  canonical={canonicalURL}
+  noindex={noindex}
+  nofollow={nofollow}
+  openGraph={{
+    basic: {
+      title: title,
+      type: 'website',
+      image: ogImageURL,
+      url: canonicalURL,
+    },
+    optional: {
+      description: description,
+      siteName: 'Beach Bird Studios',
+      locale: 'en_US',
+    },
+    image: {
+      url: ogImageURL,
+      width: 1200,
+      height: 630,
+      alt: title,
+    },
+  }}
+  twitter={{
+    card: 'summary_large_image',
+    site: '@beachbirdstudios',
+    creator: '@beachbirdstudios',
+    title: title,
+    description: description,
+    image: ogImageURL,
+    imageAlt: title,
+  }}
+  extend={{
+    meta: [
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'generator', content: Astro.generator },
+      { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' },
+      { name: 'theme-color', content: '#47A7EB' },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/svg+xml', href: '/images/Icon.svg' },
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      { rel: 'manifest', href: '/manifest.json' },
+    ],
+  }}
+/>

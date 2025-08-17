@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "./tailwind.css";
+
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Regular.woff2') format('woff2'),
+       url('/fonts/Chillax-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Medium.woff2') format('woff2'),
+       url('/fonts/Chillax-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Semibold.woff2') format('woff2'),
+       url('/fonts/Chillax-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Bold.woff2') format('woff2'),
+       url('/fonts/Chillax-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Synonym';
+  src: url('/fonts/Synonym-Regular.woff2') format('woff2'),
+       url('/fonts/Synonym-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Synonym';
+  src: url('/fonts/Synonym-Medium.woff2') format('woff2'),
+       url('/fonts/Synonym-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Synonym';
+  src: url('/fonts/Synonym-Semibold.woff2') format('woff2'),
+       url('/fonts/Synonym-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Synonym', system-ui, sans-serif;
+  color: #0C3745;
+  background-color: #FFFFFF;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Chillax', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0C3745;
+}
+
+/* Utility Classes */
+.container-width {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, rgb(71 167 235), rgb(12 55 69));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-beach-blue hover:bg-beach-dark transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beach-blue;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 border-2 border-beach-blue text-base font-medium rounded-lg text-beach-blue hover:bg-beach-blue hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beach-blue;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-beach-dark bg-beach-yellow hover:bg-yellow-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beach-yellow;
+}
+
+/* Link Styles */
+.link-hover {
+  @apply text-beach-blue hover:text-beach-dark transition-colors duration-200 underline-offset-4 hover:underline;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+}
+
+.card-bordered {
+  @apply bg-white rounded-xl border border-gray-200 hover:border-beach-blue transition-colors duration-300 overflow-hidden;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-beach-blue ring-offset-2;
+}
+
+/* Selection Styles */
+::selection {
+  @apply bg-beach-light-blue text-beach-dark;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-beach-blue rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-beach-dark;
+}

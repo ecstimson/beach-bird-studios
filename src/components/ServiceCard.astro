@@ -1,0 +1,68 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  features?: string[];
+  price?: string;
+  href: string;
+  ctaText?: string;
+  icon?: string;
+  highlight?: boolean;
+}
+
+const {
+  title,
+  description,
+  features = [],
+  price,
+  href,
+  ctaText = 'Learn More',
+  icon,
+  highlight = false
+} = Astro.props;
+---
+
+<div class={`${highlight ? 'card ring-2 ring-beach-blue scale-105' : 'card-bordered'} p-6 flex flex-col h-full group hover:scale-105 transition-transform duration-300`}>
+  {icon && (
+    <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-beach-blue/20 transition-colors">
+      <span class="text-2xl">{icon}</span>
+    </div>
+  )}
+  
+  <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-3 group-hover:text-beach-blue transition-colors">
+    {title}
+  </h3>
+  
+  {price && (
+    <div class="text-2xl font-bold text-beach-blue mb-3">
+      {price}
+    </div>
+  )}
+  
+  <p class="text-gray-600 mb-4 flex-grow">
+    {description}
+  </p>
+  
+  {features.length > 0 && (
+    <ul class="space-y-2 mb-6">
+      {features.map((feature) => (
+        <li class="flex items-start">
+          <svg class="w-5 h-5 text-beach-blue mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-sm text-gray-600">{feature}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+  
+  <a 
+    href={href}
+    class={`inline-flex items-center justify-center mt-auto ${highlight ? 'btn-primary' : 'btn-secondary'} w-full`}
+  >
+    {ctaText}
+    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>

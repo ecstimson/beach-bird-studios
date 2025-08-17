@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import BlogCard from '../components/BlogCard.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Blog | Web Design & SEO Insights | Beach Bird Studios';
+const pageDescription = 'Expert insights on web design, SEO, and digital marketing. Learn how to grow your business online with proven strategies from Beach Bird Studios.';
+
+// Sample blog posts - in production these would come from content collections
+const blogPosts = [
+  {
+    title: 'Why Your Wilmington Business Is Invisible Online',
+    excerpt: 'Discover the three main reasons customers can\'t find your business online and learn proven strategies to dominate local search results.',
+    date: 'January 15, 2025',
+    category: 'Local SEO',
+    href: '/blog/why-wilmington-business-invisible-online',
+    readTime: '5 min read'
+  },
+  {
+    title: 'AI Website Development vs Traditional: What\'s the Difference?',
+    excerpt: 'Learn how AI-powered development creates comprehensive websites with 100+ pages in weeks, not months, and why it\'s revolutionizing web design.',
+    date: 'January 12, 2025',
+    category: 'Web Development',
+    href: '/blog/ai-website-development-vs-traditional',
+    readTime: '7 min read'
+  },
+  {
+    title: 'The Core 30 Strategy: Dominating Local SEO',
+    excerpt: 'Discover the proven Core 30 strategy that helps local businesses rank #1 in Google searches and capture more customers.',
+    date: 'January 10, 2025',
+    category: 'SEO Strategy',
+    href: '/blog/core-30-strategy-local-seo',
+    readTime: '6 min read'
+  },
+  {
+    title: 'Google Business Profile Optimization: The Complete Guide',
+    excerpt: 'Your Google Business Profile is your most powerful local SEO tool. Learn how to optimize every aspect for maximum visibility.',
+    date: 'January 8, 2025',
+    category: 'Local SEO',
+    href: '/blog/google-business-profile-optimization',
+    readTime: '8 min read'
+  },
+  {
+    title: 'Mobile Optimization: Why 60% of Your Traffic Depends on It',
+    excerpt: 'Over 60% of web traffic comes from mobile devices. Learn why mobile optimization is critical and how to get it right.',
+    date: 'January 5, 2025',
+    category: 'Web Design',
+    href: '/blog/mobile-optimization-importance',
+    readTime: '5 min read'
+  },
+  {
+    title: 'Framer vs WordPress: Which Platform Is Right for You?',
+    excerpt: 'Compare Framer and WordPress to find the perfect platform for your business website. Pros, cons, and expert recommendations.',
+    date: 'January 3, 2025',
+    category: 'Platforms',
+    href: '/blog/framer-vs-wordpress',
+    readTime: '6 min read'
+  }
+];
+
+const categories = [
+  'All Posts',
+  'Local SEO',
+  'Web Development',
+  'SEO Strategy',
+  'Web Design',
+  'Platforms'
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <SEO title={pageTitle} description={pageDescription} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      headline="Insights to Grow Your Business Online"
+      subheadline="Expert tips, strategies, and insights on web design, SEO, and digital marketing"
+      primaryCTA={{ text: 'Subscribe to Updates', href: '/contact' }}
+      variant="gradient"
+    />
+    
+    <!-- Blog Content -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <!-- Categories Filter -->
+        <div class="flex flex-wrap gap-3 justify-center mb-12">
+          {categories.map((category) => (
+            <button class={`px-4 py-2 rounded-full font-medium transition-colors ${
+              category === 'All Posts' 
+                ? 'bg-beach-blue text-white' 
+                : 'bg-beach-cream text-beach-dark hover:bg-beach-blue hover:text-white'
+            }`}>
+              {category}
+            </button>
+          ))}
+        </div>
+        
+        <!-- Blog Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post) => (
+            <BlogCard {...post} />
+          ))}
+        </div>
+        
+        <!-- Load More -->
+        <div class="text-center mt-12">
+          <button class="btn-secondary">
+            Load More Articles
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Newsletter Signup -->
+    <section class="section-padding bg-beach-cream/30">
+      <div class="container-width">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
+            Stay Ahead of the Competition
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Get weekly insights on web design, SEO, and digital marketing delivered to your inbox.
+          </p>
+          
+          <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+              required
+            />
+            <button type="submit" class="btn-primary">
+              Subscribe
+            </button>
+          </form>
+          
+          <p class="text-sm text-gray-500 mt-4">
+            No spam, unsubscribe anytime. We respect your privacy.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Popular Topics -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-8 text-center">
+          Popular Topics
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gradient-to-br from-sky-500/10 to-sky-500/5 rounded-xl p-6">
+            <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-4">
+              Local SEO Guides
+            </h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Google Business Profile Setup</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Local Citation Building</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ NAP Consistency Guide</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Review Management</a></li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-6">
+            <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-4">
+              Web Design Tips
+            </h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Mobile-First Design</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Conversion Optimization</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Speed Optimization</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ User Experience Best Practices</a></li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-sky-50 to-white rounded-xl p-6">
+            <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-4">
+              Digital Marketing
+            </h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Content Strategy</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Email Marketing</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Social Media Tips</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-beach-blue transition-colors">→ Analytics & Tracking</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <CTASection
+      headline="Need Help Growing Your Business Online?"
+      description="Let's discuss your goals and create a strategy that works"
+      primaryCTA={{ text: 'Get Free Consultation', href: '/contact' }}
+      secondaryCTA={{ text: 'View Our Services', href: '/services' }}
+      variant="gradient"
+    />
+  </main>
+  
+  <Footer />
+</Layout>

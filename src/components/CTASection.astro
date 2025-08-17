@@ -1,0 +1,74 @@
+---
+export interface Props {
+  headline: string;
+  description?: string;
+  primaryCTA?: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+  variant?: 'default' | 'dark' | 'gradient' | 'accent';
+  align?: 'center' | 'left';
+}
+
+const {
+  headline,
+  description,
+  primaryCTA,
+  secondaryCTA,
+  variant = 'gradient',
+  align = 'center'
+} = Astro.props;
+
+const variantClasses = {
+  default: 'bg-beach-cream',
+  dark: 'bg-beach-dark text-white',
+  gradient: 'bg-gradient-to-r from-sky-500 to-slate-800 text-white',
+  accent: 'bg-beach-yellow'
+};
+
+const alignmentClasses = {
+  center: 'text-center items-center',
+  left: 'text-left items-start'
+};
+---
+
+<section class={`${variantClasses[variant]} section-padding`}>
+  <div class="container-width">
+    <div class={`max-w-4xl ${align === 'center' ? 'mx-auto' : ''} flex flex-col ${alignmentClasses[align]}`}>
+      <h2 class={`text-3xl sm:text-4xl lg:text-5xl font-chillax font-bold mb-4 ${variant === 'dark' || variant === 'gradient' ? 'text-white' : 'text-beach-dark'}`}>
+        {headline}
+      </h2>
+      
+      {description && (
+        <p class={`text-lg sm:text-xl mb-8 ${variant === 'dark' || variant === 'gradient' ? 'text-beach-light-blue' : 'text-gray-600'} max-w-3xl`}>
+          {description}
+        </p>
+      )}
+      
+      {(primaryCTA || secondaryCTA) && (
+        <div class={`flex flex-col sm:flex-row gap-4 ${align === 'center' ? 'justify-center' : ''}`}>
+          {primaryCTA && (
+            <a 
+              href={primaryCTA.href} 
+              class={variant === 'accent' ? 'btn-primary' : 'btn-accent'}
+            >
+              {primaryCTA.text}
+            </a>
+          )}
+          {secondaryCTA && (
+            <a 
+              href={secondaryCTA.href}
+              class={`btn-secondary ${variant === 'dark' || variant === 'gradient' ? '!border-white !text-white hover:!bg-white hover:!text-beach-dark' : ''}`}
+            >
+              {secondaryCTA.text}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

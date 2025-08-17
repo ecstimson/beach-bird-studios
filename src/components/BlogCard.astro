@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  href: string;
+  image?: string;
+  readTime?: string;
+}
+
+const { title, excerpt, date, category, href, image, readTime = '5 min read' } = Astro.props;
+---
+
+<article class="card group hover:scale-[1.02] transition-transform duration-300">
+  {image && (
+    <div class="aspect-video bg-beach-cream overflow-hidden">
+      <img 
+        src={image} 
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+  )}
+  
+  <div class="p-6">
+    <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+      <span class="bg-beach-blue/10 text-beach-blue px-3 py-1 rounded-full font-medium">
+        {category}
+      </span>
+      <span>{date}</span>
+      <span>{readTime}</span>
+    </div>
+    
+    <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-3 group-hover:text-beach-blue transition-colors">
+      <a href={href} class="hover:underline">
+        {title}
+      </a>
+    </h3>
+    
+    <p class="text-gray-600 mb-4 line-clamp-3">
+      {excerpt}
+    </p>
+    
+    <a 
+      href={href}
+      class="inline-flex items-center text-beach-blue hover:text-beach-dark transition-colors font-medium"
+    >
+      Read More
+      <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</article>
