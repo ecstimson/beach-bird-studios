@@ -192,6 +192,91 @@ Beach Bird Studios is a premium web design and SEO agency based in Wilmington, N
 - Adequate spacing between elements
 - Hierarchy through size and weight
 
+## Dynamic Content Pages ([slug].astro)
+
+### How Content Pages Work
+All markdown content in `/src/content/services/` is rendered through `/src/pages/services/[slug].astro`. This file:
+
+1. **Parses markdown into visual sections** - Each H2 header creates a new section
+2. **Alternates backgrounds** - white → cream (#F5E6D3/30) → gray-50
+3. **Transforms content types into components**:
+   - Pricing sections → 3-column card layout with featured middle card
+   - Feature lists (with colons) → FeatureGrid with colored icons
+   - Industries → Grid of cards with icons
+   - Process steps → Numbered circles with descriptions
+   - Comparisons → Side-by-side cards
+
+### Markdown Formatting for Visual Components
+
+#### Pricing Cards (3-column layout)
+```markdown
+## Framer Website Packages
+
+**Starter Site** - Perfect for small businesses
+- 5-7 page custom website
+- Mobile responsive design
+- 3-week delivery
+
+**Professional Site** - Ideal for growing companies
+- 10-15 page website
+- Advanced features
+- 4-week delivery
+
+**Enterprise Site** - For larger organizations
+- 20+ pages
+- Complex features
+- 6-week delivery
+```
+The middle card will be automatically featured with blue gradient background.
+
+#### Feature Grids (with colored icons)
+```markdown
+## Why Choose Our Service
+
+- Lightning Fast: Delivery in weeks not months
+- Local Expertise: Based in Wilmington NC
+- SEO Optimized: Built for search engines
+```
+Bullet points with colons become feature cards with icons.
+
+#### Industry Grids
+```markdown
+## Perfect For These Industries
+
+### Professional Services
+Law firms, accounting practices, and consulting companies benefit from our professional aesthetic.
+
+### Creative Agencies
+Design studios and marketing agencies love our animation capabilities.
+
+### Local Businesses
+Restaurants, retail stores, and service businesses use our local SEO expertise.
+```
+
+#### Process Steps (numbered circles)
+```markdown
+## Our Process
+
+### 1. Discovery
+Understanding your business and goals
+
+### 2. Design
+Creating custom designs for your brand
+
+### 3. Development
+Building your website with clean code
+
+### 4. Launch
+Deploying and training on your new site
+```
+
+### Section Detection Keywords
+The [slug].astro file detects special sections by H2 keywords:
+- **Pricing**: "package", "investment", "pricing"
+- **Industries**: "perfect for", "industries"
+- **Process**: "process"
+- **Comparison**: "vs", "comparison"
+
 ## Implementation Notes
 
 ### File Structure
@@ -199,6 +284,7 @@ Beach Bird Studios is a premium web design and SEO agency based in Wilmington, N
 - Pages in `/src/pages/`
 - Styles in `/src/styles/`
 - Assets in `/public/`
+- Content in `/src/content/` (for markdown files)
 
 ### Technology Stack
 - Astro.js framework

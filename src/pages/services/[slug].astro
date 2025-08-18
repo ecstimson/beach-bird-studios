@@ -1,0 +1,468 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Extract headline and subheadline for hero
+const headline = entry.data.title?.replace(' | Beach Bird Studios', '') || 'Professional Web Services';
+const subheadline = entry.data.description || 'Transform your online presence with Beach Bird Studios';
+
+// Parse markdown content into sections
+const rawContent = entry.body;
+const sections = [];
+let currentSection = { title: '', content: [], type: 'content' };
+
+const lines = rawContent.split('\n');
+let skipNextLine = false;
+
+for (let i = 0; i < lines.length; i++) {
+  const line = lines[i];
+  
+  // Skip the H1 title as it's in the hero
+  if (line.startsWith('# ') && !line.startsWith('## ')) {
+    skipNextLine = true;
+    continue;
+  }
+  
+  if (skipNextLine && line.trim() === '') {
+    skipNextLine = false;
+    continue;
+  }
+  
+  // New H2 section
+  if (line.startsWith('## ')) {
+    if (currentSection.content.length > 0 || currentSection.title) {
+      sections.push({ ...currentSection });
+    }
+    const title = line.substring(3).trim();
+    currentSection = { 
+      title, 
+      content: [],
+      type: 'content'
+    };
+    
+    // Check for special section types
+    if (title.toLowerCase().includes('package') || title.toLowerCase().includes('investment') || title.toLowerCase().includes('pricing')) {
+      currentSection.type = 'pricing';
+    } else if (title.toLowerCase().includes('perfect for') || title.toLowerCase().includes('industries')) {
+      currentSection.type = 'industries';
+    } else if (title.toLowerCase().includes('process')) {
+      currentSection.type = 'process';
+    } else if (title.toLowerCase().includes('comparison') || title.includes(' vs ')) {
+      currentSection.type = 'comparison';
+    }
+  } 
+  // Check for H3 headers (potential card titles)
+  else if (line.startsWith('### ')) {
+    currentSection.content.push({ type: 'h3', text: line.substring(4).trim() });
+  }
+  // Bold headers that might be card titles (entire line is bold)
+  else if (line.startsWith('**') && line.includes('**') && line.indexOf('**', 2) > 2) {
+    // This handles "**Starter Site** - Perfect for small businesses"
+    currentSection.content.push({ type: 'paragraph', text: line });
+    // If this is in a pricing section, it's likely a card title
+    if (currentSection.type === 'pricing') {
+      currentSection.content[currentSection.content.length - 1].type = 'card-title';
+    }
+  }
+  // Bullet points 
+  else if (line.startsWith('- ') || line.startsWith('* ')) {
+    const text = line.substring(2).trim();
+    // Check if this looks like a feature (has a colon or bold text)
+    if (text.includes(':') || text.includes('**')) {
+      if (!currentSection.features) currentSection.features = [];
+      currentSection.features.push(text);
+      if (currentSection.type === 'content') {
+        currentSection.type = 'features';
+      }
+    } else {
+      currentSection.content.push({ type: 'bullet', text });
+    }
+  }
+  // Regular paragraph
+  else if (line.trim()) {
+    currentSection.content.push({ type: 'paragraph', text: line });
+  }
+}
+
+// Add the last section
+if (currentSection.content.length > 0 || currentSection.title) {
+  sections.push({ ...currentSection });
+}
+
+// Convert feature bullets to FeatureGrid format
+const processFeatures = (features) => {
+  const icons = ['zap', 'shield-check', 'trending-up', 'cpu', 'layers', 'target', 'brain', 'rocket'];
+  const colors = ['yellow', 'blue', 'green', 'cyan', 'purple', 'orange', 'pink', 'indigo'];
+  return features.slice(0, 6).map((feature, idx) => {
+    const parts = feature.replace(/\*\*/g, '').split(':');
+    return {
+      icon: icons[idx % icons.length],
+      title: parts[0].trim(),
+      description: parts[1]?.trim() || parts[0].trim(),
+      iconColor: colors[idx % colors.length]
+    };
+  });
+};
+
+// Process pricing sections
+const processPricingCards = (section) => {
+  const cards = [];
+  let currentCard = null;
+  let collectingFeatures = false;
+  
+  // Look through all content and features
+  const allItems = [...section.content];
+  if (section.features) {
+    section.features.forEach(f => allItems.push({ type: 'feature', text: f }));
+  }
+  
+  allItems.forEach((item) => {
+    // Check for bold card titles like "**Starter Site**" or H3 headers
+    if (item.type === 'card-title' || item.type === 'h3' || 
+        (item.type === 'paragraph' && item.text.startsWith('**') && item.text.includes('**'))) {
+      
+      if (currentCard) cards.push(currentCard);
+      
+      let titleText = item.text;
+      if (titleText.startsWith('**')) {
+        titleText = titleText.replace(/\*\*/g, '');
+      }
+      
+      const parts = titleText.split(' - ');
+      currentCard = {
+        title: parts[0].trim(),
+        tagline: parts[1]?.trim() || '',
+        features: [],
+        description: ''
+      };
+      collectingFeatures = true;
+    } 
+    // Collect bullet points as features
+    else if ((item.type === 'bullet' || item.type === 'feature') && currentCard && collectingFeatures) {
+      currentCard.features.push(item.text || item);
+    } 
+    // Non-bold paragraph might be description or signal end of card
+    else if (item.type === 'paragraph' && !item.text.startsWith('**')) {
+      if (currentCard && !currentCard.description && item.text.length < 100) {
+        currentCard.description = item.text;
+      } else {
+        collectingFeatures = false;
+      }
+    }
+  });
+  
+  if (currentCard) cards.push(currentCard);
+  
+  // Mark the middle card as featured
+  if (cards.length === 3) {
+    cards[1].featured = true;
+  }
+  
+  return cards;
+};
+
+// Process industry sections
+const processIndustries = (section) => {
+  const industries = [];
+  let currentIndustry = null;
+  
+  section.content.forEach((item) => {
+    if (item.type === 'h3') {
+      if (currentIndustry) industries.push(currentIndustry);
+      currentIndustry = {
+        title: item.text,
+        description: ''
+      };
+    } else if (item.type === 'paragraph' && currentIndustry) {
+      currentIndustry.description += item.text + ' ';
+    }
+  });
+  
+  if (currentIndustry) industries.push(currentIndustry);
+  return industries;
+};
+---
+
+<Layout title={entry.data.title || entry.slug} description={entry.data.description}>
+  <Header />
+  
+  <!-- Hero Section with Beach Bird blue gradient -->
+  <Hero
+    headline={headline}
+    subheadline={subheadline}
+    primaryCTA={{ text: 'Get Started Today', href: '/contact' }}
+    secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+  />
+  
+  <!-- Dynamic Sections -->
+  {sections.map((section, index) => {
+    // Beach Bird brand colors: white, cream (#F5E6D3/30), gray-50
+    let bgClass = 'bg-white';
+    if (index % 3 === 1) {
+      bgClass = 'bg-beach-cream/30';
+    } else if (index % 3 === 2) {
+      bgClass = 'bg-gray-50';
+    }
+    
+    return (
+      <section class={`py-16 ${bgClass}`}>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {section.title && (
+            <div class="text-center mb-12">
+              <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                {section.title}
+              </h2>
+            </div>
+          )}
+          
+          {/* Pricing/Package Cards */}
+          {section.type === 'pricing' && (
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {processPricingCards(section).map((card) => (
+                <div class={`rounded-xl p-8 ${card.featured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/80 text-white shadow-xl scale-105' : 'bg-white shadow-lg'}`}>
+                  <h3 class={`text-2xl font-bold mb-2 ${card.featured ? 'text-white' : 'text-gray-900'}`}>
+                    {card.title}
+                  </h3>
+                  {card.tagline && (
+                    <p class={`mb-4 ${card.featured ? 'text-white/90' : 'text-gray-600'}`}>{card.tagline}</p>
+                  )}
+                  {card.description && (
+                    <p class={`mb-6 ${card.featured ? 'text-white/80' : 'text-gray-600'}`}>{card.description}</p>
+                  )}
+                  <ul class="space-y-3">
+                    {card.features.map((feature) => (
+                      <li class="flex items-start">
+                        <i data-lucide="check-circle" class={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${card.featured ? 'text-beach-yellow' : 'text-beach-blue'}`}></i>
+                        <span class={card.featured ? 'text-white' : 'text-gray-700'}>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all ${card.featured ? 'bg-beach-yellow text-gray-900 hover:bg-yellow-400' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
+                    Get Quote
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Feature Grid Section */}
+          {section.type === 'features' && section.features && (
+            <FeatureGrid 
+              features={processFeatures(section.features)} 
+              columns={3} 
+              variant="cards" 
+            />
+          )}
+          
+          {/* Comparison Cards */}
+          {section.type === 'comparison' && section.features && (
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {processFeatures(section.features).map((item, idx) => (
+                <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-gray-100 hover:border-beach-blue transition-colors">
+                  <div class={`w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4`}>
+                    <i data-lucide={item.icon} class="w-6 h-6 text-beach-blue"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p class="text-gray-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Industries Grid */}
+          {section.type === 'industries' && (
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {processIndustries(section).map((industry) => (
+                <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition-shadow border border-gray-100">
+                  <div class="w-10 h-10 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="briefcase" class="w-5 h-5 text-beach-blue"></i>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">{industry.title}</h3>
+                  <p class="text-gray-600 text-sm">{industry.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Process Steps */}
+          {section.type === 'process' && (
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {section.content.filter(item => item.type === 'h3').map((item, idx) => (
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-blue/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white font-bold text-xl">{idx + 1}</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-2">{item.text}</h3>
+                  <p class="text-gray-600 text-sm">
+                    {section.content[section.content.indexOf(item) + 1]?.text || ''}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Regular Content Section */}
+          {section.type === 'content' && (
+            <div class="prose prose-lg max-w-none">
+              {section.content.map((item) => {
+                if (item.type === 'h3') {
+                  return <h3 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
+                } else if (item.type === 'paragraph') {
+                  return <p class="text-lg text-gray-600 mb-6 leading-relaxed">{item.text}</p>;
+                } else if (item.type === 'bullet') {
+                  return (
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                      <li class="text-gray-600">{item.text}</li>
+                    </ul>
+                  );
+                }
+              })}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  })}
+  
+  <!-- Beach Bird Studios Feature Section -->
+  <section class="py-16 bg-gradient-to-br from-beach-blue/5 to-beach-yellow/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          The Beach Bird Studios Advantage
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Why Wilmington businesses choose us for their digital transformation
+        </p>
+      </div>
+      
+      <FeatureGrid 
+        features={[
+          {
+            icon: 'zap',
+            title: 'Lightning Fast Delivery',
+            description: 'Most projects completed in 3-4 weeks, not months',
+            iconColor: 'yellow'
+          },
+          {
+            icon: 'map-pin',
+            title: 'Local Wilmington Team',
+            description: 'Meet in person or work remotely - your choice',
+            iconColor: 'blue'
+          },
+          {
+            icon: 'shield-check',
+            title: 'Quality Guaranteed',
+            description: 'Professional results with ongoing support',
+            iconColor: 'green'
+          },
+          {
+            icon: 'trending-up',
+            title: 'SEO Optimized',
+            description: 'Built for search engines from day one',
+            iconColor: 'cyan'
+          },
+          {
+            icon: 'users',
+            title: 'Dedicated Support',
+            description: 'Real people, real help when you need it',
+            iconColor: 'purple'
+          },
+          {
+            icon: 'dollar-sign',
+            title: 'Transparent Pricing',
+            description: 'No hidden fees or surprise costs',
+            iconColor: 'orange'
+          }
+        ]}
+        columns={3}
+        variant="cards"
+      />
+    </div>
+  </section>
+  
+  <!-- CTA Section with Beach Bird gradient -->
+  <CTASection
+    headline="Ready to Transform Your Online Presence?"
+    description="Let's discuss how Beach Bird Studios can help grow your business"
+    primaryCTA={{ text: 'Start Your Project', href: '/contact' }}
+    secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+    variant="gradient"
+  />
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Beach Bird brand colors */
+  .bg-beach-blue {
+    background-color: #47A7EB;
+  }
+  
+  .bg-beach-yellow {
+    background-color: #FFC107;
+  }
+  
+  .bg-beach-cream {
+    background-color: #F5E6D3;
+  }
+  
+  .text-beach-blue {
+    color: #47A7EB;
+  }
+  
+  .text-beach-yellow {
+    color: #FFC107;
+  }
+  
+  /* Hide H1 from markdown since it's in the hero */
+  .prose h1 {
+    @apply hidden;
+  }
+  
+  /* Style any remaining markdown content */
+  .prose h2 {
+    @apply text-3xl font-bold text-gray-900 mb-6;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-semibold text-gray-800 mb-4;
+  }
+  
+  .prose p {
+    @apply text-lg text-gray-600 mb-6 leading-relaxed;
+  }
+  
+  .prose ul {
+    @apply list-disc pl-6 mb-6 space-y-2;
+  }
+  
+  .prose li {
+    @apply text-gray-600;
+  }
+  
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+  
+  .prose a {
+    @apply text-beach-blue hover:text-blue-700 underline;
+  }
+</style>

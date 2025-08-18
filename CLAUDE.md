@@ -119,3 +119,88 @@
 - Test on all breakpoints
 - Ensure touch targets are adequate
 - Optimize for Core Web Vitals
+
+## Dynamic Content Pages System
+
+### How [slug].astro Works
+The `/src/pages/services/[slug].astro` file automatically transforms markdown content into visually appealing pages:
+
+1. **Content Location**: Place markdown files in `/src/content/services/`
+2. **Automatic Routing**: Files become pages at `/services/[filename]`
+3. **Visual Sections**: Each `## H2` header creates a new section with alternating backgrounds
+4. **Smart Component Conversion**: Different markdown patterns become different visual components
+
+### Markdown Patterns for Visual Components
+
+#### Creating Pricing Cards
+```markdown
+## [Any]thing Packages
+
+**Package Name** - Tagline here
+- Feature one
+- Feature two
+- Feature three
+
+**Another Package** - Different tagline
+- Feature one
+- Feature two
+- Feature three
+```
+Result: 3-column pricing cards with the middle one featured
+
+#### Creating Feature Grids
+```markdown
+## Section Title
+
+- Feature Name: Description of the feature
+- Another Feature: Its description here
+- Third Feature: Description text
+```
+Result: Grid of cards with colored icons
+
+#### Creating Industry/Service Cards
+```markdown
+## Perfect For These Industries
+
+### Industry Name
+Description of how we help this industry.
+
+### Another Industry
+How we serve this sector.
+```
+Result: Grid layout with bordered cards
+
+#### Creating Process Steps
+```markdown
+## Our Process
+
+### Step One Title
+Description of this step
+
+### Step Two Title
+What happens in step two
+```
+Result: Numbered circles with descriptions
+
+### Section Type Detection
+The system automatically detects section types based on H2 keywords:
+- Contains "package", "investment", "pricing" → Pricing cards
+- Contains "perfect for", "industries" → Industry grid
+- Contains "process" → Process steps
+- Contains "vs", "comparison" → Comparison cards
+- Bullet points with colons → Feature grid
+- Everything else → Regular content section
+
+### Background Rotation
+Sections automatically alternate backgrounds:
+1. White (default)
+2. Cream (#F5E6D3 with 30% opacity)
+3. Gray-50
+4. Back to white (repeats)
+
+### Important Notes
+- Always use `## H2` for main sections (not `### H3`)
+- The `# H1` title is hidden (shown in Hero component instead)
+- Bold text starting a line `**Like This**` becomes a card title in pricing sections
+- Bullet points with colons `:` become feature cards
+- Regular bullet points remain as lists
