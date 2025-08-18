@@ -59,15 +59,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </style>
 
 <script is:inline>
-  // Initialize Lucide icons
-  document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Lucide icons on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  });
+  
+  // Re-initialize after Astro page transitions
+  document.addEventListener('astro:page-load', () => {
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
   });
   
   // Also run after a short delay to catch any icons loaded after DOM ready
-  setTimeout(function() {
+  setTimeout(() => {
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }

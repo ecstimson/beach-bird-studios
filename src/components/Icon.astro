@@ -1,0 +1,18 @@
+---
+export interface Props {
+  name: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  class?: string;
+}
+
+const { name, size = 'md', class: className = '' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6', 
+  lg: 'w-8 h-8',
+  xl: 'w-10 h-10'
+};
+---
+
+<i data-lucide={name} class={`${sizeClasses[size]} ${className}`}></i>

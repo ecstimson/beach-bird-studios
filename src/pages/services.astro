@@ -25,7 +25,7 @@ const mainServices = [
     price: 'Starting at $3,500',
     href: '/contact',
     ctaText: 'Get Started',
-    icon: '🎨'
+    icon: 'palette'
   },
   {
     title: 'AI-Powered Development',
@@ -40,7 +40,7 @@ const mainServices = [
     price: 'Custom Quote',
     href: '/contact',
     ctaText: 'Learn More',
-    icon: '🤖',
+    icon: 'cpu',
     highlight: true
   },
   {
@@ -56,38 +56,38 @@ const mainServices = [
     price: 'From $500/month',
     href: '/contact',
     ctaText: 'Start Ranking',
-    icon: '🔍'
+    icon: 'search'
   }
 ];
 
 const additionalServices = [
   {
-    icon: '🚀',
+    icon: 'rocket',
     title: 'Website Speed Optimization',
     description: 'Make your existing site lightning fast. Better user experience and higher Google rankings.'
   },
   {
-    icon: '📱',
+    icon: 'smartphone',
     title: 'Mobile Optimization',
     description: 'Ensure your site works perfectly on all devices. Over 60% of traffic is mobile.'
   },
   {
-    icon: '🔄',
+    icon: 'refresh-cw',
     title: 'Website Redesign',
     description: 'Modernize your outdated website with current design trends and technology.'
   },
   {
-    icon: '🛒',
+    icon: 'shopping-cart',
     title: 'E-commerce Solutions',
     description: 'Online stores that convert browsers into buyers with seamless checkout.'
   },
   {
-    icon: '📝',
+    icon: 'file-text',
     title: 'Content Creation',
     description: 'Professional copywriting that engages visitors and improves SEO rankings.'
   },
   {
-    icon: '🔧',
+    icon: 'wrench',
     title: 'Website Maintenance',
     description: 'Keep your site secure, updated, and running smoothly with ongoing care.'
   }
@@ -95,22 +95,22 @@ const additionalServices = [
 
 const process = [
   {
-    icon: '📞',
+    icon: 'phone',
     title: 'Discovery Call',
     description: 'We learn about your business, goals, and current challenges'
   },
   {
-    icon: '📋',
+    icon: 'clipboard-list',
     title: 'Strategy Development',
     description: 'Create a custom plan tailored to your specific needs and budget'
   },
   {
-    icon: '🎨',
+    icon: 'palette',
     title: 'Design & Build',
     description: 'Our team brings your vision to life with stunning design and powerful functionality'
   },
   {
-    icon: '🚀',
+    icon: 'rocket',
     title: 'Launch & Optimize',
     description: 'Go live and continuously improve based on real data and results'
   }
@@ -182,8 +182,8 @@ const process = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {process.map((step, index) => (
             <div class="text-center">
-              <div class="w-16 h-16 bg-beach-blue text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
-                {step.icon}
+              <div class="w-16 h-16 bg-beach-blue text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide={step.icon} class="w-8 h-8"></i>
               </div>
               <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-2">
                 {index + 1}. {step.title}
@@ -207,28 +207,28 @@ const process = [
             </h2>
             <div class="space-y-4">
               <div class="flex items-start">
-                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <i data-lucide="check" class="w-6 h-6 text-beach-blue mr-3 mt-0.5 flex-shrink-0"></i>
                 <div>
                   <h3 class="font-semibold text-beach-dark mb-1">Local Expertise</h3>
                   <p class="text-gray-600">Based in Wilmington, we understand the North Carolina market and what local customers search for.</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <i data-lucide="check" class="w-6 h-6 text-beach-blue mr-3 mt-0.5 flex-shrink-0"></i>
                 <div>
                   <h3 class="font-semibold text-beach-dark mb-1">Proven Results</h3>
                   <p class="text-gray-600">Our clients regularly see 200-400% increases in quality leads and dramatic ranking improvements.</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <i data-lucide="check" class="w-6 h-6 text-beach-blue mr-3 mt-0.5 flex-shrink-0"></i>
                 <div>
                   <h3 class="font-semibold text-beach-dark mb-1">Fast Delivery</h3>
                   <p class="text-gray-600">We deliver complete websites in weeks while others take months. Your business can't afford to wait.</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <i data-lucide="check" class="w-6 h-6 text-beach-blue mr-3 mt-0.5 flex-shrink-0"></i>
                 <div>
                   <h3 class="font-semibold text-beach-dark mb-1">Flexible Solutions</h3>
                   <p class="text-gray-600">Whether you need a new site, AI development, or just SEO, we have the perfect solution.</p>
@@ -246,19 +246,19 @@ const process = [
             </p>
             <ul class="space-y-3 mb-6">
               <li class="flex items-center text-gray-700">
-                <span class="text-beach-blue mr-2">→</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-beach-blue mr-2 flex-shrink-0"></i>
                 30-minute strategy call
               </li>
               <li class="flex items-center text-gray-700">
-                <span class="text-beach-blue mr-2">→</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-beach-blue mr-2 flex-shrink-0"></i>
                 Free website evaluation
               </li>
               <li class="flex items-center text-gray-700">
-                <span class="text-beach-blue mr-2">→</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-beach-blue mr-2 flex-shrink-0"></i>
                 Custom recommendations
               </li>
               <li class="flex items-center text-gray-700">
-                <span class="text-beach-blue mr-2">→</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-beach-blue mr-2 flex-shrink-0"></i>
                 No obligation quote
               </li>
             </ul>

@@ -10,22 +10,22 @@ const pageDescription = 'Ready to grow your business online? Contact Beach Bird 
 
 const contactReasons = [
   {
-    icon: '🚀',
+    icon: 'rocket',
     title: 'Start a New Project',
     description: 'Ready to build a new website or launch a comprehensive SEO campaign'
   },
   {
-    icon: '🔄',
+    icon: 'refresh-cw',
     title: 'Redesign Your Website',
     description: 'Modernize your outdated site with current design and technology'
   },
   {
-    icon: '📈',
+    icon: 'trending-up',
     title: 'Improve Your Rankings',
     description: 'Get found online with proven SEO strategies that work'
   },
   {
-    icon: '💬',
+    icon: 'message-circle',
     title: 'Free Consultation',
     description: 'Not sure what you need? Let\'s discuss your goals and options'
   }
@@ -208,7 +208,9 @@ const faqs = [
             <div class="space-y-6 mb-8">
               {contactReasons.map((reason) => (
                 <div class="flex items-start">
-                  <span class="text-2xl mr-4">{reason.icon}</span>
+                  <div class="mr-4 flex-shrink-0">
+                    <i data-lucide={reason.icon} class="w-8 h-8 text-beach-blue"></i>
+                  </div>
                   <div>
                     <h3 class="font-semibold text-beach-dark mb-1">
                       {reason.title}
@@ -229,15 +231,15 @@ const faqs = [
               
               <div class="space-y-3">
                 <a href="tel:910-512-6990" class="flex items-center text-gray-700 hover:text-beach-blue transition-colors">
-                  <span class="text-beach-blue mr-3">📞</span>
+                  <i data-lucide="phone" class="w-5 h-5 text-beach-blue mr-3"></i>
                   910-512-6990
                 </a>
                 <a href="mailto:eric@beachbirdstudios.com" class="flex items-center text-gray-700 hover:text-beach-blue transition-colors">
-                  <span class="text-beach-blue mr-3">✉️</span>
+                  <i data-lucide="mail" class="w-5 h-5 text-beach-blue mr-3"></i>
                   eric@beachbirdstudios.com
                 </a>
                 <div class="flex items-start text-gray-700">
-                  <span class="text-beach-blue mr-3">📍</span>
+                  <i data-lucide="map-pin" class="w-5 h-5 text-beach-blue mr-3 mt-0.5"></i>
                   <div>
                     Wilmington, NC<br />
                     Serving all of North Carolina
@@ -254,19 +256,19 @@ const faqs = [
               
               <ol class="space-y-3">
                 <li class="flex items-start">
-                  <span class="text-beach-yellow mr-3">1.</span>
+                  <i data-lucide="check-circle" class="w-5 h-5 text-beach-yellow mr-3 mt-0.5 flex-shrink-0"></i>
                   <span>We'll review your submission and prepare for our call</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-beach-yellow mr-3">2.</span>
+                  <i data-lucide="check-circle" class="w-5 h-5 text-beach-yellow mr-3 mt-0.5 flex-shrink-0"></i>
                   <span>Schedule a 30-minute strategy consultation</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-beach-yellow mr-3">3.</span>
+                  <i data-lucide="check-circle" class="w-5 h-5 text-beach-yellow mr-3 mt-0.5 flex-shrink-0"></i>
                   <span>Receive a custom proposal with timeline and pricing</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-beach-yellow mr-3">4.</span>
+                  <i data-lucide="check-circle" class="w-5 h-5 text-beach-yellow mr-3 mt-0.5 flex-shrink-0"></i>
                   <span>Start your project and watch your business grow</span>
                 </li>
               </ol>
