@@ -1,0 +1,221 @@
+# Beach Bird Studios - Design Principles
+
+## Brand Overview
+Beach Bird Studios is a premium web design and SEO agency based in Wilmington, NC, serving businesses throughout North Carolina. The brand combines coastal elegance with technical excellence.
+
+## Core Brand Values
+- **Premium Quality**: High-end web solutions
+- **Local Expertise**: Deep understanding of North Carolina markets
+- **Speed & Efficiency**: Fast delivery without compromising quality
+- **Results-Driven**: Focus on converting visitors to customers
+
+## Visual Identity
+
+### Logo
+- Primary: Beach bird icon with flowing design
+- Color variations: Full color, white (for dark backgrounds)
+- Clear space: Minimum 20px around logo
+
+### Color Palette
+
+#### Primary Colors
+- **Beach Blue**: `#47A7EB` - Primary brand color, trust and professionalism
+- **Beach Dark**: `#0C3745` - Navy blue for text and high contrast
+- **Beach Yellow**: `#FFC107` - Accent color for CTAs and highlights
+
+#### Secondary Colors
+- **Beach Cream**: `#F5E6D3` - Soft background color
+- **Beach Sand**: `#FFF8E1` - Light accent backgrounds
+- **Beach Light Blue**: `#B6DCF7` - Soft blue for subtle accents
+
+#### Neutral Colors
+- **White**: `#FFFFFF` - Primary background
+- **Gray 50**: `#F9FAFB` - Light backgrounds
+- **Gray 600**: `#4B5563` - Body text
+- **Gray 900**: `#111827` - Headings
+
+### Typography
+
+#### Font Families
+- **Headings**: Chillax (Semibold)
+  - Display: 4.5-7rem
+  - H1: 3-4rem
+  - H2: 2-3rem
+  - H3: 1.5-2rem
+
+- **Body**: Synonym (Regular)
+  - Body: 1rem (16px)
+  - Large: 1.125rem (18px)
+  - Small: 0.875rem (14px)
+
+#### Font Usage
+- Headlines: Semibold, tight letter-spacing (-0.025em)
+- Body text: Regular weight, normal spacing
+- CTAs: Medium to semi-bold weight
+- All text should have proper contrast ratios (WCAG AA compliant)
+
+### Critical Text Color Rules
+- **On gradient backgrounds**: H1, H2, H3 must use `!text-white` or `!text-beach-yellow`
+- **White buttons on dark backgrounds**: Must have `!text-beach-dark !bg-white` for visibility
+- **Hyperlinks**: Use `text-beach-blue hover:text-beach-dark` NOT default blue
+- **Never use navy text on blue backgrounds** - ensure proper contrast
+
+## Icon System
+
+### Icon Library
+- **Primary**: Lucide Icons (NOT emoji icons)
+- **Size**: 20-24px for inline, 32-48px for feature icons
+- **Color**: Inherit from parent or use brand colors
+
+### Standard Icons
+- `zap` - Speed/Performance
+- `layers` - Flexibility/Options
+- `trending-up` - Growth/Results
+- `map` - Location/Local
+- `palette` - Design/Creative
+- `cpu` - Technology/AI
+- `search` - SEO/Discovery
+- `users` - Community/Customers
+- `crown` - Premium/Leadership
+- `shield-check` - Security/Trust
+- `calendar` - Scheduling
+- `arrow-right` - Navigation/Progress
+- `play-circle` - Video/Demo
+- `trophy` - Success/Achievement
+- `map-pin` - Location marker
+- `credit-card` - Payment
+
+## Component Patterns
+
+### Hero Sections
+- Gradient background (`gradient-hero` class)
+- White text on dark backgrounds
+- Prominent CTA buttons
+- Trust indicators below main content
+
+### Service Cards
+- Clean white backgrounds
+- Subtle shadows on hover
+- Icon + title + description pattern
+- Featured cards with gradient backgrounds
+
+### Section Flow
+- Alternating background colors for visual rhythm
+- Smooth transitions between sections
+- Consistent padding and spacing
+
+### Buttons
+- **Primary**: Yellow gradient with dark text
+- **Secondary**: White with border (dark text on light bg, white bg on dark)
+- **Accent**: Solid yellow background
+- Hover effects: Transform and shadow changes
+
+### Footer
+- Dark background (`bg-beach-dark`)
+- White and light blue text
+- Organized link structure
+- Social media icons
+
+## Animation Principles
+
+### Entrance Animations
+- `fadeInUp`: Main content entrance
+- `fadeIn`: Secondary elements
+- `slideInLeft`: Side elements
+- Staggered delays for sequential reveals
+
+### Interaction Animations
+- Hover transforms (translateY)
+- Shadow expansion on hover
+- Smooth color transitions
+- Button scale effects
+
+### Performance
+- CSS animations preferred over JavaScript
+- Minimal animation on mobile
+- Respect reduced motion preferences
+
+## Layout Principles
+
+### Container Width
+- Max width: 1280px (7xl)
+- Consistent padding: 16-32px
+- Responsive breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+
+### Section Padding
+- Mobile: 64px (py-16)
+- Tablet: 80px (py-20)
+- Desktop: 96px (py-24)
+
+### Grid Systems
+- Service cards: 1 col mobile, 3 cols desktop
+- Feature grids: 1 col mobile, 2 cols tablet, 2-4 cols desktop
+- Footer links: 1 col mobile, 5 cols desktop
+
+## Content Guidelines
+
+### Tone of Voice
+- Professional yet approachable
+- Clear and direct
+- Benefits-focused
+- Local and personal
+
+### Headlines
+- Action-oriented
+- Clear value proposition
+- Emotional connection
+- Urgency without pressure
+
+### Body Copy
+- Short paragraphs (2-3 sentences)
+- Bullet points for features
+- Clear CTAs
+- Social proof integration
+
+## Accessibility Standards
+
+### Color Contrast
+- Minimum WCAG AA compliance
+- White text on dark backgrounds
+- Dark text on light backgrounds
+- Never low-contrast combinations
+
+### Interactive Elements
+- Minimum 44x44px touch targets
+- Clear focus states
+- Keyboard navigation support
+- Screen reader friendly
+
+### Typography
+- Minimum 16px base font size
+- Line height 1.5-1.7 for body text
+- Adequate spacing between elements
+- Hierarchy through size and weight
+
+## Implementation Notes
+
+### File Structure
+- Components in `/src/components/`
+- Pages in `/src/pages/`
+- Styles in `/src/styles/`
+- Assets in `/public/`
+
+### Technology Stack
+- Astro.js framework
+- Tailwind CSS utilities
+- Custom CSS for specific needs
+- Lucide icons via CDN
+
+### Performance Goals
+- Lighthouse score > 90
+- First contentful paint < 1.5s
+- Time to interactive < 3.5s
+- Cumulative layout shift < 0.1
+
+### SEO Requirements
+- Semantic HTML structure
+- Meta descriptions on all pages
+- Open Graph tags
+- Schema markup for local business
+- XML sitemap
+- Robots.txt configuration

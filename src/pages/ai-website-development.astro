@@ -1,0 +1,307 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'AI Website Development Wilmington NC | Beach Bird Studios';
+const pageDescription = 'Scale your business with AI-powered website development. Create 100+ pages in weeks, not months. Perfect for enterprises and ambitious local businesses in NC.';
+
+const aiFeatures = [
+  {
+    icon: 'cpu',
+    title: 'AI-Powered Content Generation',
+    description: 'Our AI creates unique, SEO-optimized content for every page. No duplicate content, no thin pages - just comprehensive coverage of your industry.'
+  },
+  {
+    icon: 'lightning',
+    title: 'Massive Scale, Fast Delivery',
+    description: 'Generate 100-1000 pages in weeks instead of years. Perfect for businesses that need comprehensive online presence quickly.'
+  },
+  {
+    icon: 'target',
+    title: 'Every Keyword Covered',
+    description: 'Dominate search results by targeting every relevant keyword in your industry. Leave no search opportunity uncaptured.'
+  },
+  {
+    icon: 'brain',
+    title: 'Intelligent Site Architecture',
+    description: 'AI designs optimal site structure, internal linking, and user flows to maximize both SEO performance and user experience.'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Performance at Scale',
+    description: 'Even with hundreds of pages, your site loads fast. Advanced optimization ensures speed never suffers as you scale.'
+  },
+  {
+    icon: 'shield-check',
+    title: 'Quality Assurance',
+    description: 'Every AI-generated page is reviewed and refined by our team. Technology handles scale, humans ensure quality.'
+  }
+];
+
+const processSteps = [
+  {
+    icon: 'search',
+    title: 'Market Analysis',
+    description: 'AI analyzes your industry, competitors, and keyword opportunities to map out comprehensive content strategy.'
+  },
+  {
+    icon: 'layers',
+    title: 'Architecture Design',
+    description: 'Intelligent site structure designed for both user experience and maximum SEO impact.'
+  },
+  {
+    icon: 'cpu',
+    title: 'Content Generation',
+    description: 'AI creates unique, valuable content for every page while maintaining your brand voice and expertise.'
+  },
+  {
+    icon: 'rocket',
+    title: 'Launch & Optimize',
+    description: 'Deploy your comprehensive website and continuously optimize based on performance data.'
+  }
+];
+
+const comparisonData = [
+  {
+    icon: 'check',
+    title: 'AI Development Advantage',
+    description: '100+ pages in 4-6 weeks, comprehensive keyword coverage, consistent quality, SEO-optimized structure, cost-effective scaling.'
+  },
+  {
+    icon: 'x',
+    title: 'Traditional Approach',
+    description: '10-20 pages in 6 months, limited content coverage, inconsistent quality, manual SEO work, exponentially expensive scaling.'
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <SEO title={pageTitle} description={pageDescription} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      headline="Scale Your Digital Presence with AI"
+      subheadline="Create comprehensive websites with 100+ pages in weeks, not months. Perfect for businesses ready to dominate their market online."
+      primaryCTA={{ text: 'Get Your AI Strategy Session', href: '/contact' }}
+      secondaryCTA={{ text: 'See AI Examples', href: '/portfolio' }}
+      variant="gradient"
+    />
+    
+    <!-- Introduction Section -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-6">
+            Why Settle for 10 Pages When You Could Have 100?
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Most businesses launch with a basic 5-10 page website, then spend years slowly adding content. 
+            Meanwhile, competitors with comprehensive sites capture all the search traffic and customer attention. 
+            Our AI website development changes that game entirely.
+          </p>
+          <p class="text-lg text-gray-600">
+            We use advanced AI to create massive, comprehensive websites that cover every aspect of your business, 
+            every service you offer, and every question your customers ask. The result? Total market domination online.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features Grid -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+            What Makes AI Development Revolutionary
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            This isn't just automation - it's intelligent scaling that maintains quality while achieving massive reach.
+          </p>
+        </div>
+        
+        <FeatureGrid features={aiFeatures} columns={3} variant="cards" />
+      </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+            Our AI Development Process
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Technology-driven efficiency with human oversight and quality control.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {processSteps.map((step, index) => (
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-dark rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide={step.icon} class="w-8 h-8 text-white"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                {index + 1}. {step.title}
+              </h3>
+              <p class="text-gray-600">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Comparison Section -->
+    <section class="section-padding section-sand">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+            AI Development vs Traditional Web Development
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {comparisonData.map((item) => (
+            <div class={`rounded-xl p-8 ${item.icon === 'check' ? 'bg-white border-2 border-beach-blue' : 'bg-gray-100'}`}>
+              <div class={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${item.icon === 'check' ? 'bg-green-100' : 'bg-red-100'}`}>
+                <i data-lucide={item.icon} class={`w-6 h-6 ${item.icon === 'check' ? 'text-green-600' : 'text-red-600'}`}></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p class="text-gray-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Perfect For Section -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-8 text-center">
+            AI Development Is Perfect For:
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="w-6 h-6 text-beach-blue mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-lg text-gray-700">Businesses with complex service offerings that need comprehensive coverage</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="w-6 h-6 text-beach-blue mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-lg text-gray-700">Companies ready to dominate their industry's search results</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="w-6 h-6 text-beach-blue mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-lg text-gray-700">Multi-location businesses needing location-specific content</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="w-6 h-6 text-beach-blue mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-lg text-gray-700">Enterprises that need massive content creation without massive budgets</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="w-6 h-6 text-beach-blue mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-lg text-gray-700">Businesses tired of being outranked by inferior competitors with better websites</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Case Study Section -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-width">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+              Real Results: 300% Traffic Increase in 6 Months
+            </h2>
+            <p class="text-lg text-gray-600">
+              Local NC contractor went from 20 pages to 250 pages with our AI development
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div class="text-3xl font-bold text-beach-blue mb-2">20 → 250</div>
+                <div class="text-gray-600">Pages Created</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-beach-blue mb-2">300%</div>
+                <div class="text-gray-600">Traffic Increase</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-beach-blue mb-2">150%</div>
+                <div class="text-gray-600">Lead Increase</div>
+              </div>
+            </div>
+            <div class="mt-8 text-center">
+              <p class="text-gray-600 italic">
+                "We went from struggling to compete online to dominating every search in our industry. 
+                The AI development gave us more comprehensive coverage than competitors with million-dollar marketing budgets."
+              </p>
+              <p class="text-gray-800 font-semibold mt-2">- Mike R., Coastal Construction LLC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Related Services -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+            Explore Our Other Services
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Need something different? We offer the full spectrum of web development services.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <a href="/custom-website-design" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start">
+              <i data-lucide="palette" class="w-8 h-8 text-beach-blue mr-4 flex-shrink-0"></i>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Website Design</h3>
+                <p class="text-gray-600 mb-2">Need a beautiful, unique design for a smaller site? Our custom design service creates stunning 5-15 page websites perfect for most businesses.</p>
+                <span class="text-beach-blue font-semibold">Learn More →</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="/seo-services" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start">
+              <i data-lucide="search" class="w-8 h-8 text-beach-blue mr-4 flex-shrink-0"></i>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">SEO Services</h3>
+                <p class="text-gray-600 mb-2">Already have a website but need better search rankings? Our SEO services work with any platform to improve your visibility.</p>
+                <span class="text-beach-blue font-semibold">Learn More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <CTASection
+      headline="Ready to Dominate Your Market Online?"
+      description="Stop watching competitors outrank you with bigger websites. Let's build something that gives you the comprehensive coverage you need to win."
+      primaryCTA={{ text: 'Get Your AI Development Quote', href: '/contact' }}
+      secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+      variant="gradient"
+    />
+  </main>
+  
+  <Footer />
+</Layout>

@@ -41,6 +41,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="stylesheet" href="/fonts/chillax.css">
     <link rel="stylesheet" href="/fonts/synonym.css">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   </head>
@@ -53,11 +58,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   @import '../styles/global.css';
 </style>
 
-<script>
+<script is:inline>
   // Initialize Lucide icons
   document.addEventListener('DOMContentLoaded', function() {
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
   });
+  
+  // Also run after a short delay to catch any icons loaded after DOM ready
+  setTimeout(function() {
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  }, 100);
 </script>

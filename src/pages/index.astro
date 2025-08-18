@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 import CTASection from '../components/CTASection.astro';
 import Footer from '../components/Footer.astro';
 
@@ -15,149 +14,272 @@ const deliverables = [
   {
     icon: 'zap',
     title: 'Lightning-Fast Development',
-    description: 'We deliver complete websites in weeks while others take months. Your business can\'t afford to wait half a year to start generating leads.'
+    description: 'We deliver complete websites in weeks while others take months. Your business can\'t afford to wait half a year to start generating leads.',
+    iconColor: 'yellow'
   },
   {
     icon: 'layers',
     title: 'Flexible Solutions',
-    description: 'Three distinct paths to online success - choose what fits your needs and budget. Custom design, AI-powered development, or SEO for your current site.'
+    description: 'Three distinct paths to online success - choose what fits your needs and budget. Custom design, AI-powered development, or SEO for your current site.',
+    iconColor: 'blue'
   },
   {
     icon: 'trending-up',
     title: 'Built for Results',
-    description: 'Every website and SEO campaign is designed to convert visitors into customers. Beautiful design means nothing if it doesn\'t grow your business.'
+    description: 'Every website and SEO campaign is designed to convert visitors into customers. Beautiful design means nothing if it doesn\'t grow your business.',
+    iconColor: 'green'
   },
   {
     icon: 'map',
     title: 'Local Expertise',
-    description: 'Based in Wilmington, serving all of North Carolina. We understand the coastal market and what local customers are searching for.'
+    description: 'Based in Wilmington, we understand the coastal market and what local customers are searching for.',
+    iconColor: 'cyan'
   }
 ];
 
 const services = [
   {
     title: 'Custom Web Design',
+    tagline: 'Beautiful & Fast',
     description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
-    features: ['Beautiful & Fast', 'Timeline: Weeks, not months', 'Custom Quote'],
-    href: '/services',
-    icon: 'palette'
+    features: ['Timeline: Weeks, not months', 'Mobile-responsive design', 'Custom Quote'],
+    href: '/custom-website-design',
+    icon: 'palette',
+    featured: false
   },
   {
     title: 'AI Development',
+    tagline: '100+ Pages That Dominate',
     description: 'Comprehensive websites with a page for every service and location - built faster than you thought possible',
-    features: ['100+ Pages That Dominate', 'Strategic Coverage', 'Custom Quote'],
-    href: '/services',
+    features: ['Strategic Coverage', 'SEO-optimized content', 'Custom Quote'],
+    href: '/ai-website-development',
     icon: 'cpu',
-    highlight: true
+    featured: true
   },
   {
     title: 'SEO Services',
+    tagline: 'Keep Your Website, Add Power',
     description: 'We\'ll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom',
-    features: ['Keep Your Website, Add Power', 'Monthly Service', 'No rebuild required'],
-    href: '/services',
-    icon: 'search'
-  }
-];
-
-const successMetrics = [
-  {
-    icon: 'trending-up',
-    title: 'Dramatic Ranking Improvements',
-    description: 'From buried on page 5 to dominating position #1 in local searches'
-  },
-  {
-    icon: 'users',
-    title: 'Lead Generation That Works',
-    description: 'Our clients regularly see 200-400% increases in quality leads'
-  },
-  {
-    icon: 'zap',
-    title: 'Speed That Converts',
-    description: 'Fast-loading websites that keep visitors engaged and buying'
-  },
-  {
-    icon: 'crown',
-    title: 'Market Leadership',
-    description: 'Become the obvious choice when customers search for your services'
+    features: ['Monthly Service', 'No rebuild required', 'Works with any platform'],
+    href: '/seo-services',
+    icon: 'search',
+    featured: false
   }
 ];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <SEO title={pageTitle} description={pageDescription} />
   <Header />
   
-  <main>
-    <!-- Hero Section -->
-    <Hero
-      headline="Premium Websites & SEO That Actually Work"
-      subheadline="Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website"
-      primaryCTA={{ text: 'Start Your Project', href: '/contact' }}
-      secondaryCTA={{ text: 'See Our Services', href: '/services' }}
-      variant="gradient"
-    />
-    
-    <!-- What We Deliver -->
-    <section class="section-padding bg-white">
-      <div class="container-width">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
-            What We Deliver
-          </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            We're not just another web agency. We're your partner in digital domination.
-          </p>
+  <Hero
+    headline="Premium Websites & SEO<br>That Actually Work"
+    subheadline="Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website"
+    primaryCTA={{ text: 'Start Your Project', href: '#contact' }}
+    secondaryCTA={{ text: 'See Our Process', href: '#process' }}
+  />
+  
+  <FeatureGrid
+    title="What We Deliver"
+    subtitle="Real results for North Carolina businesses, not empty promises"
+    features={deliverables}
+  />
+  
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Choose the solution that fits your business goals and budget
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- How It Works Section -->
+  <section id="process" class="py-20 section-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Simple, transparent process from start to finish
+        </p>
+      </div>
+      
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
+        <!-- Step 1 -->
+        <div class="text-center max-w-xs">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <span class="text-2xl font-bold text-primary">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Choose Your Path</h3>
+          <p class="text-gray-600">Pick the solution that fits your needs and budget</p>
         </div>
         
-        <FeatureGrid features={deliverables} columns={2} variant="cards" />
-      </div>
-    </section>
-    
-    <!-- Services Preview -->
-    <section class="section-padding bg-beach-cream/30">
-      <div class="container-width">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
-            Our Services
-          </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Choose the path that fits your business goals and budget
-          </p>
+        <!-- Arrow -->
+        <div class="hidden md:block">
+          <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <ServiceCard {...service} />
-          ))}
-        </div>
-      </div>
-    </section>
-    
-    <!-- Success Metrics -->
-    <section class="section-padding bg-gradient-to-br from-sky-50 to-white">
-      <div class="container-width">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
-            What Success Looks Like
-          </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Real results our clients experience every day
-          </p>
+        <!-- Step 2 -->
+        <div class="text-center max-w-xs">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <span class="text-2xl font-bold text-primary">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Strategy Call</h3>
+          <p class="text-gray-600">We'll map out your project and timeline</p>
         </div>
         
-        <FeatureGrid features={successMetrics} columns={2} variant="default" />
+        <!-- Arrow -->
+        <div class="hidden md:block">
+          <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="text-center max-w-xs">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <span class="text-2xl font-bold text-primary">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">We Build</h3>
+          <p class="text-gray-600">Sit back while we create your online presence</p>
+        </div>
+        
+        <!-- Arrow -->
+        <div class="hidden md:block">
+          <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="text-center max-w-xs">
+          <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Dominate</h3>
+          <p class="text-gray-600">Watch as customers find you instead of competitors</p>
+        </div>
       </div>
-    </section>
-    
-    <!-- Final CTA -->
-    <CTASection
-      headline="Ready to Stop Losing Customers Online?"
-      description="Every day you wait, competitors are stealing your customers. Let's fix that."
-      primaryCTA={{ text: 'Get Your Free Website Evaluation', href: '/contact' }}
-      secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
-      variant="gradient"
-    />
-  </main>
+      
+      <div class="text-center mt-12">
+        <a href="#contact" class="btn-primary inline-flex items-center">
+          Schedule Free Consultation
+          <i data-lucide="calendar" class="w-5 h-5 ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Success Metrics Section -->
+  <section id="success" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Success Looks Like</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Real results our clients experience every day
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Ranking Improvements -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Dramatic Ranking Improvements</h3>
+              <p class="text-gray-600">From buried on page 5 to dominating position #1 in local searches</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lead Generation -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="users" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Lead Generation That Works</h3>
+              <p class="text-gray-600">Our clients regularly see 200-400% increases in quality leads</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Speed That Converts -->
+        <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Speed That Converts</h3>
+              <p class="text-gray-600">Fast-loading websites that keep visitors engaged and buying</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Market Leadership -->
+        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="crown" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Market Leadership</h3>
+              <p class="text-gray-600">Become the obvious choice when customers search for your services</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Common Questions</h2>
+      </div>
+      
+      <div class="space-y-6">
+        <!-- Question 1 -->
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Do I really need a new website?</h3>
+          <p class="text-gray-600">Not always. If your current site works, we can add SEO without touching it.</p>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">How is AI development different?</h3>
+          <p class="text-gray-600">We can create 100+ unique pages targeting every service and location - something that would normally take months.</p>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">What makes you different?</h3>
+          <p class="text-gray-600">We're the only NC agency offering all three solutions. Pick what works for your business.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="/faq" class="text-primary font-semibold hover:underline">View All FAQs →</a>
+      </div>
+    </div>
+  </section>
+  
+  <CTASection
+    title="Ready to Stop Losing Customers Online?"
+    subtitle="Every day you wait, competitors are stealing your customers. Let's fix that."
+    primaryCTA={{ text: 'Get Your Free Website Evaluation', href: '#' }}
+    secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990', phone: true }}
+  />
   
   <Footer />
 </Layout>
+

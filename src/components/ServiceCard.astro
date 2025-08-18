@@ -1,56 +1,52 @@
 ---
 export interface Props {
   title: string;
+  tagline?: string;
   description: string;
-  features?: string[];
-  price?: string;
+  features: string[];
   href: string;
   ctaText?: string;
-  icon?: string;
-  highlight?: boolean;
+  icon: string;
+  featured?: boolean;
 }
 
 const {
   title,
+  tagline,
   description,
   features = [],
-  price,
   href,
   ctaText = 'Learn More',
   icon,
-  highlight = false
+  featured = false
 } = Astro.props;
 ---
 
-<div class={`${highlight ? 'card ring-2 ring-beach-blue scale-105' : 'card-bordered'} p-6 flex flex-col h-full group hover:scale-105 transition-transform duration-300`}>
-  {icon && (
-    <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-beach-blue/20 transition-colors">
-      <i data-lucide={icon} class="w-6 h-6 text-beach-blue"></i>
-    </div>
-  )}
+<div class={featured ? 'featured-card rounded-2xl p-8 card-hover' : 'bg-white border-2 border-gray-200 rounded-2xl p-8 card-hover'}>
+  <div class={`w-14 h-14 ${featured ? 'bg-white/20' : 'bg-blue-100'} rounded-xl flex items-center justify-center mb-6`}>
+    <i data-lucide={icon} class={`w-7 h-7 ${featured ? 'text-white' : 'text-blue-600'}`}></i>
+  </div>
   
-  <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-3 group-hover:text-beach-blue transition-colors">
+  <h3 class={`text-2xl font-bold ${featured ? 'text-white' : 'text-gray-900'} mb-2`}>
     {title}
   </h3>
   
-  {price && (
-    <div class="text-2xl font-bold text-beach-blue mb-3">
-      {price}
-    </div>
+  {tagline && (
+    <p class={`text-lg font-semibold ${featured ? 'text-yellow-300' : 'text-blue-600'} mb-4`}>
+      {tagline}
+    </p>
   )}
   
-  <p class="text-gray-600 mb-4 flex-grow">
+  <p class={`${featured ? 'text-blue-100' : 'text-gray-600'} mb-6`}>
     {description}
   </p>
   
   {features.length > 0 && (
-    <ul class="space-y-2 mb-6">
+    <ul class="space-y-3 mb-8">
       {features.map((feature) => (
         <li class="flex items-start">
-          <svg class="w-5 h-5 text-beach-blue mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg>
-          <span class="text-sm text-gray-600">{feature}</span>
+          <i data-lucide="check-circle" class={`w-5 h-5 ${featured ? 'text-yellow-300' : 'text-green-500'} mr-3 flex-shrink-0 mt-0.5`}></i>
+          <span class={featured ? 'text-white' : 'text-gray-700'}>{feature}</span>
         </li>
       ))}
     </ul>
@@ -58,11 +54,9 @@ const {
   
   <a 
     href={href}
-    class={`inline-flex items-center justify-center mt-auto ${highlight ? 'btn-primary' : 'btn-secondary'} w-full`}
+    class={`w-full ${featured ? 'btn-primary' : 'btn-secondary'} flex items-center justify-center`}
   >
     {ctaText}
-    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-    </svg>
+    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
   </a>
 </div>
