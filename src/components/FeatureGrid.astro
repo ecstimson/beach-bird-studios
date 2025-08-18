@@ -1,10 +1,8 @@
 ---
-import Icon from './Icons.astro';
-
 export interface Feature {
   title: string;
   description: string;
-  iconName?: string;
+  icon?: string;
 }
 
 export interface Props {
@@ -24,30 +22,18 @@ const gridClasses = {
 
 <div class={`grid ${gridClasses[columns]} gap-8`}>
   {features.map((feature) => (
-    <div class={variant === 'cards' ? 'card p-8 hover-lift' : variant === 'minimal' ? 'p-4' : 'p-6 rounded-lg hover:bg-beach-cream/50 transition-all hover:scale-105'}>
-      {feature.iconName && (
-        <div class="mb-4">
-          <Icon name={feature.iconName} size="lg" className="transition-transform hover:scale-110" />
+    <div class={variant === 'cards' ? 'card p-6' : variant === 'minimal' ? '' : 'p-6 rounded-lg hover:bg-beach-cream/50 transition-colors'}>
+      {feature.icon && (
+        <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">{feature.icon}</span>
         </div>
       )}
-      <h3 class="text-xl font-bold text-beach-dark mb-3">
+      <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-2">
         {feature.title}
       </h3>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-gray-600">
         {feature.description}
       </p>
     </div>
   ))}
 </div>
-
-<style>
-  h3 {
-    font-family: 'Chillax-Variable', sans-serif;
-    font-variation-settings: 'wght' 600;
-  }
-  
-  p {
-    font-family: 'Synonym-Variable', sans-serif;
-    font-variation-settings: 'wght' 400;
-  }
-</style>

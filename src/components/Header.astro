@@ -1,17 +1,15 @@
 ---
 const navigationItems = [
-  { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Process', href: '/process' },
+  { name: 'Results', href: '/results' },
 ];
 ---
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
   <nav class="container-width">
     <div class="flex items-center justify-between h-20">
-      <!-- Logo -->
+      <!-- Logo only, no text -->
       <a href="/" class="flex items-center group">
         <img src="/images/logo.svg" alt="Beach Bird Studios" class="h-12 w-auto transition-transform group-hover:scale-105" />
       </a>
@@ -24,7 +22,7 @@ const navigationItems = [
           </a>
         ))}
         
-        <!-- CTA Button -->
+        <!-- CTA Button with bright yellow -->
         <a href="/contact" class="btn-cta">
           Get Started
         </a>

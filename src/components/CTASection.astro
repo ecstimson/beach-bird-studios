@@ -24,10 +24,10 @@ const {
 } = Astro.props;
 
 const variantClasses = {
-  default: 'section-white',
-  dark: 'section-navy',
-  gradient: 'gradient-primary text-white',
-  accent: 'section-sand'
+  default: 'bg-beach-cream',
+  dark: 'bg-beach-dark text-white',
+  gradient: 'bg-gradient-to-r from-sky-500 to-slate-800 text-white',
+  accent: 'bg-beach-yellow'
 };
 
 const alignmentClasses = {
@@ -36,15 +36,15 @@ const alignmentClasses = {
 };
 ---
 
-<section class={`${variantClasses[variant]} py-20 sm:py-24 lg:py-28`}>
+<section class={`${variantClasses[variant]} section-padding`}>
   <div class="container-width">
     <div class={`max-w-4xl ${align === 'center' ? 'mx-auto' : ''} flex flex-col ${alignmentClasses[align]}`}>
-      <h2 class={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${variant === 'dark' || variant === 'gradient' ? 'text-white' : 'text-beach-dark'}`}>
+      <h2 class={`text-3xl sm:text-4xl lg:text-5xl font-chillax font-bold mb-4 ${variant === 'dark' || variant === 'gradient' ? 'text-white' : 'text-beach-dark'}`}>
         {headline}
       </h2>
       
       {description && (
-        <p class={`text-lg sm:text-xl mb-10 ${variant === 'dark' || variant === 'gradient' ? 'text-beach-light-blue' : 'text-gray-600'} max-w-3xl`}>
+        <p class={`text-lg sm:text-xl mb-8 ${variant === 'dark' || variant === 'gradient' ? 'text-beach-light-blue' : 'text-gray-600'} max-w-3xl`}>
           {description}
         </p>
       )}
@@ -54,7 +54,7 @@ const alignmentClasses = {
           {primaryCTA && (
             <a 
               href={primaryCTA.href} 
-              class="btn-cta text-lg px-8 py-4 hover-lift"
+              class={variant === 'accent' ? 'btn-primary' : 'btn-accent'}
             >
               {primaryCTA.text}
             </a>
@@ -62,7 +62,7 @@ const alignmentClasses = {
           {secondaryCTA && (
             <a 
               href={secondaryCTA.href}
-              class={`btn-light text-lg px-8 py-4 hover-lift ${variant === 'dark' || variant === 'gradient' ? 'text-beach-dark' : ''}`}
+              class={`btn-secondary ${variant === 'dark' || variant === 'gradient' ? '!border-white !text-white hover:!bg-white hover:!text-beach-dark' : ''}`}
             >
               {secondaryCTA.text}
             </a>
@@ -72,17 +72,3 @@ const alignmentClasses = {
     </div>
   </div>
 </section>
-
-<style>
-  h2 {
-    font-family: 'Chillax-Variable', sans-serif;
-    font-variation-settings: 'wght' 700;
-    letter-spacing: -0.02em;
-  }
-  
-  p {
-    font-family: 'Synonym-Variable', sans-serif;
-    font-variation-settings: 'wght' 400;
-    line-height: 1.7;
-  }
-</style>
