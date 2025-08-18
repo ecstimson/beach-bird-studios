@@ -37,9 +37,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
     
-    <!-- Fonts Preload -->
-    <link rel="preload" href="/fonts/Chillax-Semibold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Synonym-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Using system fonts for now -->
   </head>
   <body>
     <slot />

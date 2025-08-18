@@ -11,8 +11,8 @@ export default {
         'beach-cream': 'rgb(236 247 255)',
       },
       fontFamily: {
-        'chillax': ['Chillax', 'sans-serif'],
-        'synonym': ['Synonym', 'sans-serif'],
+        'chillax': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        'synonym': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
