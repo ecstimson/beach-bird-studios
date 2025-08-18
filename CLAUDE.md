@@ -1,5 +1,30 @@
 # Beach Bird Studios Website - Design & Development Guidelines
 
+## CRITICAL CONTENT RULES - NEVER VIOLATE THESE
+
+### Testimonials and Reviews
+- **NEVER** create fictitious testimonials, reviews, or client quotes
+- **NEVER** invent client names or company names for testimonials
+- **NEVER** attribute quotes to made-up people or businesses
+- **ONLY** use real testimonials with written permission from real clients
+- If no testimonials exist, use "Coming soon" or leave the section empty
+
+### Case Studies and Metrics
+- **NEVER** invent specific metrics or results (like "300% increase")
+- **NEVER** create fake case studies
+- **ONLY** use real, verified data from actual client projects
+- Use general benefit statements instead of specific fake metrics
+- Examples of acceptable general statements:
+  - "Improve your search rankings"
+  - "Generate more qualified leads"
+  - "Increase your online visibility"
+
+### Legal Compliance
+- All testimonials must be genuine and verifiable
+- Fake testimonials violate FTC guidelines and can result in legal action
+- When in doubt, leave it out
+- Always prefer general value propositions over specific unverified claims
+
 ## Brand Identity
 
 ### Colors
