@@ -6,9 +6,18 @@ export interface Props {
 const { variant = 'default' } = Astro.props;
 
 const navItems = [
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'Process' },
-  { href: '#success', label: 'Results' },
+  { 
+    href: '/services', 
+    label: 'Services',
+    dropdown: [
+      { href: '/services', label: 'All Services' },
+      { href: '/custom-website-design', label: 'Custom Web Design' },
+      { href: '/ai-website-development', label: 'AI Website Development' },
+      { href: '/seo-services', label: 'SEO Services' },
+    ]
+  },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
 ];
 ---
 
@@ -25,11 +34,30 @@ const navItems = [
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
         {navItems.map((item) => (
-          <a href={item.href} class="text-gray-600 hover:text-primary transition-colors">
-            {item.label}
-          </a>
+          item.dropdown ? (
+            <div class="relative group">
+              <button class="flex items-center text-gray-600 hover:text-primary transition-colors">
+                {item.label}
+                <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+              </button>
+              <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {item.dropdown.map((subItem) => (
+                  <a 
+                    href={subItem.href} 
+                    class="block px-4 py-3 text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a href={item.href} class="text-gray-600 hover:text-primary transition-colors">
+              {item.label}
+            </a>
+          )
         ))}
-        <a href="#contact" class="btn-primary">Get Started</a>
+        <a href="/contact" class="btn-primary">Contact</a>
       </div>
       
       <!-- Mobile Menu Button -->
@@ -43,12 +71,28 @@ const navItems = [
   <div class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu">
     <div class="px-4 py-2 space-y-1">
       {navItems.map((item) => (
-        <a href={item.href} class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
-          {item.label}
-        </a>
+        item.dropdown ? (
+          <div>
+            <button class="flex items-center justify-between w-full px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-dropdown-btn">
+              {item.label}
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div class="hidden pl-4 space-y-1 mobile-dropdown-menu">
+              {item.dropdown.map((subItem) => (
+                <a href={subItem.href} class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
+                  {subItem.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={item.href} class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
+            {item.label}
+          </a>
+        )
       ))}
       <div class="pt-2 pb-3 border-t border-gray-100">
-        <a href="#contact" class="btn-primary w-full justify-center">Get Started</a>
+        <a href="/contact" class="btn-primary w-full justify-center">Contact</a>
       </div>
     </div>
   </div>
@@ -67,6 +111,19 @@ const navItems = [
   mobileMenuLinks?.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu?.classList.add('hidden');
+    });
+  });
+  
+  // Handle mobile dropdown menus
+  const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+  mobileDropdownBtns?.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const menu = btn.nextElementSibling;
+      menu?.classList.toggle('hidden');
+      const icon = btn.querySelector('[data-lucide="chevron-down"]');
+      if (icon) {
+        icon.style.transform = menu?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      }
     });
   });
 </script>

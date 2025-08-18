@@ -2,23 +2,32 @@
 const currentYear = new Date().getFullYear();
 
 const services = [
+  { name: 'All Services', href: '/services' },
   { name: 'Custom Web Design', href: '/custom-website-design' },
   { name: 'AI Development', href: '/ai-website-development' },
   { name: 'SEO Services', href: '/seo-services' }
 ];
 
+const company = [
+  { name: 'About', href: '/about' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Portfolio', href: '/#success' }
+];
+
 const locations = [
   { name: 'Wilmington', href: '/web-design-wilmington-nc' },
   { name: 'Wrightsville Beach', href: '/web-design-wrightsville-beach' },
-  { name: 'Carolina Beach', href: '/web-design-carolina-beach' }
+  { name: 'Carolina Beach', href: '/web-design-carolina-beach' },
+  { name: 'Leland', href: '/web-design-leland-nc' }
 ];
 ---
 
 <footer class="bg-gray-900 text-gray-300 py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
       <!-- Company -->
-      <div>
+      <div class="lg:col-span-1">
         <img src="/images/logo.svg" alt="Beach Bird Studios" class="h-10 w-auto mb-4 brightness-0 invert" />
         <p class="text-sm">Premium websites & SEO that actually work. Serving Wilmington and all of North Carolina.</p>
       </div>
@@ -31,6 +40,20 @@ const locations = [
             <li>
               <a href={service.href} class="hover:text-white transition-colors">
                 {service.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Company Links -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          {company.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-white transition-colors">
+                {link.name}
               </a>
             </li>
           ))}
@@ -53,7 +76,7 @@ const locations = [
       
       <!-- Contact -->
       <div>
-        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <h4 class="text-white font-semibold mb-4">Get in Touch</h4>
         <ul class="space-y-2 text-sm">
           <li class="flex items-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i>
@@ -61,7 +84,11 @@ const locations = [
           </li>
           <li class="flex items-center gap-2">
             <i data-lucide="mail" class="w-4 h-4"></i>
-            <a href="mailto:hello@beachbirdstudios.com" class="hover:text-white transition-colors">hello@beachbirdstudios.com</a>
+            <a href="mailto:eric@beachbirdstudios.com" class="hover:text-white transition-colors">eric@beachbirdstudios.com</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Wilmington, NC</span>
           </li>
         </ul>
       </div>
