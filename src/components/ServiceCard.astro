@@ -1,0 +1,78 @@
+---
+import Icon from './Icons.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  features?: string[];
+  price?: string;
+  href: string;
+  ctaText?: string;
+  iconName?: string;
+  highlight?: boolean;
+}
+
+const {
+  title,
+  description,
+  features = [],
+  price,
+  href,
+  ctaText = 'Learn More',
+  iconName,
+  highlight = false
+} = Astro.props;
+---
+
+<div class={`${highlight ? 'card ring-2 ring-beach-yellow scale-105' : 'card'} p-8 flex flex-col h-full group hover-lift transition-all duration-300`}>
+  {iconName && (
+    <div class="mb-6">
+      <Icon name={iconName} size="xl" className="group-hover:scale-110 transition-transform duration-300" />
+    </div>
+  )}
+  
+  <h3 class="text-2xl font-bold text-beach-dark mb-4 group-hover:text-beach-blue transition-colors">
+    {title}
+  </h3>
+  
+  {price && (
+    <div class="text-3xl font-bold text-beach-blue mb-4">
+      {price}
+    </div>
+  )}
+  
+  <p class="text-gray-600 mb-6 flex-grow line-height-relaxed">
+    {description}
+  </p>
+  
+  {features.length > 0 && (
+    <ul class="space-y-3 mb-8">
+      {features.map((feature) => (
+        <li class="flex items-start">
+          <Icon name="check" size="sm" className="mr-3 mt-0.5 flex-shrink-0" />
+          <span class="text-gray-600">{feature}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+  
+  <a 
+    href={href}
+    class={`inline-flex items-center justify-center mt-auto ${highlight ? 'btn-cta' : 'btn-primary'} w-full group`}
+  >
+    {ctaText}
+    <Icon name="arrow-right" size="sm" className="ml-2 group-hover:translate-x-1 transition-transform" />
+  </a>
+</div>
+
+<style>
+  h3 {
+    font-family: 'Chillax-Variable', sans-serif;
+    font-variation-settings: 'wght' 600;
+  }
+  
+  p, span {
+    font-family: 'Synonym-Variable', sans-serif;
+    font-variation-settings: 'wght' 400;
+  }
+</style>

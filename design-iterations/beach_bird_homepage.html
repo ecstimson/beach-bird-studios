@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilmington Web Design - 100+ Page Websites Fast | Beach Bird Studios</title>
+    <meta name="description" content="Wilmington web design & SEO services that actually work. Custom sites, 100+ page AI development, or SEO for any platform. Free consultation available.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="theme_beach_bird.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #47A7EB;
+            --primary-dark: #0C3745;
+            --accent: #FFC107;
+            --sand: #F5E6D3;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #111827;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .animate-slideInLeft {
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* Stagger animations */
+        .stagger-1 { animation-delay: 100ms; }
+        .stagger-2 { animation-delay: 200ms; }
+        .stagger-3 { animation-delay: 300ms; }
+        .stagger-4 { animation-delay: 400ms; }
+        
+        /* Button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, #FFB300 100%);
+            color: var(--primary-dark);
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(255, 193, 7, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(255, 193, 7, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary-dark);
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 8px;
+            border: 2px solid #E5E7EB;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px 0 rgba(71, 167, 235, 0.2);
+        }
+        
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Gradient backgrounds */
+        .gradient-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+        
+        .gradient-mesh {
+            background-image: radial-gradient(at 40% 20%, rgba(71, 167, 235, 0.2) 0px, transparent 50%),
+                              radial-gradient(at 80% 0%, rgba(230, 184, 76, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 0% 50%, rgba(182, 220, 247, 0.2) 0px, transparent 50%);
+        }
+        
+        /* Section backgrounds */
+        .section-sand {
+            background: linear-gradient(180deg, #FFFFFF 0%, var(--sand) 50%, #FFFFFF 100%);
+        }
+        
+        /* Navigation active state */
+        .nav-active {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        /* Service card featured */
+        .featured-card {
+            background: linear-gradient(135deg, #47A7EB 0%, #2C8FD6 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-card::before {
+            content: 'FEATURED';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 4px 40px;
+            font-size: 12px;
+            font-weight: 700;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #F3F4F6;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="../public/images/logo.svg" alt="Beach Bird Studios" class="h-12 w-auto">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+                    <a href="#process" class="text-gray-600 hover:text-primary transition-colors">Process</a>
+                    <a href="#success" class="text-gray-600 hover:text-primary transition-colors">Results</a>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white pt-32 pb-20 relative overflow-hidden">
+        <div class="gradient-mesh absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fadeInUp">
+                    Premium Websites & SEO<br>That Actually Work
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-10 animate-fadeInUp stagger-1">
+                    Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-2">
+                    <a href="#contact" class="btn-primary inline-flex items-center justify-center">
+                        Start Your Project
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                    <a href="#process" class="btn-secondary inline-flex items-center justify-center">
+                        See Our Process
+                        <i data-lucide="play-circle" class="w-5 h-5 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm text-blue-100 animate-fadeIn stagger-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    Based in Wilmington, NC
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    Serving All of North Carolina
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                    Fast, Reliable Delivery
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    Payment Plans Available
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What We Deliver Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We Deliver</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real results for North Carolina businesses, not empty promises
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Lightning Fast -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-6 h-6 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lightning-Fast Development</h3>
+                    <p class="text-gray-600">We deliver complete websites in weeks while others take months. Your business can't afford to wait.</p>
+                </div>
+                
+                <!-- Flexible Solutions -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="layers" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Flexible Solutions</h3>
+                    <p class="text-gray-600">Three distinct paths to online success - choose what fits your needs and budget perfectly.</p>
+                </div>
+                
+                <!-- Built for Results -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Built for Results</h3>
+                    <p class="text-gray-600">Every website and SEO campaign is designed to convert visitors into customers.</p>
+                </div>
+                
+                <!-- Local Expertise -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="map" class="w-6 h-6 text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Local Expertise</h3>
+                    <p class="text-gray-600">Based in Wilmington, we understand the coastal market and what local customers search for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose the solution that fits your business goals and budget
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Custom Web Design -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="palette" class="w-7 h-7 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom Web Design</h3>
+                    <p class="text-lg font-semibold text-blue-600 mb-4">Beautiful & Fast</p>
+                    <p class="text-gray-600 mb-6">Perfect for businesses wanting a stunning, manageable website without the complexity</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Timeline: Weeks, not months</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Mobile-responsive design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Custom Quote</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="w-full btn-secondary flex items-center justify-center">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- AI Development (Featured) -->
+                <div class="featured-card rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="cpu" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">AI Development</h3>
+                    <p class="text-lg font-semibold text-yellow-300 mb-4">100+ Pages That Dominate</p>
+                    <p class="text-blue-100 mb-6">Comprehensive websites with a page for every service and location - built faster than you thought possible</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-300 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">Strategic Coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-300 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">SEO-optimized content</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-300 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">Custom Quote</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="w-full btn-primary flex items-center justify-center">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- SEO Services -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="search" class="w-7 h-7 text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">SEO Services</h3>
+                    <p class="text-lg font-semibold text-green-600 mb-4">Keep Your Website, Add Power</p>
+                    <p class="text-gray-600 mb-6">We'll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Monthly Service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">No rebuild required</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Works with any platform</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="w-full btn-secondary flex items-center justify-center">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section id="process" class="py-20 section-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Simple, transparent process from start to finish
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
+                <!-- Step 1 -->
+                <div class="text-center max-w-xs">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span class="text-2xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Choose Your Path</h3>
+                    <p class="text-gray-600">Pick the solution that fits your needs and budget</p>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="hidden md:block">
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center max-w-xs">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span class="text-2xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Strategy Call</h3>
+                    <p class="text-gray-600">We'll map out your project and timeline</p>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="hidden md:block">
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center max-w-xs">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span class="text-2xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">We Build</h3>
+                    <p class="text-gray-600">Sit back while we create your online presence</p>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="hidden md:block">
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="text-center max-w-xs">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Dominate</h3>
+                    <p class="text-gray-600">Watch as customers find you instead of competitors</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="btn-primary inline-flex items-center">
+                    Schedule Free Consultation
+                    <i data-lucide="calendar" class="w-5 h-5 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Metrics Section -->
+    <section id="success" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Success Looks Like</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real results our clients experience every day
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Ranking Improvements -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Dramatic Ranking Improvements</h3>
+                            <p class="text-gray-600">From buried on page 5 to dominating position #1 in local searches</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lead Generation -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Lead Generation That Works</h3>
+                            <p class="text-gray-600">Our clients regularly see 200-400% increases in quality leads</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speed That Converts -->
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Speed That Converts</h3>
+                            <p class="text-gray-600">Fast-loading websites that keep visitors engaged and buying</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Market Leadership -->
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="crown" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Market Leadership</h3>
+                            <p class="text-gray-600">Become the obvious choice when customers search for your services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Common Questions</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Question 1 -->
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Do I really need a new website?</h3>
+                    <p class="text-gray-600">Not always. If your current site works, we can add SEO without touching it.</p>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">How is AI development different?</h3>
+                    <p class="text-gray-600">We can create 100+ unique pages targeting every service and location - something that would normally take months.</p>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">What makes you different?</h3>
+                    <p class="text-gray-600">We're the only NC agency offering all three solutions. Pick what works for your business.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="text-primary font-semibold hover:underline">View All FAQs →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section id="contact" class="py-20 gradient-hero text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to Stop Losing Customers Online?</h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Every day you wait, competitors are stealing your customers. Let's fix that.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="btn-primary inline-flex items-center justify-center">
+                    Get Your Free Website Evaluation
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+                <a href="tel:910-512-6990" class="btn-secondary inline-flex items-center justify-center">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    Call 910-512-6990
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company -->
+                <div>
+                    <img src="../public/images/logo.svg" alt="Beach Bird Studios" class="h-10 w-auto mb-4 brightness-0 invert">
+                    <p class="text-sm">Premium websites & SEO that actually work. Serving Wilmington and all of North Carolina.</p>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Custom Web Design</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">AI Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SEO Services</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Locations -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Locations</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Wilmington</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Wrightsville Beach</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Carolina Beach</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <a href="tel:910-512-6990" class="hover:text-white transition-colors">910-512-6990</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:hello@beachbirdstudios.com" class="hover:text-white transition-colors">hello@beachbirdstudios.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+                <p>&copy; 2024 Beach Bird Studios. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('section > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

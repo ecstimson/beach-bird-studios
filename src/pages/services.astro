@@ -1,0 +1,284 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Web Design & SEO Services | Beach Bird Studios';
+const pageDescription = 'Custom web design, AI-powered development with 100+ pages, and SEO services for any platform. Choose the solution that fits your business.';
+
+const mainServices = [
+  {
+    title: 'Custom Web Design',
+    description: 'Beautiful, fast-loading websites that reflect your brand and convert visitors into customers. Perfect for established businesses ready to level up.',
+    features: [
+      'Professional custom design',
+      'Mobile-responsive layouts',
+      'Fast loading speeds',
+      'Easy content management',
+      'SEO-ready structure'
+    ],
+    price: 'Starting at $3,500',
+    href: '/contact',
+    ctaText: 'Get Started',
+    icon: '🎨'
+  },
+  {
+    title: 'AI-Powered Development',
+    description: 'Revolutionary AI technology creates comprehensive websites with 100+ pages covering every service and location. Dominate your market.',
+    features: [
+      '100+ unique pages',
+      'Every service covered',
+      'Every location targeted',
+      'Built in weeks, not months',
+      'Complete market coverage'
+    ],
+    price: 'Custom Quote',
+    href: '/contact',
+    ctaText: 'Learn More',
+    icon: '🤖',
+    highlight: true
+  },
+  {
+    title: 'SEO Services',
+    description: 'Keep your current website and add the power of professional SEO. We work with WordPress, Wix, Squarespace, or any platform.',
+    features: [
+      'No website rebuild needed',
+      'Google Business optimization',
+      'Local search domination',
+      'Monthly reporting',
+      'Proven Core 30 strategy'
+    ],
+    price: 'From $500/month',
+    href: '/contact',
+    ctaText: 'Start Ranking',
+    icon: '🔍'
+  }
+];
+
+const additionalServices = [
+  {
+    icon: '🚀',
+    title: 'Website Speed Optimization',
+    description: 'Make your existing site lightning fast. Better user experience and higher Google rankings.'
+  },
+  {
+    icon: '📱',
+    title: 'Mobile Optimization',
+    description: 'Ensure your site works perfectly on all devices. Over 60% of traffic is mobile.'
+  },
+  {
+    icon: '🔄',
+    title: 'Website Redesign',
+    description: 'Modernize your outdated website with current design trends and technology.'
+  },
+  {
+    icon: '🛒',
+    title: 'E-commerce Solutions',
+    description: 'Online stores that convert browsers into buyers with seamless checkout.'
+  },
+  {
+    icon: '📝',
+    title: 'Content Creation',
+    description: 'Professional copywriting that engages visitors and improves SEO rankings.'
+  },
+  {
+    icon: '🔧',
+    title: 'Website Maintenance',
+    description: 'Keep your site secure, updated, and running smoothly with ongoing care.'
+  }
+];
+
+const process = [
+  {
+    icon: '📞',
+    title: 'Discovery Call',
+    description: 'We learn about your business, goals, and current challenges'
+  },
+  {
+    icon: '📋',
+    title: 'Strategy Development',
+    description: 'Create a custom plan tailored to your specific needs and budget'
+  },
+  {
+    icon: '🎨',
+    title: 'Design & Build',
+    description: 'Our team brings your vision to life with stunning design and powerful functionality'
+  },
+  {
+    icon: '🚀',
+    title: 'Launch & Optimize',
+    description: 'Go live and continuously improve based on real data and results'
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <SEO title={pageTitle} description={pageDescription} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      headline="Web Design & SEO Services That Deliver Results"
+      subheadline="From custom websites to AI-powered development to SEO optimization, we have the perfect solution for your business"
+      primaryCTA={{ text: 'Get Free Consultation', href: '/contact' }}
+      secondaryCTA={{ text: 'View Our Work', href: '/about' }}
+      variant="gradient"
+    />
+    
+    <!-- Main Services -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
+            Choose Your Path to Online Success
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Three powerful solutions designed to meet different business needs and budgets
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {mainServices.map((service) => (
+            <ServiceCard {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Additional Services -->
+    <section class="section-padding bg-beach-cream/30">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
+            Additional Services
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Complete digital solutions to help your business thrive online
+          </p>
+        </div>
+        
+        <FeatureGrid features={additionalServices} columns={3} variant="cards" />
+      </div>
+    </section>
+    
+    <!-- Process -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
+            Our Proven Process
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Simple, transparent, and designed to deliver results
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {process.map((step, index) => (
+            <div class="text-center">
+              <div class="w-16 h-16 bg-beach-blue text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                {step.icon}
+              </div>
+              <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-2">
+                {index + 1}. {step.title}
+              </h3>
+              <p class="text-gray-600">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Why Choose Us -->
+    <section class="section-padding bg-gradient-to-br from-sky-50 to-white">
+      <div class="container-width">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-6">
+              Why Beach Bird Studios?
+            </h2>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <div>
+                  <h3 class="font-semibold text-beach-dark mb-1">Local Expertise</h3>
+                  <p class="text-gray-600">Based in Wilmington, we understand the North Carolina market and what local customers search for.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <div>
+                  <h3 class="font-semibold text-beach-dark mb-1">Proven Results</h3>
+                  <p class="text-gray-600">Our clients regularly see 200-400% increases in quality leads and dramatic ranking improvements.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <div>
+                  <h3 class="font-semibold text-beach-dark mb-1">Fast Delivery</h3>
+                  <p class="text-gray-600">We deliver complete websites in weeks while others take months. Your business can't afford to wait.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-beach-blue text-xl mr-3">✓</span>
+                <div>
+                  <h3 class="font-semibold text-beach-dark mb-1">Flexible Solutions</h3>
+                  <p class="text-gray-600">Whether you need a new site, AI development, or just SEO, we have the perfect solution.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-xl p-8">
+            <h3 class="text-2xl font-chillax font-bold text-beach-dark mb-6">
+              Get Your Free Consultation
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Let's discuss your goals and find the perfect solution for your business.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center text-gray-700">
+                <span class="text-beach-blue mr-2">→</span>
+                30-minute strategy call
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="text-beach-blue mr-2">→</span>
+                Free website evaluation
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="text-beach-blue mr-2">→</span>
+                Custom recommendations
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="text-beach-blue mr-2">→</span>
+                No obligation quote
+              </li>
+            </ul>
+            <a href="/contact" class="btn-primary w-full text-center">
+              Schedule Your Call
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <CTASection
+      headline="Ready to Grow Your Business Online?"
+      description="Stop losing customers to competitors. Let's build something amazing together."
+      primaryCTA={{ text: 'Start Your Project', href: '/contact' }}
+      secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+      variant="gradient"
+    />
+  </main>
+  
+  <Footer />
+</Layout>

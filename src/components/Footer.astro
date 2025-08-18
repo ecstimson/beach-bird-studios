@@ -1,0 +1,178 @@
+---
+import Icon from './Icons.astro';
+
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  services: [
+    { name: 'Custom Web Design', href: '/custom-website-design' },
+    { name: 'AI Website Development', href: '/ai-website-development' },
+    { name: 'SEO Services', href: '/seo-services' },
+    { name: 'Framer Development', href: '/framer-website-design' },
+    { name: 'Webflow Development', href: '/webflow-website-design' },
+  ],
+  industries: [
+    { name: 'Medical Practices', href: '/medical-practice-website-design' },
+    { name: 'Dental Practices', href: '/dental-website-design' },
+    { name: 'Law Firms', href: '/law-firm-website-design' },
+    { name: 'Home Services', href: '/hvac-company-website-design' },
+    { name: 'Real Estate', href: '/real-estate-website-design' },
+  ],
+  locations: [
+    { name: 'Wilmington', href: '/web-design-wilmington-nc' },
+    { name: 'Wrightsville Beach', href: '/wrightsville-beach-web-design' },
+    { name: 'Carolina Beach', href: '/carolina-beach-web-design' },
+    { name: 'Leland', href: '/leland-nc-web-design' },
+    { name: 'Hampstead', href: '/hampstead-nc-web-design' },
+  ],
+  company: [
+    { name: 'About Us', href: '/about' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Process', href: '/process' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
+  ],
+};
+---
+
+<footer class="section-navy">
+  <!-- Main Footer Content -->
+  <div class="container-width py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <!-- Company Info -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center mb-6">
+          <img src="/images/logo.svg" alt="Beach Bird Studios" class="h-10 w-auto brightness-0 invert" />
+        </div>
+        <p class="text-beach-light-blue mb-6">
+          Premium websites & SEO that actually work. Serving Wilmington and all of North Carolina.
+        </p>
+        <div class="flex space-x-4">
+          <!-- Social Icons -->
+          <a href="#" aria-label="Facebook" class="text-beach-light-blue hover:text-white transition-colors">
+            <Icon name="facebook" size="md" className="brightness-0 invert opacity-70 hover:opacity-100" />
+          </a>
+          <a href="#" aria-label="LinkedIn" class="text-beach-light-blue hover:text-white transition-colors">
+            <Icon name="linkedin" size="md" className="brightness-0 invert opacity-70 hover:opacity-100" />
+          </a>
+          <a href="#" aria-label="Twitter" class="text-beach-light-blue hover:text-white transition-colors">
+            <Icon name="twitter" size="md" className="brightness-0 invert opacity-70 hover:opacity-100" />
+          </a>
+          <a href="#" aria-label="Instagram" class="text-beach-light-blue hover:text-white transition-colors">
+            <Icon name="instagram" size="md" className="brightness-0 invert opacity-70 hover:opacity-100" />
+          </a>
+        </div>
+      </div>
+      
+      <!-- Services -->
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-white">Services</h3>
+        <ul class="space-y-2">
+          {footerLinks.services.map((link) => (
+            <li>
+              <a href={link.href} class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Industries -->
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-white">Industries</h3>
+        <ul class="space-y-2">
+          {footerLinks.industries.map((link) => (
+            <li>
+              <a href={link.href} class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Locations -->
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-white">Locations</h3>
+        <ul class="space-y-2">
+          {footerLinks.locations.map((link) => (
+            <li>
+              <a href={link.href} class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Company -->
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-white">Company</h3>
+        <ul class="space-y-2">
+          {footerLinks.company.map((link) => (
+            <li>
+              <a href={link.href} class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CTA Section -->
+  <div class="bg-beach-blue/20 border-t border-beach-blue/30">
+    <div class="container-width py-12">
+      <div class="text-center">
+        <h2 class="font-bold text-3xl mb-4 text-white">Ready to Dominate Online?</h2>
+        <p class="text-beach-light-blue mb-8 max-w-2xl mx-auto text-lg">
+          Every day without proper online presence is a day your competitors capture customers that should be yours.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-cta text-lg px-8 py-4">
+            Get Your Free Consultation
+          </a>
+          <a href="tel:910-512-6990" class="btn-light text-lg px-8 py-4">
+            Call 910-512-6990
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom Bar -->
+  <div class="border-t border-beach-blue/30">
+    <div class="container-width py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div class="text-beach-light-blue text-center md:text-left">
+          © {currentYear} Beach Bird Studios. All rights reserved.
+        </div>
+        <div class="flex space-x-6">
+          <a href="/privacy-policy" class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+            Privacy Policy
+          </a>
+          <a href="/terms-of-service" class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+            Terms of Service
+          </a>
+          <a href="/sitemap" class="text-beach-light-blue hover:text-yellow-400 transition-colors">
+            Sitemap
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  h2, h3 {
+    font-family: 'Chillax-Variable', sans-serif;
+    font-variation-settings: 'wght' 600;
+  }
+  
+  p, a, li {
+    font-family: 'Synonym-Variable', sans-serif;
+    font-variation-settings: 'wght' 400;
+  }
+</style>

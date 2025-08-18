@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Wilmington Web Design - 100+ Page Websites Fast | Beach Bird Studios';
+const pageDescription = 'Wilmington web design & SEO services that actually work. Custom sites, 100+ page AI development, or SEO for any platform. Free consultation available.';
+
+const deliverables = [
+  {
+    iconName: 'rocket',
+    title: 'Lightning-Fast Development',
+    description: 'We deliver complete websites in weeks while others take months. Your business can\'t afford to wait half a year to start generating leads.'
+  },
+  {
+    iconName: 'target',
+    title: 'Flexible Solutions',
+    description: 'Three distinct paths to online success - choose what fits your needs and budget. Custom design, AI-powered development, or SEO for your current site.'
+  },
+  {
+    iconName: 'chart',
+    title: 'Built for Results',
+    description: 'Every website and SEO campaign is designed to convert visitors into customers. Beautiful design means nothing if it doesn\'t grow your business.'
+  },
+  {
+    iconName: 'globe',
+    title: 'Local Expertise',
+    description: 'Based in Wilmington, serving all of North Carolina. We understand the coastal market and what local customers are searching for.'
+  }
+];
+
+const services = [
+  {
+    title: 'Custom Web Design',
+    description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
+    features: ['Beautiful & Fast', 'Timeline: Weeks, not months', 'Custom Quote'],
+    href: '/services',
+    iconName: 'web-design'
+  },
+  {
+    title: 'AI Development',
+    description: 'Comprehensive websites with a page for every service and location - built faster than you thought possible',
+    features: ['100+ Pages That Dominate', 'Strategic Coverage', 'Custom Quote'],
+    href: '/services',
+    iconName: 'development',
+    highlight: true
+  },
+  {
+    title: 'SEO Services',
+    description: 'We\'ll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom',
+    features: ['Keep Your Website, Add Power', 'Monthly Service', 'No rebuild required'],
+    href: '/services',
+    iconName: 'seo'
+  }
+];
+
+const successMetrics = [
+  {
+    iconName: 'chart',
+    title: 'Dramatic Ranking Improvements',
+    description: 'From buried on page 5 to dominating position #1 in local searches'
+  },
+  {
+    iconName: 'target',
+    title: 'Lead Generation That Works',
+    description: 'Our clients regularly see 200-400% increases in quality leads'
+  },
+  {
+    iconName: 'rocket',
+    title: 'Speed That Converts',
+    description: 'Fast-loading websites that keep visitors engaged and buying'
+  },
+  {
+    iconName: 'star',
+    title: 'Market Leadership',
+    description: 'Become the obvious choice when customers search for your services'
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <SEO title={pageTitle} description={pageDescription} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section (Gradient Background) -->
+    <Hero
+      headline="Premium Websites & SEO That Actually Work"
+      subheadline="Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website"
+      primaryCTA={{ text: 'Start Your Project', href: '/contact' }}
+      secondaryCTA={{ text: 'See Our Services', href: '/services' }}
+      variant="gradient"
+    />
+    
+    <!-- What We Deliver (Navy Background) -->
+    <section class="section-navy py-20 sm:py-24 lg:py-28">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            What We Deliver
+          </h2>
+          <p class="text-lg sm:text-xl text-beach-light-blue max-w-3xl mx-auto">
+            We're not just another web agency. We're your partner in digital domination.
+          </p>
+        </div>
+        
+        <FeatureGrid features={deliverables} columns={2} variant="cards" />
+      </div>
+    </section>
+    
+    <!-- Services Preview (White Background) -->
+    <section class="section-white py-20 sm:py-24 lg:py-28">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-beach-dark mb-6">
+            Our Services
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            Choose the path that fits your business goals and budget
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <ServiceCard {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Success Metrics (Sand Background) -->
+    <section class="section-sand py-20 sm:py-24 lg:py-28">
+      <div class="container-width">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-beach-dark mb-6">
+            What Success Looks Like
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            Real results our clients experience every day
+          </p>
+        </div>
+        
+        <FeatureGrid features={successMetrics} columns={2} variant="default" />
+      </div>
+    </section>
+    
+    <!-- Why Choose Us (White Background) -->
+    <section class="section-white py-20 sm:py-24 lg:py-28">
+      <div class="container-width">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-beach-dark mb-6">
+            Why Beach Bird Studios?
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-600 mb-8">
+            We combine technical expertise with local market knowledge to create websites that don't just look good – they dominate search results and convert visitors into customers.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div class="p-6">
+              <h3 class="font-bold text-xl text-beach-dark mb-3">Fast Delivery</h3>
+              <p class="text-gray-600">Weeks, not months. Your business can't afford to wait.</p>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-xl text-beach-dark mb-3">Proven Results</h3>
+              <p class="text-gray-600">Our clients see real growth in rankings, traffic, and revenue.</p>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-xl text-beach-dark mb-3">Local Focus</h3>
+              <p class="text-gray-600">We know Wilmington and NC markets inside and out.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Final CTA (Navy Background) -->
+    <CTASection
+      headline="Ready to Stop Losing Customers Online?"
+      description="Every day you wait, competitors are stealing your customers. Let's fix that."
+      primaryCTA={{ text: 'Get Your Free Website Evaluation', href: '/contact' }}
+      secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+      variant="dark"
+    />
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  h2, h3 {
+    font-family: 'Chillax-Variable', sans-serif;
+    font-variation-settings: 'wght' 700;
+    letter-spacing: -0.02em;
+  }
+  
+  p {
+    font-family: 'Synonym-Variable', sans-serif;
+    font-variation-settings: 'wght' 400;
+    line-height: 1.7;
+  }
+</style>

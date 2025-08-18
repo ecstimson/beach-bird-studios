@@ -1,0 +1,92 @@
+---
+export interface Props {
+  headline: string;
+  subheadline?: string;
+  primaryCTA?: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+  backgroundImage?: string;
+  variant?: 'default' | 'gradient' | 'pattern';
+}
+
+const {
+  headline,
+  subheadline,
+  primaryCTA,
+  secondaryCTA,
+  backgroundImage,
+  variant = 'gradient'
+} = Astro.props;
+
+const backgroundClasses = {
+  default: 'bg-white',
+  gradient: 'gradient-hero',
+  pattern: 'bg-white relative overflow-hidden'
+};
+---
+
+<section class={`relative ${backgroundClasses[variant]} py-24 sm:py-32 lg:py-40`}>
+  {variant === 'pattern' && (
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23003d5c" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+  )}
+  
+  {backgroundImage && (
+    <div class="absolute inset-0 z-0">
+      <img 
+        src={backgroundImage} 
+        alt="" 
+        class="w-full h-full object-cover opacity-10"
+      />
+    </div>
+  )}
+  
+  <div class="container-width relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class={`text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fadeIn ${variant === 'gradient' ? 'text-white' : 'text-beach-dark'}`}>
+        {headline}
+      </h1>
+      
+      {subheadline && (
+        <p class={`text-xl sm:text-2xl lg:text-3xl mb-10 animate-fadeIn ${variant === 'gradient' ? 'text-beach-light-blue' : 'text-gray-600'}`} style="animation-delay: 0.1s">
+          {subheadline}
+        </p>
+      )}
+      
+      {(primaryCTA || secondaryCTA) && (
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeIn" style="animation-delay: 0.2s">
+          {primaryCTA && (
+            <a href={primaryCTA.href} class="btn-cta text-lg px-8 py-4 hover-lift">
+              {primaryCTA.text}
+            </a>
+          )}
+          {secondaryCTA && (
+            <a href={secondaryCTA.href} class={`btn-light text-lg px-8 py-4 hover-lift ${variant === 'gradient' ? 'text-beach-dark' : ''}`}>
+              {secondaryCTA.text}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  h1 {
+    font-family: 'Chillax-Variable', 'Chillax-Bold', sans-serif;
+    font-variation-settings: 'wght' 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  p {
+    font-family: 'Synonym-Variable', sans-serif;
+    font-variation-settings: 'wght' 400;
+  }
+</style>

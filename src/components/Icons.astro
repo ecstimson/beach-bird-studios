@@ -1,0 +1,187 @@
+---
+export interface Props {
+  name: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  className?: string;
+}
+
+const { name, size = 'md', className = '' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+  xl: 'w-12 h-12'
+};
+
+const iconColor = '#003d5c'; // Navy color for all icons
+---
+
+<div class={`icon inline-flex ${sizeClasses[size]} ${className}`}>
+  {name === 'web-design' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 9h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9zM3 9V5a2 2 0 012-2h14a2 2 0 012 2v4M8 3v6m8-6v6" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'development' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 8l-4 4 4 4m10-8l4 4-4 4M14 4l-4 16" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'seo' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 4a7 7 0 100 14 7 7 0 000-14zm10 17l-6-6" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'marketing' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 12h-6l-2 3h-4l2-3H2m20-7v14" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'branding' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'consulting' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m20-8v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75M9 11a4 4 0 100-8 4 4 0 000 8z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'email' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'phone' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'location' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="10" r="3" stroke={iconColor} stroke-width="2"/>
+    </svg>
+  )}
+  
+  {name === 'arrow-right' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 12h14m-7-7l7 7-7 7" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'check' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 6L9 17l-5-5" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'star' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'calendar' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke={iconColor} stroke-width="2"/>
+      <line x1="16" y1="2" x2="16" y2="6" stroke={iconColor} stroke-width="2"/>
+      <line x1="8" y1="2" x2="8" y2="6" stroke={iconColor} stroke-width="2"/>
+      <line x1="3" y1="10" x2="21" y2="10" stroke={iconColor} stroke-width="2"/>
+    </svg>
+  )}
+  
+  {name === 'clock' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke={iconColor} stroke-width="2"/>
+      <path d="M12 6v6l4 2" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'user' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'chart' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 20V10m-6 10V4M6 20v-6" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'globe' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke={iconColor} stroke-width="2"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke={iconColor} stroke-width="2"/>
+    </svg>
+  )}
+  
+  {name === 'rocket' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09zM12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2s0 11-11 13a22.2 22.2 0 01-3.95 2z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'lightbulb' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2a7 7 0 00-4 12.9V17a2 2 0 002 2h4a2 2 0 002-2v-2.1A7 7 0 0012 2zM9 21h6" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'target' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke={iconColor} stroke-width="2"/>
+      <circle cx="12" cy="12" r="6" stroke={iconColor} stroke-width="2"/>
+      <circle cx="12" cy="12" r="2" stroke={iconColor} stroke-width="2"/>
+    </svg>
+  )}
+  
+  {name === 'menu' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'close' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6l12 12" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'facebook' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'twitter' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+  
+  {name === 'linkedin' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="4" cy="4" r="2" stroke={iconColor} stroke-width="2"/>
+    </svg>
+  )}
+  
+  {name === 'instagram' && (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke={iconColor} stroke-width="2"/>
+      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke={iconColor} stroke-width="2"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke={iconColor} stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  )}
+</div>

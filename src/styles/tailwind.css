@@ -1,0 +1,10 @@
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+@theme {
+  --color-beach-blue: #47A7EB;
+  --color-beach-yellow: #E6B84C;
+  --color-beach-dark: #0C3745;
+  --color-beach-light-blue: #B6DCF7;
+  --color-beach-cream: #ECF7FF;
+}

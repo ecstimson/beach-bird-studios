@@ -1,0 +1,325 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Contact Beach Bird Studios | Get Your Free Consultation';
+const pageDescription = 'Ready to grow your business online? Contact Beach Bird Studios for a free consultation. Web design, AI development, and SEO services in Wilmington, NC.';
+
+const contactReasons = [
+  {
+    icon: '🚀',
+    title: 'Start a New Project',
+    description: 'Ready to build a new website or launch a comprehensive SEO campaign'
+  },
+  {
+    icon: '🔄',
+    title: 'Redesign Your Website',
+    description: 'Modernize your outdated site with current design and technology'
+  },
+  {
+    icon: '📈',
+    title: 'Improve Your Rankings',
+    description: 'Get found online with proven SEO strategies that work'
+  },
+  {
+    icon: '💬',
+    title: 'Free Consultation',
+    description: 'Not sure what you need? Let\'s discuss your goals and options'
+  }
+];
+
+const faqs = [
+  {
+    question: 'How quickly can you start my project?',
+    answer: 'We can typically begin new projects within 1-2 weeks of signing. Rush delivery is available for urgent needs.'
+  },
+  {
+    question: 'Do you work with businesses outside Wilmington?',
+    answer: 'Yes! While we\'re based in Wilmington, we serve businesses throughout North Carolina and beyond.'
+  },
+  {
+    question: 'What if I\'m not sure what I need?',
+    answer: 'That\'s perfectly fine! Schedule a free consultation and we\'ll help you determine the best solution for your business.'
+  },
+  {
+    question: 'Do you offer payment plans?',
+    answer: 'Yes, we offer flexible payment options to make our services accessible for businesses of all sizes.'
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <SEO title={pageTitle} description={pageDescription} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      headline="Let's Grow Your Business Together"
+      subheadline="Get a free consultation and discover how we can transform your online presence"
+      variant="gradient"
+    />
+    
+    <!-- Contact Form Section -->
+    <section class="section-padding bg-white">
+      <div class="container-width">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Form -->
+          <div class="bg-white rounded-xl shadow-xl p-8">
+            <h2 class="text-2xl font-chillax font-bold text-beach-dark mb-6">
+              Get Your Free Consultation
+            </h2>
+            
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                  />
+                </div>
+                
+                <div>
+                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                />
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                />
+              </div>
+              
+              <div>
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                />
+              </div>
+              
+              <div>
+                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">
+                  Service Interested In *
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                >
+                  <option value="">Select a service</option>
+                  <option value="custom-web-design">Custom Web Design</option>
+                  <option value="ai-development">AI Website Development</option>
+                  <option value="seo-services">SEO Services</option>
+                  <option value="website-redesign">Website Redesign</option>
+                  <option value="not-sure">Not Sure / Need Consultation</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                  Tell Us About Your Project
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                  placeholder="What are your goals? What challenges are you facing?"
+                ></textarea>
+              </div>
+              
+              <div>
+                <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">
+                  Project Budget
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-beach-blue focus:outline-none focus:ring-2 focus:ring-beach-blue/20"
+                >
+                  <option value="">Select budget range</option>
+                  <option value="under-5k">Under $5,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k-25k">$10,000 - $25,000</option>
+                  <option value="25k-plus">$25,000+</option>
+                  <option value="not-sure">Not Sure</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn-primary w-full">
+                Send Message
+              </button>
+              
+              <p class="text-sm text-gray-500 text-center">
+                We'll respond within 1 business day
+              </p>
+            </form>
+          </div>
+          
+          <!-- Contact Info -->
+          <div>
+            <h2 class="text-2xl font-chillax font-bold text-beach-dark mb-6">
+              Why Reach Out?
+            </h2>
+            
+            <div class="space-y-6 mb-8">
+              {contactReasons.map((reason) => (
+                <div class="flex items-start">
+                  <span class="text-2xl mr-4">{reason.icon}</span>
+                  <div>
+                    <h3 class="font-semibold text-beach-dark mb-1">
+                      {reason.title}
+                    </h3>
+                    <p class="text-gray-600">
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="bg-beach-cream/50 rounded-xl p-6 mb-8">
+              <h3 class="text-xl font-chillax font-semibold text-beach-dark mb-4">
+                Direct Contact
+              </h3>
+              
+              <div class="space-y-3">
+                <a href="tel:910-512-6990" class="flex items-center text-gray-700 hover:text-beach-blue transition-colors">
+                  <span class="text-beach-blue mr-3">📞</span>
+                  910-512-6990
+                </a>
+                <a href="mailto:hello@beachbirdstudios.com" class="flex items-center text-gray-700 hover:text-beach-blue transition-colors">
+                  <span class="text-beach-blue mr-3">✉️</span>
+                  hello@beachbirdstudios.com
+                </a>
+                <div class="flex items-start text-gray-700">
+                  <span class="text-beach-blue mr-3">📍</span>
+                  <div>
+                    Wilmington, NC<br />
+                    Serving all of North Carolina
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Response Time -->
+            <div class="bg-gradient-to-br from-sky-500 to-slate-800 text-white rounded-xl p-6">
+              <h3 class="text-xl font-chillax font-semibold mb-4">
+                What Happens Next?
+              </h3>
+              
+              <ol class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-beach-yellow mr-3">1.</span>
+                  <span>We'll review your submission and prepare for our call</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-beach-yellow mr-3">2.</span>
+                  <span>Schedule a 30-minute strategy consultation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-beach-yellow mr-3">3.</span>
+                  <span>Receive a custom proposal with timeline and pricing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-beach-yellow mr-3">4.</span>
+                  <span>Start your project and watch your business grow</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQs -->
+    <section class="section-padding bg-beach-cream/30">
+      <div class="container-width">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-lg p-6">
+                <h3 class="text-lg font-chillax font-semibold text-beach-dark mb-2">
+                  {faq.question}
+                </h3>
+                <p class="text-gray-600">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="section-padding bg-gradient-to-r from-sky-500 to-slate-800 text-white">
+      <div class="container-width text-center">
+        <h2 class="text-3xl sm:text-4xl font-chillax font-bold mb-4">
+          Ready to Stop Losing Customers Online?
+        </h2>
+        <p class="text-xl text-beach-light-blue mb-8 max-w-2xl mx-auto">
+          Every day you wait, competitors are stealing your customers. Let's fix that today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:910-512-6990" class="btn-accent text-lg px-8 py-4">
+            Call Now: 910-512-6990
+          </a>
+          <a href="#contact-form" class="btn-secondary !border-white !text-white hover:!bg-white hover:!text-beach-dark text-lg px-8 py-4">
+            Schedule Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
