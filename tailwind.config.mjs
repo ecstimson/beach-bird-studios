@@ -11,10 +11,10 @@ export default {
         'beach-cream': 'rgb(236 247 255)',
       },
       fontFamily: {
-        'chillax': ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
-        'synonym': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        'heading': ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        'chillax': ['Chillax-Semibold', 'Chillax', 'system-ui', '-apple-system', 'sans-serif'],
+        'synonym': ['Synonym-Regular', 'Synonym', 'system-ui', '-apple-system', 'sans-serif'],
+        'sans': ['Synonym-Regular', 'Synonym', 'system-ui', '-apple-system', 'sans-serif'],
+        'heading': ['Chillax-Semibold', 'Chillax', 'system-ui', '-apple-system', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
