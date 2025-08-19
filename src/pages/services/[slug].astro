@@ -72,6 +72,10 @@ for (let i = 0; i < lines.length; i++) {
   else if (line.startsWith('### ')) {
     currentSection.content.push({ type: 'h3', text: line.substring(4).trim() });
   }
+  // Check for H4 headers (sub-sections)
+  else if (line.startsWith('#### ')) {
+    currentSection.content.push({ type: 'h4', text: line.substring(5).trim() });
+  }
   // Bold headers that might be card titles (entire line is bold)
   else if (line.startsWith('**') && line.includes('**') && line.indexOf('**', 2) > 2) {
     // This handles "**Starter Site** - Perfect for small businesses"
@@ -213,9 +217,11 @@ const processIndustries = (section) => {
   
   <!-- Dynamic Sections -->
   {sections.map((section, index) => {
-    // Beach Bird brand colors: white, cream (#F5E6D3/30), gray-50
+    // Use sand background for process sections
     let bgClass = 'bg-white';
-    if (index % 3 === 1) {
+    if (section.type === 'process') {
+      bgClass = 'section-sand';
+    } else if (index % 3 === 1) {
       bgClass = 'bg-beach-cream/30';
     } else if (index % 3 === 2) {
       bgClass = 'bg-gray-50';
@@ -303,18 +309,74 @@ const processIndustries = (section) => {
           
           {/* Process Steps */}
           {section.type === 'process' && (
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {section.content.filter(item => item.type === 'h3').map((item, idx) => (
-                <div class="text-center">
-                  <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-blue/80 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-white font-bold text-xl">{idx + 1}</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">{item.text}</h3>
-                  <p class="text-gray-600 text-sm">
-                    {section.content[section.content.indexOf(item) + 1]?.text || ''}
-                  </p>
-                </div>
-              ))}
+            <div class="space-y-12">
+              {section.content.filter(item => item.type === 'h3').map((item, idx) => {
+                const h3Index = section.content.indexOf(item);
+                const phases = [];
+                let currentPhase = null;
+                
+                // Collect H4 phases and their content
+                for (let i = h3Index + 1; i < section.content.length; i++) {
+                  const contentItem = section.content[i];
+                  if (contentItem.type === 'h3') break; // Stop at next H3
+                  
+                  if (contentItem.type === 'h4') {
+                    if (currentPhase) phases.push(currentPhase);
+                    currentPhase = { title: contentItem.text, content: [] };
+                  } else if (currentPhase && contentItem.type === 'bullet') {
+                    currentPhase.content.push(contentItem.text);
+                  } else if (!currentPhase && contentItem.type === 'paragraph') {
+                    // Direct paragraph after H3
+                    if (!phases.description) phases.description = contentItem.text;
+                  }
+                }
+                if (currentPhase) phases.push(currentPhase);
+                
+                // If there are phases (H4 sections), render them as cards
+                if (phases.length > 0) {
+                  return (
+                    <div class="mb-12">
+                      <h3 class="text-2xl font-bold text-gray-900 mb-6">{idx + 1}. {item.text}</h3>
+                      {phases.description && (
+                        <p class="text-gray-600 mb-6">{phases.description}</p>
+                      )}
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {phases.map((phase, phaseIdx) => (
+                          <div class="bg-white rounded-lg p-6 shadow-md border border-gray-100">
+                            <div class="flex items-center mb-4">
+                              <div class="w-10 h-10 bg-beach-blue/10 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-beach-blue font-bold">{phaseIdx + 1}</span>
+                              </div>
+                              <h4 class="text-lg font-semibold text-gray-900">{phase.title}</h4>
+                            </div>
+                            <ul class="space-y-2">
+                              {phase.content.map((bullet) => (
+                                <li class="flex items-start">
+                                  <i data-lucide="check" class="w-4 h-4 text-beach-blue mr-2 mt-1 flex-shrink-0"></i>
+                                  <span class="text-gray-600 text-sm">{bullet}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                } else {
+                  // Simple process step without phases
+                  return (
+                    <div class="text-center">
+                      <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-blue/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-xl">{idx + 1}</span>
+                      </div>
+                      <h3 class="text-lg font-bold text-gray-900 mb-2">{item.text}</h3>
+                      <p class="text-gray-600 text-sm">
+                        {section.content[h3Index + 1]?.text || ''}
+                      </p>
+                    </div>
+                  );
+                }
+              })}
             </div>
           )}
           
@@ -324,8 +386,12 @@ const processIndustries = (section) => {
               {section.content.map((item) => {
                 if (item.type === 'h3') {
                   return <h3 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
+                } else if (item.type === 'h4') {
+                  return <h4 class="text-xl font-semibold text-gray-700 mb-3 mt-6">{item.text}</h4>;
                 } else if (item.type === 'paragraph') {
-                  return <p class="text-lg text-gray-600 mb-6 leading-relaxed">{item.text}</p>;
+                  // Parse for bold text
+                  const htmlText = item.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                  return <p class="text-lg text-gray-600 mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: htmlText }}></p>;
                 } else if (item.type === 'bullet') {
                   return (
                     <ul class="list-disc pl-6 mb-6 space-y-2">
