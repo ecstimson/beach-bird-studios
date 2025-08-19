@@ -349,7 +349,7 @@ p {
    ============================================ */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  color: var(--primary-dark) !important; /* Force dark text for visibility */
+  color: #0C3745 !important; /* Force deep navy text */
   font-weight: 600;
   padding: 14px 32px;
   min-height: 44px; /* Accessibility: minimum touch target */
@@ -366,7 +366,13 @@ p {
 }
 
 .btn-primary * {
-  color: var(--primary-dark) !important; /* Ensure all child elements use dark text */
+  color: #0C3745 !important; /* Ensure all child elements use deep navy */
+}
+
+.btn-primary span,
+.btn-primary i,
+.btn-primary svg {
+  color: #0C3745 !important; /* Extra specificity for icons and text */
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -385,7 +391,7 @@ p {
 
 .btn-secondary {
   background: white;
-  color: var(--primary-dark) !important; /* Force dark text for visibility */
+  color: #0C3745 !important; /* Force deep navy text */
   font-weight: 600;
   padding: 14px 32px;
   min-height: 44px; /* Accessibility: minimum touch target */
@@ -401,7 +407,13 @@ p {
 }
 
 .btn-secondary * {
-  color: var(--primary-dark) !important; /* Ensure all child elements use dark text */
+  color: #0C3745 !important; /* Ensure all child elements use deep navy */
+}
+
+.btn-secondary span,
+.btn-secondary i,
+.btn-secondary svg {
+  color: #0C3745 !important; /* Extra specificity for icons and text */
 }
 
 .btn-secondary:hover:not(:disabled) {
@@ -652,53 +664,56 @@ p {
    GRADIENTS & BACKGROUNDS
    ============================================ */
 .gradient-hero {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, #1E5A7A 100%);
+  background: transparent;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-/* Noise texture overlay */
+/* Soft gradient background with undefined edges */
 .gradient-hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.03;
-  z-index: 1;
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px),
-    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.03) 35px, rgba(0,0,0,.03) 70px);
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 140%;
+  background: radial-gradient(ellipse at center, var(--primary-dark) 0%, #1E5A7A 40%, transparent 70%);
+  opacity: 0.95;
+  z-index: -2;
+  filter: blur(80px);
 }
 
-/* Enhanced gradient mesh background */
-.gradient-hero .gradient-overlay {
+/* Additional soft gradient layer */
+.gradient-hero::after {
   content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 120%;
+  background: 
+    radial-gradient(ellipse at top center, var(--primary-dark) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom center, #1E5A7A 0%, transparent 50%);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* Enhanced gradient mesh background with soft edges */
+.gradient-hero .gradient-overlay {
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(71, 167, 235, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(245, 230, 211, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 40%, rgba(255, 193, 7, 0.15) 0%, transparent 40%);
+    radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(71, 167, 235, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 40% 20%, rgba(245, 230, 211, 0.1) 0%, transparent 35%),
+    radial-gradient(circle at 70% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 35%);
   animation: gradientShift 20s ease infinite;
-}
-
-.gradient-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: 
-    radial-gradient(ellipse at bottom, rgba(71, 167, 235, 0.2) 0%, transparent 70%),
-    radial-gradient(circle at 10% 90%, rgba(255, 193, 7, 0.2) 0%, transparent 30%);
-  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes gradientShift {
@@ -707,39 +722,40 @@ p {
   66% { transform: rotate(240deg) scale(0.95); }
 }
 
-/* Floating orbs effect */
+/* Floating orbs with softer effect */
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.6;
+  filter: blur(60px);
+  opacity: 0.4;
   animation: float 20s infinite;
+  z-index: 0;
 }
 
 .hero-orb-1 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, var(--accent), rgba(255, 193, 7, 0.3));
-  top: -100px;
-  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.3), transparent 60%);
+  top: -200px;
+  left: -200px;
   animation-delay: 0s;
 }
 
 .hero-orb-2 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, var(--primary-light), rgba(71, 167, 235, 0.3));
-  bottom: -150px;
-  right: -50px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(71, 167, 235, 0.25), transparent 60%);
+  bottom: -200px;
+  right: -100px;
   animation-delay: 5s;
 }
 
 .hero-orb-3 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, var(--sand), rgba(245, 230, 211, 0.4));
-  top: 50%;
-  left: 30%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(245, 230, 211, 0.3), transparent 60%);
+  top: 40%;
+  left: 50%;
   animation-delay: 10s;
 }
 
@@ -773,7 +789,44 @@ p {
 }
 
 .section-sand {
-  background: linear-gradient(180deg, #FFFFFF 0%, var(--sand) 50%, #FFFFFF 100%);
+  position: relative;
+  background: transparent;
+  overflow: visible;
+}
+
+.section-sand::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110vw;
+  height: 120%;
+  background: radial-gradient(ellipse at center, rgba(245, 230, 211, 0.4) 0%, rgba(245, 230, 211, 0.2) 40%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Seamless gradient transition utility */
+.gradient-seamless {
+  position: relative;
+  background: transparent;
+  overflow: visible;
+}
+
+.gradient-seamless::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 130%;
+  background: radial-gradient(ellipse at center, var(--primary-dark) 0%, transparent 65%);
+  opacity: 0.9;
+  z-index: -1;
+  filter: blur(100px);
+  pointer-events: none;
 }
 
 /* ============================================
