@@ -669,19 +669,19 @@ p {
   overflow: visible;
 }
 
-/* Main soft blob background - darker for better contrast */
+/* Main soft blob background - balanced contrast version */
 .gradient-hero::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140vw;
-  height: 140%;
-  background: radial-gradient(circle at center, #0C3745 0%, #0C3745 15%, #1E5A7A 35%, transparent 65%);
-  opacity: 0.95;
+  width: 150vw;
+  height: 150%;
+  background: radial-gradient(circle at center, #0C3745 0%, #1E5A7A 20%, #47A7EB 40%, transparent 60%);
+  opacity: 0.9;
   z-index: -2;
-  filter: blur(100px);
+  filter: blur(80px);
   pointer-events: none;
 }
 
@@ -692,12 +692,12 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 180vw;
-  height: 180%;
-  background: radial-gradient(circle at center, #1E5A7A 0%, #47A7EB 20%, transparent 45%);
-  opacity: 0.4;
+  width: 170vw;
+  height: 170%;
+  background: radial-gradient(circle at center, #2C8FD6 0%, transparent 50%);
+  opacity: 0.3;
   z-index: -1;
-  filter: blur(120px);
+  filter: blur(100px);
   pointer-events: none;
 }
 
