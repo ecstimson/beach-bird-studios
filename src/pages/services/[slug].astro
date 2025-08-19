@@ -128,8 +128,21 @@ for (let i = 0; i < lines.length; i++) {
   // Bullet points 
   else if (line.startsWith('- ') || line.startsWith('* ')) {
     const text = line.substring(2).trim();
+    // For "What We Deliver" or "Beach Bird Difference" sections, treat as features
+    if (currentSection.title && (currentSection.title.toLowerCase().includes('what we deliver') || 
+        currentSection.title.toLowerCase().includes('beach bird difference'))) {
+      if (!currentSection.features) currentSection.features = [];
+      // Add H3 title prefix if there was a recent H3
+      const lastH3 = currentSection.content.filter(c => c.type === 'h3').pop();
+      if (lastH3) {
+        currentSection.features.push(`${lastH3.text}: ${text}`);
+      } else {
+        currentSection.features.push(text);
+      }
+      currentSection.type = 'features';
+    }
     // Check if this looks like a feature (has a colon or bold text)
-    if (text.includes(':') || text.includes('**')) {
+    else if (text.includes(':') || text.includes('**')) {
       if (!currentSection.features) currentSection.features = [];
       currentSection.features.push(text);
       if (currentSection.type === 'content') {
@@ -141,7 +154,21 @@ for (let i = 0; i < lines.length; i++) {
   }
   // Regular paragraph
   else if (line.trim()) {
-    currentSection.content.push({ type: 'paragraph', text: line });
+    // For "Beach Bird Difference" section, check if paragraph follows H3
+    if (currentSection.title && currentSection.title.toLowerCase().includes('beach bird difference')) {
+      const lastH3 = currentSection.content.filter(c => c.type === 'h3').pop();
+      if (lastH3) {
+        if (!currentSection.features) currentSection.features = [];
+        currentSection.features.push(`${lastH3.text}: ${line}`);
+        // Remove the H3 from content since we've used it
+        currentSection.content = currentSection.content.filter(c => c !== lastH3);
+        currentSection.type = 'features';
+      } else {
+        currentSection.content.push({ type: 'paragraph', text: line });
+      }
+    } else {
+      currentSection.content.push({ type: 'paragraph', text: line });
+    }
   }
 }
 
@@ -170,6 +197,7 @@ const processPricingCards = (section) => {
   const cards = [];
   let currentCard = null;
   let collectingFeatures = false;
+  let currentPackageTitle = null;
   
   // Look through all content and features
   const allItems = [...section.content];
@@ -178,8 +206,13 @@ const processPricingCards = (section) => {
   }
   
   allItems.forEach((item) => {
+    // H3 headers indicate package categories in Investment Options
+    if (item.type === 'h3') {
+      currentPackageTitle = item.text;
+      collectingFeatures = false;
+    }
     // Check for H4 headers (used in SEO services for pricing tiers)
-    if (item.type === 'h4') {
+    else if (item.type === 'h4') {
       if (currentCard) cards.push(currentCard);
       
       const parts = item.text.split(' - ');
@@ -187,12 +220,13 @@ const processPricingCards = (section) => {
         title: parts[0].trim(),
         tagline: parts[1]?.trim() || '',
         features: [],
-        description: ''
+        description: '',
+        packageType: currentPackageTitle
       };
       collectingFeatures = true;
     }
-    // Check for bold card titles like "**Starter Site**" or H3 headers
-    else if (item.type === 'card-title' || item.type === 'h3' || 
+    // Check for bold card titles like "**Starter Site**" or as fallback
+    else if (item.type === 'card-title' || 
         (item.type === 'paragraph' && item.text.startsWith('**') && item.text.includes('**'))) {
       
       if (currentCard) cards.push(currentCard);
@@ -219,7 +253,8 @@ const processPricingCards = (section) => {
     else if (item.type === 'paragraph' && !item.text.startsWith('**')) {
       if (currentCard && !currentCard.description && item.text.length < 100) {
         currentCard.description = item.text;
-      } else {
+      } else if (!currentCard) {
+        // Might be description under H3 header
         collectingFeatures = false;
       }
     }
@@ -227,12 +262,33 @@ const processPricingCards = (section) => {
   
   if (currentCard) cards.push(currentCard);
   
-  // Mark the middle card as featured
-  if (cards.length === 3) {
-    cards[1].featured = true;
+  // Group cards by package type if they have one
+  const groupedCards = {};
+  const ungroupedCards = [];
+  
+  cards.forEach(card => {
+    if (card.packageType) {
+      if (!groupedCards[card.packageType]) {
+        groupedCards[card.packageType] = [];
+      }
+      groupedCards[card.packageType].push(card);
+    } else {
+      ungroupedCards.push(card);
+    }
+  });
+  
+  // Mark middle cards as featured
+  Object.values(groupedCards).forEach(group => {
+    if (group.length === 3) {
+      group[1].featured = true;
+    }
+  });
+  
+  if (ungroupedCards.length === 3) {
+    ungroupedCards[1].featured = true;
   }
   
-  return cards;
+  return { grouped: groupedCards, ungrouped: ungroupedCards };
 };
 
 // Process industry sections
@@ -292,34 +348,79 @@ const processIndustries = (section) => {
           )}
           
           {/* Pricing/Package Cards */}
-          {section.type === 'pricing' && (
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {processPricingCards(section).map((card) => (
-                <div class={`rounded-xl p-8 ${card.featured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/80 text-white shadow-xl scale-105' : 'bg-white shadow-lg'}`}>
-                  <h3 class={`text-2xl font-bold mb-2 ${card.featured ? 'text-white' : 'text-gray-900'}`}>
-                    {card.title}
-                  </h3>
-                  {card.tagline && (
-                    <p class={`mb-4 ${card.featured ? 'text-white/90' : 'text-gray-600'}`}>{card.tagline}</p>
-                  )}
-                  {card.description && (
-                    <p class={`mb-6 ${card.featured ? 'text-white/80' : 'text-gray-600'}`}>{card.description}</p>
-                  )}
-                  <ul class="space-y-3">
-                    {card.features.map((feature) => (
-                      <li class="flex items-start">
-                        <i data-lucide="check-circle" class={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${card.featured ? 'text-beach-yellow' : 'text-beach-blue'}`}></i>
-                        <span class={card.featured ? 'text-white' : 'text-gray-700'}>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all ${card.featured ? 'bg-beach-yellow text-gray-900 hover:bg-yellow-400' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
-                    Get Quote
-                  </button>
+          {section.type === 'pricing' && (() => {
+            const pricingData = processPricingCards(section);
+            const hasGroups = Object.keys(pricingData.grouped).length > 0;
+            
+            if (hasGroups) {
+              // Render grouped cards with H3 headers
+              return (
+                <div class="space-y-12">
+                  {Object.entries(pricingData.grouped).map(([packageType, cards]) => (
+                    <div>
+                      <h3 class="text-2xl font-bold text-gray-900 mb-6">{packageType}</h3>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {cards.map((card) => (
+                          <div class={`rounded-xl p-8 ${card.featured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/80 text-white shadow-xl scale-105' : 'bg-white shadow-lg'}`}>
+                            <h4 class={`text-xl font-bold mb-2 ${card.featured ? 'text-white' : 'text-gray-900'}`}>
+                              {card.title}
+                            </h4>
+                            {card.tagline && (
+                              <p class={`mb-4 text-sm ${card.featured ? 'text-white/90' : 'text-gray-600'}`}>{card.tagline}</p>
+                            )}
+                            {card.description && (
+                              <p class={`mb-6 ${card.featured ? 'text-white/80' : 'text-gray-600'}`}>{card.description}</p>
+                            )}
+                            <ul class="space-y-3">
+                              {card.features.map((feature) => (
+                                <li class="flex items-start">
+                                  <i data-lucide="check-circle" class={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${card.featured ? 'text-beach-yellow' : 'text-beach-blue'}`}></i>
+                                  <span class={card.featured ? 'text-white' : 'text-gray-700'}>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <button class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all ${card.featured ? 'bg-beach-yellow text-gray-900 hover:bg-yellow-400' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
+                              Get Quote
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          )}
+              );
+            } else {
+              // Render ungrouped cards
+              return (
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {pricingData.ungrouped.map((card) => (
+                    <div class={`rounded-xl p-8 ${card.featured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/80 text-white shadow-xl scale-105' : 'bg-white shadow-lg'}`}>
+                      <h3 class={`text-2xl font-bold mb-2 ${card.featured ? 'text-white' : 'text-gray-900'}`}>
+                        {card.title}
+                      </h3>
+                      {card.tagline && (
+                        <p class={`mb-4 ${card.featured ? 'text-white/90' : 'text-gray-600'}`}>{card.tagline}</p>
+                      )}
+                      {card.description && (
+                        <p class={`mb-6 ${card.featured ? 'text-white/80' : 'text-gray-600'}`}>{card.description}</p>
+                      )}
+                      <ul class="space-y-3">
+                        {card.features.map((feature) => (
+                          <li class="flex items-start">
+                            <i data-lucide="check-circle" class={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${card.featured ? 'text-beach-yellow' : 'text-beach-blue'}`}></i>
+                            <span class={card.featured ? 'text-white' : 'text-gray-700'}>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <button class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all ${card.featured ? 'bg-beach-yellow text-gray-900 hover:bg-yellow-400' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
+                        Get Quote
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+          })()}
           
           {/* Feature Grid Section */}
           {section.type === 'features' && section.features && (
@@ -345,28 +446,44 @@ const processIndustries = (section) => {
             </div>
           )}
           
-          {/* Industries Grid */}
+          {/* Industries Grid or Perfect For List */}
           {section.type === 'industries' && (
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {processIndustries(section).map((industry) => (
-                <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition-shadow border border-gray-100">
-                  <div class="w-10 h-10 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="briefcase" class="w-5 h-5 text-beach-blue"></i>
+            section.title && section.title.toLowerCase().includes('perfect for') ? (
+              // Render as simple bullet list for "Perfect For" sections
+              <div class="max-w-3xl mx-auto">
+                <ul class="space-y-4">
+                  {section.content.filter(item => item.type === 'bullet').map((item) => (
+                    <li class="flex items-start">
+                      <i data-lucide="check-circle" class="w-6 h-6 text-beach-blue mt-1 mr-3 flex-shrink-0"></i>
+                      <span class="text-lg text-gray-700">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              // Render as grid for industries with descriptions
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {processIndustries(section).map((industry) => (
+                  <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-10 h-10 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+                      <i data-lucide="briefcase" class="w-5 h-5 text-beach-blue"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">{industry.title}</h3>
+                    <p class="text-gray-600 text-sm">{industry.description}</p>
                   </div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-2">{industry.title}</h3>
-                  <p class="text-gray-600 text-sm">{industry.description}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )
           )}
           
           {/* Process Steps */}
           {section.type === 'process' && (
-            <div class="space-y-12">
+            <div class={section.title && section.title.toLowerCase().includes('monthly') ? 'grid grid-cols-1 md:grid-cols-3 gap-8' : 'space-y-12'}>
               {section.content.filter(item => item.type === 'h3').map((item, idx) => {
                 const h3Index = section.content.indexOf(item);
                 const phases = [];
                 let currentPhase = null;
+                const bullets = [];
                 
                 // Collect H4 phases and their content
                 for (let i = h3Index + 1; i < section.content.length; i++) {
@@ -378,12 +495,33 @@ const processIndustries = (section) => {
                     currentPhase = { title: contentItem.text, content: [] };
                   } else if (currentPhase && contentItem.type === 'bullet') {
                     currentPhase.content.push(contentItem.text);
+                  } else if (!currentPhase && contentItem.type === 'bullet') {
+                    bullets.push(contentItem.text);
                   } else if (!currentPhase && contentItem.type === 'paragraph') {
                     // Direct paragraph after H3
                     if (!phases.description) phases.description = contentItem.text;
                   }
                 }
                 if (currentPhase) phases.push(currentPhase);
+                
+                // For "Our Monthly Process", render as simple cards
+                if (section.title && section.title.toLowerCase().includes('monthly')) {
+                  return (
+                    <div class="text-center">
+                      <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-blue/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-xl">{idx + 1}</span>
+                      </div>
+                      <h3 class="text-lg font-bold text-gray-900 mb-2">{item.text}</h3>
+                      {bullets.length > 0 && (
+                        <ul class="text-gray-600 text-sm space-y-1">
+                          {bullets.map((bullet) => (
+                            <li>{bullet}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  );
+                }
                 
                 // If there are phases (H4 sections), render them as cards
                 if (phases.length > 0) {
@@ -416,16 +554,7 @@ const processIndustries = (section) => {
                     </div>
                   );
                 } else {
-                  // Simple process step without phases - collect bullets as description
-                  const bullets = [];
-                  for (let i = h3Index + 1; i < section.content.length; i++) {
-                    const contentItem = section.content[i];
-                    if (contentItem.type === 'h3') break;
-                    if (contentItem.type === 'bullet') {
-                      bullets.push(contentItem.text);
-                    }
-                  }
-                  
+                  // Simple process step without phases
                   return (
                     <div class="text-center">
                       <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-blue/80 rounded-full flex items-center justify-center mx-auto mb-4">
