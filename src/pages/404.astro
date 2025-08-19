@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const suggestions = [
+  { href: '/', label: 'Homepage' },
+  { href: '/services', label: 'Our Services' },
+  { href: '/services/custom-website-design', label: 'Custom Web Design' },
+  { href: '/services/ai-website-development', label: 'AI Website Development' },
+  { href: '/services/seo-services', label: 'SEO Services' },
+  { href: '/contact', label: 'Contact Us' },
+];
+
+// Popular pages for quick navigation
+const popularPages = [
+  { 
+    href: '/services/custom-website-design', 
+    title: 'Custom Web Design',
+    description: 'Beautiful, fast websites built for conversion'
+  },
+  { 
+    href: '/services/ai-website-development', 
+    title: 'AI Development',
+    description: '100+ pages that dominate search results'
+  },
+  { 
+    href: '/services/seo-services', 
+    title: 'SEO Services',
+    description: 'Optimize your existing website for search'
+  },
+];
+---
+
+<Layout title="404 - Page Not Found | Beach Bird Studios">
+  <Header />
+  
+  <main class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <!-- 404 Hero Section -->
+    <section class="pt-32 pb-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Large 404 Display -->
+        <div class="mb-8">
+          <h1 class="text-[150px] md:text-[200px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-beach-blue to-beach-dark leading-none">
+            404
+          </h1>
+        </div>
+        
+        <!-- Error Message -->
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Oops! This page flew south for the winter
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Like a beach bird migrating, this page seems to have taken flight. 
+          Let's help you find your way back to solid ground.
+        </p>
+        
+        <!-- Search Bar -->
+        <div class="max-w-md mx-auto mb-8">
+          <form action="/search" method="get" class="relative">
+            <input
+              type="search"
+              name="q"
+              placeholder="Search our site..."
+              class="w-full px-5 py-3 pr-12 text-gray-900 bg-white border-2 border-gray-200 rounded-lg focus:border-beach-blue focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-500 hover:text-beach-blue transition-colors"
+            >
+              <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+          </form>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="/" class="btn-primary inline-flex items-center justify-center">
+            <i data-lucide="home" class="w-5 h-5 mr-2"></i>
+            Back to Homepage
+          </a>
+          <a href="/contact" class="btn-secondary inline-flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+            Contact Support
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Popular Pages Section -->
+    <section class="pb-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">
+          Popular Pages You Might Be Looking For
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {popularPages.map((page) => (
+            <a
+              href={page.href}
+              class="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-beach-blue hover:shadow-lg transition-all group"
+            >
+              <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-beach-blue transition-colors">
+                {page.title}
+              </h4>
+              <p class="text-gray-600">
+                {page.description}
+              </p>
+              <div class="mt-4 text-beach-blue font-semibold flex items-center">
+                Learn More
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </a>
+          ))}
+        </div>
+        
+        <!-- Additional Help -->
+        <div class="mt-12 text-center">
+          <p class="text-gray-600 mb-4">
+            Still can't find what you're looking for?
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            {suggestions.map((link) => (
+              <a
+                href={link.href}
+                class="px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-beach-blue hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="mt-16 p-8 bg-gradient-to-r from-beach-blue to-beach-dark rounded-2xl text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">
+            Need Immediate Assistance?
+          </h3>
+          <p class="mb-6">
+            Our team is here to help you find exactly what you need
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:910-512-6990"
+              class="inline-flex items-center justify-center px-6 py-3 bg-white text-beach-dark rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+              Call 910-512-6990
+            </a>
+            <a
+              href="mailto:eric@beachbirdstudios.com"
+              class="inline-flex items-center justify-center px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-colors"
+            >
+              <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Animated gradient for 404 text */
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .bg-gradient-to-r {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+</style>
