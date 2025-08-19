@@ -1,0 +1,169 @@
+---
+export interface Props {
+  id: string;
+  title?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  closeOnOverlay?: boolean;
+  showClose?: boolean;
+}
+
+const {
+  id,
+  title,
+  size = 'md',
+  closeOnOverlay = true,
+  showClose = true
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'max-w-sm',
+  md: 'max-w-md',
+  lg: 'max-w-lg',
+  xl: 'max-w-xl'
+};
+
+const sizeClass = sizeClasses[size];
+---
+
+<div 
+  id={id}
+  class="modal-overlay hidden"
+  data-close-on-overlay={closeOnOverlay}
+>
+  <div class={`modal ${sizeClass}`} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`}>
+    {title && (
+      <div class="modal-header">
+        <h2 id={`${id}-title`} class="text-xl font-semibold text-gray-900">{title}</h2>
+        {showClose && (
+          <button 
+            class="modal-close-btn"
+            aria-label="Close modal"
+            data-modal-close={id}
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        )}
+      </div>
+    )}
+    
+    <div class="modal-body">
+      <slot />
+    </div>
+    
+    <div class="modal-footer">
+      <slot name="footer" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-overlay.hidden {
+    display: none;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-close-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--gray-500);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .modal-close-btn:hover {
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+  }
+</style>
+
+<script>
+  // Modal management
+  class ModalManager {
+    static openModal(modalId: string) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus trap
+        const focusableElements = modal.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstFocusable = focusableElements[0] as HTMLElement;
+        const lastFocusable = focusableElements[focusableElements.length - 1] as HTMLElement;
+        
+        firstFocusable?.focus();
+        
+        modal.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            ModalManager.closeModal(modalId);
+          }
+          
+          if (e.key === 'Tab') {
+            if (e.shiftKey) {
+              if (document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable?.focus();
+              }
+            } else {
+              if (document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable?.focus();
+              }
+            }
+          }
+        });
+      }
+    }
+    
+    static closeModal(modalId: string) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+  }
+
+  // Expose to global scope
+  (window as any).ModalManager = ModalManager;
+
+  // Setup event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    // Close on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay && overlay.getAttribute('data-close-on-overlay') === 'true') {
+          ModalManager.closeModal(overlay.id);
+        }
+      });
+    });
+    
+    // Close buttons
+    document.querySelectorAll('[data-modal-close]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal-close');
+        if (modalId) {
+          ModalManager.closeModal(modalId);
+        }
+      });
+    });
+    
+    // Open buttons
+    document.querySelectorAll('[data-modal-open]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal-open');
+        if (modalId) {
+          ModalManager.openModal(modalId);
+        }
+      });
+    });
+  });
+</script>

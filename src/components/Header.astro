@@ -61,7 +61,12 @@ const navItems = [
       </div>
       
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="mobile-menu-button">
+      <button 
+        class="md:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center" 
+        id="mobile-menu-button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
@@ -73,20 +78,20 @@ const navItems = [
       {navItems.map((item) => (
         item.dropdown ? (
           <div>
-            <button class="flex items-center justify-between w-full px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-dropdown-btn">
+            <button class="flex items-center justify-between w-full px-4 py-3 min-h-[48px] text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-dropdown-btn">
               {item.label}
-              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
             </button>
             <div class="hidden pl-4 space-y-1 mobile-dropdown-menu">
               {item.dropdown.map((subItem) => (
-                <a href={subItem.href} class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
+                <a href={subItem.href} class="block px-4 py-3 min-h-[48px] flex items-center text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
                   {subItem.label}
                 </a>
               ))}
             </div>
           </div>
         ) : (
-          <a href={item.href} class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
+          <a href={item.href} class="block px-4 py-3 min-h-[48px] flex items-center text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
             {item.label}
           </a>
         )
@@ -103,7 +108,18 @@ const navItems = [
   const mobileMenu = document.getElementById('mobile-menu');
   
   mobileMenuButton?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
     mobileMenu?.classList.toggle('hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', (!isOpen).toString());
+    
+    // Animate menu icon
+    const icon = mobileMenuButton?.querySelector('[data-lucide]');
+    if (icon) {
+      icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
   });
   
   // Close mobile menu when clicking on a link

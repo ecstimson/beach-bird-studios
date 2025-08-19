@@ -1,0 +1,67 @@
+---
+export interface Props {
+  type?: 'text' | 'title' | 'button' | 'card' | 'image' | 'avatar';
+  width?: string;
+  height?: string;
+  className?: string;
+  count?: number;
+}
+
+const { 
+  type = 'text', 
+  width = 'auto', 
+  height = 'auto',
+  className = '',
+  count = 1
+} = Astro.props;
+
+const getSkeletonClass = () => {
+  switch(type) {
+    case 'text':
+      return 'skeleton skeleton-text';
+    case 'title':
+      return 'skeleton skeleton-title';
+    case 'button':
+      return 'skeleton skeleton-button';
+    case 'card':
+      return 'skeleton skeleton-card';
+    case 'image':
+      return 'skeleton skeleton-image';
+    case 'avatar':
+      return 'skeleton skeleton-avatar';
+    default:
+      return 'skeleton';
+  }
+};
+
+const baseClass = getSkeletonClass();
+---
+
+<div class={`skeleton-wrapper ${className}`}>
+  {Array.from({ length: count }).map(() => (
+    <div 
+      class={baseClass}
+      style={`width: ${width}; height: ${height};`}
+    />
+  ))}
+</div>
+
+<style>
+  .skeleton-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm, 0.5rem);
+  }
+
+  .skeleton-image {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-lg, 1rem);
+  }
+
+  .skeleton-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+</style>

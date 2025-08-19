@@ -1,0 +1,122 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  placeholder?: 'blur' | 'skeleton' | 'none';
+  className?: string;
+  sizes?: string;
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = 'lazy',
+  placeholder = 'blur',
+  className = '',
+  sizes,
+  quality = 85
+} = Astro.props;
+
+// Generate a low-quality placeholder for blur effect
+const placeholderSrc = placeholder === 'blur' ? `${src}?w=20&q=10&blur=10` : '';
+---
+
+<div class={`lazy-image-wrapper ${className}`} data-placeholder={placeholder}>
+  {placeholder === 'skeleton' && (
+    <div class="skeleton skeleton-image" />
+  )}
+  
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    sizes={sizes}
+    class={`lazy-image ${placeholder === 'blur' ? 'blur-load' : ''}`}
+    data-src={src}
+    style={placeholder === 'blur' ? `background-image: url(${placeholderSrc})` : ''}
+    onload="this.classList.add('loaded')"
+  />
+</div>
+
+<style>
+  .lazy-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg, 1rem);
+  }
+
+  .lazy-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .lazy-image:not(.loaded) {
+    opacity: 0;
+  }
+
+  .lazy-image.loaded {
+    opacity: 1;
+  }
+
+  .blur-load {
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+  }
+
+  .blur-load.loaded {
+    filter: blur(0);
+  }
+
+  .skeleton-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .lazy-image.loaded ~ .skeleton-image {
+    display: none;
+  }
+</style>
+
+<script>
+  // Intersection Observer for advanced lazy loading
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          const src = img.dataset.src;
+          
+          if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
+          }
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.01
+    });
+
+    // Observe all lazy images
+    document.addEventListener('DOMContentLoaded', () => {
+      const lazyImages = document.querySelectorAll('img[data-src]');
+      lazyImages.forEach(img => imageObserver.observe(img));
+    });
+  }
+</script>

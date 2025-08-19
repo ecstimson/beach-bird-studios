@@ -1,20 +1,54 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'beach-blue': 'rgb(71 167 235)',
-        'beach-yellow': 'rgb(230 184 76)', 
-        'beach-dark': 'rgb(12 55 69)',
-        'beach-light-blue': 'rgb(182 220 247)',
-        'beach-cream': 'rgb(236 247 255)',
+        'beach-blue': 'var(--primary)',
+        'beach-yellow': 'var(--accent)', 
+        'beach-dark': 'var(--primary-dark)',
+        'beach-light-blue': 'var(--primary-light)',
+        'beach-cream': 'var(--sand-light)',
+        'primary': 'var(--primary)',
+        'primary-dark': 'var(--primary-dark)',
+        'accent': 'var(--accent)',
+        'sand': 'var(--sand)',
       },
       fontFamily: {
-        'chillax': ['Chillax-Semibold', 'Chillax', 'system-ui', '-apple-system', 'sans-serif'],
-        'synonym': ['Synonym-Regular', 'Synonym', 'system-ui', '-apple-system', 'sans-serif'],
-        'sans': ['Synonym-Regular', 'Synonym', 'system-ui', '-apple-system', 'sans-serif'],
-        'heading': ['Chillax-Semibold', 'Chillax', 'system-ui', '-apple-system', 'sans-serif'],
+        'chillax': ['Chillax', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'synonym': ['Synonym', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'sans': ['Synonym', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'heading': ['Chillax', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
+      spacing: {
+        'xs': 'var(--space-xs)',
+        'sm': 'var(--space-sm)',
+        'md': 'var(--space-md)',
+        'lg': 'var(--space-lg)',
+        'xl': 'var(--space-xl)',
+        '2xl': 'var(--space-2xl)',
+        '3xl': 'var(--space-3xl)',
+        '4xl': 'var(--space-4xl)',
+      },
+      borderRadius: {
+        'sm': 'var(--radius-sm)',
+        'md': 'var(--radius-md)',
+        'lg': 'var(--radius-lg)',
+        'xl': 'var(--radius-xl)',
+        'full': 'var(--radius-full)',
+      },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
+        '2xl': 'var(--shadow-2xl)',
+      },
+      transitionDuration: {
+        'fast': '150ms',
+        'base': '250ms',
+        'slow': '350ms',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
