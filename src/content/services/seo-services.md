@@ -94,22 +94,7 @@ Our systematic approach has been refined across hundreds of campaigns. We know w
 ### Every URL Counts
 Each page we create has a specific purpose and gets the attention it needs - including backlinks.
 
-## Real Results
 
-### Plumbing Company (WordPress)
-- Implemented Core 30 strategy
-- Added neighborhood-specific content
-- Result: Dominant map pack presence
-
-### Law Firm (Wix)
-- Built topical authority content
-- Created practice area clusters
-- Result: First page for all target terms
-
-### Medical Practice (Squarespace)
-- Core 30 + geographic expansion
-- Location-based service pages
-- Result: Full service area coverage
 
 ## Perfect For
 
