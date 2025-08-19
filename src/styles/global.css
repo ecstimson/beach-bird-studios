@@ -792,42 +792,42 @@ p {
 
 .section-sand {
   position: relative;
-  background: transparent;
-  overflow: visible;
+  background: rgba(245, 230, 211, 0.3);
+  overflow: hidden;
 }
 
-.section-sand::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110vw;
-  height: 120%;
-  background: radial-gradient(ellipse at center, rgba(245, 230, 211, 0.4) 0%, rgba(245, 230, 211, 0.2) 40%, transparent 70%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Seamless gradient transition utility */
+/* Seamless gradient transition utility - same as hero */
 .gradient-seamless {
+  background: linear-gradient(135deg, #0C3745 0%, #1E5A7A 50%, #47A7EB 100%);
   position: relative;
-  background: transparent;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .gradient-seamless::before {
   content: '';
   position: absolute;
-  top: -15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120vw;
-  height: 130%;
-  background: radial-gradient(ellipse at center, var(--primary-dark) 0%, transparent 65%);
-  opacity: 0.9;
-  z-index: -1;
-  filter: blur(100px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top center, rgba(71, 167, 235, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom left, rgba(12, 55, 69, 0.4) 0%, transparent 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradient-seamless::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(at 40% 20%, rgba(255, 193, 7, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(71, 167, 235, 0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(245, 230, 211, 0.1) 0px, transparent 50%);
+  z-index: 2;
   pointer-events: none;
 }
 
