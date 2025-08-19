@@ -514,6 +514,65 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+/* Process step styling - matches homepage */
+.process-step-number {
+  width: 4rem;
+  height: 4rem;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.process-step-number span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.process-step-number-blue {
+  background: linear-gradient(135deg, var(--primary) 0%, #2C8FD6 100%);
+}
+
+.process-step-number-blue span {
+  color: white;
+}
+
+/* Investment card styling - matches homepage featured cards */
+.investment-card {
+  background: linear-gradient(135deg, var(--primary) 0%, #2C8FD6 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.investment-card h4,
+.investment-card h3 {
+  color: white !important;
+}
+
+.investment-card p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.investment-card li {
+  color: white !important;
+}
+
+.investment-card .btn-primary {
+  background: var(--accent);
+  color: var(--primary-dark) !important;
+}
+
+.investment-card .btn-primary:hover {
+  background: var(--accent-dark);
+}
+
 /* ============================================
    FORMS & INPUTS
    ============================================ */
