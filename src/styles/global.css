@@ -664,40 +664,38 @@ p {
    GRADIENTS & BACKGROUNDS
    ============================================ */
 .gradient-hero {
-  background: transparent;
+  background: linear-gradient(135deg, #0C3745 0%, #1E5A7A 50%, #47A7EB 100%);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
-/* Main soft blob background - balanced contrast version */
+/* Gradient overlay for depth */
 .gradient-hero::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150vw;
-  height: 150%;
-  background: radial-gradient(circle at center, #0C3745 0%, #1E5A7A 20%, #47A7EB 40%, transparent 60%);
-  opacity: 0.9;
-  z-index: -2;
-  filter: blur(80px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top center, rgba(71, 167, 235, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom left, rgba(12, 55, 69, 0.4) 0%, transparent 50%);
+  z-index: 1;
   pointer-events: none;
 }
 
-/* Secondary softer layer for extra smoothness */
+/* Additional gradient mesh for texture */
 .gradient-hero::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 170vw;
-  height: 170%;
-  background: radial-gradient(circle at center, #2C8FD6 0%, transparent 50%);
-  opacity: 0.3;
-  z-index: -1;
-  filter: blur(100px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(at 40% 20%, rgba(255, 193, 7, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(71, 167, 235, 0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(245, 230, 211, 0.1) 0px, transparent 50%);
+  z-index: 2;
   pointer-events: none;
 }
 
