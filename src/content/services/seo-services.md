@@ -181,8 +181,6 @@ Each page we create has a specific purpose and gets the attention it needs - inc
 - Industry authority building
 - Competitive displacement
 
-[Get Your Custom Quote]
-
 ## FAQs
 
 Q: How do I know which phase I need?

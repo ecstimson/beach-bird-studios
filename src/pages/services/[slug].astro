@@ -399,9 +399,9 @@ const processIndustries = (section) => {
                                 </li>
                               ))}
                             </ul>
-                            <button class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all ${card.featured ? 'btn-primary' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
+                            <a href="/contact" class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center ${card.featured ? 'btn-primary' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
                               Get Quote
-                            </button>
+                            </a>
                           </div>
                         ))}
                       </div>
@@ -435,9 +435,9 @@ const processIndustries = (section) => {
                             </li>
                           ))}
                         </ul>
-                        <button class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all ${isFeatured ? 'btn-primary' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
+                        <a href="/contact" class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center ${isFeatured ? 'btn-primary' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
                           Get Quote
-                        </button>
+                        </a>
                       </div>
                     );
                   })}
