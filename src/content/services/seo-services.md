@@ -9,12 +9,6 @@ Headline: Powerful SEO Without Rebuilding Your Website
 Subheadline: Keep your current site on WordPress, Wix, Squarespace, or any platform - we'll make it rank
 CTA: [Get Your Free SEO Audit] [See Our Process]
 
-## Finally, An SEO Solution That Makes Sense
-
-You don't always need a new website. Sometimes you just need to be found.
-
-We offer comprehensive SEO without forcing you to rebuild. Your website stays exactly where it is - we just make it work harder.
-
 ## Our Strategic SEO Process
 
 ### For Local Businesses - The Core 30 Method
@@ -206,8 +200,3 @@ A: Many clients see improvements within 60-90 days, with significant results as 
 Q: What if my site has technical issues?
 A: We fix what we can without rebuilding. If major changes are needed, we'll discuss options.
 
-## Ready to Dominate Your Market?
-
-Stop watching competitors steal your customers. Let's implement a proven SEO strategy that actually works.
-
-[Get Your Free Rank Map Analysis] [Call 910-512-6990]
