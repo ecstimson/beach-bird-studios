@@ -791,8 +791,8 @@ p {
 }
 
 .section-sand {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5E6D3 50%, #FFFFFF 100%);
   position: relative;
-  background: rgba(245, 230, 211, 0.3);
   overflow: hidden;
 }
 
