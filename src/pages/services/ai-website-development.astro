@@ -131,7 +131,7 @@ const comparisonData = [
     </section>
     
     <!-- Process Section -->
-    <section class="section-padding bg-white">
+    <section class="section-padding section-sand">
       <div class="container-width">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
@@ -152,29 +152,6 @@ const comparisonData = [
                 {index + 1}. {step.title}
               </h3>
               <p class="text-gray-600">{step.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-    
-    <!-- Comparison Section -->
-    <section class="section-padding section-sand">
-      <div class="container-width">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
-            AI Development vs Traditional Web Development
-          </h2>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {comparisonData.map((item) => (
-            <div class={`rounded-xl p-8 ${item.icon === 'check' ? 'bg-white border-2 border-beach-blue' : 'bg-gray-100'}`}>
-              <div class={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${item.icon === 'check' ? 'bg-green-100' : 'bg-red-100'}`}>
-                <i data-lucide={item.icon} class={`w-6 h-6 ${item.icon === 'check' ? 'text-green-600' : 'text-red-600'}`}></i>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-              <p class="text-gray-600">{item.description}</p>
             </div>
           ))}
         </div>
@@ -284,7 +261,7 @@ const comparisonData = [
             </div>
           </a>
           
-          <a href="/seo-services" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <a href="/services/seo-services" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <div class="flex items-start">
               <i data-lucide="search" class="w-8 h-8 text-beach-blue mr-4 flex-shrink-0"></i>
               <div>
