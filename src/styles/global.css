@@ -669,51 +669,54 @@ p {
   overflow: visible;
 }
 
-/* Soft gradient background with undefined edges */
+/* Main soft blob background */
 .gradient-hero::before {
   content: '';
   position: absolute;
-  top: -20%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 120vw;
-  height: 140%;
-  background: radial-gradient(ellipse at center, var(--primary-dark) 0%, #1E5A7A 40%, transparent 70%);
-  opacity: 0.95;
+  transform: translate(-50%, -50%);
+  width: 150vw;
+  height: 150%;
+  background: radial-gradient(circle at center, #0C3745 0%, #1E5A7A 25%, transparent 50%);
+  opacity: 0.85;
   z-index: -2;
-  filter: blur(80px);
+  filter: blur(120px);
+  pointer-events: none;
 }
 
-/* Additional soft gradient layer */
+/* Secondary softer layer for extra smoothness */
 .gradient-hero::after {
   content: '';
   position: absolute;
-  top: -10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 120%;
-  background: 
-    radial-gradient(ellipse at top center, var(--primary-dark) 0%, transparent 60%),
-    radial-gradient(ellipse at bottom center, #1E5A7A 0%, transparent 50%);
-  opacity: 0.9;
+  transform: translate(-50%, -50%);
+  width: 200vw;
+  height: 200%;
+  background: radial-gradient(circle at center, #47A7EB 0%, transparent 40%);
+  opacity: 0.3;
   z-index: -1;
+  filter: blur(150px);
+  pointer-events: none;
 }
 
-/* Enhanced gradient mesh background with soft edges */
+/* Ultra-soft gradient mesh overlay */
 .gradient-hero .gradient-overlay {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200vw;
   height: 200%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.2) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(71, 167, 235, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 40% 20%, rgba(245, 230, 211, 0.1) 0%, transparent 35%),
-    radial-gradient(circle at 70% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 35%);
+    radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 70% 60%, rgba(71, 167, 235, 0.1) 0%, transparent 35%),
+    radial-gradient(circle at 50% 30%, rgba(245, 230, 211, 0.08) 0%, transparent 30%);
   animation: gradientShift 20s ease infinite;
   z-index: 0;
+  filter: blur(80px);
+  pointer-events: none;
 }
 
 @keyframes gradientShift {
@@ -722,40 +725,41 @@ p {
   66% { transform: rotate(240deg) scale(0.95); }
 }
 
-/* Floating orbs with softer effect */
+/* Floating orbs with ultra-soft effect */
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
+  filter: blur(100px);
+  opacity: 0.25;
   animation: float 20s infinite;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 193, 7, 0.3), transparent 60%);
-  top: -200px;
-  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.4), transparent 50%);
+  top: -300px;
+  left: -300px;
   animation-delay: 0s;
 }
 
 .hero-orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(71, 167, 235, 0.25), transparent 60%);
-  bottom: -200px;
-  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(71, 167, 235, 0.3), transparent 50%);
+  bottom: -250px;
+  right: -150px;
   animation-delay: 5s;
 }
 
 .hero-orb-3 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(245, 230, 211, 0.3), transparent 60%);
-  top: 40%;
-  left: 50%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(245, 230, 211, 0.35), transparent 50%);
+  top: 30%;
+  left: 60%;
   animation-delay: 10s;
 }
 
