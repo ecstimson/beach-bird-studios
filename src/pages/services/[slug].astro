@@ -27,22 +27,56 @@ const subheadline = entry.data.description || 'Transform your online presence wi
 const rawContent = entry.body;
 const sections = [];
 let currentSection = { title: '', content: [], type: 'content' };
+let heroData = {};
 
 const lines = rawContent.split('\n');
-let skipNextLine = false;
+let skipSection = false;
+let inHeroSection = false;
+let inMetaSection = false;
 
 for (let i = 0; i < lines.length; i++) {
   const line = lines[i];
   
   // Skip the H1 title as it's in the hero
   if (line.startsWith('# ') && !line.startsWith('## ')) {
-    skipNextLine = true;
     continue;
   }
   
-  if (skipNextLine && line.trim() === '') {
-    skipNextLine = false;
+  // Check for special sections to skip or process differently
+  if (line.startsWith('## Meta Information')) {
+    skipSection = true;
+    inMetaSection = true;
     continue;
+  } else if (line.startsWith('## Hero Section')) {
+    skipSection = true;
+    inHeroSection = true;
+    continue;
+  } else if (line.startsWith('## ') && (inMetaSection || inHeroSection)) {
+    skipSection = false;
+    inMetaSection = false;
+    inHeroSection = false;
+  }
+  
+  // Process hero section data
+  if (inHeroSection) {
+    if (line.startsWith('Headline:')) {
+      heroData.headline = line.substring(9).trim();
+    } else if (line.startsWith('Subheadline:')) {
+      heroData.subheadline = line.substring(12).trim();
+    }
+    continue;
+  }
+  
+  // Skip meta section entirely
+  if (inMetaSection || skipSection) {
+    if (line.startsWith('## ') && !line.includes('Meta Information') && !line.includes('Hero Section')) {
+      skipSection = false;
+      inMetaSection = false;
+      inHeroSection = false;
+      // Don't continue, process this line
+    } else {
+      continue;
+    }
   }
   
   // New H2 section
@@ -60,12 +94,18 @@ for (let i = 0; i < lines.length; i++) {
     // Check for special section types
     if (title.toLowerCase().includes('package') || title.toLowerCase().includes('investment') || title.toLowerCase().includes('pricing')) {
       currentSection.type = 'pricing';
-    } else if (title.toLowerCase().includes('perfect for') || title.toLowerCase().includes('industries')) {
+    } else if (title.toLowerCase().includes('perfect for')) {
       currentSection.type = 'industries';
     } else if (title.toLowerCase().includes('process')) {
       currentSection.type = 'process';
     } else if (title.toLowerCase().includes('comparison') || title.includes(' vs ')) {
       currentSection.type = 'comparison';
+    } else if (title.toLowerCase().includes('what we deliver') || title.toLowerCase().includes('beach bird difference')) {
+      currentSection.type = 'features';
+    } else if (title.toLowerCase().includes('real results')) {
+      currentSection.type = 'results';
+    } else if (title.toLowerCase().includes('faq')) {
+      currentSection.type = 'faq';
     }
   } 
   // Check for H3 headers (potential card titles)
@@ -138,8 +178,21 @@ const processPricingCards = (section) => {
   }
   
   allItems.forEach((item) => {
+    // Check for H4 headers (used in SEO services for pricing tiers)
+    if (item.type === 'h4') {
+      if (currentCard) cards.push(currentCard);
+      
+      const parts = item.text.split(' - ');
+      currentCard = {
+        title: parts[0].trim(),
+        tagline: parts[1]?.trim() || '',
+        features: [],
+        description: ''
+      };
+      collectingFeatures = true;
+    }
     // Check for bold card titles like "**Starter Site**" or H3 headers
-    if (item.type === 'card-title' || item.type === 'h3' || 
+    else if (item.type === 'card-title' || item.type === 'h3' || 
         (item.type === 'paragraph' && item.text.startsWith('**') && item.text.includes('**'))) {
       
       if (currentCard) cards.push(currentCard);
@@ -209,10 +262,10 @@ const processIndustries = (section) => {
   
   <!-- Hero Section with Beach Bird blue gradient -->
   <Hero
-    headline={headline}
-    subheadline={subheadline}
-    primaryCTA={{ text: 'Get Started Today', href: '/contact' }}
-    secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+    headline={heroData.headline || headline}
+    subheadline={heroData.subheadline || subheadline}
+    primaryCTA={{ text: 'Get Your Free SEO Audit', href: '/contact' }}
+    secondaryCTA={{ text: 'See Our Process', href: '#process' }}
   />
   
   <!-- Dynamic Sections -->
@@ -363,19 +416,107 @@ const processIndustries = (section) => {
                     </div>
                   );
                 } else {
-                  // Simple process step without phases
+                  // Simple process step without phases - collect bullets as description
+                  const bullets = [];
+                  for (let i = h3Index + 1; i < section.content.length; i++) {
+                    const contentItem = section.content[i];
+                    if (contentItem.type === 'h3') break;
+                    if (contentItem.type === 'bullet') {
+                      bullets.push(contentItem.text);
+                    }
+                  }
+                  
                   return (
                     <div class="text-center">
                       <div class="w-16 h-16 bg-gradient-to-br from-beach-blue to-beach-blue/80 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-white font-bold text-xl">{idx + 1}</span>
                       </div>
                       <h3 class="text-lg font-bold text-gray-900 mb-2">{item.text}</h3>
-                      <p class="text-gray-600 text-sm">
-                        {section.content[h3Index + 1]?.text || ''}
-                      </p>
+                      {bullets.length > 0 ? (
+                        <ul class="text-gray-600 text-sm space-y-1">
+                          {bullets.map((bullet) => (
+                            <li>{bullet}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p class="text-gray-600 text-sm">
+                          {section.content[h3Index + 1]?.text || ''}
+                        </p>
+                      )}
                     </div>
                   );
                 }
+              })}
+            </div>
+          )}
+          
+          {/* FAQ Section */}
+          {section.type === 'faq' && (
+            <div class="space-y-6 max-w-4xl mx-auto">
+              {(() => {
+                const faqs = [];
+                let currentFaq = null;
+                
+                section.content.forEach((item) => {
+                  if (item.type === 'paragraph') {
+                    if (item.text.startsWith('Q:')) {
+                      if (currentFaq && currentFaq.answer) faqs.push(currentFaq);
+                      currentFaq = {
+                        question: item.text.substring(2).trim(),
+                        answer: ''
+                      };
+                    } else if (item.text.startsWith('A:') && currentFaq) {
+                      currentFaq.answer = item.text.substring(2).trim();
+                      faqs.push(currentFaq);
+                      currentFaq = null;
+                    }
+                  }
+                });
+                if (currentFaq && currentFaq.answer) faqs.push(currentFaq);
+                
+                return faqs.map((faq, idx) => (
+                  <div class="bg-white rounded-lg p-6 shadow-md border border-gray-100">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                      {faq.question}
+                    </h3>
+                    <p class="text-gray-600">{faq.answer}</p>
+                  </div>
+                ));
+              })()}
+            </div>
+          )}
+          
+          {/* Results Section */}
+          {section.type === 'results' && (
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {section.content.filter(item => item.type === 'h3').map((item, idx) => {
+                const h3Index = section.content.indexOf(item);
+                const bullets = [];
+                
+                // Collect bullets after this H3 until next H3
+                for (let i = h3Index + 1; i < section.content.length; i++) {
+                  if (section.content[i].type === 'h3') break;
+                  if (section.content[i].type === 'bullet') {
+                    bullets.push(section.content[i].text);
+                  }
+                }
+                
+                return (
+                  <div class="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+                      <i data-lucide="trending-up" class="w-6 h-6 text-beach-blue"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">{item.text}</h3>
+                    <ul class="space-y-2">
+                      {bullets.map((bullet) => (
+                        <li class="flex items-start">
+                          <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                          <span class="text-gray-600 text-sm">{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
               })}
             </div>
           )}
