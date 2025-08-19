@@ -1,3 +1,11 @@
+---
+title: "Plumbing Website Design"
+description: "Website design and development for plumbing website design"
+category: "construction"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Plumbing Website Design - Wilmington NC | Beach Bird Studios
 
 ## Hero

@@ -1,8 +1,17 @@
-# Web Design Raleigh | Beach Bird Studios
+---
+title: "Web Design Raleigh"
+description: "Custom websites for businesses in Raleigh, NC"
+city: "Raleigh"
+state: "NC"
+population: 474708
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Raleigh | Custom Websites for Triangle Businesses"
+  metaDescription: "Raleigh web design experts. Custom websites, AI development, and SEO services for businesses in NC's capital and Research Triangle. Remote collaboration, local "
+  keywords: ["raleigh web design", "web development raleigh nc", "raleigh seo", "website design raleigh", "raleigh digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Raleigh | Custom Websites for Triangle Businesses
-Meta Description: Raleigh web design experts. Custom websites, AI development, and SEO services for businesses in NC's capital and Research Triangle. Remote collaboration, local market expertise. [Free Consultation]
+# Web Design Raleigh | Beach Bird Studios
 
 ## Hero Section
 Headline: Raleigh Web Design for the Research Triangle

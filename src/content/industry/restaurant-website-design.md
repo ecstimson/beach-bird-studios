@@ -1,3 +1,11 @@
+---
+title: "Restaurant Website Design"
+description: "Website design and development for restaurant website design"
+category: "hospitality"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Restaurant Website Design & Online Marketing
 
 ## Meta Information

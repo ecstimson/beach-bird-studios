@@ -1,3 +1,11 @@
+---
+title: "Shopify Seo Services"
+description: "Professional shopify seo services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Shopify SEO Services
 
 Drive more organic sales and dominate e-commerce search results with specialized Shopify SEO optimization designed for online retailers and brands.

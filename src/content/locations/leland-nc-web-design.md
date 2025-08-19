@@ -1,8 +1,16 @@
-# Web Design Leland NC | Beach Bird Studios
+---
+title: "Web Design Leland"
+description: "Custom websites for businesses in Leland, NC"
+city: "Leland"
+state: "NC"
+population: 23504
+seo:
+  metaTitle: "Web Design Leland NC | Custom Websites for Growing Brunswick County"
+  metaDescription: "Leland NC web design specialists. Custom websites for businesses in Brunswick County's fastest-growing community. Local experts serving Leland's booming market."
+  keywords: ["leland web design", "web development leland nc", "leland seo", "website design leland", "leland digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Leland NC | Custom Websites for Growing Brunswick County
-Meta Description: Leland NC web design specialists. Custom websites for businesses in Brunswick County's fastest-growing community. Local experts serving Leland's booming market. [Free Consultation]
+# Web Design Leland NC | Beach Bird Studios
 
 ## Hero Section
 Headline: Leland's Premier Web Design Agency

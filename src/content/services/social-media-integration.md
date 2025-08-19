@@ -1,3 +1,11 @@
+---
+title: "Social Media Integration"
+description: "Professional social media integration services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Social Media Integration That Amplifies Your Marketing
 
 Connect your website and social media channels for seamless customer experiences and maximum marketing impact across all platforms.

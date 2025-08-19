@@ -1,3 +1,11 @@
+---
+title: "Consulting Firm Websites"
+description: "Website design and development for consulting firm websites"
+category: "professional-services"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Professional Consulting Firm Website Design & Development
 
 Position your consulting practice as the trusted advisor of choice with a sophisticated website that demonstrates expertise and attracts high-value clients in Wilmington, NC and beyond.

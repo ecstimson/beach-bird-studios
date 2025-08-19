@@ -1,8 +1,17 @@
-# Web Design Charlotte | Beach Bird Studios
+---
+title: "Web Design Charlotte"
+description: "Custom websites for businesses in Charlotte, NC"
+city: "Charlotte"
+state: "NC"
+population: 897720
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Charlotte | Custom Websites for Queen City Businesses"
+  metaDescription: "Charlotte web design specialists. Custom websites, AI development, and SEO services for businesses in NC's largest city. Remote expertise with local market unde"
+  keywords: ["charlotte web design", "web development charlotte nc", "charlotte seo", "website design charlotte", "charlotte digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Charlotte | Custom Websites for Queen City Businesses
-Meta Description: Charlotte web design specialists. Custom websites, AI development, and SEO services for businesses in NC's largest city. Remote expertise with local market understanding. [Free Consultation]
+# Web Design Charlotte | Beach Bird Studios
 
 ## Hero Section
 Headline: Charlotte Web Design That Competes in the Queen City

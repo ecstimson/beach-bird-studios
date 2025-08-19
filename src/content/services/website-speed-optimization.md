@@ -1,3 +1,11 @@
+---
+title: "Website Speed Optimization"
+description: "Professional website speed optimization services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Website Speed Optimization
 
 ## Page Information

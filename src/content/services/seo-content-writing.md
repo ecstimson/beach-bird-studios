@@ -1,3 +1,11 @@
+---
+title: "Seo Content Writing"
+description: "Professional seo content writing services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # SEO Content Writing Services - Beach Bird Studios
 
 ## Meta Information

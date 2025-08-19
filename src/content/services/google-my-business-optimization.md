@@ -1,3 +1,11 @@
+---
+title: "Google My Business Optimization"
+description: "Professional google my business optimization services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Google My Business Optimization - Beach Bird Studios
 
 ## Meta Information

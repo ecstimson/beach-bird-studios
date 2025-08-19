@@ -1,3 +1,11 @@
+---
+title: "Framer Training"
+description: "Professional framer training services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Professional Framer Training & Workshops
 
 Master Framer design and development with expert training from Beach Bird Studios in Wilmington, NC.

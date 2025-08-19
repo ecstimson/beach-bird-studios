@@ -1,3 +1,11 @@
+---
+title: "One Page Website Design"
+description: "Professional one page website design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # One Page Website Design
 
 ## Page Information

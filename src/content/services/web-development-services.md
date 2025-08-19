@@ -1,3 +1,11 @@
+---
+title: "Web Development Services"
+description: "Professional web development services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Web Development Services
 
 ## Page Information

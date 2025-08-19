@@ -1,8 +1,16 @@
-# Web Design Wrightsville Beach | Beach Bird Studios
+---
+title: "Web Design Wrightsville Beach"
+description: "Custom websites for businesses in Wrightsville Beach, NC"
+city: "Wrightsville Beach"
+state: "NC"
+population: 2500
+seo:
+  metaTitle: "Web Design Wrightsville Beach | Premium Coastal Websites & SEO"
+  metaDescription: "Wrightsville Beach web design specialists. Custom websites for coastal businesses, vacation rentals, and marine services. Local experts who understand island li"
+  keywords: ["wrightsville beach web design", "web development wrightsville beach nc", "wrightsville beach seo", "website design wrightsville beach", "wrightsville beach digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Wrightsville Beach | Premium Coastal Websites & SEO
-Meta Description: Wrightsville Beach web design specialists. Custom websites for coastal businesses, vacation rentals, and marine services. Local experts who understand island life. [Free Consultation]
+# Web Design Wrightsville Beach | Beach Bird Studios
 
 ## Hero Section
 Headline: Wrightsville Beach's Premier Web Design Agency

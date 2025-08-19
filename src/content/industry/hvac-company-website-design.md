@@ -1,3 +1,11 @@
+---
+title: "Hvac Company Website Design"
+description: "Website design and development for hvac company website design"
+category: "construction"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # HVAC Company Website Design - Wilmington NC | Beach Bird Studios
 
 ## Hero

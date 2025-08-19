@@ -1,3 +1,11 @@
+---
+title: "Electrical Contractor Websites"
+description: "Website design and development for electrical contractor websites"
+category: "construction"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Electrical Contractor Website Design - Wilmington NC | Beach Bird Studios
 
 ## Hero

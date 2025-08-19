@@ -1,3 +1,11 @@
+---
+title: "Wordpress Vs Wix"
+description: "Professional wordpress vs wix services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # WordPress vs Wix - Which Is Right for Your Business?
 
 ## Meta Information

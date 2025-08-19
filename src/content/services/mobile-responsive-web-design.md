@@ -1,3 +1,11 @@
+---
+title: "Mobile Responsive Web Design"
+description: "Professional mobile responsive web design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Mobile Responsive Web Design
 
 ## Page Information

@@ -1,8 +1,16 @@
-# Web Design Oak Island | Beach Bird Studios
+---
+title: "Web Design Oak Island"
+description: "Custom websites for businesses in Oak Island, NC"
+city: "Oak Island"
+state: "NC"
+population: 8500
+seo:
+  metaTitle: "Web Design Oak Island | Custom Websites for Island Community Businesses"
+  metaDescription: "Oak Island web design specialists. Custom websites for vacation rentals, golf courses, and community businesses. Capture the friendly island lifestyle online. ["
+  keywords: ["oak island web design", "web development oak island nc", "oak island seo", "website design oak island", "oak island digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Oak Island | Custom Websites for Island Community Businesses
-Meta Description: Oak Island web design specialists. Custom websites for vacation rentals, golf courses, and community businesses. Capture the friendly island lifestyle online. [Free Consultation]
+# Web Design Oak Island | Beach Bird Studios
 
 ## Hero Section
 Headline: Oak Island's Premier Web Design Partners

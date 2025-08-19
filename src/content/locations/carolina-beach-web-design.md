@@ -1,8 +1,16 @@
-# Web Design Carolina Beach | Beach Bird Studios
+---
+title: "Web Design Carolina Beach"
+description: "Custom websites for businesses in Carolina Beach, NC"
+city: "Carolina Beach"
+state: "NC"
+population: 6500
+seo:
+  metaTitle: "Web Design Carolina Beach | Custom Websites for Boardwalk Businesses"
+  metaDescription: "Carolina Beach web design experts. Custom websites for restaurants, vacation rentals, and entertainment venues. Capture the classic boardwalk experience online."
+  keywords: ["carolina beach web design", "web development carolina beach nc", "carolina beach seo", "website design carolina beach", "carolina beach digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Carolina Beach | Custom Websites for Boardwalk Businesses
-Meta Description: Carolina Beach web design experts. Custom websites for restaurants, vacation rentals, and entertainment venues. Capture the classic boardwalk experience online. [Free Consultation]
+# Web Design Carolina Beach | Beach Bird Studios
 
 ## Hero Section
 Headline: Carolina Beach's Web Design Specialists

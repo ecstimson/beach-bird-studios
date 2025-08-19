@@ -1,8 +1,16 @@
-# Web Design Topsail Island | Beach Bird Studios
+---
+title: "Web Design Topsail Island"
+description: "Custom websites for businesses in Topsail Island, NC"
+city: "Topsail Island"
+state: "NC"
+population: 3500
+seo:
+  metaTitle: "Web Design Topsail Island | Custom Websites for Island Businesses"
+  metaDescription: "Topsail Island web design experts. Custom websites for vacation rentals, restaurants, and marine businesses. Capture the pristine island experience online. [Fre"
+  keywords: ["topsail island web design", "web development topsail island nc", "topsail island seo", "website design topsail island", "topsail island digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Topsail Island | Custom Websites for Island Businesses
-Meta Description: Topsail Island web design experts. Custom websites for vacation rentals, restaurants, and marine businesses. Capture the pristine island experience online. [Free Consultation]
+# Web Design Topsail Island | Beach Bird Studios
 
 ## Hero Section
 Headline: Topsail Island's Digital Design Specialists

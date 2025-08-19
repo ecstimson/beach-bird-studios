@@ -1,3 +1,11 @@
+---
+title: "Cafe Website Design"
+description: "Website design and development for cafe website design"
+category: "hospitality"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Cafe Website Design & Digital Marketing
 
 ## Meta Information

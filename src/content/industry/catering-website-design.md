@@ -1,3 +1,11 @@
+---
+title: "Catering Website Design"
+description: "Website design and development for catering website design"
+category: "hospitality"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Catering Website Design & Event Marketing
 
 ## Meta Information

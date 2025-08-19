@@ -1,3 +1,11 @@
+---
+title: "Personal Injury Lawyer Websites"
+description: "Website design and development for personal injury lawyer websites"
+category: "legal"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Personal Injury Lawyer Website Design & SEO
 
 ## Meta Information

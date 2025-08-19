@@ -1,8 +1,16 @@
-# Web Design Surf City | Beach Bird Studios
+---
+title: "Web Design Surf City"
+description: "Custom websites for businesses in Surf City, NC"
+city: "Surf City"
+state: "NC"
+population: 2500
+seo:
+  metaTitle: "Web Design Surf City | Custom Websites for Topsail Island Businesses"
+  metaDescription: "Surf City web design experts. Custom websites for surf shops, vacation rentals, and island businesses. Capture the surf culture and family-friendly island vibe "
+  keywords: ["surf city web design", "web development surf city nc", "surf city seo", "website design surf city", "surf city digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Surf City | Custom Websites for Topsail Island Businesses
-Meta Description: Surf City web design experts. Custom websites for surf shops, vacation rentals, and island businesses. Capture the surf culture and family-friendly island vibe online. [Free Consultation]
+# Web Design Surf City | Beach Bird Studios
 
 ## Hero Section
 Headline: Surf City's Island Web Design Experts

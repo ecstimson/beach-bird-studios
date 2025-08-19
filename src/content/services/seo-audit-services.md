@@ -1,3 +1,11 @@
+---
+title: "Seo Audit Services"
+description: "Professional seo audit services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # SEO Audit Services - Beach Bird Studios
 
 ## Meta Information

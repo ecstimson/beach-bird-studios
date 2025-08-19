@@ -1,3 +1,11 @@
+---
+title: "Small Business Website Design"
+description: "Professional small business website design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Small Business Website Design
 
 ## Page Information

@@ -1,3 +1,11 @@
+---
+title: "Affordable Website Design"
+description: "Professional affordable website design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Affordable Website Design
 
 ## Page Information

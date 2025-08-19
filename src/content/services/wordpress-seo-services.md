@@ -1,3 +1,11 @@
+---
+title: "Wordpress Seo Services"
+description: "Professional wordpress seo services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # WordPress SEO Services - Beach Bird Studios
 
 ## Meta Information

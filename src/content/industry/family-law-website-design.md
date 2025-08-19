@@ -1,3 +1,11 @@
+---
+title: "Family Law Website Design"
+description: "Website design and development for family law website design"
+category: "legal"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Family Law Website Design & Legal Marketing
 
 ## Meta Information

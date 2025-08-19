@@ -1,8 +1,17 @@
-# Web Design Asheville | Beach Bird Studios
+---
+title: "Web Design Asheville"
+description: "Custom websites for businesses in NC's creative mountain city"
+city: "Asheville"
+state: "NC"
+population: 94589
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Asheville | Custom Websites for Land of the Sky"
+  metaDescription: "Asheville web design experts. Custom websites, AI development, and SEO services for NC's creative mountain city businesses."
+  keywords: ["asheville web design", "web development asheville nc", "asheville seo", "website design asheville", "asheville digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Asheville | Custom Websites for Land of the Sky
-Meta Description: Asheville web design experts. Custom websites, AI development, and SEO services for businesses in NC's creative mountain city. Artistic innovation meets outdoor adventure. [Free Consultation]
+# Web Design Asheville | Beach Bird Studios
 
 ## Hero Section
 Headline: Asheville Web Design for the Land of the Sky

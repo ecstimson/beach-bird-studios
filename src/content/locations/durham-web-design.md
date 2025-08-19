@@ -1,8 +1,17 @@
-# Web Design Durham | Beach Bird Studios
+---
+title: "Web Design Durham"
+description: "Custom websites for businesses in Durham, NC"
+city: "Durham"
+state: "NC"
+population: 283506
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Durham | Custom Websites for Bull City Businesses"
+  metaDescription: "Durham web design experts. Custom websites, AI development, and SEO services for businesses in NC's Bull City. Research Triangle innovation meets Southern cultu"
+  keywords: ["durham web design", "web development durham nc", "durham seo", "website design durham", "durham digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Durham | Custom Websites for Bull City Businesses
-Meta Description: Durham web design experts. Custom websites, AI development, and SEO services for businesses in NC's Bull City. Research Triangle innovation meets Southern culture. [Free Consultation]
+# Web Design Durham | Beach Bird Studios
 
 ## Hero Section
 Headline: Durham Web Design for the City of Medicine

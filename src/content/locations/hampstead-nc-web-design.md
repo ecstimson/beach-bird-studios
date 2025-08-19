@@ -1,8 +1,16 @@
-# Web Design Hampstead NC | Beach Bird Studios
+---
+title: "Web Design Hampstead"
+description: "Custom websites for businesses in Hampstead, NC"
+city: "Hampstead"
+state: "NC"
+population: 8500
+seo:
+  metaTitle: "Web Design Hampstead NC | Custom Websites for Growing Community Businesses"
+  metaDescription: "Hampstead NC web design specialists. Custom websites for family businesses, professional services, and coastal community enterprises. Capture small-town growth "
+  keywords: ["hampstead web design", "web development hampstead nc", "hampstead seo", "website design hampstead", "hampstead digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Hampstead NC | Custom Websites for Growing Community Businesses
-Meta Description: Hampstead NC web design specialists. Custom websites for family businesses, professional services, and coastal community enterprises. Capture small-town growth and opportunity. [Free Consultation]
+# Web Design Hampstead NC | Beach Bird Studios
 
 ## Hero Section
 Headline: Hampstead's Digital Growth Partners

@@ -1,3 +1,11 @@
+---
+title: "Criminal Defense Attorney Websites"
+description: "Website design and development for criminal defense attorney websites"
+category: "legal"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Criminal Defense Attorney Website Design & Legal SEO
 
 ## Meta Information

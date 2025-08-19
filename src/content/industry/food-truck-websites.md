@@ -1,3 +1,11 @@
+---
+title: "Food Truck Websites"
+description: "Website design and development for food truck websites"
+category: "hospitality"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Food Truck Website Design & Mobile Marketing
 
 ## Meta Information

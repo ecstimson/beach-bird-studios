@@ -1,3 +1,11 @@
+---
+title: "Accounting Firm Websites"
+description: "Website design and development for accounting firm websites"
+category: "professional-services"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Professional Accounting Firm Website Design & Development
 
 Transform your accounting practice with a professional website that builds trust, demonstrates expertise, and attracts quality clients in Wilmington, NC and beyond.

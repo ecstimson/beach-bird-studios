@@ -1,3 +1,11 @@
+---
+title: "Blog Writing Services"
+description: "Professional blog writing services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Professional Blog Writing Services That Drive Traffic and Leads
 
 Get consistent, SEO-optimized blog content that positions your Wilmington business as the go-to expert in your industry.

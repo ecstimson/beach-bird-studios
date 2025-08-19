@@ -1,3 +1,11 @@
+---
+title: "Seo Services"
+description: "Professional seo services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Platform-Agnostic SEO Services - Beach Bird Studios
 
 ## Meta Information

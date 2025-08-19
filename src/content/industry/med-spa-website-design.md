@@ -1,3 +1,11 @@
+---
+title: "Med Spa Website Design"
+description: "Website design and development for med spa website design"
+category: "healthcare"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Med Spa Website Design & SEO
 
 ## Meta Information

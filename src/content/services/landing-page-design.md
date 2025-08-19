@@ -1,3 +1,11 @@
+---
+title: "Landing Page Design"
+description: "Professional landing page design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Landing Page Design
 
 ## Page Information

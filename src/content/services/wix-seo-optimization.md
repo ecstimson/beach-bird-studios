@@ -1,3 +1,11 @@
+---
+title: "Wix Seo Optimization"
+description: "Professional wix seo optimization services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Wix SEO Optimization Services
 
 Transform your Wix website into a search engine powerhouse with expert SEO optimization that drives real results for Wilmington, NC businesses.

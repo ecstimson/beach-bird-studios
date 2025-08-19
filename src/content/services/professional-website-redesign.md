@@ -1,3 +1,11 @@
+---
+title: "Professional Website Redesign"
+description: "Professional professional website redesign services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Professional Website Redesign
 
 ## Page Information

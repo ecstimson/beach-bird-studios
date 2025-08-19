@@ -1,8 +1,16 @@
-# Web Design Southport NC | Beach Bird Studios
+---
+title: "Web Design Southport"
+description: "Custom websites for businesses in Southport, NC"
+city: "Southport"
+state: "NC"
+population: 3971
+seo:
+  metaTitle: "Web Design Southport NC | Custom Websites for Historic Port Businesses"
+  metaDescription: "Southport NC web design experts. Custom websites for historic district businesses, waterfront dining, and coastal services. Capture the charming port town atmos"
+  keywords: ["southport web design", "web development southport nc", "southport seo", "website design southport", "southport digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Southport NC | Custom Websites for Historic Port Businesses
-Meta Description: Southport NC web design experts. Custom websites for historic district businesses, waterfront dining, and coastal services. Capture the charming port town atmosphere online. [Free Consultation]
+# Web Design Southport NC | Beach Bird Studios
 
 ## Hero Section
 Headline: Southport's Historic Port Web Design Specialists

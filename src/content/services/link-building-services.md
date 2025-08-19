@@ -1,3 +1,11 @@
+---
+title: "Link Building Services"
+description: "Professional link building services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Link Building Services
 
 Build domain authority and search rankings with strategic, white-hat link building campaigns that establish your Wilmington, NC business as an industry leader.

@@ -1,3 +1,9 @@
+---
+title: "Design Principals"
+description: "Design principles and guidelines for design principals"
+category: "design"
+---
+
 # S-Tier SaaS Dashboard Design Checklist (Inspired by Stripe, Airbnb, Linear)
 
 ## I. Core Design Philosophy & Strategy

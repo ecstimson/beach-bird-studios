@@ -1,8 +1,17 @@
-# Web Design Fayetteville | Beach Bird Studios
+---
+title: "Web Design Fayetteville"
+description: "Custom websites for businesses in Fayetteville, NC"
+city: "Fayetteville"
+state: "NC"
+population: 211657
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Fayetteville | Custom Websites for Fort Liberty Community"
+  metaDescription: "Fayetteville web design experts. Custom websites, AI development, and SEO services for businesses serving the Fort Liberty military community. Proud military to"
+  keywords: ["fayetteville web design", "web development fayetteville nc", "fayetteville seo", "website design fayetteville", "fayetteville digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Fayetteville | Custom Websites for Fort Liberty Community
-Meta Description: Fayetteville web design experts. Custom websites, AI development, and SEO services for businesses serving the Fort Liberty military community. Proud military town digital solutions. [Free Consultation]
+# Web Design Fayetteville | Beach Bird Studios
 
 ## Hero Section
 Headline: Fayetteville Web Design for America's Premier Military Community

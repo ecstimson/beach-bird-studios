@@ -1,8 +1,17 @@
-# Web Design & SEO Services in Wilmington, NC
+---
+title: "Web Design Wilmington"
+description: "Custom websites for businesses in Wilmington, NC"
+city: "Wilmington"
+state: "NC"
+population: 123744
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Wilmington NC | AI-Powered Websites & SEO"
+  metaDescription: "Wilmington's premier web design & SEO agency. Custom websites, AI development with 100+ pages, or SEO for your current site. Local experts. [Free Consultation]"
+  keywords: ["wilmington web design", "web development wilmington nc", "wilmington seo", "website design wilmington", "wilmington digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Wilmington NC | AI-Powered Websites & SEO
-Meta Description: Wilmington's premier web design & SEO agency. Custom websites, AI development with 100+ pages, or SEO for your current site. Local experts. [Free Consultation]
+# Web Design & SEO Services in Wilmington, NC
 
 ## Hero Section
 Headline: Wilmington's Premier Web Design & SEO Agency

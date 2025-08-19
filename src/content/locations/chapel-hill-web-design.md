@@ -1,8 +1,17 @@
-# Web Design Chapel Hill | Beach Bird Studios
+---
+title: "Web Design Chapel Hill"
+description: "Custom websites for businesses in Chapel Hill, NC"
+city: "Chapel Hill"
+state: "NC"
+population: 61960
+marketSize: "medium"
+seo:
+  metaTitle: "Web Design Chapel Hill | Custom Websites for Southern Part of Heaven"
+  metaDescription: "Chapel Hill web design experts. Custom websites, AI development, and SEO services for businesses in NC's Southern Part of Heaven. University town excellence mee"
+  keywords: ["chapel hill web design", "web development chapel hill nc", "chapel hill seo", "website design chapel hill", "chapel hill digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Chapel Hill | Custom Websites for Southern Part of Heaven
-Meta Description: Chapel Hill web design experts. Custom websites, AI development, and SEO services for businesses in NC's Southern Part of Heaven. University town excellence meets entrepreneurial spirit. [Free Consultation]
+# Web Design Chapel Hill | Beach Bird Studios
 
 ## Hero Section
 Headline: Chapel Hill Web Design for the Southern Part of Heaven

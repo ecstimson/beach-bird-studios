@@ -1,8 +1,17 @@
-# Web Design Cary | Beach Bird Studios
+---
+title: "Web Design Cary"
+description: "Custom websites for businesses in Cary, NC"
+city: "Cary"
+state: "NC"
+population: 174721
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Cary | Custom Websites for Technology Town Businesses"
+  metaDescription: "Cary web design experts. Custom websites, AI development, and SEO services for businesses in NC's Technology Town. Professional excellence for educated markets."
+  keywords: ["cary web design", "web development cary nc", "cary seo", "website design cary", "cary digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Cary | Custom Websites for Technology Town Businesses
-Meta Description: Cary web design experts. Custom websites, AI development, and SEO services for businesses in NC's Technology Town. Professional excellence for educated markets. [Free Consultation]
+# Web Design Cary | Beach Bird Studios
 
 ## Hero Section
 Headline: Cary Web Design for Technology Town Excellence

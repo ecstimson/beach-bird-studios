@@ -1,3 +1,11 @@
+---
+title: "Ai Web Development"
+description: "Professional ai web development services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # AI-Powered Website Development - Beach Bird Studios
 
 ## Meta Information

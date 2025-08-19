@@ -1,3 +1,11 @@
+---
+title: "Veterinary Clinic Website Design"
+description: "Website design and development for veterinary clinic website design"
+category: "healthcare"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Veterinary Clinic Website Design & SEO
 
 ## Meta Information

@@ -1,3 +1,13 @@
+---
+title: "Beach Bird Studios Homepage"
+description: "Premium web design, AI development, and SEO services in Wilmington, NC"
+hero:
+  headline: "Premium Websites & SEO That Actually Work"
+  subheadline: "Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website"
+  ctaPrimary: "Start Your Project"
+  ctaSecondary: "See Our Process"
+---
+
 # Homepage - Beach Bird Studios
 
 ## Meta Information

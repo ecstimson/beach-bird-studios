@@ -1,3 +1,11 @@
+---
+title: "Urgent Care Website Design"
+description: "Website design and development for urgent care website design"
+category: "healthcare"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Urgent Care Website Design & SEO
 
 ## Meta Information

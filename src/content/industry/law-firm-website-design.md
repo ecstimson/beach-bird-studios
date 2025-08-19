@@ -1,3 +1,11 @@
+---
+title: "Law Firm Website Design"
+description: "Website design and development for law firm website design"
+category: "legal"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Law Firm Website Design & Legal SEO
 
 ## Meta Information

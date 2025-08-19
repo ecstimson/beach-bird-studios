@@ -1,3 +1,11 @@
+---
+title: "Ecommerce Website Design"
+description: "Professional ecommerce website design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Ecommerce Website Design
 
 ## Page Information

@@ -1,3 +1,11 @@
+---
+title: "Local Seo Services"
+description: "Professional local seo services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Local SEO Services Wilmington NC - Beach Bird Studios
 
 ## Meta Information

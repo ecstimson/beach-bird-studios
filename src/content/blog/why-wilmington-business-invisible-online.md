@@ -1,3 +1,14 @@
+---
+title: "Why Wilmington Business Invisible Online"
+description: "Learn about why wilmington business invisible online"
+author: "Beach Bird Studios"
+publishDate: 2025-08-19
+featured: false
+draft: false
+tags: ["web design", "seo", "business"]
+category: "business"
+---
+
 # Why Your Wilmington Business Is Invisible Online (And How to Fix It)
 
 ## Meta Information

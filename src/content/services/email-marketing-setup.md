@@ -1,3 +1,11 @@
+---
+title: "Email Marketing Setup"
+description: "Professional email marketing setup services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Email Marketing Setup That Turns Subscribers Into Customers
 
 Build an automated email marketing system that nurtures leads and drives consistent sales for your Wilmington business.

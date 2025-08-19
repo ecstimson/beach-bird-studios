@@ -1,3 +1,11 @@
+---
+title: "Bar Website Design"
+description: "Website design and development for bar website design"
+category: "hospitality"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Bar Website Design & Nightlife Marketing
 
 ## Meta Information

@@ -1,3 +1,9 @@
+---
+title: "Design Review Claude"
+description: "Design principles and guidelines for design review claude"
+category: "design"
+---
+
 ## Visual Development
 
 ### Design Principles

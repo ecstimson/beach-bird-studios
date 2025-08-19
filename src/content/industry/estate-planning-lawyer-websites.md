@@ -1,3 +1,11 @@
+---
+title: "Estate Planning Lawyer Websites"
+description: "Website design and development for estate planning lawyer websites"
+category: "legal"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Estate Planning Lawyer Website Design & Legal Marketing
 
 ## Meta Information

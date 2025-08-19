@@ -1,3 +1,11 @@
+---
+title: "Custom Code Development"
+description: "Professional custom code development services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Custom Code Development Services - Beach Bird Studios
 
 ## Meta Information

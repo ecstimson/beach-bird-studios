@@ -1,3 +1,11 @@
+---
+title: "Monthly Seo Management"
+description: "Professional monthly seo management services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Monthly SEO Management Services - Beach Bird Studios
 
 ## Meta Information

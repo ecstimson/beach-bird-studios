@@ -1,3 +1,11 @@
+---
+title: "Framer Vs Wordpress"
+description: "Professional framer vs wordpress services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Framer vs WordPress - Which Is Right for Your Business?
 
 ## Meta Information

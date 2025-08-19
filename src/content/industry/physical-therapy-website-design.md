@@ -1,3 +1,11 @@
+---
+title: "Physical Therapy Website Design"
+description: "Website design and development for physical therapy website design"
+category: "healthcare"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Physical Therapy Website Design & SEO
 
 ## Meta Information

@@ -1,8 +1,16 @@
-# Web Design Kure Beach | Beach Bird Studios
+---
+title: "Web Design Kure Beach"
+description: "Custom websites for businesses in Kure Beach, NC"
+city: "Kure Beach"
+state: "NC"
+population: 2200
+seo:
+  metaTitle: "Web Design Kure Beach | Custom Websites for Coastal Businesses"
+  metaDescription: "Kure Beach web design specialists. Custom websites for fishing businesses, vacation rentals, and family-friendly enterprises. Capture the authentic fishing vill"
+  keywords: ["kure beach web design", "web development kure beach nc", "kure beach seo", "website design kure beach", "kure beach digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Kure Beach | Custom Websites for Coastal Businesses
-Meta Description: Kure Beach web design specialists. Custom websites for fishing businesses, vacation rentals, and family-friendly enterprises. Capture the authentic fishing village charm online. [Free Consultation]
+# Web Design Kure Beach | Beach Bird Studios
 
 ## Hero Section
 Headline: Kure Beach's Premier Web Design Team

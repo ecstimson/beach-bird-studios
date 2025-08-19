@@ -1,3 +1,11 @@
+---
+title: "Figma Web Design"
+description: "Professional figma web design services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Expert Figma Web Design Services
 
 Transform your ideas into stunning web designs with professional Figma expertise from Beach Bird Studios in Wilmington, NC.

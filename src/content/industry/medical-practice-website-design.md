@@ -1,3 +1,11 @@
+---
+title: "Medical Practice Website Design"
+description: "Website design and development for medical practice website design"
+category: "healthcare"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Medical Practice Website Design & SEO
 
 ## Meta Information

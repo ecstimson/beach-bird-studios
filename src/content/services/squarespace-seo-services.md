@@ -1,3 +1,11 @@
+---
+title: "Squarespace Seo Services"
+description: "Professional squarespace seo services services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Squarespace SEO Services
 
 Maximize your Squarespace website's search potential with expert SEO optimization designed specifically for the platform's unique architecture and capabilities.

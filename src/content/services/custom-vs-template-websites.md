@@ -1,3 +1,11 @@
+---
+title: "Custom Vs Template Websites"
+description: "Professional custom vs template websites services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Custom vs Template Websites - Which Is Right for Your Business?
 
 ## Meta Information

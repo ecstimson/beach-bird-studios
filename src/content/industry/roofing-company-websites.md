@@ -1,3 +1,11 @@
+---
+title: "Roofing Company Websites"
+description: "Website design and development for roofing company websites"
+category: "construction"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Roofing Company Website Design - Wilmington NC | Beach Bird Studios
 
 ## Hero

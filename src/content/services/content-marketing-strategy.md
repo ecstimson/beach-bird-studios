@@ -1,3 +1,11 @@
+---
+title: "Content Marketing Strategy"
+description: "Professional content marketing strategy services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Content Marketing Strategy That Drives Real Business Results
 
 Transform your Wilmington business with strategic content that attracts, engages, and converts your ideal customers into loyal clients.

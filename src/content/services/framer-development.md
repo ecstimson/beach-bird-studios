@@ -1,3 +1,11 @@
+---
+title: "Framer Development"
+description: "Professional framer development services for businesses"
+featured: false
+priority: 50
+tags: ["web design", "development", "seo"]
+---
+
 # Expert Framer Development Services - Beach Bird Studios
 
 ## Meta Information

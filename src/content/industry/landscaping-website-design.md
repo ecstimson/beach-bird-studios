@@ -1,3 +1,11 @@
+---
+title: "Landscaping Website Design"
+description: "Website design and development for landscaping website design"
+category: "construction"
+challenges: ["online visibility", "lead generation", "competition"]
+solutions: ["custom design", "seo optimization", "conversion optimization"]
+---
+
 # Landscaping Website Design - Wilmington NC | Beach Bird Studios
 
 ## Hero

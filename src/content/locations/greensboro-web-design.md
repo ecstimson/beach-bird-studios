@@ -1,8 +1,17 @@
-# Web Design Greensboro | Beach Bird Studios
+---
+title: "Web Design Greensboro"
+description: "Custom websites for businesses in Greensboro, NC"
+city: "Greensboro"
+state: "NC"
+population: 299035
+marketSize: "large"
+seo:
+  metaTitle: "Web Design Greensboro | Custom Websites for Triad Businesses"
+  metaDescription: "Greensboro web design experts. Custom websites, AI development, and SEO services for businesses in NC's Triad region. Remote collaboration, local market experti"
+  keywords: ["greensboro web design", "web development greensboro nc", "greensboro seo", "website design greensboro", "greensboro digital marketing"]
+---
 
-## Meta Information
-Title: Web Design Greensboro | Custom Websites for Triad Businesses
-Meta Description: Greensboro web design experts. Custom websites, AI development, and SEO services for businesses in NC's Triad region. Remote collaboration, local market expertise. [Free Consultation]
+# Web Design Greensboro | Beach Bird Studios
 
 ## Hero Section
 Headline: Greensboro Web Design for the Heart of the Triad
