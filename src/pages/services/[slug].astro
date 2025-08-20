@@ -409,15 +409,8 @@ const processIndustries = (section: Section): Industry[] => {
   
   <!-- Dynamic Sections -->
   {sections.map((section, index) => {
-    // Use sand background for process sections
-    let bgClass = 'bg-white';
-    if (section.type === 'process') {
-      bgClass = 'section-sand';
-    } else if (index % 3 === 1) {
-      bgClass = 'bg-beach-cream/30';
-    } else if (index % 3 === 2) {
-      bgClass = 'bg-gray-50';
-    }
+    // Alternate backgrounds between white and gray
+    const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
     
     return (
       <section class={`py-16 ${bgClass}`}>
@@ -444,7 +437,7 @@ const processIndustries = (section: Section): Industry[] => {
                       <h3 class="text-2xl font-bold text-gray-900 mb-6">{packageType}</h3>
                       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {cards.map((card) => (
-                          <div class={`rounded-xl p-8 ${card.featured ? 'investment-card' : 'bg-white shadow-lg'}`}>
+                          <div class={`rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow ${card.featured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/90 text-white scale-105' : 'bg-white border border-gray-100'}`}>
                             <h4 class={`text-xl font-bold mb-2 ${card.featured ? 'text-white' : 'text-gray-900'}`}>
                               {card.title}
                             </h4>

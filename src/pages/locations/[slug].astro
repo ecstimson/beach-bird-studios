@@ -245,13 +245,8 @@ const locationFeatures = [
     
     <!-- Dynamic Content Sections -->
     {sections.map((section, index) => {
-      // Rotate backgrounds
-      let bgClass = 'bg-white';
-      if (index % 3 === 1) {
-        bgClass = 'bg-beach-cream/30';
-      } else if (index % 3 === 2) {
-        bgClass = 'bg-gray-50';
-      }
+      // Alternate backgrounds between white and gray
+      const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
       
       return (
         <section class={`section-padding ${bgClass}`}>
@@ -268,7 +263,7 @@ const locationFeatures = [
             {section.type === 'industries' && (
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {processIndustries(section).map((industry: any) => (
-                  <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-beach-blue/20 hover:scale-105 card-hover">
+                  <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 hover:border-beach-blue/20">
                     <div class="w-12 h-12 bg-gradient-to-br from-beach-blue to-beach-blue/70 rounded-lg flex items-center justify-center mb-4">
                       <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
                     </div>
@@ -282,7 +277,7 @@ const locationFeatures = [
             {/* Service Area Coverage */}
             {section.type === 'service-area' && (
               <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-beach-blue/5 to-beach-sand/20 rounded-2xl p-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {section.content.map((item: any) => {
                       if (item.type === 'bold-line') {
@@ -320,7 +315,7 @@ const locationFeatures = [
                     const isFeatured = idx === 1; // Middle card featured
                     
                     return (
-                      <div class={`rounded-xl p-8 ${isFeatured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/90 text-white shadow-2xl scale-105' : 'bg-white shadow-lg border border-gray-100'}`}>
+                      <div class={`rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow ${isFeatured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/90 text-white scale-105' : 'bg-white border border-gray-100'}`}>
                         {isFeatured && (
                           <div class="text-center mb-4">
                             <span class="bg-beach-yellow text-beach-dark px-4 py-1 rounded-full text-sm font-semibold">MOST POPULAR</span>
@@ -412,7 +407,7 @@ const locationFeatures = [
     })}
     
     <!-- Services CTA -->
-    <section class="section-padding section-sand">
+    <section class="section-padding bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
