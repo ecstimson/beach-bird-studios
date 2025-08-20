@@ -371,7 +371,23 @@ const processIndustries = (section: Section): Industry[] => {
 };
 ---
 
-<Layout title={entry.data.title || entry.slug} description={entry.data.description}>
+<Layout 
+  title={entry.data.title || entry.slug} 
+  description={entry.data.description}
+  structuredDataType="Service"
+  structuredData={{
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Services', url: '/services' },
+      { name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug, url: `/services/${entry.slug}` }
+    ],
+    service: {
+      name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug,
+      type: 'SEO Service',
+      description: entry.data.description || 'Professional SEO and web services for North Carolina businesses.'
+    }
+  }}
+>
   <Header />
   
   <!-- Hero Section with Beach Bird blue gradient -->

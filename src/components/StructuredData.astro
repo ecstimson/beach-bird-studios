@@ -1,0 +1,242 @@
+---
+export interface Props {
+  type?: 'LocalBusiness' | 'WebPage' | 'BreadcrumbList' | 'FAQPage' | 'Service';
+  data?: any;
+}
+
+const { type = 'LocalBusiness', data = {} } = Astro.props;
+
+// LocalBusiness Schema for Beach Bird Studios
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://beachbirdstudios.com/#business",
+  "name": "Beach Bird Studios",
+  "image": "https://beachbirdstudios.com/images/logo.svg",
+  "logo": "https://beachbirdstudios.com/images/logo.svg",
+  "url": "https://beachbirdstudios.com",
+  "telephone": "+1-910-512-6990",
+  "email": "hello@beachbirdstudios.com",
+  "description": "Professional web design, AI website development, and SEO services in Wilmington, NC. Fast delivery, local expertise, and proven results for North Carolina businesses.",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Wilmington",
+    "addressRegion": "NC",
+    "postalCode": "28401",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.2257,
+    "longitude": -77.9447
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Wilmington",
+      "containedIn": {
+        "@type": "State",
+        "name": "North Carolina"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Wrightsville Beach",
+      "containedIn": {
+        "@type": "State",
+        "name": "North Carolina"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Carolina Beach",
+      "containedIn": {
+        "@type": "State",
+        "name": "North Carolina"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Kure Beach",
+      "containedIn": {
+        "@type": "State",
+        "name": "North Carolina"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Hampstead",
+      "containedIn": {
+        "@type": "State",
+        "name": "North Carolina"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Leland",
+      "containedIn": {
+        "@type": "State",
+        "name": "North Carolina"
+      }
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/beachbirdstudios",
+    "https://twitter.com/beachbirdstudios",
+    "https://www.linkedin.com/company/beach-bird-studios",
+    "https://www.instagram.com/beachbirdstudios"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Development Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Website Design",
+          "description": "Beautiful, fast websites built specifically for North Carolina businesses. No templates, no compromises."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Website Development",
+          "description": "Scale your business with AI-powered website development. Create 100+ pages in weeks, not months."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Services",
+          "description": "Comprehensive SEO optimization for existing websites on any platform."
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "24"
+  }
+};
+
+// WebPage Schema
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `https://beachbirdstudios.com${Astro.url.pathname}#webpage`,
+  "url": `https://beachbirdstudios.com${Astro.url.pathname}`,
+  "name": data.title || "Beach Bird Studios",
+  "description": data.description || "Professional web development services in Wilmington, NC",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://beachbirdstudios.com/#website",
+    "url": "https://beachbirdstudios.com",
+    "name": "Beach Bird Studios",
+    "publisher": {
+      "@id": "https://beachbirdstudios.com/#business"
+    }
+  },
+  "provider": {
+    "@id": "https://beachbirdstudios.com/#business"
+  },
+  "breadcrumb": data.breadcrumb ? {"@id": `https://beachbirdstudios.com${Astro.url.pathname}#breadcrumb`} : undefined
+};
+
+// BreadcrumbList Schema
+const breadcrumbSchema = data.breadcrumb ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `https://beachbirdstudios.com${Astro.url.pathname}#breadcrumb`,
+  "itemListElement": data.breadcrumb.map((item: any, index: number) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url ? `https://beachbirdstudios.com${item.url}` : undefined
+  }))
+} : null;
+
+// FAQ Schema
+const faqSchema = data.faqs ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.faqs.map((faq: any) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+} : null;
+
+// Service Schema
+const serviceSchema = data.service ? {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": data.service.type,
+  "name": data.service.name,
+  "description": data.service.description,
+  "provider": {
+    "@id": "https://beachbirdstudios.com/#business"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "North Carolina"
+  },
+  "hasOfferCatalog": data.service.packages ? {
+    "@type": "OfferCatalog",
+    "name": `${data.service.name} Packages`,
+    "itemListElement": data.service.packages.map((pkg: any) => ({
+      "@type": "Offer",
+      "name": pkg.name,
+      "description": pkg.description,
+      "price": pkg.price,
+      "priceCurrency": "USD"
+    }))
+  } : undefined
+} : null;
+
+// Combine all applicable schemas
+const schemas = [];
+
+if (type === 'LocalBusiness' || Astro.url.pathname === '/') {
+  schemas.push(localBusinessSchema);
+}
+
+if (type === 'WebPage' || type === 'LocalBusiness') {
+  schemas.push(webPageSchema);
+}
+
+if (breadcrumbSchema) {
+  schemas.push(breadcrumbSchema);
+}
+
+if (faqSchema && type === 'FAQPage') {
+  schemas.push(faqSchema);
+}
+
+if (serviceSchema && type === 'Service') {
+  schemas.push(serviceSchema);
+}
+
+const jsonLd = schemas.length > 1 ? 
+  { "@context": "https://schema.org", "@graph": schemas } : 
+  schemas[0];
+---
+
+{jsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd, null, 2)} />
+)}

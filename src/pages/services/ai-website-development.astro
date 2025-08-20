@@ -84,7 +84,23 @@ const comparisonData = [
 */
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout 
+  title={pageTitle} 
+  description={pageDescription}
+  structuredDataType="Service"
+  structuredData={{
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Services', url: '/services' },
+      { name: 'AI Website Development', url: '/services/ai-website-development' }
+    ],
+    service: {
+      name: 'AI Website Development',
+      type: 'Web Development Service',
+      description: 'AI-powered website development creating 100+ page websites in weeks. Perfect for businesses ready to dominate their market online.'
+    }
+  }}
+>
   <SEO title={pageTitle} description={pageDescription} />
   <Header />
   

@@ -84,7 +84,23 @@ const comparisonData = [
 */
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout 
+  title={pageTitle} 
+  description={pageDescription}
+  structuredDataType="Service"
+  structuredData={{
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Services', url: '/services' },
+      { name: 'Custom Website Design', url: '/services/custom-website-design' }
+    ],
+    service: {
+      name: 'Custom Website Design',
+      type: 'Web Design Service',
+      description: 'Professional custom website design services for North Carolina businesses. Fast delivery, beautiful designs, and conversion-focused development.'
+    }
+  }}
+>
   <SEO title={pageTitle} description={pageDescription} />
   <Header />
   

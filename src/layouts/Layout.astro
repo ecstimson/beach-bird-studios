@@ -1,11 +1,21 @@
 ---
+import StructuredData from '../components/StructuredData.astro';
+
 export interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  structuredDataType?: 'LocalBusiness' | 'WebPage' | 'BreadcrumbList' | 'FAQPage' | 'Service';
+  structuredData?: any;
 }
 
-const { title, description = 'Beach Bird Studios - Premium Websites & SEO That Actually Work', ogImage = '/og-image.jpg' } = Astro.props;
+const { 
+  title, 
+  description = 'Beach Bird Studios - Premium Websites & SEO That Actually Work', 
+  ogImage = '/og-image.jpg',
+  structuredDataType = 'WebPage',
+  structuredData = {}
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -47,6 +57,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Structured Data -->
+    <StructuredData 
+      type={structuredDataType} 
+      data={{ 
+        title, 
+        description, 
+        ...structuredData 
+      }} 
+    />
   </head>
   <body>
     <slot />
