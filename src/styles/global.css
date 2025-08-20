@@ -3,6 +3,49 @@
 @tailwind utilities;
 
 /* ============================================
+   LOGO SVG FIX FOR MOBILE
+   ============================================ */
+/* Fix for SVG text rendering issues on WebKit/Safari mobile */
+.logo-svg {
+  /* Ensure SVG maintains aspect ratio and minimum size */
+  display: block;
+  width: auto;
+  height: 100%;
+  min-width: 200px;
+  max-width: 100%;
+  
+  /* WebKit-specific fixes for SVG text rendering */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  
+  /* Force GPU acceleration to fix text rendering */
+  will-change: transform;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 640px) {
+  .logo-svg {
+    /* Prevent SVG text compression on small screens */
+    min-width: 220px;
+    
+    /* Force re-rendering to fix letter-spacing issues */
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+/* Safari-specific SVG text fix */
+@supports (-webkit-appearance: none) and (stroke-color: transparent) {
+  .logo-svg {
+    /* Safari hack to force proper text rendering */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ============================================
    CSS VARIABLES & DESIGN TOKENS
    ============================================ */
 :root {
