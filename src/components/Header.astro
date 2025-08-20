@@ -1,4 +1,6 @@
 ---
+import LogoSVG from './LogoSVG.astro';
+
 export interface Props {
   variant?: 'default' | 'transparent';
 }
@@ -27,13 +29,7 @@ const navItems = [
       <!-- Logo -->
       <div class="flex items-center">
         <a href="/" class="block">
-          <div class="h-10 sm:h-12 w-[200px] sm:w-[240px] relative">
-            <img 
-              src="/images/logo.svg" 
-              alt="Beach Bird Studios" 
-              class="absolute inset-0 w-full h-full object-contain object-left"
-            />
-          </div>
+          <LogoSVG />
         </a>
       </div>
       

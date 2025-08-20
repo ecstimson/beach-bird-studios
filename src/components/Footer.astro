@@ -1,4 +1,6 @@
 ---
+import LogoSVG from './LogoSVG.astro';
+
 const currentYear = new Date().getFullYear();
 
 const services = [
@@ -28,8 +30,8 @@ const locations = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
       <!-- Company -->
       <div class="lg:col-span-1">
-        <div class="h-10 w-[200px] relative mb-4">
-          <img src="/images/logo.svg" alt="Beach Bird Studios" class="absolute inset-0 w-full h-full object-contain object-left brightness-0 invert" />
+        <div class="footer-logo brightness-0 invert mb-4">
+          <LogoSVG />
         </div>
         <p class="text-sm">Premium websites & SEO that actually work. Serving Wilmington and all of North Carolina.</p>
       </div>
