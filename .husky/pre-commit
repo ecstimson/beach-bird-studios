@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run content verification before commit
+echo "🔍 Verifying content sync..."
+npm run content:verify
+
+if [ $? -ne 0 ]; then
+  echo "❌ Content sync verification failed. Please fix issues before committing."
+  exit 1
+fi
+
+echo "✅ Content sync verification passed"

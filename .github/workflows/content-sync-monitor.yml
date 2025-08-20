@@ -1,0 +1,65 @@
+name: Content Sync Monitor
+
+on:
+  push:
+    paths:
+      - 'src/content/**/*.md'
+      - 'src/pages/**/*.astro'
+  pull_request:
+    paths:
+      - 'src/content/**/*.md'
+      - 'src/pages/**/*.astro'
+  schedule:
+    - cron: '0 */6 * * *' # Run every 6 hours
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  verify-content-sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run Content Verification
+        run: |
+          node scripts/verify-content-sync.js
+          
+      - name: Build and Test
+        run: |
+          npm run build
+          
+      - name: Check for Missing Content
+        run: |
+          node scripts/check-missing-content.js
+          
+      - name: Generate Content Report
+        run: |
+          node scripts/generate-content-report.js > content-report.md
+          
+      - name: Upload Content Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: content-report
+          path: content-report.md
+          
+      - name: Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('content-report.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });

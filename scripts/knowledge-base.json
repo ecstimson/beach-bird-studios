@@ -1,0 +1,80 @@
+{
+  "resolvedIssues": [
+    {
+      "id": "industry-pages-404",
+      "issue": "31 industry pages returning 404 errors",
+      "symptoms": [
+        "Industry markdown files exist in src/content/industry/",
+        "Pages return 404 when accessed via /services/[slug]",
+        "getStaticPaths only includes 'services' collection"
+      ],
+      "solution": {
+        "file": "src/pages/services/[slug].astro",
+        "fix": "Add industry collection to getStaticPaths",
+        "code": "const industries = await getCollection('industry');\nconst industryPaths = industries.map(entry => ({\n  params: { slug: entry.slug },\n  props: { entry, collection: 'industry' },\n}));\nreturn [...servicePaths, ...industryPaths];",
+        "verified": true,
+        "dateResolved": "2025-08-20"
+      },
+      "prevention": "Always check that dynamic routes include all relevant content collections"
+    },
+    {
+      "id": "location-content-not-rendering",
+      "issue": "Location pages show blank content despite markdown existing",
+      "symptoms": [
+        "Markdown files have content with ## sections",
+        "Content includes metadata lines like 'Headline:' and 'Subheadline:'",
+        "Page renders but shows white space where content should be",
+        "Using <Content /> component doesn't parse special formatting"
+      ],
+      "solution": {
+        "file": "src/pages/locations/[slug].astro",
+        "fix": "Use same content parsing logic as services pages",
+        "approach": "Parse markdown sections dynamically instead of using raw <Content />",
+        "verified": false,
+        "dateIdentified": "2025-08-20"
+      },
+      "prevention": "Ensure all dynamic pages use consistent content parsing for special markdown formats"
+    }
+  ],
+  "patterns": {
+    "contentNotRendering": {
+      "checks": [
+        "Verify markdown file exists and has content",
+        "Check if content uses special formatting (metadata lines)",
+        "Confirm route file is parsing content correctly",
+        "Ensure collections are properly configured"
+      ],
+      "commonCauses": [
+        "Missing collection in getStaticPaths",
+        "Raw <Content /> component used instead of parsing",
+        "Frontmatter missing required fields",
+        "Route pattern mismatch"
+      ]
+    },
+    "404Errors": {
+      "checks": [
+        "Verify content file exists",
+        "Check getStaticPaths includes the collection",
+        "Confirm slug matches file name",
+        "Ensure collection is defined in config.ts"
+      ],
+      "commonCauses": [
+        "Collection not included in dynamic route",
+        "Incorrect route mapping",
+        "Missing getStaticPaths configuration"
+      ]
+    }
+  },
+  "automations": {
+    "checkAllCollections": {
+      "description": "Ensures all content collections are properly routed",
+      "script": "verifyAllCollectionsRouted",
+      "frequency": "onBuild"
+    },
+    "contentParsingConsistency": {
+      "description": "Verifies all pages use consistent content parsing",
+      "script": "checkContentParsingMethods",
+      "frequency": "onFileChange"
+    }
+  }
+}

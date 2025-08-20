@@ -1,0 +1,61 @@
+{
+  "contentSyncAgent": {
+    "enabled": true,
+    "autoFix": true,
+    "scanInterval": 1800000,
+    "watchFiles": true,
+    "notifications": {
+      "slack": false,
+      "email": false,
+      "console": true
+    },
+    "rules": {
+      "minWordCount": 300,
+      "requiredFrontmatter": ["title", "description"],
+      "requiredSections": {
+        "services": ["Hero Section", "What We Deliver", "Our Process"],
+        "industry": ["Industry Overview", "Common Challenges", "Our Solutions"],
+        "locations": ["Hero Section", "Why Your Online Presence Matters", "Service Area Coverage"]
+      },
+      "contentCompleteness": {
+        "critical": 40,
+        "warning": 60,
+        "good": 80
+      }
+    },
+    "autoFixRules": {
+      "addMissingFrontmatter": true,
+      "fixOrphanedContent": true,
+      "updateRouteMapping": true,
+      "generatePlaceholderContent": false
+    },
+    "collections": {
+      "services": {
+        "route": "/services/[slug]",
+        "minContent": 500,
+        "maxContent": 5000
+      },
+      "industry": {
+        "route": "/services/[slug]",
+        "minContent": 500,
+        "maxContent": 3000
+      },
+      "locations": {
+        "route": "/locations/[slug]",
+        "minContent": 800,
+        "maxContent": 4000
+      },
+      "blog": {
+        "route": "/blog/[slug]",
+        "minContent": 1000,
+        "maxContent": 10000
+      }
+    },
+    "reporting": {
+      "generateOnBuild": true,
+      "generateOnDeploy": true,
+      "outputPath": "content-reports",
+      "format": "markdown"
+    }
+  }
+}
