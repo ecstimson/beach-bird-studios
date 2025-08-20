@@ -2,9 +2,11 @@
 title: "WordPress vs Modern Platforms 2025: Why Businesses Are Making the Switch"
 description: "Compare WordPress with modern platforms like Framer and Webflow. Discover why North Carolina businesses are migrating to faster, more secure alternatives."
 author: "Eric Stimson"
-date: "2024-12-16"
+publishDate: "2024-12-16"
 tags: ["WordPress", "Web Platforms", "Framer", "Webflow", "Technology"]
-image: "/images/blog/wordpress-vs-modern.jpg"
+image:
+  src: "/images/blog/wordpress-vs-modern.jpg"
+  alt: "WordPress vs Modern Platforms Comparison"
 featured: true
 ---
 

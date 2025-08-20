@@ -2,9 +2,11 @@
 title: "AI Website Development vs Traditional: The Clear Winner for 2025"
 description: "Compare AI-powered website development with traditional methods. Learn why businesses are switching to AI for faster, more affordable, and scalable web solutions."
 author: "Eric Stimson"
-date: "2024-12-19"
+publishDate: "2024-12-19"
 tags: ["AI Development", "Web Development", "Business Strategy", "Technology"]
-image: "/images/blog/ai-vs-traditional.jpg"
+image:
+  src: "/images/blog/ai-vs-traditional.jpg"
+  alt: "AI vs Traditional Web Development"
 featured: false
 ---
 

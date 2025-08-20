@@ -2,9 +2,11 @@
 title: "How AI Builds 100+ Page Websites That Actually Convert"
 description: "Learn the strategy behind AI-powered 100+ page websites and why they dominate search results while maintaining quality and user experience."
 author: "Eric Stimson"
-date: "2024-12-18"
+publishDate: "2024-12-18"
 tags: ["AI Development", "SEO Strategy", "Web Development", "Content Strategy"]
-image: "/images/blog/100-page-websites.jpg"
+image:
+  src: "/images/blog/100-page-websites.jpg"
+  alt: "100+ Page AI Websites"
 featured: true
 ---
 

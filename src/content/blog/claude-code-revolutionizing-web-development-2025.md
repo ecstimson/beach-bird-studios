@@ -2,9 +2,11 @@
 title: "How Claude Code is Revolutionizing Web Development in 2025"
 description: "Discover how Claude Code and AI-powered development are transforming the web design industry, delivering enterprise-quality websites at unprecedented speed and scale."
 author: "Eric Stimson"
-date: "2024-12-20"
+publishDate: "2024-12-20"
 tags: ["AI Development", "Claude Code", "Web Development", "Technology"]
-image: "/images/blog/claude-code-development.jpg"
+image:
+  src: "/images/blog/claude-code-development.jpg"
+  alt: "Claude Code AI Development"
 featured: true
 ---
 

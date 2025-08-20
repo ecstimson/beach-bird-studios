@@ -2,9 +2,11 @@
 title: "Google Business Profile Optimization: Your Secret Weapon for Local Dominance"
 description: "Master Google Business Profile optimization to dominate local search results. Learn proven strategies that North Carolina businesses use to attract more customers."
 author: "Eric Stimson"
-date: "2024-12-17"
+publishDate: "2024-12-17"
 tags: ["Local SEO", "Google My Business", "Digital Marketing", "Small Business"]
-image: "/images/blog/google-business-profile.jpg"
+image:
+  src: "/images/blog/google-business-profile.jpg"
+  alt: "Google Business Profile Optimization"
 featured: false
 ---
 
