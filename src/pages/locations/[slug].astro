@@ -207,7 +207,7 @@ const locationFeatures = [
   <main>
     <!-- Introduction Section -->
     <section class="section-padding bg-white">
-      <div class="container-width">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-6">
             Your Local {cityName} Web Design Partner
@@ -223,7 +223,7 @@ const locationFeatures = [
     
     <!-- Features Grid -->
     <section class="section-padding bg-gray-50">
-      <div class="container-width">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
             Why {cityName} Businesses Choose Us
@@ -249,7 +249,7 @@ const locationFeatures = [
       
       return (
         <section class={`section-padding ${bgClass}`}>
-          <div class="container-width">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {section.title && (
               <div class="text-center mb-12">
                 <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
@@ -292,7 +292,7 @@ const locationFeatures = [
             
             {/* Regular Content Section */}
             {section.type === 'content' && (
-              <div class="prose prose-lg max-w-none">
+              <div class="prose prose-lg max-w-4xl mx-auto">
                 {section.content.map((item: any) => {
                   if (item.type === 'h3') {
                     return <h3 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
@@ -321,7 +321,7 @@ const locationFeatures = [
     
     <!-- Services CTA -->
     <section class="section-padding section-sand">
-      <div class="container-width">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
             Our Services for {cityName} Businesses
