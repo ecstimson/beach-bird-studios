@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/SEO.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
+// import ServiceCard from '../../components/ServiceCard.astro'; // Unused
 import FeatureGrid from '../../components/FeatureGrid.astro';
 import CTASection from '../../components/CTASection.astro';
 import Footer from '../../components/Footer.astro';
@@ -67,6 +67,8 @@ const processSteps = [
   }
 ];
 
+// Unused comparison data - remove if not needed
+/*
 const comparisonData = [
   {
     icon: 'check',
@@ -79,6 +81,7 @@ const comparisonData = [
     description: '10-20 pages in 6 months, limited content coverage, inconsistent quality, manual SEO work, exponentially expensive scaling.'
   }
 ];
+*/
 ---
 
 <Layout title={pageTitle} description={pageDescription}>

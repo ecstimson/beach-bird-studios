@@ -1,7 +1,9 @@
 ---
 export interface Props {
-  title: string;
+  title?: string;
   subtitle?: string;
+  headline?: string;
+  description?: string;
   primaryCTA?: {
     text: string;
     href: string;
@@ -11,22 +13,30 @@ export interface Props {
     href: string;
     phone?: boolean;
   };
+  variant?: string;
 }
 
 const {
   title,
   subtitle,
+  headline,
+  description,
   primaryCTA,
-  secondaryCTA
+  secondaryCTA,
+  variant = 'default'
 } = Astro.props;
+
+// Use headline/description if provided, otherwise fall back to title/subtitle
+const displayTitle = headline || title;
+const displaySubtitle = description || subtitle;
 ---
 
 <section id="contact" class="py-20 gradient-seamless text-white">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">{title}</h2>
-    {subtitle && (
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">{displayTitle}</h2>
+    {displaySubtitle && (
       <p class="text-xl text-white mb-8">
-        {subtitle}
+        {displaySubtitle}
       </p>
     )}
     <div class="flex flex-col sm:flex-row gap-4 justify-center">

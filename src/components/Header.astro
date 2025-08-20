@@ -116,8 +116,8 @@ const navItems = [
     const icon = mobileMenuButton?.querySelector('[data-lucide]');
     if (icon) {
       icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+      if (typeof (window as any).lucide !== 'undefined') {
+        (window as any).lucide.createIcons();
       }
     }
   });
@@ -138,7 +138,7 @@ const navItems = [
       menu?.classList.toggle('hidden');
       const icon = btn.querySelector('[data-lucide="chevron-down"]');
       if (icon) {
-        icon.style.transform = menu?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        (icon as HTMLElement).style.transform = menu?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
       }
     });
   });

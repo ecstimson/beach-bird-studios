@@ -12,7 +12,7 @@
     },
     "jsx": "react-jsx",
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,

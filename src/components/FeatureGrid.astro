@@ -10,9 +10,11 @@ export interface Props {
   title?: string;
   subtitle?: string;
   features: Feature[];
+  columns?: number;
+  variant?: string;
 }
 
-const { title, subtitle, features } = Astro.props;
+const { title, subtitle, features, columns = 2, variant = 'default' } = Astro.props;
 
 const iconColors = {
   yellow: 'bg-yellow-100 text-yellow-600',

@@ -22,14 +22,6 @@ export default defineConfig({
   ],
   build: {
     inlineStylesheets: 'auto',
-    // Split JavaScript bundles for better caching
-    rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[hash][extname]',
-        chunkFileNames: 'chunks/[hash].js',
-        entryFileNames: 'entries/[hash].js',
-      },
-    },
   },
   vite: {
     build: {

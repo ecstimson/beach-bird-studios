@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
+// import ServiceCard from '../../components/ServiceCard.astro'; // Unused
 import CTASection from '../../components/CTASection.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -17,7 +17,45 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+// const { Content } = await entry.render(); // Unused - using parsed content instead
+
+// Type definitions
+interface ContentItem {
+  type: string;
+  text: string;
+}
+
+interface Section {
+  title: string;
+  content: ContentItem[];
+  type: string;
+  features?: string[];
+}
+
+interface PricingCard {
+  title: string;
+  tagline?: string;
+  description?: string;
+  features: string[];
+  featured?: boolean;
+  packageType?: string;
+}
+
+interface Industry {
+  title: string;
+  description: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Phase {
+  title: string;
+  content: string[];
+  description?: string;
+}
 
 // Extract headline and subheadline for hero
 const headline = entry.data.title?.replace(' | Beach Bird Studios', '') || 'Professional Web Services';
@@ -25,9 +63,9 @@ const subheadline = entry.data.description || 'Transform your online presence wi
 
 // Parse markdown content into sections
 const rawContent = entry.body;
-const sections = [];
-let currentSection = { title: '', content: [], type: 'content' };
-let heroData = {};
+const sections: Section[] = [];
+let currentSection: Section = { title: '', content: [], type: 'content' };
+let heroData: { headline?: string; subheadline?: string } = {};
 
 const lines = rawContent.split('\n');
 let skipSection = false;
@@ -173,7 +211,7 @@ if (currentSection.content.length > 0 || currentSection.title) {
 
 
 // Convert feature bullets to FeatureGrid format
-const processFeatures = (features, section) => {
+const processFeatures = (features: any[], section: Section) => {
   const icons = ['zap', 'shield-check', 'trending-up', 'cpu', 'layers', 'target', 'brain', 'rocket'];
   const colors = ['yellow', 'blue', 'green', 'cyan', 'purple', 'orange', 'pink', 'indigo'];
   
@@ -213,11 +251,11 @@ const processFeatures = (features, section) => {
 };
 
 // Process pricing sections
-const processPricingCards = (section) => {
-  const cards = [];
-  let currentCard = null;
+const processPricingCards = (section: Section): { grouped: Record<string, PricingCard[]>, ungrouped: PricingCard[] } => {
+  const cards: PricingCard[] = [];
+  let currentCard: PricingCard | null = null;
   let collectingFeatures = false;
-  let currentPackageTitle = null;
+  let currentPackageTitle: string | null = null;
   
   // Look through all content and features
   const allItems = [...section.content];
@@ -241,7 +279,7 @@ const processPricingCards = (section) => {
         tagline: parts[1]?.trim() || '',
         features: [],
         description: '',
-        packageType: currentPackageTitle
+        packageType: currentPackageTitle || ''
       };
       collectingFeatures = true;
     }
@@ -267,7 +305,7 @@ const processPricingCards = (section) => {
     } 
     // Collect bullet points as features
     else if ((item.type === 'bullet' || item.type === 'feature') && currentCard && collectingFeatures) {
-      currentCard.features.push(item.text || item);
+      currentCard.features.push(typeof item === 'string' ? item : item.text);
     } 
     // Non-bold paragraph might be description or signal end of card
     else if (item.type === 'paragraph' && !item.text.startsWith('**')) {
@@ -283,8 +321,8 @@ const processPricingCards = (section) => {
   if (currentCard) cards.push(currentCard);
   
   // Group cards by package type if they have one
-  const groupedCards = {};
-  const ungroupedCards = [];
+  const groupedCards: Record<string, PricingCard[]> = {};
+  const ungroupedCards: PricingCard[] = [];
   
   cards.forEach(card => {
     if (card.packageType) {
@@ -312,9 +350,9 @@ const processPricingCards = (section) => {
 };
 
 // Process industry sections
-const processIndustries = (section) => {
-  const industries = [];
-  let currentIndustry = null;
+const processIndustries = (section: Section): Industry[] => {
+  const industries: Industry[] = [];
+  let currentIndustry: Industry | null = null;
   
   section.content.forEach((item) => {
     if (item.type === 'h3') {
@@ -505,9 +543,9 @@ const processIndustries = (section) => {
             <div class={section.title && section.title.toLowerCase().includes('monthly') ? 'grid grid-cols-1 md:grid-cols-3 gap-8' : 'space-y-12'}>
               {section.content.filter(item => item.type === 'h3').map((item, idx) => {
                 const h3Index = section.content.indexOf(item);
-                const phases = [];
-                let currentPhase = null;
-                const bullets = [];
+                const phases: any[] = [];
+                let currentPhase: { title: string; content: string[] } | null = null;
+                const bullets: string[] = [];
                 
                 // Collect H4 phases and their content
                 for (let i = h3Index + 1; i < section.content.length; i++) {
@@ -523,7 +561,7 @@ const processIndustries = (section) => {
                     bullets.push(contentItem.text);
                   } else if (!currentPhase && contentItem.type === 'paragraph') {
                     // Direct paragraph after H3
-                    if (!phases.description) phases.description = contentItem.text;
+                    if (!(phases as any).description) (phases as any).description = contentItem.text;
                   }
                 }
                 if (currentPhase) phases.push(currentPhase);
@@ -552,8 +590,8 @@ const processIndustries = (section) => {
                   return (
                     <div class="mb-12">
                       <h3 class="text-2xl font-bold text-gray-900 mb-6">{item.text}</h3>
-                      {phases.description && (
-                        <p class="text-gray-600 mb-6">{phases.description}</p>
+                      {(phases as any).description && (
+                        <p class="text-gray-600 mb-6">{(phases as any).description}</p>
                       )}
                       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {phases.map((phase, phaseIdx) => (
@@ -562,7 +600,7 @@ const processIndustries = (section) => {
                               <h4 class="text-lg font-semibold text-gray-900">{phase.title}</h4>
                             </div>
                             <ul class="space-y-2">
-                              {phase.content.map((bullet) => (
+                              {phase.content.map((bullet: string) => (
                                 <li class="flex items-start">
                                   <i data-lucide="check" class="w-4 h-4 text-beach-blue mr-2 mt-1 flex-shrink-0"></i>
                                   <span class="text-gray-600 text-sm">{bullet}</span>
@@ -604,8 +642,8 @@ const processIndustries = (section) => {
           {section.type === 'faq' && (
             <div class="space-y-6 max-w-4xl mx-auto">
               {(() => {
-                const faqs = [];
-                let currentFaq = null;
+                const faqs: any[] = [];
+                let currentFaq: any = null;
                 
                 section.content.forEach((item) => {
                   if (item.type === 'paragraph') {
@@ -676,16 +714,16 @@ const processIndustries = (section) => {
             <div class="prose prose-lg max-w-none">
               {section.content.map((item, idx) => {
                 if (item.type === 'h3') {
-                  return <h3 key={idx} class="text-2xl font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
+                  return <h3 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
                 } else if (item.type === 'h4') {
-                  return <h4 key={idx} class="text-xl font-semibold text-gray-700 mb-3 mt-6">{item.text}</h4>;
+                  return <h4 class="text-xl font-semibold text-gray-700 mb-3 mt-6">{item.text}</h4>;
                 } else if (item.type === 'paragraph') {
                   // Parse for bold text
                   const htmlText = item.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                  return <p key={idx} class="text-lg text-gray-600 mb-6 leading-relaxed" set:html={htmlText}></p>;
+                  return <p class="text-lg text-gray-600 mb-6 leading-relaxed" set:html={htmlText}></p>;
                 } else if (item.type === 'bullet') {
                   return (
-                    <ul key={idx} class="list-disc pl-6 mb-2 space-y-1">
+                    <ul class="list-disc pl-6 mb-2 space-y-1">
                       <li class="text-gray-600">{item.text}</li>
                     </ul>
                   );
