@@ -1,6 +1,30 @@
 import type { APIRoute } from 'astro';
 
+export const OPTIONS: APIRoute = async () => {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+};
+
 export const POST: APIRoute = async ({ request }) => {
+  // Add CORS headers for local development
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
+  // Handle preflight requests
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { status: 200, headers });
+  }
+
   try {
     // Parse form data
     const formData = await request.formData();
@@ -20,9 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
         error: 'Missing required fields' 
       }), {
         status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
       });
     }
 
@@ -34,9 +56,7 @@ export const POST: APIRoute = async ({ request }) => {
         error: 'Invalid email address' 
       }), {
         status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
       });
     }
 
@@ -133,9 +153,7 @@ This email was sent from the contact form at beachbirdstudios.com
       message: 'Your message has been sent successfully! We\'ll be in touch within 1 business day.' 
     }), {
       status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
     });
 
   } catch (error) {
@@ -146,9 +164,7 @@ This email was sent from the contact form at beachbirdstudios.com
       error: 'Failed to send message. Please try again or call us directly.' 
     }), {
       status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
     });
   }
 };
