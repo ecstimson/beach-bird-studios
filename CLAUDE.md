@@ -222,3 +222,31 @@ Sections automatically alternate backgrounds:
 - Bold text starting a line `**Like This**` becomes a card title in pricing sections
 - Bullet points with colons `:` become feature cards
 - Regular bullet points remain as lists
+
+## SVG Text Rendering Fix for Mobile
+
+When SVG logos or images with text show spacing issues on mobile (especially Safari/WebKit):
+
+### The Problem
+- SVG text elements with multiple `<tspan>` tags and letter-spacing can render incorrectly on mobile
+- Safari/WebKit has known bugs with SVG text letter-spacing (WebKit Bug #20606)
+- Text may appear with gaps or compressed spacing
+
+### The Solution
+Wrap the SVG in a fixed-dimension container:
+
+```html
+<div class="h-10 sm:h-12 w-[200px] sm:w-[240px] relative">
+  <img 
+    src="/images/logo.svg" 
+    alt="Description" 
+    class="absolute inset-0 w-full h-full object-contain object-left"
+  />
+</div>
+```
+
+This forces consistent rendering by:
+- Setting explicit width/height on the container
+- Using `absolute inset-0` to fill the container
+- Using `object-contain` to maintain aspect ratio
+- Using `object-left` to align properly
