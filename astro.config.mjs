@@ -3,11 +3,15 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beachbirdstudios.com',
-  output: 'static',
+  output: 'server', // Changed to 'server' for API routes with Vercel
+  adapter: vercel({
+    analytics: true,
+  }),
   integrations: [
     tailwind({
       applyBaseStyles: false,

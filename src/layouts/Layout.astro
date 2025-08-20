@@ -1,6 +1,9 @@
 ---
 import StructuredData from '../components/StructuredData.astro';
 
+// Prerender all pages using this layout (except API routes)
+export const prerender = true;
+
 export interface Props {
   title: string;
   description?: string;

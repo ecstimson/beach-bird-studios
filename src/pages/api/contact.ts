@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro';
 
+export const prerender = false; // This API route must run on the server
+
 export const OPTIONS: APIRoute = async () => {
   return new Response(null, {
     status: 200,
