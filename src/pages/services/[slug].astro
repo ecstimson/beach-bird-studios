@@ -10,13 +10,22 @@ import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
-  return services.map(entry => ({
+  const industries = await getCollection('industry');
+  
+  const servicePaths = services.map(entry => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, collection: 'services' },
   }));
+  
+  const industryPaths = industries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry, collection: 'industry' },
+  }));
+  
+  return [...servicePaths, ...industryPaths];
 }
 
-const { entry } = Astro.props;
+const { entry, collection } = Astro.props;
 // const { Content } = await entry.render(); // Unused - using parsed content instead
 
 // Type definitions
@@ -383,7 +392,7 @@ const processIndustries = (section: Section): Industry[] => {
     ],
     service: {
       name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug,
-      type: 'SEO Service',
+      type: collection === 'industry' ? 'Industry Service' : 'SEO Service',
       description: entry.data.description || 'Professional SEO and web services for North Carolina businesses.'
     }
   }}
