@@ -73,7 +73,7 @@ const faqs = [
               Get Your Free Consultation
             </h2>
             
-            <form class="space-y-6">
+            <form id="contact-form" class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
@@ -172,13 +172,25 @@ const faqs = [
               </div>
               
               
-              <button type="submit" class="btn-primary w-full">
+              <button type="submit" id="submit-button" class="btn-primary w-full">
                 Send Message
               </button>
               
               <p class="text-sm text-gray-500 text-center">
                 We'll respond within 1 business day
               </p>
+              
+              <!-- Success/Error Messages -->
+              <div id="form-message" class="hidden">
+                <div id="success-message" class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
+                  <p class="font-semibold">Success!</p>
+                  <p class="text-sm">Your message has been sent. We'll be in touch soon!</p>
+                </div>
+                <div id="error-message" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                  <p class="font-semibold">Error</p>
+                  <p class="text-sm" id="error-text">Something went wrong. Please try again or call us directly.</p>
+                </div>
+              </div>
             </form>
           </div>
           
@@ -307,4 +319,79 @@ const faqs = [
   </main>
   
   <Footer />
+  
+  <script>
+    // Handle contact form submission
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contact-form') as HTMLFormElement;
+      const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+      const formMessage = document.getElementById('form-message');
+      const successMessage = document.getElementById('success-message');
+      const errorMessage = document.getElementById('error-message');
+      const errorText = document.getElementById('error-text');
+      
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          // Disable submit button and show loading state
+          submitButton.disabled = true;
+          submitButton.textContent = 'Sending...';
+          
+          // Hide any previous messages
+          formMessage?.classList.add('hidden');
+          successMessage?.classList.add('hidden');
+          errorMessage?.classList.add('hidden');
+          
+          try {
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Send to API endpoint
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok && result.success) {
+              // Show success message
+              formMessage?.classList.remove('hidden');
+              successMessage?.classList.remove('hidden');
+              
+              // Reset form
+              form.reset();
+              
+              // Scroll to message
+              successMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              // Show error message
+              formMessage?.classList.remove('hidden');
+              errorMessage?.classList.remove('hidden');
+              if (errorText && result.error) {
+                errorText.textContent = result.error;
+              }
+              
+              // Scroll to message
+              errorMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          } catch (error) {
+            // Show error message
+            formMessage?.classList.remove('hidden');
+            errorMessage?.classList.remove('hidden');
+            if (errorText) {
+              errorText.textContent = 'Network error. Please check your connection and try again.';
+            }
+            
+            console.error('Form submission error:', error);
+          } finally {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+          }
+        });
+      }
+    });
+  </script>
 </Layout>
