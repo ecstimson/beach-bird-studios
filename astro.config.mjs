@@ -10,7 +10,9 @@ export default defineConfig({
   site: 'https://beachbirdstudios.com',
   output: 'server', // Changed to 'server' for API routes with Vercel
   adapter: vercel({
-    analytics: true,
+    webAnalytics: {
+      enabled: true,
+    },
   }),
   integrations: [
     tailwind({
