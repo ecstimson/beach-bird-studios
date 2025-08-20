@@ -267,38 +267,39 @@ const categories = [
           
           // Filter blog posts
           blogPosts.forEach(post => {
-            const postCategory = post.getAttribute('data-category');
+            const postElement = post as HTMLElement;
+            const postCategory = postElement.getAttribute('data-category');
             
             if (selectedCategory === 'All Posts' || postCategory === selectedCategory) {
               // Show post with fade in animation
-              post.style.display = 'block';
-              post.classList.remove('hidden');
-              post.style.opacity = '0';
-              post.style.transform = 'translateY(10px)';
+              postElement.style.display = 'block';
+              postElement.classList.remove('hidden');
+              postElement.style.opacity = '0';
+              postElement.style.transform = 'translateY(10px)';
               
               setTimeout(() => {
-                post.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                post.style.opacity = '1';
-                post.style.transform = 'translateY(0)';
+                postElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                postElement.style.opacity = '1';
+                postElement.style.transform = 'translateY(0)';
               }, 10);
             } else {
               // Hide post with fade out animation
-              post.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
-              post.style.opacity = '0';
-              post.style.transform = 'translateY(-10px)';
+              postElement.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+              postElement.style.opacity = '0';
+              postElement.style.transform = 'translateY(-10px)';
               
               setTimeout(() => {
-                post.style.display = 'none';
-                post.classList.add('hidden');
+                postElement.style.display = 'none';
+                postElement.classList.add('hidden');
               }, 200);
             }
           });
           
           // Update URL without page reload (for better UX and tracking)
-          const url = new URL(window.location);
+          const url = new URL(window.location.href);
           if (selectedCategory === 'All Posts') {
             url.searchParams.delete('category');
-          } else {
+          } else if (selectedCategory) {
             url.searchParams.set('category', selectedCategory.toLowerCase().replace(' ', '-'));
           }
           window.history.pushState({}, '', url);
@@ -311,7 +312,7 @@ const categories = [
       
       if (categoryParam) {
         const formattedCategory = categoryParam.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
-        const targetButton = document.querySelector(`[data-category="${formattedCategory}"]`);
+        const targetButton = document.querySelector(`[data-category="${formattedCategory}"]`) as HTMLButtonElement;
         if (targetButton) {
           targetButton.click();
         }
