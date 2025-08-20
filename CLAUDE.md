@@ -223,30 +223,66 @@ Sections automatically alternate backgrounds:
 - Bullet points with colons `:` become feature cards
 - Regular bullet points remain as lists
 
-## SVG Text Rendering Fix for Mobile
-
-When SVG logos or images with text show spacing issues on mobile (especially Safari/WebKit):
+## SVG Logo Rendering Fix
 
 ### The Problem
-- SVG text elements with multiple `<tspan>` tags and letter-spacing can render incorrectly on mobile
-- Safari/WebKit has known bugs with SVG text letter-spacing (WebKit Bug #20606)
-- Text may appear with gaps or compressed spacing
+- SVG text elements with multiple `<tspan>` tags and letter-spacing render incorrectly on mobile
+- Safari/WebKit has known bugs with SVG text letter-spacing
+- Text appears with gaps or broken spacing
 
-### The Solution
-Wrap the SVG in a fixed-dimension container:
+### The Solution (Implemented)
+The logo.svg file has been fixed by:
+1. Removing all `<tspan>` elements 
+2. Removing letter-spacing CSS classes
+3. Converting text to a single continuous element
 
+The logo is displayed using:
 ```html
-<div class="h-10 sm:h-12 w-[200px] sm:w-[240px] relative">
-  <img 
-    src="/images/logo.svg" 
-    alt="Description" 
-    class="absolute inset-0 w-full h-full object-contain object-left"
-  />
-</div>
+<img 
+  src="/images/logo.svg" 
+  alt="Beach Bird Studios" 
+  class="h-10 sm:h-12 w-auto"
+  style="max-width: 240px;"
+/>
 ```
 
-This forces consistent rendering by:
-- Setting explicit width/height on the container
-- Using `absolute inset-0` to fill the container
-- Using `object-contain` to maintain aspect ratio
-- Using `object-left` to align properly
+## Legal Pages
+
+### Required Legal Pages (Now Implemented)
+- **Privacy Policy** (`/privacy`) - Comprehensive privacy policy
+- **Terms of Service** (`/terms`) - Complete terms and conditions
+- **FAQ** (`/faq`) - Frequently asked questions with 6 categories
+
+These pages are linked in the footer for easy access and legal compliance.
+
+## Content Management System
+
+### Location-Based Pages
+Location pages are stored in `/src/content/locations/` and automatically generate pages at `/locations/[slug]`
+
+### Service Pages
+Service pages are stored in `/src/content/services/` and include:
+- Main service pages (custom-website-design, ai-website-development, seo-services)
+- Supporting service pages (various specific services)
+- Industry-specific pages in `/src/content/industry/`
+
+### Dynamic Page Generation
+The `[slug].astro` files in `/src/pages/services/` and `/src/pages/locations/` automatically:
+1. Read markdown content from content collections
+2. Transform markdown into visual components based on patterns
+3. Apply consistent styling and layout
+4. Generate SEO-optimized pages
+
+## Contact Information
+- **Phone**: 910-512-6990 (consistent throughout site)
+- **Email**: eric@beachbirdstudios.com
+- **Location**: Wilmington, NC (serving all of North Carolina)
+
+## Build and Deploy
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run preview    # Preview production build
+```
+
+The site generates 79 static pages at build time, including all service, location, and industry pages.
