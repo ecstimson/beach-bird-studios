@@ -18,6 +18,120 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+// Parse markdown content into sections for dynamic rendering
+const rawContent = entry.body;
+const sections: any[] = [];
+let currentSection: any = { title: '', content: [], type: 'content' };
+let heroData: { headline?: string; subheadline?: string } = {};
+
+const lines = rawContent.split('\n');
+let inHeroSection = false;
+let skipSection = false;
+
+for (let i = 0; i < lines.length; i++) {
+  const line = lines[i];
+  
+  // Skip the H1 title as it's in the hero
+  if (line.startsWith('# ') && !line.startsWith('## ')) {
+    continue;
+  }
+  
+  // Check for Hero Section
+  if (line.startsWith('## Hero Section')) {
+    inHeroSection = true;
+    skipSection = true;
+    continue;
+  } else if (line.startsWith('## ') && inHeroSection) {
+    inHeroSection = false;
+    skipSection = false;
+  }
+  
+  // Process hero section data
+  if (inHeroSection) {
+    if (line.startsWith('Headline:')) {
+      heroData.headline = line.substring(9).trim();
+    } else if (line.startsWith('Subheadline:')) {
+      heroData.subheadline = line.substring(12).trim();
+    }
+    continue;
+  }
+  
+  if (skipSection) {
+    continue;
+  }
+  
+  // New H2 section
+  if (line.startsWith('## ')) {
+    if (currentSection.content.length > 0 || currentSection.title) {
+      sections.push({ ...currentSection });
+    }
+    const title = line.substring(3).trim();
+    currentSection = { 
+      title, 
+      content: [],
+      type: 'content'
+    };
+    
+    // Check for special section types
+    if (title.toLowerCase().includes('industries')) {
+      currentSection.type = 'industries';
+    } else if (title.toLowerCase().includes('service area') || title.toLowerCase().includes('coverage')) {
+      currentSection.type = 'service-area';
+    }
+  } 
+  // Check for H3 headers
+  else if (line.startsWith('### ')) {
+    const h3Text = line.substring(4).trim();
+    currentSection.content.push({ type: 'h3', text: h3Text });
+  }
+  // Bullet points
+  else if (line.startsWith('- ') || line.startsWith('* ')) {
+    const text = line.substring(2).trim();
+    currentSection.content.push({ type: 'bullet', text });
+  }
+  // Bold lines (e.g., **Core Wilmington:**)
+  else if (line.startsWith('**') && line.includes(':**')) {
+    currentSection.content.push({ type: 'bold-line', text: line });
+  }
+  // Regular paragraph
+  else if (line.trim()) {
+    currentSection.content.push({ type: 'paragraph', text: line });
+  }
+}
+
+// Add the last section
+if (currentSection.content.length > 0 || currentSection.title) {
+  sections.push({ ...currentSection });
+}
+
+// Process industries section
+const processIndustries = (section: any) => {
+  const industries: any[] = [];
+  let currentIndustry: any = null;
+  
+  section.content.forEach((item: any) => {
+    if (item.type === 'h3') {
+      if (currentIndustry) industries.push(currentIndustry);
+      currentIndustry = {
+        title: item.text,
+        description: ''
+      };
+    } else if (item.type === 'paragraph' && currentIndustry) {
+      currentIndustry.description += item.text + ' ';
+    } else if (item.type === 'bullet') {
+      // Handle bullet points as simple industry items
+      const parts = item.text.split(':');
+      industries.push({
+        title: parts[0].replace(/\*\*/g, '').trim(),
+        description: parts[1]?.trim() || ''
+      });
+    }
+  });
+  
+  if (currentIndustry) industries.push(currentIndustry);
+  return industries;
+};
+
 // Extract city name from slug or title
 const cityName = entry.data.city || entry.slug.replace(/-web-design|-nc/g, '').replace(/-/g, ' ')
   .split(' ')
@@ -84,8 +198,8 @@ const locationFeatures = [
   
   <!-- Hero Section -->
   <Hero
-    headline={`${cityName} Web Design & SEO Services`}
-    subheadline={`Looking for professional web design in ${cityName}? We create stunning websites that convert visitors into customers.`}
+    headline={heroData.headline || `${cityName} Web Design & SEO Services`}
+    subheadline={heroData.subheadline || `Looking for professional web design in ${cityName}? We create stunning websites that convert visitors into customers.`}
     primaryCTA={{ text: 'Get Your Free Consultation', href: '/contact' }}
     secondaryCTA={{ text: 'View Our Services', href: '/services' }}
   />
@@ -123,14 +237,87 @@ const locationFeatures = [
       </div>
     </section>
     
-    <!-- Content from Markdown -->
-    <section class="section-padding bg-white">
-      <div class="container-width">
-        <div class="prose prose-lg max-w-none">
-          <Content />
-        </div>
-      </div>
-    </section>
+    <!-- Dynamic Content Sections -->
+    {sections.map((section, index) => {
+      // Rotate backgrounds
+      let bgClass = 'bg-white';
+      if (index % 3 === 1) {
+        bgClass = 'bg-beach-cream/30';
+      } else if (index % 3 === 2) {
+        bgClass = 'bg-gray-50';
+      }
+      
+      return (
+        <section class={`section-padding ${bgClass}`}>
+          <div class="container-width">
+            {section.title && (
+              <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+                  {section.title}
+                </h2>
+              </div>
+            )}
+            
+            {/* Industries Grid */}
+            {section.type === 'industries' && (
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {processIndustries(section).map((industry: any) => (
+                  <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-10 h-10 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+                      <i data-lucide="briefcase" class="w-5 h-5 text-beach-blue"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">{industry.title}</h3>
+                    <p class="text-gray-600 text-sm">{industry.description}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Service Area Coverage */}
+            {section.type === 'service-area' && (
+              <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                  {section.content.map((item: any) => {
+                    if (item.type === 'bold-line') {
+                      const htmlText = item.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                      return <p class="text-lg text-gray-700 font-semibold" set:html={htmlText}></p>;
+                    } else if (item.type === 'paragraph') {
+                      return <p class="text-gray-600">{item.text}</p>;
+                    }
+                    return null;
+                  })}
+                </div>
+              </div>
+            )}
+            
+            {/* Regular Content Section */}
+            {section.type === 'content' && (
+              <div class="prose prose-lg max-w-none">
+                {section.content.map((item: any) => {
+                  if (item.type === 'h3') {
+                    return <h3 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
+                  } else if (item.type === 'paragraph') {
+                    // Parse for bold text and inline links
+                    const htmlText = item.text
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      .replace(/\[([^\]]+)\]/g, '<a href="/contact" class="text-beach-blue hover:text-blue-700 underline">$1</a>');
+                    return <p class="text-lg text-gray-600 mb-6 leading-relaxed" set:html={htmlText}></p>;
+                  } else if (item.type === 'bullet') {
+                    const htmlText = item.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    return (
+                      <ul class="list-disc pl-6 mb-2 space-y-1">
+                        <li class="text-gray-600" set:html={htmlText}></li>
+                      </ul>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
+            )}
+          </div>
+        </section>
+      );
+    })}
     
     <!-- Services CTA -->
     <section class="section-padding section-sand">
