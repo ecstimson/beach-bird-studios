@@ -1,6 +1,6 @@
 ---
-title: "Seo Services"
-description: "Professional seo services services for businesses"
+title: "SEO Services"
+description: "Professional SEO services for businesses"
 featured: false
 priority: 50
 tags: ["web design", "development", "seo"]
