@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import emailjs from '@emailjs/nodejs';
 
 export const prerender = false; // This API route must run on the server
 
@@ -85,13 +86,57 @@ This email was sent from the contact form at beachbirdstudios.com
 
     // Email sending options - choose one:
     
-    // Option 1: Use Web3Forms (recommended - free tier available)
+    // Option 1: Use EmailJS (recommended - most reliable)
+    // Sign up at https://www.emailjs.com and add your keys to .env file
+    if (import.meta.env.EMAILJS_SERVICE_ID && import.meta.env.EMAILJS_TEMPLATE_ID && import.meta.env.EMAILJS_PUBLIC_KEY) {
+      console.log('Sending email via EmailJS Node.js SDK...');
+      
+      // Initialize EmailJS with public key (and private key if available)
+      const initOptions: any = {
+        publicKey: import.meta.env.EMAILJS_PUBLIC_KEY,
+      };
+      
+      // Add private key if available for better security
+      if (import.meta.env.EMAILJS_PRIVATE_KEY) {
+        initOptions.privateKey = import.meta.env.EMAILJS_PRIVATE_KEY;
+      }
+      
+      emailjs.init(initOptions);
+      
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${firstName} ${lastName}`,
+        from_email: email,
+        phone: phone || 'Not provided',
+        company: company || 'Not provided',
+        service: service,
+        message: message,
+        to_email: 'eric@beachbirdstudios.com',
+      };
+      
+      console.log('Sending email with EmailJS SDK...');
+      
+      try {
+        const response = await emailjs.send(
+          import.meta.env.EMAILJS_SERVICE_ID,
+          import.meta.env.EMAILJS_TEMPLATE_ID,
+          templateParams
+        );
+        
+        console.log('EmailJS SDK response:', response.status, response.text);
+        console.log('Email sent successfully via EmailJS SDK');
+      } catch (error: any) {
+        console.error('EmailJS SDK error:', error);
+        throw new Error(`Failed to send email via EmailJS: ${error?.text || error?.message || 'Unknown error'}`);
+      }
+    }
+    // Option 2: Use Web3Forms (backup option)
     // Sign up at https://web3forms.com and add your access key to .env file
-    if (process.env.WEB3FORMS_ACCESS_KEY && process.env.WEB3FORMS_ACCESS_KEY !== 'your_access_key_here') {
+    else if (import.meta.env.WEB3FORMS_ACCESS_KEY && import.meta.env.WEB3FORMS_ACCESS_KEY !== 'your_access_key_here') {
       console.log('Sending email via Web3Forms...');
       
       const web3FormsData = {
-        access_key: process.env.WEB3FORMS_ACCESS_KEY,
+        access_key: import.meta.env.WEB3FORMS_ACCESS_KEY,
         subject: `New Contact Form Submission - ${service}`,
         from_name: `${firstName} ${lastName}`,
         email: email, // Web3Forms expects 'email' field
@@ -123,8 +168,8 @@ This email was sent from the contact form at beachbirdstudios.com
     } 
     // Option 2: Use Formspree (free tier available)
     // Sign up at https://formspree.io and add your endpoint to .env file
-    else if (process.env.FORMSPREE_ENDPOINT) {
-      const formspreeResponse = await fetch(process.env.FORMSPREE_ENDPOINT, {
+    else if (import.meta.env.FORMSPREE_ENDPOINT) {
+      const formspreeResponse = await fetch(import.meta.env.FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
