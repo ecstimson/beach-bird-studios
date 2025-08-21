@@ -43,15 +43,15 @@ const {
       {(primaryCTA || secondaryCTA) && (
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-2">
           {primaryCTA && (
-            <a href={primaryCTA.href} class="btn-primary inline-flex items-center justify-center">
-              <span style="color: #0C3745 !important;">{primaryCTA.text}</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
+            <a href={primaryCTA.href} class="btn-brand-primary inline-flex items-center justify-center">
+              <span>{primaryCTA.text}</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
             </a>
           )}
           {secondaryCTA && (
-            <a href={secondaryCTA.href} class="btn-secondary inline-flex items-center justify-center">
-              <span style="color: #0C3745 !important;">{secondaryCTA.text}</span>
-              <i data-lucide="play-circle" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
+            <a href={secondaryCTA.href} class="btn-brand-secondary-hero inline-flex items-center justify-center">
+              <span>{secondaryCTA.text}</span>
+              <i data-lucide="play-circle" class="w-5 h-5 ml-2"></i>
             </a>
           )}
         </div>

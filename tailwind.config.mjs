@@ -5,6 +5,33 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Brand colors matching CSS variables
+        peach: {
+          50: 'var(--color-peach-50, #fef7f0)',
+          100: 'var(--color-peach-100, #fdeee0)',
+          200: 'var(--color-peach-200, #fbd9c0)',
+          300: 'var(--color-peach-300, #f8c195)',
+          400: 'var(--color-peach-400, #f4a267)',
+          500: 'var(--color-peach-500, #f08544)',
+          600: 'var(--color-peach-600, #e06b39)',
+        },
+        gold: {
+          50: 'var(--color-gold-50, #fffbeb)',
+          100: 'var(--color-gold-100, #fef3c7)',
+          200: 'var(--color-gold-200, #fde68a)',
+          300: 'var(--color-gold-300, #fcd34d)',
+          400: 'var(--color-gold-400, #fbbf24)',
+          500: 'var(--color-gold-500, #f59e0b)',
+        },
+        ocean: {
+          50: 'var(--color-ocean-50, #f0f9ff)',
+          100: 'var(--color-ocean-100, #e0f2fe)',
+          200: 'var(--color-ocean-200, #bae6fd)',
+          300: 'var(--color-ocean-300, #7dd3fc)',
+          400: 'var(--color-ocean-400, #38bdf8)',
+          500: 'var(--color-ocean-500, #0ea5e9)',
+        },
+        // Legacy colors for compatibility
         'beach-blue': 'var(--primary)',
         'beach-yellow': 'var(--accent)', 
         'beach-dark': 'var(--primary-dark)',
@@ -44,6 +71,9 @@ export default {
         'lg': 'var(--shadow-lg)',
         'xl': 'var(--shadow-xl)',
         '2xl': 'var(--shadow-2xl)',
+        'glow-sm': '0 0 10px rgba(240, 133, 68, 0.3)',
+        'glow-md': '0 0 20px rgba(240, 133, 68, 0.3)',
+        'glow-lg': '0 0 30px rgba(240, 133, 68, 0.3), 0 0 40px rgba(251, 191, 36, 0.2)',
       },
       transitionDuration: {
         'fast': '150ms',
@@ -55,6 +85,8 @@ export default {
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {

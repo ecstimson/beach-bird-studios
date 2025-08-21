@@ -49,7 +49,30 @@
    CSS VARIABLES & DESIGN TOKENS
    ============================================ */
 :root {
-  /* Brand Colors */
+  /* Beach Bird Studios Brand Colors - Peach/Gold/Ocean */
+  --color-peach-50: #fef7f0;
+  --color-peach-100: #fdeee0;
+  --color-peach-200: #fbd9c0;
+  --color-peach-300: #f8c195;
+  --color-peach-400: #f4a267;
+  --color-peach-500: #f08544;
+  --color-peach-600: #e06b39;
+  
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  
+  --color-ocean-50: #f0f9ff;
+  --color-ocean-100: #e0f2fe;
+  --color-ocean-200: #bae6fd;
+  --color-ocean-300: #7dd3fc;
+  --color-ocean-400: #38bdf8;
+  --color-ocean-500: #0ea5e9;
+  
+  /* Legacy brand colors (for compatibility) */
   --primary: #47A7EB;
   --primary-dark: #0C3745;
   --primary-light: #B6DCF7;
@@ -57,6 +80,12 @@
   --accent-dark: #FFB300;
   --sand: #F5E6D3;
   --sand-light: #FAF4ED;
+  
+  /* Modern shadows with brand colors */
+  --shadow-peach: 0 0 20px rgba(240, 133, 68, 0.3);
+  --shadow-gold: 0 0 20px rgba(251, 191, 36, 0.3);
+  --shadow-ocean: 0 0 20px rgba(14, 165, 233, 0.3);
+  --shadow-glow: 0 0 40px rgba(240, 133, 68, 0.2), 0 0 60px rgba(251, 191, 36, 0.1);
   
   /* Semantic Colors */
   --success: #10B981;
@@ -766,7 +795,10 @@ p {
    GRADIENTS & BACKGROUNDS
    ============================================ */
 .gradient-hero {
-  background: linear-gradient(135deg, #0C3745 0%, #1E5A7A 50%, #47A7EB 100%);
+  background: linear-gradient(135deg, 
+    var(--color-ocean-500) 0%, 
+    var(--color-peach-500) 50%, 
+    var(--color-gold-400) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -779,8 +811,8 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at top center, rgba(71, 167, 235, 0.3) 0%, transparent 50%),
-              radial-gradient(ellipse at bottom left, rgba(12, 55, 69, 0.4) 0%, transparent 50%);
+  background: radial-gradient(ellipse at top center, rgba(240, 133, 68, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom left, rgba(14, 165, 233, 0.4) 0%, transparent 50%);
   z-index: 1;
   pointer-events: none;
 }
@@ -839,7 +871,7 @@ p {
 .hero-orb-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255, 193, 7, 0.4), transparent 50%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.4), transparent 50%);
   top: -300px;
   left: -300px;
   animation-delay: 0s;
@@ -848,7 +880,7 @@ p {
 .hero-orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(71, 167, 235, 0.3), transparent 50%);
+  background: radial-gradient(circle, rgba(240, 133, 68, 0.3), transparent 50%);
   bottom: -250px;
   right: -150px;
   animation-delay: 5s;
@@ -857,7 +889,7 @@ p {
 .hero-orb-3 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(245, 230, 211, 0.35), transparent 50%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.35), transparent 50%);
   top: 30%;
   left: 60%;
   animation-delay: 10s;
@@ -877,11 +909,11 @@ p {
 
 .gradient-mesh {
   background-image: 
-    radial-gradient(at 40% 20%, rgba(255, 193, 7, 0.25) 0px, transparent 40%),
-    radial-gradient(at 80% 0%, rgba(71, 167, 235, 0.3) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(245, 230, 211, 0.2) 0px, transparent 50%),
-    radial-gradient(at 60% 70%, rgba(255, 193, 7, 0.15) 0px, transparent 40%),
-    radial-gradient(at 20% 80%, rgba(71, 167, 235, 0.2) 0px, transparent 30%);
+    radial-gradient(at 40% 20%, rgba(251, 191, 36, 0.25) 0px, transparent 40%),
+    radial-gradient(at 80% 0%, rgba(240, 133, 68, 0.3) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(14, 165, 233, 0.2) 0px, transparent 50%),
+    radial-gradient(at 60% 70%, rgba(251, 191, 36, 0.15) 0px, transparent 40%),
+    radial-gradient(at 20% 80%, rgba(14, 165, 233, 0.2) 0px, transparent 30%);
   animation: meshFloat 30s ease-in-out infinite;
 }
 
@@ -1143,6 +1175,311 @@ p {
   display: flex;
   justify-content: flex-end;
   gap: var(--space-md);
+}
+
+/* ============================================
+   MODERN UTILITIES & COMPONENTS
+   ============================================ */
+
+/* Brand Card Styles */
+.brand-card-standard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid rgba(240, 133, 68, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(240, 133, 68, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-card-standard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 12px 40px rgba(240, 133, 68, 0.15),
+    0 0 30px rgba(251, 191, 36, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.brand-card-featured {
+  background: linear-gradient(135deg, 
+    var(--color-peach-500) 0%, 
+    var(--color-gold-400) 100%);
+  box-shadow: 
+    0 20px 40px rgba(240, 133, 68, 0.3),
+    0 0 60px rgba(251, 191, 36, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-card-featured::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.brand-card-featured:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 
+    0 30px 60px rgba(240, 133, 68, 0.4),
+    0 0 80px rgba(251, 191, 36, 0.3);
+}
+
+/* Brand Button Styles */
+.btn-brand-primary {
+  background: linear-gradient(135deg, var(--color-gold-400) 0%, var(--color-gold-500) 100%);
+  color: var(--color-peach-600) !important;
+  font-weight: 600;
+  padding: 14px 32px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-brand-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transition: width 0.6s ease, height 0.6s ease;
+  transform: translate(-50%, -50%);
+}
+
+.btn-brand-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-brand-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(251, 191, 36, 0.4);
+}
+
+.btn-brand-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  color: var(--color-peach-500) !important;
+  font-weight: 600;
+  padding: 14px 32px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-peach-400);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(240, 133, 68, 0.1);
+}
+
+.btn-brand-secondary:hover {
+  background: linear-gradient(135deg, var(--color-peach-100) 0%, var(--color-gold-100) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(240, 133, 68, 0.2);
+  border-color: var(--color-peach-500);
+}
+
+/* Hero-specific secondary button (for use on gradient backgrounds) */
+.btn-brand-secondary-hero {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--color-peach-600) !important;
+  font-weight: 600;
+  padding: 14px 32px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-brand-secondary-hero:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Glow Effects */
+.glow-peach {
+  box-shadow: var(--shadow-peach);
+}
+
+.glow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+.glow-ocean {
+  box-shadow: var(--shadow-ocean);
+}
+
+.glow-animated {
+  box-shadow: var(--shadow-glow);
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { 
+    box-shadow: var(--shadow-peach); 
+  }
+  to { 
+    box-shadow: var(--shadow-glow); 
+  }
+}
+
+/* Modern Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Brand Gradients */
+.gradient-peach {
+  background: linear-gradient(135deg, var(--color-peach-400) 0%, var(--color-gold-400) 100%);
+}
+
+.gradient-ocean {
+  background: linear-gradient(135deg, var(--color-ocean-400) 0%, var(--color-ocean-500) 100%);
+}
+
+
+/* Text Gradients */
+.text-gradient-peach {
+  background: linear-gradient(135deg, var(--color-peach-500) 0%, var(--color-gold-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-ocean {
+  background: linear-gradient(135deg, var(--color-ocean-400) 0%, var(--color-ocean-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern Section Styling */
+.section-peach {
+  background: linear-gradient(135deg, 
+    var(--color-peach-50) 0%, 
+    var(--color-gold-50) 100%);
+}
+
+.section-ocean {
+  background: linear-gradient(135deg, 
+    var(--color-ocean-50) 0%, 
+    var(--color-peach-50) 100%);
+}
+
+.section-mesh {
+  background: 
+    radial-gradient(at 40% 20%, hsla(28,100%,74%,0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(45,100%,56%,0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(199,100%,93%,0.1) 0px, transparent 50%),
+    var(--color-peach-50);
+  background-size: 200% 200%;
+  animation: meshMove 10s ease-in-out infinite;
+}
+
+@keyframes meshMove {
+  0%, 100% { 
+    background-position: 0% 0%; 
+  }
+  50% { 
+    background-position: 100% 100%; 
+  }
+}
+
+/* Modern Hero sections */
+.hero-section-modern {
+  background: 
+    radial-gradient(at 40% 20%, hsla(28,100%,74%,0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(45,100%,56%,0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(199,100%,93%,0.1) 0px, transparent 50%),
+    var(--color-peach-50);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* Brand Card Styling */
+.brand-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+  box-shadow: 
+    0 4px 6px rgba(240, 133, 68, 0.1),
+    0 10px 20px rgba(240, 133, 68, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 12px rgba(240, 133, 68, 0.15),
+    0 20px 40px rgba(251, 191, 36, 0.1);
+}
+
+/* Layered Shadows */
+.shadow-layered {
+  box-shadow: 
+    0 1px 2px rgba(240, 133, 68, 0.07),
+    0 2px 4px rgba(240, 133, 68, 0.07),
+    0 4px 8px rgba(240, 133, 68, 0.07),
+    0 8px 16px rgba(240, 133, 68, 0.07),
+    0 16px 32px rgba(240, 133, 68, 0.07);
+}
+
+/* Smooth Scroll Animations */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================

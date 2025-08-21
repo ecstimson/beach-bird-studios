@@ -27,11 +27,20 @@ export default defineConfig({
     })
   ],
   build: {
-    inlineStylesheets: 'auto',
+    // Prevent CSS inlining issues for consistency
+    inlineStylesheets: 'never',
   },
+  // Fix CSS scoping specificity issues
+  scopedStyleStrategy: 'where',
   vite: {
+    css: {
+      // Enable source maps for debugging
+      devSourcemap: true,
+    },
     build: {
       cssCodeSplit: true,
+      // Keep CSS external for consistency
+      assetsInlineLimit: 0,
       rollupOptions: {
         output: {
           manualChunks: {
@@ -59,5 +68,4 @@ export default defineConfig({
     defaultStrategy: 'viewport',
   },
   compressHTML: true,
-  scopedStyleStrategy: 'attribute',
 });

@@ -78,6 +78,56 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <style is:global>
   @import '../styles/global.css';
+  
+  /* Global styles that apply to ALL pages */
+  /* Section styling to replace gray-white-gray pattern */
+  .section {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section:nth-child(odd) {
+    background: linear-gradient(135deg, 
+      var(--color-peach-50, #fef7f0) 0%, 
+      var(--color-gold-50, #fffbeb) 100%);
+  }
+  
+  .section:nth-child(even) {
+    background: radial-gradient(ellipse at top, 
+      var(--color-gold-50, #fffbeb) 0%, 
+      transparent 70%),
+      var(--color-peach-50, #fef7f0);
+  }
+  
+  /* Ensure consistent background for all pages */
+  body {
+    background: linear-gradient(135deg, 
+      var(--color-peach-50, #fef7f0) 0%, 
+      var(--color-gold-50, #fffbeb) 100%);
+    min-height: 100vh;
+  }
+  
+  /* Professional card styling for all pages */
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem;
+    box-shadow: 
+      0 4px 6px rgba(240, 133, 68, 0.1),
+      0 10px 20px rgba(240, 133, 68, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      0 8px 12px rgba(240, 133, 68, 0.15),
+      0 20px 40px rgba(251, 191, 36, 0.1);
+  }
 </style>
 
 <script is:inline>

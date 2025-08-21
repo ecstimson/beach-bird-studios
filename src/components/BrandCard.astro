@@ -1,0 +1,153 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  variant?: 'peach' | 'gold' | 'ocean' | 'glass';
+  icon?: string;
+  href?: string;
+  className?: string;
+}
+
+const { title, description, variant = 'glass', icon, href, className = '' } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={`brand-card brand-card--${variant} ${className}`}>
+    {icon && (
+      <div class="brand-card__icon">
+        <i data-lucide={icon}></i>
+      </div>
+    )}
+    <h3 class="brand-card__title">{title}</h3>
+    {description && <p class="brand-card__description">{description}</p>}
+    <slot />
+  </a>
+) : (
+  <div class={`brand-card brand-card--${variant} ${className}`}>
+    {icon && (
+      <div class="brand-card__icon">
+        <i data-lucide={icon}></i>
+      </div>
+    )}
+    <h3 class="brand-card__title">{title}</h3>
+    {description && <p class="brand-card__description">{description}</p>}
+    <slot />
+  </div>
+)}
+
+<style>
+  .brand-card {
+    display: block;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a.brand-card:hover {
+    text-decoration: none;
+  }
+  
+  .brand-card--glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 8px 32px rgba(240, 133, 68, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  .brand-card--peach {
+    background: linear-gradient(135deg, 
+      rgba(240, 133, 68, 0.1) 0%, 
+      rgba(240, 133, 68, 0.05) 100%);
+    border-left: 4px solid var(--color-peach-500);
+    box-shadow: 0 4px 20px rgba(240, 133, 68, 0.1);
+  }
+  
+  .brand-card--gold {
+    background: linear-gradient(135deg, 
+      rgba(251, 191, 36, 0.1) 0%, 
+      rgba(251, 191, 36, 0.05) 100%);
+    border-left: 4px solid var(--color-gold-400);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.1);
+  }
+  
+  .brand-card--ocean {
+    background: linear-gradient(135deg, 
+      rgba(14, 165, 233, 0.1) 0%, 
+      rgba(14, 165, 233, 0.05) 100%);
+    border-left: 4px solid var(--color-ocean-500);
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+  }
+  
+  .brand-card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+  
+  .brand-card--glass:hover {
+    box-shadow: 
+      0 12px 40px rgba(240, 133, 68, 0.15),
+      0 0 30px rgba(251, 191, 36, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  .brand-card--peach:hover {
+    box-shadow: 0 8px 30px rgba(240, 133, 68, 0.2);
+    border-left-width: 6px;
+  }
+  
+  .brand-card--gold:hover {
+    box-shadow: 0 8px 30px rgba(251, 191, 36, 0.2);
+    border-left-width: 6px;
+  }
+  
+  .brand-card--ocean:hover {
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.2);
+    border-left-width: 6px;
+  }
+  
+  .brand-card__icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--color-peach-400) 0%, var(--color-gold-400) 100%);
+    border-radius: 0.75rem;
+    color: white;
+  }
+  
+  .brand-card__icon i {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .brand-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+    font-family: var(--font-heading);
+  }
+  
+  .brand-card__description {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .brand-card {
+      padding: 1.5rem;
+    }
+    
+    .brand-card__title {
+      font-size: 1.125rem;
+    }
+  }
+</style>
