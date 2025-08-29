@@ -11,6 +11,7 @@ import Footer from '../../components/Footer.astro';
 export async function getStaticPaths() {
   const services = await getCollection('services');
   const industries = await getCollection('industry');
+  const locations = await getCollection('locations'); // Add this line
   
   const servicePaths = services.map(entry => ({
     params: { slug: entry.slug },
@@ -22,7 +23,13 @@ export async function getStaticPaths() {
     props: { entry, collection: 'industry' },
   }));
   
-  return [...servicePaths, ...industryPaths];
+  // Add this block
+  const locationPaths = locations.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry, collection: 'locations' },
+  }));
+  
+  return [...servicePaths, ...industryPaths, ...locationPaths]; // Include locationPaths
 }
 
 const { entry, collection } = Astro.props;
@@ -385,16 +392,16 @@ const processIndustries = (section: Section): Industry[] => {
   description={entry.data.description}
   structuredDataType="Service"
   structuredData={{
-    breadcrumb: [
-      { name: 'Home', url: '/' },
-      { name: 'Services', url: '/services' },
-      { name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug, url: `/services/${entry.slug}` }
-    ],
-    service: {
-      name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug,
-      type: collection === 'industry' ? 'Industry Service' : 'SEO Service',
-      description: entry.data.description || 'Professional SEO and web services for North Carolina businesses.'
-    }
+   breadcrumb: [
+  { name: 'Home', url: '/' },
+  { name: collection === 'locations' ? 'Locations' : 'Services', url: collection === 'locations' ? '/locations' : '/services' },
+  { name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug, url: `/${collection}/${entry.slug}` }
+],
+service: {
+  name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug,
+  type: collection === 'industry' ? 'Industry Service' : collection === 'locations' ? 'Location Service' : 'SEO Service',
+  description: entry.data.description || 'Professional SEO and web services for North Carolina businesses.'
+}
   }}
 >
   <Header />
