@@ -11,9 +11,9 @@ import Footer from '../../components/Footer.astro';
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const services = await getCollection('services');
+  const industries = await getCollection('industry');
   
-  return services.map(entry => ({
+  return industries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -381,13 +381,13 @@ const processIndustries = (section: Section): Industry[] => {
   structuredData={{
    breadcrumb: [
   { name: 'Home', url: '/' },
-  { name: 'Services', url: '/services' },
-  { name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug, url: `/services/${entry.slug}` }
+  { name: 'Industries', url: '/industries' },
+  { name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug, url: `/industry/${entry.slug}` }
 ],
 service: {
   name: entry.data.title?.replace(' | Beach Bird Studios', '') || entry.slug,
-  type: 'Professional Service',
-  description: entry.data.description || 'Professional SEO and web services for North Carolina businesses.'
+  type: 'Industry-Specific Service',
+  description: entry.data.description || 'Industry-specific web design and SEO services for North Carolina businesses.'
 }
   }}
 >
