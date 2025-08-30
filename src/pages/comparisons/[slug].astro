@@ -23,10 +23,22 @@ const { Content } = await entry.render();
 const pageTitle = entry.data.title;
 const pageDescription = entry.data.description;
 
+// Type definitions
+interface ContentItem {
+  type: string;
+  text: string;
+}
+
+interface Section {
+  title: string;
+  content: ContentItem[];
+  type: string;
+}
+
 // Parse markdown content for comparison tables and structured sections
 const rawContent = entry.body;
-const sections: any[] = [];
-let currentSection: any = { title: '', content: [], type: 'content' };
+const sections: Section[] = [];
+let currentSection: Section = { title: '', content: [], type: 'content' };
 
 const lines = rawContent.split('\n');
 
@@ -122,7 +134,7 @@ if (currentSection.content.length > 0 || currentSection.title) {
             {/* Comparison Grid */}
             {section.type === 'comparison' && (
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                {section.content.filter(item => item.type === 'h3').map((item, idx) => {
+                {section.content.filter((item: ContentItem) => item.type === 'h3').map((item: ContentItem, idx: number) => {
                   // Get bullets after this H3
                   const h3Index = section.content.indexOf(item);
                   const bullets = [];
@@ -155,7 +167,7 @@ if (currentSection.content.length > 0 || currentSection.title) {
             {/* Advantages/Benefits Grid */}
             {section.type === 'advantages' && (
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {section.content.filter(item => item.type === 'h3').map((item) => {
+                {section.content.filter((item: ContentItem) => item.type === 'h3').map((item: ContentItem) => {
                   const h3Index = section.content.indexOf(item);
                   let description = '';
                   for (let i = h3Index + 1; i < section.content.length; i++) {
@@ -181,7 +193,7 @@ if (currentSection.content.length > 0 || currentSection.title) {
             {/* Disadvantages Grid */}
             {section.type === 'disadvantages' && (
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {section.content.filter(item => item.type === 'h3').map((item) => {
+                {section.content.filter((item: ContentItem) => item.type === 'h3').map((item: ContentItem) => {
                   const h3Index = section.content.indexOf(item);
                   let description = '';
                   for (let i = h3Index + 1; i < section.content.length; i++) {
@@ -207,7 +219,7 @@ if (currentSection.content.length > 0 || currentSection.title) {
             {/* Regular Content Section */}
             {section.type === 'content' && (
               <div class="prose prose-lg max-w-4xl mx-auto">
-                {section.content.map((item) => {
+                {section.content.map((item: ContentItem) => {
                   if (item.type === 'h3') {
                     return <h3 class="text-2xl font-chillax font-semibold text-gray-800 mb-4 mt-8">{item.text}</h3>;
                   } else if (item.type === 'paragraph') {
