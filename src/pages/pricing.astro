@@ -1,0 +1,545 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Pricing - Transparent Web Design & SEO Investment | Beach Bird Studios';
+const pageDescription = 'Transparent pricing for web design, AI development, and SEO services. Custom quotes based on your needs with flexible payment plans available.';
+
+const pricingApproach = [
+  {
+    icon: 'target',
+    title: 'Custom Solutions',
+    description: 'Every project is unique, so we provide custom quotes based on your specific needs, goals, and complexity requirements.'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Value-Based Investment',
+    description: 'Our pricing reflects the value and ROI your website will generate, not just the hours it takes to build.'
+  },
+  {
+    icon: 'shield-check',
+    title: 'Transparent Process',
+    description: 'Clear, detailed quotes with no hidden fees. You\'ll know exactly what you\'re investing in and why.'
+  },
+  {
+    icon: 'credit-card',
+    title: 'Flexible Payment Plans',
+    description: 'Multiple payment options including milestone-based payments and monthly payment plans for larger projects.'
+  }
+];
+
+const serviceInvestments = [
+  {
+    service: 'Custom Web Design',
+    description: 'Professional, mobile-responsive websites designed for your brand and goals',
+    startingFrom: 'Starting from $3,500',
+    factors: [
+      'Number of pages and complexity',
+      'Custom design requirements',
+      'E-commerce functionality',
+      'Third-party integrations',
+      'Content management needs'
+    ],
+    timeline: '4-8 weeks',
+    bestFor: 'Businesses wanting a unique, professional website that stands out from competitors'
+  },
+  {
+    service: 'AI Website Development',
+    description: '100+ page websites built with AI technology for maximum search visibility',
+    startingFrom: 'Starting from $2,500',
+    factors: [
+      'Industry and competition level',
+      'Geographic service area',
+      'Content customization needs',
+      'Design template selection',
+      'Additional features required'
+    ],
+    timeline: '3-5 weeks',
+    bestFor: 'Businesses wanting comprehensive online presence with extensive content quickly'
+  },
+  {
+    service: 'SEO Services',
+    description: 'Proven strategies to improve search rankings for any existing website',
+    startingFrom: 'Starting from $1,500/month',
+    factors: [
+      'Current website condition',
+      'Competition in your market',
+      'Number of target keywords',
+      'Geographic scope',
+      'Ongoing optimization needs'
+    ],
+    timeline: '3-12 months',
+    bestFor: 'Businesses with existing websites wanting to improve their search visibility'
+  }
+];
+
+const investmentFactors = [
+  {
+    category: 'Project Scope',
+    factors: [
+      'Number of pages required',
+      'Complexity of functionality',
+      'Custom design vs template customization',
+      'Content creation needs',
+      'Integration requirements'
+    ]
+  },
+  {
+    category: 'Timeline Requirements',
+    factors: [
+      'Urgency of project completion',
+      'Availability for feedback and reviews',
+      'Content and asset preparation',
+      'Launch date constraints',
+      'Phased delivery preferences'
+    ]
+  },
+  {
+    category: 'Business Goals',
+    factors: [
+      'Lead generation objectives',
+      'E-commerce requirements',
+      'Brand positioning needs',
+      'Market competition level',
+      'Growth and scalability plans'
+    ]
+  },
+  {
+    category: 'Ongoing Support',
+    factors: [
+      'Maintenance and update needs',
+      'SEO optimization requirements',
+      'Training and documentation',
+      'Analytics and reporting',
+      'Future enhancement plans'
+    ]
+  }
+];
+
+const paymentOptions = [
+  {
+    option: 'Milestone Payments',
+    description: 'Split project cost across key milestones',
+    details: [
+      '25% deposit to start project',
+      '25% at design approval',
+      '25% at development completion',
+      '25% at final launch'
+    ],
+    bestFor: 'Most projects over $5,000'
+  },
+  {
+    option: 'Monthly Payment Plans',
+    description: 'Spread investment over 6-12 months',
+    details: [
+      'Small down payment to start',
+      'Fixed monthly payments',
+      'No interest on 6-month plans',
+      'Low interest on longer terms'
+    ],
+    bestFor: 'Larger projects or cash flow management'
+  },
+  {
+    option: 'Full Payment Discount',
+    description: 'Save with complete upfront payment',
+    details: [
+      '5% discount on total project cost',
+      'Priority project scheduling',
+      'Expedited delivery when possible',
+      'Extended warranty period'
+    ],
+    bestFor: 'Projects under $10,000'
+  }
+];
+
+const valueComparison = [
+  {
+    aspect: 'DIY Website Builders',
+    limitations: [
+      'Limited customization options',
+      'Poor SEO optimization',
+      'Generic, template-based design',
+      'No professional support',
+      'Hidden ongoing costs'
+    ],
+    ourAdvantage: 'Custom design, SEO optimization, professional support, transparent pricing'
+  },
+  {
+    aspect: 'Large Agency Solutions',
+    limitations: [
+      'Extremely high costs ($15K-50K+)',
+      'Long development timelines (6+ months)',
+      'Account manager layers',
+      'Inflexible processes',
+      'Ongoing retainer requirements'
+    ],
+    ourAdvantage: 'Competitive pricing, faster delivery, direct communication, flexible approach'
+  },
+  {
+    aspect: 'Freelancer Services',
+    limitations: [
+      'Inconsistent quality and availability',
+      'Limited accountability',
+      'No comprehensive business understanding',
+      'Project delays common',
+      'Limited ongoing support'
+    ],
+    ourAdvantage: 'Reliable team, business expertise, guaranteed delivery, ongoing support'
+  }
+];
+---
+
+<Layout 
+  title={pageTitle} 
+  description={pageDescription}
+  structuredDataType="WebPage"
+  structuredData={{
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Pricing", url: "/pricing" }
+    ]
+  }}
+>
+  <Header />
+  
+  <Hero
+    headline="Transparent <span style='color: #FFC107;'>Investment</span> in Your Success"
+    subheadline="Fair, value-based pricing with flexible payment options. Get a custom quote designed specifically for your business needs."
+    primaryCTA={{
+      text: "Get Custom Quote",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "View Our Process", 
+      href: "/process"
+    }}
+  />
+
+  <main>
+    <!-- Pricing Philosophy -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Our Pricing Philosophy
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We believe in fair, transparent pricing based on the value we deliver to your business, not arbitrary hourly rates.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {pricingApproach.map((approach, index) => (
+            <div class={`text-center animate-fadeInUp stagger-${index + 1}`}>
+              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide={approach.icon} class="w-10 h-10 text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold text-dark mb-4">{approach.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{approach.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Investments -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Service Investment Ranges
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Understanding our starting points helps you plan your investment. Final quotes are always custom-tailored to your specific needs.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          {serviceInvestments.map((investment, index) => (
+            <div class={`bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeInUp stagger-${index + 1} ${index === 1 ? 'border-2 border-primary' : ''}`}>
+              {index === 1 && (
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span class="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                </div>
+              )}
+              
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-dark mb-3">{investment.service}</h3>
+                <p class="text-gray-600 mb-6">{investment.description}</p>
+                <div class="text-3xl font-bold text-primary mb-2">{investment.startingFrom}</div>
+                <div class="text-sm text-gray-500">Timeline: {investment.timeline}</div>
+              </div>
+
+              <div class="mb-6">
+                <h4 class="font-semibold text-dark mb-3">Investment factors:</h4>
+                <ul class="space-y-2">
+                  {investment.factors.map((factor) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                      <i data-lucide="arrow-right" class="w-3 h-3 text-primary flex-shrink-0 mt-1"></i>
+                      {factor}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="border-t pt-6">
+                <h4 class="font-semibold text-dark mb-2">Best for:</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">{investment.bestFor}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Investment Factors -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            What Influences Your Investment
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Several factors determine your final quote. Understanding these helps us provide the most accurate estimate for your project.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {investmentFactors.map((category, index) => (
+            <div class={`bg-gray-50 rounded-xl p-8 animate-fadeInUp stagger-${(index % 2) + 1}`}>
+              <h3 class="text-2xl font-bold text-dark mb-6">{category.category}</h3>
+              <ul class="space-y-3">
+                {category.factors.map((factor) => (
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i>
+                    <span class="text-gray-700">{factor}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Options -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Flexible Payment Options
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Choose the payment structure that works best for your business cash flow and project timeline.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          {paymentOptions.map((option, index) => (
+            <div class={`bg-white rounded-xl p-8 shadow-lg animate-fadeInUp stagger-${index + 1}`}>
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-dark mb-3">{option.option}</h3>
+                <p class="text-gray-600">{option.description}</p>
+              </div>
+
+              <div class="mb-6">
+                <ul class="space-y-3">
+                  {option.details.map((detail) => (
+                    <li class="flex items-start gap-3">
+                      <i data-lucide="dollar-sign" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i>
+                      <span class="text-gray-700">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="border-t pt-6">
+                <h4 class="font-semibold text-dark mb-2">Best for:</h4>
+                <p class="text-sm text-gray-600">{option.bestFor}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Comparison -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Investment vs. Value Comparison
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Understanding why professional web development is a smart investment compared to other options.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          {valueComparison.map((comparison, index) => (
+            <div class={`bg-gray-50 rounded-xl p-8 animate-fadeInUp stagger-${index + 1}`}>
+              <div class="grid lg:grid-cols-2 gap-8 items-start">
+                <div>
+                  <h3 class="text-2xl font-bold text-dark mb-4">{comparison.aspect}</h3>
+                  <h4 class="text-lg font-semibold text-red-600 mb-4">Common Limitations:</h4>
+                  <ul class="space-y-2">
+                    {comparison.limitations.map((limitation) => (
+                      <li class="flex items-start gap-2">
+                        <i data-lucide="x-circle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-1"></i>
+                        <span class="text-gray-600 text-sm">{limitation}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-lg font-semibold text-green-600 mb-4">Beach Bird Studios Advantage:</h4>
+                  <div class="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                    <p class="text-gray-700 leading-relaxed">{comparison.ourAdvantage}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Information -->
+    <section class="py-20 bg-primary/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Your Return on Investment
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            A professional website isn't an expense—it's an investment that pays for itself through increased business.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              icon: 'trending-up',
+              title: 'Lead Generation',
+              description: 'Professional websites typically generate 3-5x more qualified leads than DIY solutions'
+            },
+            {
+              icon: 'search',
+              title: 'Search Visibility', 
+              description: 'Proper SEO optimization can increase organic traffic by 200-500% within 6-12 months'
+            },
+            {
+              icon: 'shield-check',
+              title: 'Credibility Boost',
+              description: 'Professional design increases customer trust and conversion rates by 30-50%'
+            },
+            {
+              icon: 'clock',
+              title: 'Time Savings',
+              description: 'Focus on your business while we handle your online presence professionally'
+            }
+          ].map((benefit, index) => (
+            <div class={`text-center bg-white rounded-xl p-8 shadow-lg animate-fadeInUp stagger-${index + 1}`}>
+              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide={benefit.icon} class="w-8 h-8 text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold text-dark mb-4">{benefit.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Pricing Questions & Answers
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          {[
+            {
+              question: "Why don't you list fixed packages with set prices?",
+              answer: "Every business is unique with different needs, goals, and challenges. Fixed packages often include features you don't need while missing what you do need. Our custom approach ensures you get exactly what your business requires at a fair price."
+            },
+            {
+              question: "How do you determine the final quote?",
+              answer: "We conduct a thorough consultation to understand your business goals, target audience, desired features, timeline, and budget range. Based on this information, we provide a detailed quote that outlines exactly what's included and why."
+            },
+            {
+              question: "Are there any hidden fees or ongoing costs?",
+              answer: "No hidden fees, ever. Your quote includes everything needed to complete your project. We'll clearly explain any ongoing costs like hosting, domain renewal, or optional maintenance services upfront."
+            },
+            {
+              question: "Do you offer payment plans for larger projects?",
+              answer: "Yes, we offer flexible payment plans including milestone-based payments and monthly payment plans. We work with your budget and cash flow needs to make professional web development accessible."
+            },
+            {
+              question: "What if my project needs change during development?",
+              answer: "We handle change requests professionally with clear communication about timeline and cost impacts. Minor changes are often included, while major scope changes are quoted separately to keep your project on track."
+            },
+            {
+              question: "How does your pricing compare to other agencies?",
+              answer: "Our pricing is competitive for the quality and service we provide. We're typically less expensive than large agencies while offering more expertise and reliability than freelancers. Most importantly, we focus on ROI—your website should pay for itself through increased business."
+            }
+          ].map((faq, index) => (
+            <div class={`bg-gray-50 rounded-xl p-8 animate-fadeInUp stagger-${(index % 3) + 1}`}>
+              <h3 class="text-xl font-bold text-dark mb-4">{faq.question}</h3>
+              <p class="text-gray-700 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-dark text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready for Your Custom Quote?
+        </h2>
+        <p class="text-xl mb-8 text-white/90">
+          Get a detailed, personalized quote based on your specific business needs and goals. No obligation, no pressure.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary bg-accent hover:bg-accent/90">
+            <span style="color: #0C3745 !important;">Get Your Custom Quote</span>
+            <i data-lucide="arrow-right" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
+          </a>
+          <a href="/process" class="btn-secondary bg-white/10 hover:bg-white/20 text-white border-white/30">
+            Learn Our Process
+            <i data-lucide="play-circle" class="w-5 h-5 ml-2"></i>
+          </a>
+        </div>
+        
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm text-white/80">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            No Hidden Fees
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="credit-card" class="w-4 h-4"></i>
+            Flexible Payment Plans
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Free Consultation
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4"></i>
+            Quick Response Time
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

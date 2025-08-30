@@ -1,0 +1,783 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Local SEO Checklist 2025 - 50+ Action Items to Rank Higher | Beach Bird Studios';
+const pageDescription = 'Complete local SEO checklist with 50+ actionable items. Download our proven checklist to improve your local search rankings and attract more customers.';
+
+const quickWins = [
+  {
+    icon: 'check-circle',
+    title: 'Claim Google My Business',
+    description: 'Verify and complete your Google My Business profile. This is the foundation of local SEO success.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mobile Optimization Check',
+    description: 'Test your website on mobile devices. Over 60% of local searches happen on phones.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'map-pin',
+    title: 'Add Location to Title Tags',
+    description: 'Include your city/area in homepage and key page titles. "Plumber in Wilmington NC" works better than just "Plumber".',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'star',
+    title: 'Request Customer Reviews',
+    description: 'Ask your best customers for Google reviews. Even 5 positive reviews can significantly improve rankings.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'image',
+    title: 'Optimize Business Photos',
+    description: 'Upload high-quality photos of your business, team, and work. Include location data when possible.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'clock',
+    title: 'Update Business Hours',
+    description: 'Keep your hours current everywhere online. Inconsistent hours hurt both SEO and customer experience.',
+    iconColor: 'orange'
+  }
+];
+
+const onPageSEO = [
+  {
+    icon: 'edit',
+    title: 'Title Tag Optimization',
+    description: 'Every page needs a unique title with location keywords. Keep under 60 characters for best display.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'file-text',
+    title: 'Meta Description Creation',
+    description: 'Write compelling descriptions that include location and encourage clicks. 150-160 characters ideal.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'heading',
+    title: 'Header Tag Structure',
+    description: 'Use H1 for page title, H2 for main sections. Include location keywords naturally in headers.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'link',
+    title: 'URL Optimization',
+    description: 'Clean URLs with location keywords. /plumbing-services-wilmington-nc beats /page123',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'image',
+    title: 'Image Alt Text',
+    description: 'Add descriptive alt text to images. Include location when relevant: "Wilmington plumber fixing sink"',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'code',
+    title: 'Schema Markup',
+    description: 'Add LocalBusiness schema to help Google understand your business location and services.',
+    iconColor: 'orange'
+  }
+];
+
+const contentStrategy = [
+  {
+    icon: 'map',
+    title: 'Location-Based Pages',
+    description: 'Create dedicated pages for each city or area you serve. Focus on local keywords and local content.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'edit-3',
+    title: 'Local Blog Content',
+    description: 'Write about local events, news, and community involvement. Shows Google you\'re locally relevant.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'help-circle',
+    title: 'FAQ Pages',
+    description: 'Answer common customer questions with local context. "Do you service Wrightsville Beach?"',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'users',
+    title: 'Customer Success Stories',
+    description: 'Share case studies and testimonials that mention specific local areas and results.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'calendar',
+    title: 'Service Area Content',
+    description: 'Create content explaining how you serve different neighborhoods and their unique needs.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Industry + Location Content',
+    description: 'Combine your expertise with local knowledge. "Commercial HVAC Maintenance for Wilmington Businesses"',
+    iconColor: 'orange'
+  }
+];
+
+const technicalSEO = [
+  {
+    icon: 'zap',
+    title: 'Page Speed Optimization',
+    description: 'Test with Google PageSpeed Insights. Aim for scores above 90 on mobile and desktop.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'shield',
+    title: 'SSL Certificate',
+    description: 'Ensure your website uses HTTPS. Google requires secure connections for good rankings.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mobile Responsiveness',
+    description: 'Test your site on multiple devices. Use Google\'s Mobile-Friendly Test tool.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'search',
+    title: 'XML Sitemap',
+    description: 'Create and submit a sitemap to Google Search Console to help with page discovery.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'navigation',
+    title: 'Internal Linking',
+    description: 'Link related pages together with descriptive anchor text. Help users and search engines navigate.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'activity',
+    title: '404 Error Pages',
+    description: 'Find and fix broken links. Create helpful 404 pages that guide users back to important content.',
+    iconColor: 'orange'
+  }
+];
+
+const citationsDirectories = [
+  {
+    icon: 'building',
+    title: 'NAP Consistency',
+    description: 'Ensure Name, Address, Phone are identical everywhere online. Even small variations hurt rankings.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'globe',
+    title: 'Major Directory Listings',
+    description: 'Create profiles on Google, Yelp, Facebook, Apple Maps, and Bing Places with consistent information.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'briefcase',
+    title: 'Industry-Specific Directories',
+    description: 'Find directories specific to your industry. Plumbers use Angie\'s List, restaurants use TripAdvisor.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'map-pin',
+    title: 'Local Chamber of Commerce',
+    description: 'Join your local chamber and business associations for credible local backlinks.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'newspaper',
+    title: 'Local News Sites',
+    description: 'Get mentioned in local newspapers, blogs, and community websites for powerful local signals.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'award',
+    title: 'BBB and Certifications',
+    description: 'Maintain profiles on Better Business Bureau and relevant professional certifications.',
+    iconColor: 'orange'
+  }
+];
+
+const reviewManagement = [
+  {
+    icon: 'star',
+    title: 'Review Request Strategy',
+    description: 'Systematically ask satisfied customers for reviews. Time requests right after positive interactions.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'message-circle',
+    title: 'Review Response Plan',
+    description: 'Respond to all reviews professionally. Thank positive reviewers and address concerns constructively.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Review Monitoring',
+    description: 'Set up alerts for new reviews across all platforms. Respond quickly to show you care about feedback.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'link-2',
+    title: 'Easy Review Links',
+    description: 'Create direct links to your Google, Yelp, and Facebook review pages. Make it simple for customers.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'mail',
+    title: 'Follow-up Email Campaign',
+    description: 'Send automated emails asking for reviews 1-3 days after service completion.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'gift',
+    title: 'Review Incentive Program',
+    description: 'Offer small thank-you gifts for reviews (following platform guidelines). Focus on service quality first.',
+    iconColor: 'orange'
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  structuredDataType="WebPage"
+  structuredData={{
+    "@type": "Article",
+    "headline": "Local SEO Checklist 2025",
+    "author": {
+      "@type": "Organization",
+      "name": "Beach Bird Studios"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Beach Bird Studios"
+    }
+  }}
+>
+  <Header />
+  
+  <Hero 
+    headline="Local SEO <span class='text-yellow-400'>Checklist</span> for 2025"
+    subheadline="50+ actionable items to improve your local search rankings and attract more customers"
+    primaryCTA={{
+      text: "Download Full Checklist",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "Get SEO Help",
+      href: "/services/seo-services"
+    }}
+  />
+
+  <!-- Introduction Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          This comprehensive local SEO checklist contains over 50 proven tactics to improve your local search rankings. 
+          Each item is actionable and designed specifically for small businesses competing in local markets.
+        </p>
+        
+        <p class="text-lg text-gray-600 mb-8">
+          Work through this checklist systematically to build a strong local SEO foundation. 
+          Focus on the quick wins first, then tackle the more advanced strategies as your local presence grows.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <i data-lucide="target" class="h-5 w-5 text-blue-400"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-blue-700">
+                <strong>Pro Tip:</strong> Don't try to tackle everything at once. Pick 3-5 items each week 
+                and work through them consistently for best results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Wins -->
+  <section class="py-20 bg-green-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Quick Wins (Start Here)</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          These high-impact actions can be completed quickly and often show results within days or weeks.
+        </p>
+      </div>
+      
+      <FeatureGrid features={quickWins} />
+      
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center px-6 py-3 bg-green-100 rounded-full">
+          <i data-lucide="clock" class="w-5 h-5 text-green-600 mr-2"></i>
+          <span class="text-green-800 font-medium">Time Required: 2-4 hours total</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Page SEO -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">On-Page SEO Optimization</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Optimize your website pages to help search engines understand your location and services.
+        </p>
+      </div>
+      
+      <FeatureGrid features={onPageSEO} />
+    </div>
+  </section>
+
+  <!-- Content Strategy -->
+  <section class="py-20 bg-cream-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Local Content Strategy</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Create content that demonstrates local expertise and targets location-based searches.
+        </p>
+      </div>
+      
+      <FeatureGrid features={contentStrategy} />
+    </div>
+  </section>
+
+  <!-- Technical SEO -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Technical SEO Foundation</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ensure your website meets Google's technical requirements for local search visibility.
+        </p>
+      </div>
+      
+      <FeatureGrid features={technicalSEO} />
+    </div>
+  </section>
+
+  <!-- Citations & Directories -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Citations & Directory Listings</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Build consistent business listings across the web to establish local authority and trust.
+        </p>
+      </div>
+      
+      <FeatureGrid features={citationsDirectories} />
+    </div>
+  </section>
+
+  <!-- Review Management -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Review Management System</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Develop a systematic approach to earning and managing online reviews across all platforms.
+        </p>
+      </div>
+      
+      <FeatureGrid features={reviewManagement} />
+    </div>
+  </section>
+
+  <!-- Comprehensive Checklist -->
+  <section class="py-20 bg-cream-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Complete Local SEO Checklist</h2>
+        <p class="text-xl text-gray-600">
+          Use this comprehensive checklist to track your progress and ensure nothing is missed.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          
+          <!-- Google My Business -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+              <i data-lucide="map-pin" class="w-5 h-5 mr-2 text-blue-600"></i>
+              Google My Business
+            </h3>
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Claim and verify your listing</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Complete all profile sections 100%</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Add high-quality business photos</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Keep business hours accurate</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Enable messaging features</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Post regular updates</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Manage Q&A section</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Website Optimization -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+              <i data-lucide="globe" class="w-5 h-5 mr-2 text-green-600"></i>
+              Website Optimization
+            </h3>
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Add location to title tags</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Write local meta descriptions</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Optimize images with alt text</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Ensure mobile responsiveness</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Add schema markup</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Create location-based pages</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600">
+                <span class="text-gray-700 text-sm">Add clear contact information</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Content Marketing -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+              <i data-lucide="edit-3" class="w-5 h-5 mr-2 text-yellow-600"></i>
+              Content Marketing
+            </h3>
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Create service area pages</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Write local blog content</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Add customer testimonials</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Create FAQ page</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Share local community involvement</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Include local keywords naturally</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-600">
+                <span class="text-gray-700 text-sm">Add local photos and videos</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Citations & Reviews -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+              <i data-lucide="star" class="w-5 h-5 mr-2 text-purple-600"></i>
+              Citations & Reviews
+            </h3>
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Ensure NAP consistency everywhere</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Create major directory listings</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Join local chamber of commerce</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Request customer reviews</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Respond to all reviews</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Set up review monitoring</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-600">
+                <span class="text-gray-700 text-sm">Create easy review links</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Monthly Maintenance Tasks</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Monitor Google My Business insights</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Check for new reviews</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Update business information</span>
+              </label>
+            </div>
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Publish new local content</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Audit citation accuracy</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                <span class="text-gray-700 text-sm">Analyze local search rankings</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Resources -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Essential Local SEO Tools</h2>
+        <p class="text-xl text-gray-600">
+          Use these free and paid tools to execute your local SEO strategy effectively.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Free Tools</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">Google My Business</p>
+                <p class="text-sm text-gray-600">Manage your local business presence</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">Google Search Console</p>
+                <p class="text-sm text-gray-600">Monitor search performance and issues</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">Google Analytics</p>
+                <p class="text-sm text-gray-600">Track website traffic and user behavior</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">Google PageSpeed Insights</p>
+                <p class="text-sm text-gray-600">Test website loading speed</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Premium Tools</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i data-lucide="star" class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">BrightLocal</p>
+                <p class="text-sm text-gray-600">Local SEO audit and citation tracking</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="star" class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">Moz Local</p>
+                <p class="text-sm text-gray-600">Directory listing management</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="star" class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">SEMrush</p>
+                <p class="text-sm text-gray-600">Local keyword research and ranking tracking</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="star" class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-medium text-gray-900">ReviewTrackers</p>
+                <p class="text-sm text-gray-600">Monitor and manage online reviews</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Tracking -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Track Your Progress</h2>
+        <p class="text-xl text-gray-600">
+          Monitor these key metrics to measure your local SEO success.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Weekly Metrics</h3>
+            <ul class="space-y-3">
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">Google My Business views</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">Website organic traffic</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">Phone calls from search</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">Direction requests</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Monthly Metrics</h3>
+            <ul class="space-y-3">
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">New Google reviews</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">Local keyword rankings</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">New customer inquiries</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-gray-700">Citation completions</span>
+                <div class="w-16 h-8 bg-gray-100 rounded border"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Success Timeline Expectations</h4>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>• <strong>0-1 months:</strong> Google My Business improvements visible</li>
+            <li>• <strong>1-3 months:</strong> Website traffic and ranking improvements</li>
+            <li>• <strong>3-6 months:</strong> Significant local visibility gains</li>
+            <li>• <strong>6-12 months:</strong> Market-leading local positions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection 
+    headline="Need Help Implementing This Checklist?"
+    description="Get expert local SEO help and watch your business climb to the top of local search results."
+    primaryCTA={{
+      text: "Get SEO Help Now",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "Download Checklist PDF",
+      href: "/contact"
+    }}
+  />
+
+  <Footer />
+</Layout>
+
+<style>
+  .form-checkbox:checked {
+    background-color: currentColor;
+    border-color: currentColor;
+  }
+  
+  .bg-cream-50 {
+    background-color: rgba(245, 230, 211, 0.3);
+  }
+</style>

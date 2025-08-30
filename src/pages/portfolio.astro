@@ -1,0 +1,401 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Portfolio - Website Design & Development Projects | Beach Bird Studios';
+const pageDescription = 'Explore Beach Bird Studios\' portfolio of custom websites, AI-powered development, and SEO success stories for North Carolina businesses.';
+
+const portfolioCategories = [
+  {
+    id: 'all',
+    name: 'All Projects',
+    active: true
+  },
+  {
+    id: 'custom-design',
+    name: 'Custom Design',
+    active: false
+  },
+  {
+    id: 'ai-development',
+    name: 'AI Development',
+    active: false
+  },
+  {
+    id: 'seo-services',
+    name: 'SEO Services',
+    active: false
+  }
+];
+
+const portfolioProjects = [
+  {
+    id: 1,
+    title: 'Local Service Business Website',
+    category: 'custom-design',
+    industry: 'Home Services',
+    description: 'Modern, mobile-responsive website designed to capture local leads and showcase services.',
+    features: ['Mobile-first design', 'Lead capture forms', 'Service area maps', 'Before/after galleries'],
+    results: ['Improved online presence', 'Better user engagement', 'Professional credibility'],
+    image: '/images/portfolio/placeholder-project-1.jpg',
+    url: '#'
+  },
+  {
+    id: 2,
+    title: 'Healthcare Practice Platform',
+    category: 'ai-development',
+    industry: 'Healthcare',
+    description: 'Comprehensive 100+ page website with AI-generated content for medical practice.',
+    features: ['100+ optimized pages', 'Appointment booking', 'Service explanations', 'Patient resources'],
+    results: ['Increased organic traffic', 'More appointment bookings', 'Better patient education'],
+    image: '/images/portfolio/placeholder-project-2.jpg',
+    url: '#'
+  },
+  {
+    id: 3,
+    title: 'E-commerce SEO Campaign',
+    category: 'seo-services',
+    industry: 'Retail',
+    description: 'Complete SEO optimization for existing e-commerce platform to improve search visibility.',
+    features: ['Technical SEO audit', 'Content optimization', 'Local SEO setup', 'Performance monitoring'],
+    results: ['Higher search rankings', 'Increased organic traffic', 'Better conversion rates'],
+    image: '/images/portfolio/placeholder-project-3.jpg',
+    url: '#'
+  },
+  {
+    id: 4,
+    title: 'Restaurant Chain Website',
+    category: 'custom-design',
+    industry: 'Food & Beverage',
+    description: 'Multi-location restaurant website with online ordering and location management.',
+    features: ['Location finder', 'Online menu system', 'Order integration', 'Event booking'],
+    results: ['Streamlined operations', 'Increased online orders', 'Better customer experience'],
+    image: '/images/portfolio/placeholder-project-4.jpg',
+    url: '#'
+  },
+  {
+    id: 5,
+    title: 'Real Estate Platform',
+    category: 'ai-development',
+    industry: 'Real Estate',
+    description: 'AI-powered real estate website with comprehensive property and area information.',
+    features: ['Property listings', 'Neighborhood guides', 'Market analysis', 'Lead generation'],
+    results: ['More qualified leads', 'Better market positioning', 'Enhanced user experience'],
+    image: '/images/portfolio/placeholder-project-5.jpg',
+    url: '#'
+  },
+  {
+    id: 6,
+    title: 'Professional Services SEO',
+    category: 'seo-services',
+    industry: 'Professional Services',
+    description: 'SEO optimization for law firm to dominate local search results.',
+    features: ['Local SEO', 'Content strategy', 'Technical optimization', 'Reputation management'],
+    results: ['Top 3 local rankings', 'Increased consultation requests', 'Better online reputation'],
+    image: '/images/portfolio/placeholder-project-6.jpg',
+    url: '#'
+  }
+];
+
+const serviceShowcase = [
+  {
+    icon: 'palette',
+    title: 'Custom Web Design',
+    description: 'Beautifully crafted websites that reflect your brand and convert visitors into customers.',
+    projectCount: '25+ Projects',
+    features: ['Mobile-responsive design', 'Brand-focused aesthetics', 'Conversion optimization', 'Fast loading speeds']
+  },
+  {
+    icon: 'cpu',
+    title: 'AI Website Development',
+    description: 'Comprehensive 100+ page websites built with AI technology for maximum search visibility.',
+    projectCount: '15+ Projects', 
+    features: ['100+ optimized pages', 'AI-generated content', 'SEO-ready structure', 'Rapid development']
+  },
+  {
+    icon: 'trending-up',
+    title: 'SEO Services',
+    description: 'Proven strategies to improve your search rankings on any platform or existing website.',
+    projectCount: '40+ Projects',
+    features: ['Technical SEO audits', 'Content optimization', 'Local SEO', 'Ongoing monitoring']
+  }
+];
+---
+
+<Layout 
+  title={pageTitle} 
+  description={pageDescription}
+  structuredDataType="WebPage"
+  structuredData={{
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Portfolio", url: "/portfolio" }
+    ]
+  }}
+>
+  <Header />
+  
+  <Hero
+    headline="Our <span style='color: #FFC107;'>Portfolio</span> of Success"
+    subheadline="Explore real websites and SEO campaigns that have helped North Carolina businesses grow and succeed online."
+    primaryCTA={{
+      text: "Start Your Project",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "View Our Process", 
+      href: "/process"
+    }}
+  />
+
+  <main>
+    <!-- Service Categories Showcase -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Our Service Categories
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Three distinct approaches to help your business succeed online, each tailored to different needs and budgets.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          {serviceShowcase.map((service, index) => (
+            <div class={`bg-white rounded-xl p-8 border-2 border-gray-100 hover:border-primary/30 hover:shadow-lg transition-all duration-300 animate-fadeInUp stagger-${index + 1}`}>
+              <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <i data-lucide={service.icon} class="w-8 h-8 text-primary"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-dark mb-3">{service.title}</h3>
+              <p class="text-gray-600 mb-6">{service.description}</p>
+              <div class="text-sm text-primary font-semibold mb-6">{service.projectCount}</div>
+              <ul class="space-y-2">
+                {service.features.map((feature) => (
+                  <li class="flex items-center gap-2 text-sm text-gray-600">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Filter & Grid -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Featured Projects
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Real projects showcasing our expertise across different industries and service types.
+          </p>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            {portfolioCategories.map((category) => (
+              <button 
+                class={`px-6 py-3 rounded-full font-semibold transition-all duration-300 portfolio-filter ${
+                  category.active 
+                    ? 'bg-primary text-white' 
+                    : 'bg-white text-gray-700 hover:bg-primary/10 hover:text-primary border border-gray-200'
+                }`}
+                data-filter={category.id}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+          {portfolioProjects.map((project, index) => (
+            <div class={`portfolio-item animate-fadeInUp stagger-${(index % 3) + 1}`} data-category={project.category}>
+              <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <!-- Project Image -->
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-accent/10 relative overflow-hidden">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center">
+                      <i data-lucide="image" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
+                      <p class="text-gray-500 text-lg">Project Showcase</p>
+                      <p class="text-gray-400 text-sm">{project.industry}</p>
+                    </div>
+                  </div>
+                  <!-- Hover Overlay -->
+                  <div class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href={project.url} class="btn-primary">
+                      <span style="color: #0C3745 !important;">View Details</span>
+                      <i data-lucide="external-link" class="w-4 h-4 ml-2" style="color: #0C3745 !important;"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Project Content -->
+                <div class="p-6">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
+                      {project.industry}
+                    </span>
+                    <span class="text-xs px-3 py-1 bg-gray-100 text-gray-600 rounded-full">
+                      {portfolioCategories.find(cat => cat.id === project.category)?.name}
+                    </span>
+                  </div>
+                  
+                  <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  <p class="text-gray-600 mb-6">
+                    {project.description}
+                  </p>
+
+                  <!-- Key Features -->
+                  <div class="mb-6">
+                    <h4 class="text-sm font-semibold text-dark mb-2">Key Features:</h4>
+                    <ul class="space-y-1">
+                      {project.features.slice(0, 3).map((feature) => (
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                          <i data-lucide="check" class="w-3 h-3 text-green-500 flex-shrink-0"></i>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <!-- Results -->
+                  <div class="border-t pt-4">
+                    <h4 class="text-sm font-semibold text-dark mb-2">Results:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      {project.results.map((result) => (
+                        <span class="text-xs px-2 py-1 bg-green-50 text-green-700 rounded">
+                          {result}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Portfolio Note -->
+        <div class="mt-12 text-center animate-fadeInUp">
+          <div class="bg-white rounded-xl p-8 max-w-3xl mx-auto">
+            <i data-lucide="info" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+            <h3 class="text-xl font-bold text-dark mb-4">Portfolio Privacy Notice</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Out of respect for our clients' privacy and competitive positioning, we showcase project concepts and results rather than specific client details. Each project represents real work completed for North Carolina businesses across various industries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+            Industries We Serve
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We've helped businesses across diverse industries establish and grow their online presence.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { icon: 'home', name: 'Home Services', count: '15+ Projects' },
+            { icon: 'stethoscope', name: 'Healthcare', count: '12+ Projects' },
+            { icon: 'briefcase', name: 'Professional Services', count: '18+ Projects' },
+            { icon: 'utensils', name: 'Restaurants', count: '8+ Projects' },
+            { icon: 'building', name: 'Real Estate', count: '10+ Projects' },
+            { icon: 'shopping-bag', name: 'Retail & E-commerce', count: '14+ Projects' },
+            { icon: 'graduation-cap', name: 'Education', count: '6+ Projects' },
+            { icon: 'car', name: 'Automotive', count: '9+ Projects' }
+          ].map((industry, index) => (
+            <div class={`text-center p-6 rounded-xl bg-gray-50 hover:bg-primary/5 transition-all duration-300 animate-fadeInUp stagger-${(index % 4) + 1}`}>
+              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide={industry.icon} class="w-8 h-8 text-primary"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-dark mb-2">{industry.name}</h3>
+              <p class="text-sm text-gray-600">{industry.count}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-dark text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Join Our Success Stories?
+        </h2>
+        <p class="text-xl mb-8 text-white/90">
+          Let's create a custom solution that helps your business stand out and grow in your industry.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary bg-accent hover:bg-accent/90">
+            <span style="color: #0C3745 !important;">Start Your Project</span>
+            <i data-lucide="arrow-right" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
+          </a>
+          <a href="/process" class="btn-secondary bg-white/10 hover:bg-white/20 text-white border-white/30">
+            Learn Our Process
+            <i data-lucide="play-circle" class="w-5 h-5 ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Portfolio Filter Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.portfolio-filter');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const filter = target.getAttribute('data-filter');
+
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-white');
+          btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+        });
+        target.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+        target.classList.add('bg-primary', 'text-white');
+
+        // Filter portfolio items
+        portfolioItems.forEach(item => {
+          const htmlItem = item as HTMLElement;
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            htmlItem.style.display = 'block';
+            htmlItem.style.opacity = '0';
+            setTimeout(() => {
+              htmlItem.style.opacity = '1';
+            }, 100);
+          } else {
+            htmlItem.style.opacity = '0';
+            setTimeout(() => {
+              htmlItem.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+</script>

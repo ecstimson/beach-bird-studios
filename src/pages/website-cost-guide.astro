@@ -1,0 +1,646 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Website Cost Guide 2025 - What Should You Really Pay? | Beach Bird Studios';
+const pageDescription = 'Honest breakdown of website costs in 2025. Learn about pricing factors, what to expect at different price points, and how to avoid overpaying for web design.';
+
+const pricingFactors = [
+  {
+    icon: 'layers',
+    title: 'Project Complexity',
+    description: 'Simple brochure sites cost less than e-commerce platforms or custom web applications. More features = higher investment.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'palette',
+    title: 'Design Customization',
+    description: 'Custom designs cost more than template modifications. Unique branding and layouts require additional design time.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'code',
+    title: 'Development Time',
+    description: 'Complex functionality, integrations, and custom features increase development hours and project cost.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'edit',
+    title: 'Content Creation',
+    description: 'Professional copywriting, photography, and content strategy add value but increase the overall investment.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'zap',
+    title: 'Timeline Requirements',
+    description: 'Rush projects cost more due to overtime and resource allocation. Standard timelines are more cost-effective.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'users',
+    title: 'Designer Experience',
+    description: 'Experienced professionals charge more but deliver better results, fewer revisions, and faster completion.',
+    iconColor: 'orange'
+  }
+];
+
+const websiteTypes = [
+  {
+    icon: 'file-text',
+    title: 'Basic Business Website',
+    description: '5-10 pages showcasing your business, services, and contact information. Perfect for professional presence.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'briefcase',
+    title: 'Professional Service Site',
+    description: 'Advanced features like appointment booking, client portals, or service calculators for professional services.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'shopping-cart',
+    title: 'E-commerce Store',
+    description: 'Online store with product catalogs, shopping cart, payment processing, and inventory management.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'building',
+    title: 'Enterprise Website',
+    description: 'Large-scale sites with multiple user roles, custom databases, and advanced functionality for corporations.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'edit-3',
+    title: 'Content Management Site',
+    description: 'Blog-heavy sites, news portals, or membership sites with regular content updates and user interaction.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mobile App Integration',
+    description: 'Websites that integrate with mobile apps or provide app-like functionality through progressive web apps.',
+    iconColor: 'orange'
+  }
+];
+
+const hiddenCosts = [
+  {
+    icon: 'server',
+    title: 'Hosting & Domain',
+    description: 'Annual costs for keeping your website online. Quality hosting is essential for speed and security.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'shield',
+    title: 'SSL & Security',
+    description: 'Security certificates and monitoring tools to protect your website and customer data from threats.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'refresh-cw',
+    title: 'Maintenance & Updates',
+    description: 'Regular updates, security patches, and technical maintenance to keep your website running smoothly.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'mail',
+    title: 'Email Services',
+    description: 'Professional email addresses with your domain name and email marketing tools for customer communication.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'trending-up',
+    title: 'SEO & Marketing',
+    description: 'Search engine optimization and digital marketing to help customers find your website online.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'camera',
+    title: 'Additional Content',
+    description: 'Professional photography, video production, and ongoing content creation for your website.',
+    iconColor: 'orange'
+  }
+];
+
+const redFlags = [
+  {
+    icon: 'alert-triangle',
+    title: 'Suspiciously Low Prices',
+    description: 'Extremely low prices often mean template sites, poor quality, or hidden costs that appear later.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'eye-off',
+    title: 'No Portfolio or References',
+    description: 'Legitimate designers can show previous work and provide client references. Avoid those who cannot.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'clock',
+    title: 'Unrealistic Timelines',
+    description: 'Promises to deliver complex websites in days or weeks are usually too good to be true.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'dollar-sign',
+    title: 'No Clear Pricing Structure',
+    description: 'Avoid designers who won\'t discuss pricing or provide written estimates for your project.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'phone-off',
+    title: 'Poor Communication',
+    description: 'If they\'re hard to reach before you hire them, they\'ll be impossible to reach after.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'x-circle',
+    title: 'No Contract or Guarantees',
+    description: 'Professional projects require contracts with clear deliverables and revision policies.',
+    iconColor: 'red'
+  }
+];
+
+const valueFactors = [
+  {
+    icon: 'trending-up',
+    title: 'ROI Potential',
+    description: 'Calculate potential return on investment. A $5,000 website that generates $50,000 in business pays for itself.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'clock',
+    title: 'Time Savings',
+    description: 'Professional websites save you time on updates, maintenance, and technical issues you can\'t handle.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'award',
+    title: 'Professional Credibility',
+    description: 'Quality websites build trust and credibility, leading to higher conversion rates and customer confidence.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'zap',
+    title: 'Performance Benefits',
+    description: 'Fast, SEO-optimized websites rank higher in Google and provide better user experiences.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mobile Optimization',
+    description: 'Responsive design ensures your website works perfectly on all devices, capturing mobile traffic.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'headphones',
+    title: 'Ongoing Support',
+    description: 'Professional designers provide training, support, and guidance to help you succeed online.',
+    iconColor: 'orange'
+  }
+];
+
+const budgetStrategies = [
+  {
+    icon: 'target',
+    title: 'Start with Core Features',
+    description: 'Launch with essential features and add enhancements over time as your business grows.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'calendar',
+    title: 'Payment Plans',
+    description: 'Many designers offer payment plans to spread costs over several months instead of one large payment.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'repeat',
+    title: 'Phased Development',
+    description: 'Build your website in phases - basic site first, then e-commerce, then advanced features.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'edit',
+    title: 'Provide Your Own Content',
+    description: 'Save on content creation costs by writing your own copy and providing your own images.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'layers',
+    title: 'Template Customization',
+    description: 'Start with a professional template and customize it for your brand to reduce design costs.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Focus on ROI Features',
+    description: 'Invest in features that directly generate revenue or save time rather than purely aesthetic elements.',
+    iconColor: 'orange'
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  structuredDataType="WebPage"
+  structuredData={{
+    "@type": "Article",
+    "headline": "Website Cost Guide 2025",
+    "author": {
+      "@type": "Organization",
+      "name": "Beach Bird Studios"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Beach Bird Studios"
+    }
+  }}
+>
+  <Header />
+  
+  <Hero 
+    headline="Website Cost Guide for <span class='text-yellow-400'>2025</span>"
+    subheadline="Honest pricing breakdown and what you should really expect to pay for a professional website"
+    primaryCTA={{
+      text: "Get Your Custom Quote",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "View Our Pricing",
+      href: "/services/custom-website-design"
+    }}
+  />
+
+  <!-- Introduction Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          Website pricing can be confusing and frustrating. You've probably seen prices ranging from $500 to $50,000+ 
+          and wondered what the difference actually is. This guide breaks down real website costs in 2025, 
+          what affects pricing, and how to ensure you get good value for your investment.
+        </p>
+        
+        <p class="text-lg text-gray-600 mb-8">
+          We'll explore different price points, what you get at each level, and red flags to avoid. 
+          By the end, you'll understand what your website should cost and how to make the smartest investment for your business.
+        </p>
+
+        <div class="bg-green-50 border-l-4 border-green-400 p-6 mb-8">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <i data-lucide="dollar-sign" class="h-5 w-5 text-green-400"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-green-700">
+                <strong>Key Insight:</strong> The cheapest option is rarely the most cost-effective. 
+                Focus on value and long-term ROI rather than just upfront costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Factors -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">What Determines Website Pricing?</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Understanding these factors helps you make informed decisions and get quotes that reflect your actual needs.
+        </p>
+      </div>
+      
+      <FeatureGrid features={pricingFactors} />
+    </div>
+  </section>
+
+  <!-- Price Range Breakdown -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">2025 Website Pricing Breakdown</h2>
+        <p class="text-xl text-gray-600">
+          Here's what you can realistically expect at different price points.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Budget Range -->
+        <div class="bg-red-50 border border-red-200 rounded-lg p-8">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">Budget Range</h3>
+            <div class="text-4xl font-bold text-red-600 my-4">$500 - $2,500</div>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-900 mb-3">What You Get:</h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Template-based design</li>
+              <li>• Basic customization</li>
+              <li>• 3-8 pages maximum</li>
+              <li>• Limited revisions</li>
+              <li>• DIY content management</li>
+              <li>• Minimal ongoing support</li>
+            </ul>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-900 mb-3">Best For:</h4>
+            <p class="text-gray-600 text-sm">Very small businesses, personal projects, or temporary solutions with extremely limited budgets.</p>
+          </div>
+          
+          <div class="bg-red-100 p-4 rounded-lg">
+            <p class="text-red-800 text-sm font-medium">⚠️ Caution: Often includes hidden costs, limited functionality, and minimal support.</p>
+          </div>
+        </div>
+
+        <!-- Professional Range -->
+        <div class="bg-blue-50 border-2 border-blue-400 rounded-lg p-8 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+          </div>
+          
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">Professional Range</h3>
+            <div class="text-4xl font-bold text-blue-600 my-4">$3,000 - $8,000</div>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-900 mb-3">What You Get:</h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Custom design and branding</li>
+              <li>• Mobile-responsive layout</li>
+              <li>• 8-15 pages</li>
+              <li>• SEO optimization</li>
+              <li>• Content management system</li>
+              <li>• 3-6 month support included</li>
+            </ul>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-900 mb-3">Best For:</h4>
+            <p class="text-gray-600 text-sm">Most small to medium businesses looking for professional online presence and lead generation.</p>
+          </div>
+          
+          <div class="bg-blue-100 p-4 rounded-lg">
+            <p class="text-blue-800 text-sm font-medium">✓ Sweet Spot: Best balance of features, quality, and value for most businesses.</p>
+          </div>
+        </div>
+
+        <!-- Premium Range -->
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-8">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">Premium Range</h3>
+            <div class="text-4xl font-bold text-purple-600 my-4">$8,000 - $25,000+</div>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-900 mb-3">What You Get:</h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Completely custom development</li>
+              <li>• Advanced functionality</li>
+              <li>• E-commerce capabilities</li>
+              <li>• Database integrations</li>
+              <li>• Comprehensive SEO strategy</li>
+              <li>• 12+ months of support</li>
+            </ul>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-900 mb-3">Best For:</h4>
+            <p class="text-gray-600 text-sm">Large businesses, e-commerce stores, or companies requiring complex functionality and integrations.</p>
+          </div>
+          
+          <div class="bg-purple-100 p-4 rounded-lg">
+            <p class="text-purple-800 text-sm font-medium">🚀 Enterprise: Maximum functionality, performance, and long-term support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website Types -->
+  <section class="py-20 bg-cream-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Pricing by Website Type</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Different types of websites have different complexity levels and pricing structures.
+        </p>
+      </div>
+      
+      <FeatureGrid features={websiteTypes} />
+    </div>
+  </section>
+
+  <!-- Hidden Costs -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Hidden Costs to Consider</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Beyond the initial design cost, these ongoing expenses are essential for a successful website.
+        </p>
+      </div>
+      
+      <FeatureGrid features={hiddenCosts} />
+      
+      <div class="mt-12 bg-yellow-50 border border-yellow-200 rounded-lg p-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Annual Website Maintenance Budget</h3>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-2xl font-bold text-yellow-600 mb-2">$500 - $1,200</div>
+            <p class="text-sm text-gray-600">Basic maintenance, hosting, and security for simple business websites</p>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-yellow-600 mb-2">$1,200 - $3,000</div>
+            <p class="text-sm text-gray-600">Professional maintenance with SEO, updates, and content management</p>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-yellow-600 mb-2">$3,000 - $8,000+</div>
+            <p class="text-sm text-gray-600">Enterprise maintenance with advanced features, marketing, and priority support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Red Flags -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Red Flags: What to Avoid</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Protect yourself from these common warning signs that indicate potential problems or scams.
+        </p>
+      </div>
+      
+      <FeatureGrid features={redFlags} />
+    </div>
+  </section>
+
+  <!-- Value Assessment -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Measuring Website Value & ROI</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Focus on these value factors rather than just upfront costs to make the best investment decision.
+        </p>
+      </div>
+      
+      <FeatureGrid features={valueFactors} />
+    </div>
+  </section>
+
+  <!-- Budget Strategies -->
+  <section class="py-20 bg-cream-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Smart Budget Strategies</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Maximize your website investment with these practical approaches to managing costs.
+        </p>
+      </div>
+      
+      <FeatureGrid features={budgetStrategies} />
+    </div>
+  </section>
+
+  <!-- ROI Calculator Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Website ROI Calculator</h2>
+        <p class="text-xl text-gray-600">
+          Use these scenarios to estimate potential return on your website investment.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Local Service Business</h3>
+          <div class="space-y-3 text-gray-600">
+            <p><strong>Website Cost:</strong> $5,000</p>
+            <p><strong>Monthly Visitors:</strong> 500</p>
+            <p><strong>Conversion Rate:</strong> 3%</p>
+            <p><strong>Average Job Value:</strong> $800</p>
+            <p><strong>Monthly Revenue:</strong> $12,000</p>
+            <p><strong>Annual Revenue:</strong> $144,000</p>
+          </div>
+          <div class="mt-4 p-4 bg-green-100 rounded">
+            <p class="font-semibold text-green-800">ROI: 2,780% in first year</p>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">E-commerce Store</h3>
+          <div class="space-y-3 text-gray-600">
+            <p><strong>Website Cost:</strong> $12,000</p>
+            <p><strong>Monthly Visitors:</strong> 2,000</p>
+            <p><strong>Conversion Rate:</strong> 2%</p>
+            <p><strong>Average Order:</strong> $75</p>
+            <p><strong>Monthly Revenue:</strong> $3,000</p>
+            <p><strong>Annual Revenue:</strong> $36,000</p>
+          </div>
+          <div class="mt-4 p-4 bg-blue-100 rounded">
+            <p class="font-semibold text-blue-800">ROI: 200% in first year</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+        <p class="text-center text-gray-700">
+          <strong>Remember:</strong> These are conservative estimates. Many businesses see much higher returns 
+          with proper SEO, marketing, and conversion optimization.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions to Ask -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Questions to Ask Before You Hire</h2>
+        <p class="text-xl text-gray-600">
+          Use these questions to evaluate potential web designers and avoid costly mistakes.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Project Scope & Timeline</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• What exactly is included in the quoted price?</li>
+              <li>• How many revisions are included?</li>
+              <li>• What is the realistic timeline for completion?</li>
+              <li>• What happens if the project scope changes?</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Technical Specifications</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Will the website be mobile-responsive?</li>
+              <li>• What content management system will be used?</li>
+              <li>• Are SEO basics included in the development?</li>
+              <li>• How will the website perform on different browsers?</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Support & Maintenance</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• What kind of training will you provide?</li>
+              <li>• How long is support included after launch?</li>
+              <li>• What are your ongoing maintenance options?</li>
+              <li>• Who owns the website and content after completion?</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">References & Portfolio</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Can you provide references from recent clients?</li>
+              <li>• Do you have examples of similar projects?</li>
+              <li>• What results have your websites achieved for clients?</li>
+              <li>• How do you measure project success?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection 
+    headline="Ready to Get an Honest Quote?"
+    description="Let's discuss your project and provide transparent pricing with no hidden costs or surprises."
+    primaryCTA={{
+      text: "Get Your Custom Quote",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "See Our Portfolio",
+      href: "/about"
+    }}
+  />
+
+  <Footer />
+</Layout>
+
+<style>
+  .bg-cream-50 {
+    background-color: rgba(245, 230, 211, 0.3);
+  }
+</style>

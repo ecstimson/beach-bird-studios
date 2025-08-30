@@ -8,6 +8,13 @@ const services = [
   { name: 'SEO Services', href: '/services/seo-services' }
 ];
 
+const resources = [
+  { name: 'Web Design Guide', href: '/ultimate-web-design-guide' },
+  { name: 'SEO Guide', href: '/small-business-seo-guide' },
+  { name: 'Pricing Guide', href: '/website-cost-guide' },
+  { name: 'SEO Checklist', href: '/local-seo-checklist' }
+];
+
 const company = [
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
@@ -27,7 +34,7 @@ const locations = [
 
 <footer class="bg-gray-900 text-gray-300 py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
       <!-- Company -->
       <div class="lg:col-span-1">
         <div class="footer-logo mb-4">
@@ -49,6 +56,20 @@ const locations = [
             <li>
               <a href={service.href} class="hover:text-white transition-colors">
                 {service.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Resources -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2 text-sm">
+          {resources.map((resource) => (
+            <li>
+              <a href={resource.href} class="hover:text-white transition-colors">
+                {resource.name}
               </a>
             </li>
           ))}

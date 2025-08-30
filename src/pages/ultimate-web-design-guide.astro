@@ -1,0 +1,558 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Ultimate Web Design Guide 2025 - Everything You Need to Know | Beach Bird Studios';
+const pageDescription = 'Complete guide to web design in 2025. Learn about modern design principles, best practices, costs, and how to choose the right web designer for your business.';
+
+const designPrinciples = [
+  {
+    icon: 'user',
+    title: 'User-Centered Design',
+    description: 'Every design decision should prioritize your users\' needs and experience. What are they trying to accomplish?',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mobile-First Approach',
+    description: 'Over 60% of web traffic is mobile. Design for phones first, then scale up to tablets and desktops.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'zap',
+    title: 'Speed & Performance',
+    description: 'Fast-loading websites rank higher in Google and convert better. Aim for under 3-second load times.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'accessibility',
+    title: 'Accessibility Standards',
+    description: 'Design for everyone. Follow WCAG guidelines to ensure your site works for users with disabilities.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'search',
+    title: 'SEO Integration',
+    description: 'Beautiful design means nothing if people can\'t find you. Build SEO into your design from day one.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Conversion Focused',
+    description: 'Every element should guide visitors toward taking action. Design with your goals in mind.',
+    iconColor: 'orange'
+  }
+];
+
+const modernTrends = [
+  {
+    icon: 'minimize-2',
+    title: 'Minimalist Design',
+    description: 'Clean, uncluttered layouts that focus attention on what matters most to your visitors.',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'type',
+    title: 'Bold Typography',
+    description: 'Large, readable fonts that create hierarchy and guide users through your content.',
+    iconColor: 'green'
+  },
+  {
+    icon: 'image',
+    title: 'Custom Photography',
+    description: 'Authentic images of your business, team, and work that build trust and connection.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'layers',
+    title: 'Micro-Interactions',
+    description: 'Subtle animations and hover effects that make your site feel responsive and engaging.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'grid-3x3',
+    title: 'Grid-Based Layouts',
+    description: 'Structured designs that create visual balance and make content easy to scan.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'palette',
+    title: 'Brand-Driven Colors',
+    description: 'Strategic color choices that reflect your brand personality and guide user actions.',
+    iconColor: 'orange'
+  }
+];
+
+const commonMistakes = [
+  {
+    icon: 'x-circle',
+    title: 'No Clear Purpose',
+    description: 'Websites that try to do everything end up doing nothing well. Define your primary goal.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'clock',
+    title: 'Slow Loading Times',
+    description: 'Heavy images and poor hosting kill conversions. Every second counts for user experience.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'eye-off',
+    title: 'Poor Visual Hierarchy',
+    description: 'When everything looks important, nothing is. Guide users\' attention strategically.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'smartphone',
+    title: 'Not Mobile Optimized',
+    description: 'Desktop-only thinking in a mobile world. Test on real devices, not just browser windows.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'message-circle',
+    title: 'Unclear Messaging',
+    description: 'Visitors should understand what you do and why they should care within 5 seconds.',
+    iconColor: 'red'
+  },
+  {
+    icon: 'mouse-pointer',
+    title: 'Weak Call-to-Actions',
+    description: 'Generic buttons like "Click Here" don\'t motivate action. Be specific and benefit-focused.',
+    iconColor: 'red'
+  }
+];
+
+const choosingDesigner = [
+  {
+    icon: 'briefcase',
+    title: 'Review Their Portfolio',
+    description: 'Look for variety, quality, and results. Do their designs align with your vision and industry?',
+    iconColor: 'blue'
+  },
+  {
+    icon: 'users',
+    title: 'Check Client Testimonials',
+    description: 'Read reviews and ask for references. How do they communicate? Do projects finish on time?',
+    iconColor: 'green'
+  },
+  {
+    icon: 'code',
+    title: 'Technical Expertise',
+    description: 'Ensure they understand modern web standards, SEO, and can handle your specific needs.',
+    iconColor: 'yellow'
+  },
+  {
+    icon: 'clock',
+    title: 'Realistic Timelines',
+    description: 'Be wary of promises that seem too good to be true. Quality work takes appropriate time.',
+    iconColor: 'purple'
+  },
+  {
+    icon: 'dollar-sign',
+    title: 'Transparent Pricing',
+    description: 'Understand what\'s included and what costs extra. Avoid designers who won\'t discuss pricing.',
+    iconColor: 'cyan'
+  },
+  {
+    icon: 'headphones',
+    title: 'Ongoing Support',
+    description: 'Websites need maintenance. Ensure your designer offers support or training after launch.',
+    iconColor: 'orange'
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  structuredDataType="WebPage"
+  structuredData={{
+    "@type": "Article",
+    "headline": "Ultimate Web Design Guide 2025",
+    "author": {
+      "@type": "Organization",
+      "name": "Beach Bird Studios"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Beach Bird Studios"
+    }
+  }}
+>
+  <Header />
+  
+  <Hero 
+    headline="The Ultimate <span class='text-yellow-400'>Web Design</span> Guide for 2025"
+    subheadline="Everything you need to know about modern web design - from planning to launch and beyond"
+    primaryCTA={{
+      text: "Get Your Free Consultation",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "View Our Work",
+      href: "/about"
+    }}
+  />
+
+  <!-- Introduction Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          Web design in 2025 is more complex and more important than ever. With over 60% of web traffic coming from mobile devices, 
+          Google's emphasis on Core Web Vitals, and users expecting instant, seamless experiences, getting your website right 
+          is critical for business success.
+        </p>
+        
+        <p class="text-lg text-gray-600 mb-8">
+          This comprehensive guide covers everything you need to know about modern web design - whether you're planning your first 
+          website, considering a redesign, or just want to understand what makes websites successful in today's digital landscape.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <i data-lucide="info" class="h-5 w-5 text-blue-400"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-blue-700">
+                <strong>Quick Tip:</strong> The average website visitor decides whether to stay or leave within 15 seconds. 
+                Every design decision should be made with this in mind.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">More Helpful Resources</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <a href="/small-business-seo-guide" class="block p-4 bg-white rounded-lg border hover:border-green-300 transition-colors">
+                <h4 class="font-medium text-gray-900 mb-2">Small Business SEO Guide</h4>
+                <p class="text-sm text-gray-600">Learn how to get found in local search results</p>
+              </a>
+            </div>
+            <div>
+              <a href="/website-cost-guide" class="block p-4 bg-white rounded-lg border hover:border-green-300 transition-colors">
+                <h4 class="font-medium text-gray-900 mb-2">Website Cost Guide</h4>
+                <p class="text-sm text-gray-600">Understand website pricing and get better value</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Design Principles -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">6 Core Principles of Modern Web Design</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          These fundamental principles guide every successful web design project. Master these, and you're well on your way to a website that works.
+        </p>
+      </div>
+      
+      <FeatureGrid features={designPrinciples} />
+    </div>
+  </section>
+
+  <!-- Design Process Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">The Professional Web Design Process</h2>
+        <p class="text-xl text-gray-600">
+          Understanding the process helps you work better with designers and know what to expect.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        <div class="flex items-start space-x-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 font-bold text-lg">1</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Discovery & Strategy</h3>
+            <p class="text-gray-600 mb-4">
+              Understanding your business goals, target audience, and competitive landscape. This phase includes brand analysis, 
+              user research, and technical requirements gathering. The foundation of every successful project.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-sm text-gray-600"><strong>Deliverables:</strong> Strategy document, user personas, competitive analysis, technical specification</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600 font-bold text-lg">2</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Information Architecture & Wireframes</h3>
+            <p class="text-gray-600 mb-4">
+              Organizing content and planning user flows before visual design begins. This ensures logical navigation 
+              and that important information is easy to find. Structure first, beauty second.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-sm text-gray-600"><strong>Deliverables:</strong> Site map, user flow diagrams, wireframes for key pages</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 font-bold text-lg">3</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Visual Design</h3>
+            <p class="text-gray-600 mb-4">
+              Creating the visual identity, color schemes, typography, and overall aesthetic that reflects your brand 
+              and appeals to your target audience. This is where your website starts to come alive.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-sm text-gray-600"><strong>Deliverables:</strong> Design mockups, style guide, asset library, responsive designs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 text-purple-600 font-bold text-lg">4</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Development & Testing</h3>
+            <p class="text-gray-600 mb-4">
+              Converting designs into working code, integrating content management systems, and ensuring everything 
+              works perfectly across all devices and browsers. Quality assurance is critical.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-sm text-gray-600"><strong>Deliverables:</strong> Functional website, CMS setup, performance optimization, cross-browser testing</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-600 font-bold text-lg">5</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Launch & Optimization</h3>
+            <p class="text-gray-600 mb-4">
+              Going live, setting up analytics, monitoring performance, and making improvements based on real user data. 
+              Launch is just the beginning - ongoing optimization is where real results happen.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-sm text-gray-600"><strong>Deliverables:</strong> Live website, analytics setup, performance monitoring, optimization plan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Design Trends -->
+  <section class="py-20 bg-cream-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">2025 Web Design Trends That Actually Matter</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Not all trends are worth following. These design approaches improve user experience and business results.
+        </p>
+      </div>
+      
+      <FeatureGrid features={modernTrends} />
+    </div>
+  </section>
+
+  <!-- Common Mistakes -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">6 Costly Web Design Mistakes to Avoid</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Learn from common pitfalls that hurt user experience and business growth. Prevention is better than fixing later.
+        </p>
+      </div>
+      
+      <FeatureGrid features={commonMistakes} />
+    </div>
+  </section>
+
+  <!-- Choosing a Designer -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">How to Choose the Right Web Designer</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          The designer you choose can make or break your project. Here's what to look for.
+        </p>
+      </div>
+      
+      <FeatureGrid features={choosingDesigner} />
+    </div>
+  </section>
+
+  <!-- Investment & ROI Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Understanding Web Design Investment</h2>
+        <p class="text-xl text-gray-600">
+          Quality web design is an investment in your business growth, not just an expense.
+        </p>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-12">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6">What Affects Web Design Pricing?</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3">Project Scope Factors:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Number of pages and features</li>
+              <li>• Custom functionality requirements</li>
+              <li>• Content creation needs</li>
+              <li>• Integration with existing systems</li>
+              <li>• E-commerce capabilities</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3">Quality Factors:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Designer experience and skill level</li>
+              <li>• Custom vs template-based design</li>
+              <li>• Performance optimization</li>
+              <li>• SEO implementation</li>
+              <li>• Ongoing support included</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-lg p-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Measuring Your Website's ROI</h3>
+        <p class="text-gray-600 mb-6">
+          A well-designed website pays for itself through increased leads, sales, and credibility. Track these metrics:
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600 mb-2">25%</div>
+            <p class="text-sm text-gray-600">Average increase in conversion rate with professional design</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600 mb-2">40%</div>
+            <p class="text-sm text-gray-600">More time spent on site with good UX design</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600 mb-2">60%</div>
+            <p class="text-sm text-gray-600">Higher credibility perception with professional design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist Section -->
+  <section class="py-20 bg-cream-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Web Design Project Checklist</h2>
+        <p class="text-xl text-gray-600">
+          Use this checklist to ensure your web design project covers all the essentials.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-6">Before You Start</h3>
+            <div class="space-y-3">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Define your primary business goals</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Identify your target audience</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Research competitors' websites</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Gather brand assets and content</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Set a realistic budget range</span>
+              </label>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-6">During Development</h3>
+            <div class="space-y-3">
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Test on multiple devices</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Optimize for page speed</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Implement SEO basics</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Set up analytics tracking</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="text-gray-700">Plan for ongoing maintenance</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps CTA -->
+  <CTASection 
+    headline="Ready to Start Your Web Design Project?"
+    description="Let's discuss your goals and create a website that drives real business results. Free consultation with no obligation."
+    primaryCTA={{
+      text: "Get Your Free Consultation",
+      href: "/contact"
+    }}
+    secondaryCTA={{
+      text: "View Our Portfolio",
+      href: "/about"
+    }}
+  />
+
+  <Footer />
+</Layout>
+
+<style>
+  .prose {
+    color: #374151;
+  }
+  
+  .form-checkbox:checked {
+    background-color: #3B82F6;
+    border-color: #3B82F6;
+  }
+  
+  .bg-cream-50 {
+    background-color: rgba(245, 230, 211, 0.3);
+  }
+</style>
