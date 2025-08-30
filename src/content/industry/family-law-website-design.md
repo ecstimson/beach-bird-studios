@@ -118,30 +118,9 @@ Yes, we help family law attorneys build positive online reputations while mainta
 **"What about emergency situations?"**
 We integrate emergency contact systems and after-hours response capabilities for urgent family law matters.
 
-## Investment Packages
+## Get Started Today
 
-**Family Foundation Package** - Essential family law website
-- Compassionate design and messaging
-- Core practice area pages
-- Secure client contact forms
-- Local SEO foundation
-- Professional credential display
-
-**Family Protection Package** - Comprehensive family law marketing
-- Everything in Family Foundation
-- Detailed practice area content
-- Client education resources
-- Secure client portal access
-- Advanced local targeting
-- Reputation monitoring
-
-**Family Advocacy Package** - Complete family law authority
-- Everything in Family Protection
-- Extensive educational content library
-- Emergency response systems
-- Advanced case intake automation
-- Ongoing SEO management
-- Priority support and regular updates
+Contact us for a custom quote tailored to your family law firm business needs.
 
 ## The Cost of Invisible Online Presence
 

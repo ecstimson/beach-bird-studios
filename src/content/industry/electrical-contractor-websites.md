@@ -81,27 +81,9 @@ We develop compelling copy that addresses both emergency situations and planned 
 ### Local SEO Implementation
 Your website receives optimization for emergency electrical searches, planned installation keywords, and local electrical contractor terms that capture qualified leads in your service area.
 
-## Investment Packages
+## Get Started Today
 
-**Circuit Package** - Professional electrical presence
-- 10-page professional website design
-- Mobile-optimized emergency contact features
-- Core electrical service pages
-- Safety information and licensing display
-
-**Power Package** - Comprehensive lead generation
-- Everything in Circuit Package
-- Advanced emergency response landing pages
-- Commercial electrical service pages
-- Blog setup for electrical safety content
-- Enhanced local SEO optimization
-
-**Grid Package** - Market leadership
-- Everything in Power Package
-- Custom electrical cost calculators
-- Advanced project quote systems
-- Comprehensive competitor analysis
-- Ongoing SEO and content strategy
+Contact us for a custom quote tailored to your electrical contractor business needs.
 
 ## Perfect for These Electrical Specializations
 

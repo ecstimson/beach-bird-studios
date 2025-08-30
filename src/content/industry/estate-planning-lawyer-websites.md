@@ -128,30 +128,9 @@ Yes, we create content strategies that position you as the local estate planning
 **"What about different client demographics?"**
 We create content that appeals to various client types - from young professionals to successful business owners to multigenerational families.
 
-## Investment Packages
+## Get Started Today
 
-**Legacy Foundation Package** - Essential estate planning website
-- Professional trust-building design
-- Core estate planning service pages
-- Basic educational resources
-- Secure client communication
-- Local market targeting
-
-**Wealth Protection Package** - Advanced estate planning marketing
-- Everything in Legacy Foundation
-- Comprehensive planning content
-- Advanced educational resources
-- Secure client portal access
-- Professional credentialing display
-- Sophisticated client targeting
-
-**Estate Planning Authority Package** - Dominant market presence
-- Everything in Wealth Protection
-- Extensive planning education library
-- Thought leadership content platform
-- Advanced client management systems
-- Ongoing content and SEO management
-- Priority support and regular updates
+Contact us for a custom quote tailored to your estate planning law firm business needs.
 
 ## The Cost of Invisible Expertise
 

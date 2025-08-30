@@ -126,25 +126,9 @@ Create custom designs that reflect your catering quality and professionalism. De
 ### Launch & Booking Optimization
 Deploy your website with proper SEO foundations and lead generation features. Monitor inquiry patterns and optimize for event planning search trends.
 
-## Investment Packages
+## Get Started Today
 
-**Essential Catering Package** - Perfect for establishing professional presence
-- Professional catering website design
-- Menu display and service information
-- Basic local SEO setup
-- Contact and inquiry system integration
-
-**Complete Catering Package** - Everything needed for event success
-- Custom design reflecting your catering quality
-- Advanced menu management and gallery systems
-- Comprehensive local SEO strategy
-- Event inquiry optimization
-
-**Premium Catering Package** - Full event marketing solution
-- All Complete Package features
-- Ongoing SEO and content management
-- Advanced event tracking and analytics
-- Performance monitoring and booking optimization
+Contact us for a custom quote tailored to your catering business needs.
 
 ## Common Questions from Catering Business Owners
 

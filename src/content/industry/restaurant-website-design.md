@@ -126,25 +126,9 @@ Create custom designs that reflect your restaurant's personality and cuisine sty
 ### Launch & Optimization
 Deploy your website with proper SEO foundations and monitor performance. Continuously optimize based on customer behavior and search trends.
 
-## Investment Packages
+## Get Started Today
 
-**Essential Restaurant Package** - Perfect for getting started online
-- Professional restaurant website design
-- Mobile-optimized menu display
-- Basic local SEO setup
-- Contact and location integration
-
-**Complete Restaurant Package** - Everything you need to dominate locally
-- Custom design with professional photography consultation
-- Advanced menu management system
-- Comprehensive local SEO strategy
-- Online ordering integration ready
-
-**Premium Restaurant Package** - Full digital marketing solution
-- All Complete Package features
-- Ongoing SEO management
-- Social media integration
-- Performance monitoring and optimization
+Contact us for a custom quote tailored to your restaurant business needs.
 
 ## Common Questions from Restaurant Owners
 

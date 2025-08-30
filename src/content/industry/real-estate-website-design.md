@@ -89,28 +89,9 @@ We thoroughly test all functionality, including property search, lead capture fo
 ### Training and Support
 We provide comprehensive training on managing your new website and ongoing support to ensure continued success.
 
-## Investment Packages for Real Estate Professionals
+## Get Started Today
 
-**Essential Real Estate Package** - Perfect for individual agents
-- Professional design with MLS integration
-- Mobile-responsive layout
-- Basic lead capture forms
-- Property search functionality
-- Local SEO optimization
-
-**Professional Realtor Package** - Ideal for established agents
-- Everything in Essential package
-- Virtual tour integration
-- Advanced lead capture tools
-- CRM integration
-- Automated email sequences
-
-**Brokerage Elite Package** - Designed for real estate teams
-- Everything in Professional package
-- Multiple agent profiles
-- Advanced analytics and reporting
-- Custom lead distribution
-- Priority support and maintenance
+Contact us for a custom quote tailored to your real estate business needs.
 
 ## Real Estate Website Frequently Asked Questions
 

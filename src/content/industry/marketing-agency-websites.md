@@ -85,30 +85,9 @@ Implementing systems that attract serious prospects while filtering out bargain 
 ### Creative Excellence Demonstration
 Ensuring your website itself serves as a powerful example of your creative and technical capabilities.
 
-## Investment Packages
+## Get Started Today
 
-**Creative Professional** - Essential presence for established agencies
-- Modern, creative design showcasing your capabilities
-- Core service pages with clear value propositions
-- Basic portfolio and case study presentations
-- Lead generation forms and contact systems
-- Mobile optimization and fast loading speeds
-
-**Growth Engine** - Comprehensive solution for scaling agencies
-- Everything in Creative Professional
-- Advanced portfolio and case study systems
-- Resource library and lead magnets
-- Enhanced SEO and content marketing setup
-- Client portal and project collaboration tools
-- Social media integration and automation
-
-**Industry Leader** - Premium solution for market dominance
-- Everything in Growth Engine
-- Custom functionality and advanced integrations
-- Comprehensive analytics and conversion tracking
-- Ongoing content strategy and SEO support
-- Priority support and regular optimizations
-- Advanced lead scoring and qualification systems
+Contact us for a custom quote tailored to your marketing agency business needs.
 
 ## Frequently Asked Questions
 

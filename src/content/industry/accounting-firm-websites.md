@@ -85,30 +85,9 @@ Ensuring your website meets the highest security standards expected in financial
 ### Launch and Optimization
 Thorough testing and optimization to ensure your website performs flawlessly and generates quality leads from day one.
 
-## Investment Packages
+## Get Started Today
 
-**Professional Presence** - Essential website for established practices
-- Professional design reflecting your firm's credibility
-- Core service pages with clear messaging
-- Contact forms and basic lead capture
-- Mobile-responsive design
-- SSL security and basic SEO
-
-**Growth Accelerator** - Comprehensive solution for expanding firms
-- Everything in Professional Presence
-- Advanced lead generation tools
-- Client portal integration
-- Blog and resource sections
-- Enhanced SEO and local optimization
-- Social media integration
-
-**Market Leader** - Premium solution for competitive markets
-- Everything in Growth Accelerator
-- Custom functionality development
-- Advanced analytics and tracking
-- Ongoing content and SEO support
-- Priority support and maintenance
-- Conversion optimization services
+Contact us for a custom quote tailored to your accounting firm business needs.
 
 ## Frequently Asked Questions
 

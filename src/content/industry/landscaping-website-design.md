@@ -81,27 +81,9 @@ We develop content that adapts to landscaping seasons, highlighting appropriate 
 ### Local SEO Optimization
 Your website receives optimization for local landscaping searches, seasonal service terms, and specific plant or design-related keywords that capture qualified leads in your service area.
 
-## Investment Packages
+## Get Started Today
 
-**Seed Package** - Professional landscaping presence
-- 10-page professional website design
-- Mobile-optimized project galleries
-- Core landscaping service pages
-- Contact forms and consultation requests
-
-**Growth Package** - Comprehensive lead generation
-- Everything in Seed Package
-- Advanced seasonal landing pages
-- Maintenance program marketing pages
-- Blog setup for gardening content
-- Enhanced local SEO optimization
-
-**Bloom Package** - Market leadership
-- Everything in Growth Package
-- Custom landscape planning tools
-- Advanced project quote systems
-- Comprehensive competitor analysis
-- Ongoing SEO and seasonal content strategy
+Contact us for a custom quote tailored to your landscaping business needs.
 
 ## Perfect for These Landscaping Specializations
 

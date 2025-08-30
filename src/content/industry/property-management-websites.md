@@ -109,28 +109,9 @@ Property managers handling short-term rentals in beach communities who need book
 ### Multi-Family Property Managers
 Companies managing large apartment complexes that require robust tenant screening, leasing, and maintenance coordination systems.
 
-## Investment Packages for Property Management
+## Get Started Today
 
-**Essential Management Package** - Perfect for smaller operations
-- Professional company website
-- Basic tenant portal with rent payment
-- Property listing capabilities
-- Contact forms and information pages
-- Mobile-responsive design
-
-**Professional Management Package** - Ideal for growing companies
-- Everything in Essential package
-- Owner portal with reporting
-- Maintenance request system
-- Application processing tools
-- Basic analytics and reporting
-
-**Enterprise Management Package** - For established companies
-- Everything in Professional package
-- Advanced workflow automation
-- Custom integrations with existing software
-- Multi-location management
-- Priority support and maintenance
+Contact us for a custom quote tailored to your property management business needs.
 
 ## Property Management Website FAQs
 

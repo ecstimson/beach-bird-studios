@@ -109,28 +109,9 @@ Agents who work primarily with first-time homebuyers need educational content an
 ### Relocation Specialists
 Agents helping people relocate to the Wilmington area need comprehensive local information and resources that demonstrate deep community knowledge.
 
-## Investment Options for Real Estate Agents
+## Get Started Today
 
-**Starter Agent Package** - Perfect for new agents
-- Professional single-page design
-- Basic lead capture forms
-- Mobile-responsive layout
-- Contact information display
-- Social media integration
-
-**Professional Agent Package** - Ideal for established agents
-- Multi-page custom website
-- Property showcase galleries
-- Advanced lead capture tools
-- Local SEO optimization
-- Basic analytics setup
-
-**Premium Agent Package** - For top-performing agents
-- Everything in Professional package
-- Video integration capabilities
-- Advanced client portal
-- Email marketing integration
-- Priority support and updates
+Contact us for a custom quote tailored to your real estate agent business needs.
 
 ## Real Estate Agent Website FAQs
 

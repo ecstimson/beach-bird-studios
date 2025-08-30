@@ -126,25 +126,9 @@ Create custom designs that reflect your bar's energy and social atmosphere. Deve
 ### Launch & Promotion Optimization
 Deploy your website with proper local SEO foundations and event promotion features. Monitor performance during peak hours and optimize for nightlife search trends.
 
-## Investment Packages
+## Get Started Today
 
-**Essential Bar Package** - Perfect for establishing nightlife presence
-- Professional bar website design
-- Mobile-optimized event calendar and hours
-- Basic local SEO setup
-- Contact and location integration
-
-**Complete Bar Package** - Everything needed for event promotion
-- Custom design reflecting your bar's atmosphere
-- Advanced event management and promotion tools
-- Comprehensive local SEO strategy
-- Social media integration ready
-
-**Premium Bar Package** - Full nightlife marketing solution
-- All Complete Package features
-- Ongoing SEO and event promotion management
-- Advanced social media integration
-- Performance monitoring and crowd analytics
+Contact us for a custom quote tailored to your bar business needs.
 
 ## Common Questions from Bar Owners
 

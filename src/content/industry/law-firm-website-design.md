@@ -122,30 +122,9 @@ Yes, we help law firms build and maintain positive client reviews while ensuring
 **"Do you understand different practice areas?"**
 We create specialized content for all major practice areas, from personal injury to corporate law.
 
-## Investment Packages
+## Get Started Today
 
-**Professional Presence Package** - Essential law firm website
-- Professional design with attorney advertising compliance
-- Practice area pages optimized for search
-- Secure contact forms and client intake
-- Mobile-responsive design
-- Basic SEO foundation
-
-**Authority Builder Package** - Comprehensive legal marketing
-- Everything in Professional Presence
-- Advanced practice area content
-- Attorney profile optimization
-- Legal blog setup and initial content
-- Enhanced SEO targeting
-- Client portal integration
-
-**Market Domination Package** - Complete legal marketing solution
-- Everything in Authority Builder
-- Extensive content library creation
-- Advanced case studies and results
-- Ongoing SEO management
-- Reputation monitoring and management
-- Priority support and updates
+Contact us for a custom quote tailored to your law firm business needs.
 
 ## The Cost of Digital Neglect
 

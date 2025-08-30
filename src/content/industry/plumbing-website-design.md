@@ -81,27 +81,9 @@ We craft compelling copy that addresses both emergency situations and planned pl
 ### Technical Optimization
 Your website receives mobile-first optimization, lightning-fast loading speeds, and local SEO foundations that help you rank for critical emergency plumbing searches in your service area.
 
-## Investment Packages
+## Get Started Today
 
-**Essential Package** - Professional plumbing presence
-- 8-page professional website design
-- Mobile-optimized emergency contact features
-- Core plumbing service pages
-- Lead capture forms and quote requests
-
-**Complete Package** - Comprehensive lead generation
-- Everything in Essential Package
-- Advanced service area targeting
-- Maintenance program marketing
-- Blog foundation for ongoing content
-- Enhanced local search optimization
-
-**Market Leader Package** - Total domination
-- Everything in Complete Package
-- Advanced service cost calculators
-- Comprehensive quote request systems
-- Detailed competitor analysis
-- Ongoing SEO and content strategy
+Contact us for a custom quote tailored to your plumbing company business needs.
 
 ## Frequently Asked Questions
 

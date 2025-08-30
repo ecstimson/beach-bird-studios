@@ -126,25 +126,9 @@ Create custom designs that reflect your cafe's warmth and character. Develop mob
 ### Launch & Community Building
 Deploy your website with proper local SEO foundations and community engagement features. Monitor performance and optimize for local coffee search trends.
 
-## Investment Packages
+## Get Started Today
 
-**Essential Cafe Package** - Perfect for establishing online presence
-- Professional cafe website design
-- Mobile-optimized menu and hours display
-- Basic local SEO setup
-- Location and contact integration
-
-**Complete Cafe Package** - Everything needed for community building
-- Custom design reflecting your cafe's personality
-- Event calendar and community features
-- Comprehensive local SEO strategy
-- Online ordering integration ready
-
-**Premium Cafe Package** - Full digital community solution
-- All Complete Package features
-- Ongoing SEO and content management
-- Social media integration
-- Performance monitoring and optimization
+Contact us for a custom quote tailored to your cafe business needs.
 
 ## Common Questions from Cafe Owners
 

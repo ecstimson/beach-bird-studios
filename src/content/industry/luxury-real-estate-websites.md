@@ -112,28 +112,9 @@ Agents serving international clients relocating to the Wilmington area who requi
 ### Luxury New Construction Specialists
 Professionals representing luxury builders and developers who need sophisticated presentation of custom homes and new developments.
 
-## Investment Packages for Luxury Real Estate
+## Get Started Today
 
-**Luxury Professional Package** - For established luxury agents
-- Sophisticated, elegant design
-- Premium property showcase galleries
-- Advanced search and filtering
-- Secure client communication tools
-- Professional photography integration
-
-**Luxury Elite Package** - For top luxury professionals
-- Everything in Professional package
-- Virtual reality tour integration
-- Multi-language support capabilities
-- Advanced client portal features
-- Luxury lifestyle content areas
-
-**Luxury Concierge Package** - For full-service luxury teams
-- Everything in Elite package
-- Concierge service coordination
-- International client support
-- Advanced analytics and reporting
-- Priority white-glove support
+Contact us for a custom quote tailored to your luxury real estate business needs.
 
 ## Luxury Real Estate Website FAQs
 

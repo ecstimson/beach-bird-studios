@@ -129,30 +129,9 @@ Yes, we help criminal defense attorneys build professional reputations while mai
 **"What about emergency contact capabilities?"**
 We integrate 24/7 contact systems and emergency response features for urgent criminal defense situations.
 
-## Investment Packages
+## Get Started Today
 
-**Rights Protection Package** - Essential criminal defense website
-- Professional defense-focused design
-- Core criminal law practice areas
-- Secure client communication
-- Emergency contact features
-- Constitutional rights information
-
-**Defense Advocate Package** - Comprehensive criminal law marketing
-- Everything in Rights Protection
-- Detailed charge-specific content
-- Client rights education resources
-- Advanced secure client portal
-- Local court targeting
-- Professional credentialing display
-
-**Constitutional Champion Package** - Dominant criminal defense presence
-- Everything in Defense Advocate
-- Extensive legal education library
-- Advanced emergency response systems
-- Comprehensive case type coverage
-- Ongoing SEO management and optimization
-- Priority support and regular updates
+Contact us for a custom quote tailored to your criminal defense law firm business needs.
 
 ## The Cost of Weak Defense Presence
 

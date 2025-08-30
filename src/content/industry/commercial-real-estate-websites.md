@@ -112,28 +112,9 @@ Professionals handling warehouse, manufacturing, and logistics properties that r
 ### Retail Real Estate Experts
 Specialists in retail properties who need to showcase foot traffic data, demographic information, and retail market trends.
 
-## Investment Packages for Commercial Real Estate
+## Get Started Today
 
-**Professional Commercial Package** - For established professionals
-- Sophisticated multi-page design
-- Property portfolio showcase
-- Basic client portal features
-- Lead generation tools
-- Market data integration
-
-**Enterprise Commercial Package** - For larger firms
-- Everything in Professional package
-- Advanced secure portals
-- Financial analysis tools
-- Multi-user management system
-- Custom integrations
-
-**Institutional Commercial Package** - For major commercial firms
-- Everything in Enterprise package
-- White-label portal solutions
-- Advanced analytics and reporting
-- Multiple office locations support
-- Dedicated account management
+Contact us for a custom quote tailored to your commercial real estate business needs.
 
 ## Commercial Real Estate Website FAQs
 

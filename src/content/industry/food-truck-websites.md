@@ -126,25 +126,9 @@ Create custom designs that reflect your food truck's personality and cuisine sty
 ### Launch & Location Optimization
 Deploy your website with proper local SEO foundations and location communication features. Monitor performance across your service area and optimize for mobile food search trends.
 
-## Investment Packages
+## Get Started Today
 
-**Essential Food Truck Package** - Perfect for mobile food startups
-- Professional food truck website design
-- Mobile-optimized menu and location display
-- Basic local SEO setup
-- Contact and social media integration
-
-**Complete Food Truck Package** - Everything needed for route success
-- Custom design reflecting your truck's personality
-- Advanced location management and scheduling tools
-- Comprehensive local SEO strategy
-- Online ordering integration ready
-
-**Premium Food Truck Package** - Full mobile food marketing solution
-- All Complete Package features
-- Ongoing SEO and location optimization
-- Event booking and catering features
-- Performance monitoring and route analytics
+Contact us for a custom quote tailored to your food truck business needs.
 
 ## Common Questions from Food Truck Owners
 

@@ -118,30 +118,9 @@ Local expertise, personal attention, and specialized knowledge can effectively c
 **"What about contingency fee transparency?"**
 We create clear, compliant content about your fee structure that builds trust without making inappropriate guarantees about outcomes.
 
-## Investment Packages
+## Get Started Today
 
-**Case Acquisition Package** - Essential PI firm website
-- Injury-specific landing pages
-- Mobile-optimized case intake forms
-- Local SEO foundation
-- Attorney advertising compliance
-- Emergency contact features
-
-**Competitive Edge Package** - Advanced PI marketing
-- Everything in Case Acquisition
-- Comprehensive case type content
-- Advanced local SEO targeting
-- Client portal integration
-- Review management system
-- Competitive analysis and positioning
-
-**Market Leadership Package** - Dominant PI presence
-- Everything in Competitive Edge
-- Extensive educational content library
-- Advanced case intake automation
-- Ongoing SEO management and optimization
-- Reputation monitoring and enhancement
-- Priority support and regular updates
+Contact us for a custom quote tailored to your personal injury law firm business needs.
 
 ## The Cost of Weak Online Presence
 

@@ -81,27 +81,9 @@ We develop compelling copy that speaks to both emergency situations and planned 
 ### Technical Implementation
 Your website receives mobile optimization, fast loading speeds, and local SEO foundations that help you rank for "HVAC near me" and emergency heating/cooling searches.
 
-## Investment Packages
+## Get Started Today
 
-**Starter Package** - Essential HVAC presence
-- Professional 8-page website design
-- Mobile-responsive emergency contact features
-- Basic service pages for heating/cooling
-- Contact forms and quote request system
-
-**Growth Package** - Comprehensive lead generation
-- Everything in Starter Package
-- Advanced service area pages
-- Maintenance program marketing pages
-- Blog setup for seasonal content
-- Enhanced local SEO optimization
-
-**Domination Package** - Market leadership
-- Everything in Growth Package
-- Custom service calculators
-- Advanced quote request workflows
-- Comprehensive competitor analysis
-- Ongoing SEO and content strategy
+Contact us for a custom quote tailored to your HVAC business needs.
 
 ## Frequently Asked Questions
 

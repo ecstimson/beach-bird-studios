@@ -81,27 +81,9 @@ We develop compelling copy that addresses both emergency storm damage and planne
 ### Technical Implementation
 Your website receives mobile optimization, fast loading capabilities, and local SEO foundations that help you rank for storm damage and roofing replacement searches in your area.
 
-## Investment Packages
+## Get Started Today
 
-**Foundation Package** - Professional roofing presence
-- Professional 10-page website design
-- Mobile-responsive storm damage contact features
-- Core roofing service pages
-- Project gallery and portfolio display
-
-**Growth Package** - Comprehensive lead capture
-- Everything in Foundation Package
-- Advanced storm damage landing pages
-- Insurance claim guidance pages
-- Blog setup for seasonal content
-- Enhanced local SEO optimization
-
-**Market Domination Package** - Industry leadership
-- Everything in Growth Package
-- Custom roofing cost calculators
-- Advanced project quote systems
-- Comprehensive competitor analysis
-- Ongoing SEO and content strategy
+Contact us for a custom quote tailored to your roofing company business needs.
 
 ## Frequently Asked Questions
 
