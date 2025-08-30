@@ -1,0 +1,233 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import CTASection from '../../components/CTASection.astro';
+import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  
+  return blogPosts
+    .filter(post => !post.data.draft)
+    .map(entry => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const pageTitle = entry.data.title;
+const pageDescription = entry.data.description;
+const publishDate = new Date(entry.data.publishDate).toLocaleDateString('en-US', { 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric' 
+});
+const readTime = Math.ceil(entry.body.length / 1000) + ' min read';
+---
+
+<Layout 
+  title={pageTitle} 
+  description={pageDescription}
+  structuredDataType="BlogPosting"
+  structuredData={{
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Blog', url: '/blog' },
+      { name: entry.data.title, url: `/blog/${entry.slug}` }
+    ],
+    blogPost: {
+      headline: entry.data.title,
+      description: entry.data.description,
+      author: entry.data.author || 'Beach Bird Studios',
+      publishDate: entry.data.publishDate,
+      image: entry.data.image?.src
+    }
+  }}
+>
+  <Header />
+  
+  <!-- Blog Post Hero -->
+  <Hero
+    headline={entry.data.title}
+    subheadline={entry.data.description}
+    variant="minimal"
+  />
+  
+  <main>
+    <!-- Article Content -->
+    <article class="section-padding bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Article Meta -->
+        <div class="flex items-center justify-between mb-8 pb-8 border-b border-gray-200">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-beach-blue to-beach-blue/70 rounded-full flex items-center justify-center">
+              <i data-lucide="user" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600">By {entry.data.author || 'Beach Bird Studios'}</p>
+              <p class="text-sm text-gray-500">{publishDate} • {readTime}</p>
+            </div>
+          </div>
+          
+          {entry.data.tags && (
+            <div class="flex flex-wrap gap-2">
+              {entry.data.tags.slice(0, 3).map(tag => (
+                <span class="px-3 py-1 bg-beach-blue/10 text-beach-blue rounded-full text-sm font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+        
+        <!-- Featured Image -->
+        {entry.data.image && (
+          <div class="mb-12">
+            <img 
+              src={entry.data.image.src} 
+              alt={entry.data.image.alt}
+              class="w-full h-64 sm:h-80 object-cover rounded-xl shadow-lg"
+            />
+          </div>
+        )}
+        
+        <!-- Article Content -->
+        <div class="prose prose-lg prose-gray max-w-none">
+          <Content />
+        </div>
+        
+        <!-- Share Section -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <div class="text-center">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Share this article</h3>
+            <div class="flex justify-center space-x-4">
+              <button class="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </button>
+              <button class="w-10 h-10 bg-sky-500 hover:bg-sky-600 text-white rounded-full flex items-center justify-center transition-colors">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </button>
+              <button class="w-10 h-10 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </button>
+              <button class="w-10 h-10 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors">
+                <i data-lucide="link" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Related Posts -->
+    <section class="section-padding bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-chillax font-bold text-beach-dark mb-8 text-center">
+          Related Articles
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="/blog" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="book-open" class="w-6 h-6 text-beach-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Read More Articles</h3>
+            <p class="text-gray-600 mb-4">Explore our complete library of web design and SEO insights.</p>
+            <span class="text-beach-blue font-semibold">View All Posts →</span>
+          </a>
+          
+          <a href="/services" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="zap" class="w-6 h-6 text-beach-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Our Services</h3>
+            <p class="text-gray-600 mb-4">Custom web design, AI development, and SEO services.</p>
+            <span class="text-beach-blue font-semibold">Learn More →</span>
+          </a>
+          
+          <a href="/contact" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="phone" class="w-6 h-6 text-beach-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Get Started</h3>
+            <p class="text-gray-600 mb-4">Ready to improve your online presence? Let's talk.</p>
+            <span class="text-beach-blue font-semibold">Contact Us →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <CTASection
+      headline="Ready to Transform Your Business Online?"
+      description="Let's create a website that drives real results for your business"
+      primaryCTA={{ text: 'Get Free Consultation', href: '/contact' }}
+      secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+      variant="gradient"
+    />
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Article prose styling */
+  .prose {
+    @apply text-gray-700;
+  }
+  
+  .prose h1 {
+    @apply text-4xl font-chillax font-bold text-beach-dark mb-6;
+  }
+  
+  .prose h2 {
+    @apply text-3xl font-chillax font-semibold text-beach-dark mb-4 mt-12;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-chillax font-semibold text-gray-800 mb-3 mt-8;
+  }
+  
+  .prose h4 {
+    @apply text-xl font-semibold text-gray-800 mb-2 mt-6;
+  }
+  
+  .prose p {
+    @apply mb-6 leading-relaxed;
+  }
+  
+  .prose ul, .prose ol {
+    @apply mb-6;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-beach-blue pl-4 italic text-gray-600 my-6;
+  }
+  
+  .prose a {
+    @apply text-beach-blue hover:text-blue-700 font-medium transition-colors;
+  }
+  
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+  
+  .prose code {
+    @apply bg-gray-100 px-2 py-1 rounded text-sm;
+  }
+  
+  .prose pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto;
+  }
+</style>

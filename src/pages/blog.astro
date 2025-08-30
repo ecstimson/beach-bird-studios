@@ -1,6 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import BlogCard from '../components/BlogCard.astro';
@@ -10,66 +10,31 @@ import Footer from '../components/Footer.astro';
 const pageTitle = 'Blog | Web Design & SEO Insights | Beach Bird Studios';
 const pageDescription = 'Expert insights on web design, SEO, and digital marketing. Learn how to grow your business online with proven strategies from Beach Bird Studios.';
 
-// Sample blog posts - in production these would come from content collections
-const blogPosts = [
-  {
-    title: 'Why Your Wilmington Business Is Invisible Online',
-    excerpt: 'Discover the three main reasons customers can\'t find your business online and learn proven strategies to dominate local search results.',
-    date: 'January 15, 2025',
-    category: 'Local SEO',
-    href: '/blog/why-wilmington-business-invisible-online',
-    readTime: '5 min read'
-  },
-  {
-    title: 'AI Website Development vs Traditional: What\'s the Difference?',
-    excerpt: 'Learn how AI-powered development creates comprehensive websites with 100+ pages in weeks, not months, and why it\'s revolutionizing web design.',
-    date: 'January 12, 2025',
-    category: 'Web Development',
-    href: '/blog/ai-website-development-vs-traditional',
-    readTime: '7 min read'
-  },
-  {
-    title: 'The Core 30 Strategy: Dominating Local SEO',
-    excerpt: 'Discover the proven Core 30 strategy that helps local businesses rank #1 in Google searches and capture more customers.',
-    date: 'January 10, 2025',
-    category: 'SEO Strategy',
-    href: '/blog/core-30-strategy-local-seo',
-    readTime: '6 min read'
-  },
-  {
-    title: 'Google Business Profile Optimization: The Complete Guide',
-    excerpt: 'Your Google Business Profile is your most powerful local SEO tool. Learn how to optimize every aspect for maximum visibility.',
-    date: 'January 8, 2025',
-    category: 'Local SEO',
-    href: '/blog/google-business-profile-optimization',
-    readTime: '8 min read'
-  },
-  {
-    title: 'Mobile Optimization: Why 60% of Your Traffic Depends on It',
-    excerpt: 'Over 60% of web traffic comes from mobile devices. Learn why mobile optimization is critical and how to get it right.',
-    date: 'January 5, 2025',
-    category: 'Web Design',
-    href: '/blog/mobile-optimization-importance',
-    readTime: '5 min read'
-  },
-  {
-    title: 'Framer vs WordPress: Which Platform Is Right for You?',
-    excerpt: 'Compare Framer and WordPress to find the perfect platform for your business website. Pros, cons, and expert recommendations.',
-    date: 'January 3, 2025',
-    category: 'Platforms',
-    href: '/blog/framer-vs-wordpress',
-    readTime: '6 min read'
-  }
-];
+// Get blog posts from content collection
+const allBlogPosts = await getCollection('blog');
 
-const categories = [
-  'All Posts',
-  'Local SEO',
-  'Web Development',
-  'SEO Strategy',
-  'Web Design',
-  'Platforms'
-];
+// Sort by publish date (newest first) and filter out drafts
+const blogPosts = allBlogPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+  .map(post => ({
+    title: post.data.title,
+    excerpt: post.data.description,
+    date: new Date(post.data.publishDate).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    }),
+    category: post.data.category || 'Web Design',
+    href: `/blog/${post.slug}`,
+    readTime: Math.ceil(post.body.length / 1000) + ' min read',
+    image: post.data.image,
+    tags: post.data.tags || []
+  }));
+
+// Extract unique categories from blog posts
+const allCategories = [...new Set(blogPosts.map(post => post.category))];
+const categories = ['All Posts', ...allCategories];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
