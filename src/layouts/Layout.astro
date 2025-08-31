@@ -31,34 +31,31 @@ const path = Astro.url.pathname;
 const MARKETING_ROUTES = [/^\/services(\/|$)/, /^\/industry(\/|$)/, /^\/locations(\/|$)/, /^\/about(\/|$)/];
 const showServiceCards = !hideServiceCards && MARKETING_ROUTES.some(rx => rx.test(path));
 
-// Canonical service data - matches DESIGN_SYSTEMS.md ServiceCards spec
-const serviceCardData = {
-  title: "Our Services",
-  intro: "Choose the solution that fits your business goals and budget",
-  items: [
-    {
-      icon: "globe",
-      title: 'Custom Web Design',
-      description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
-      href: '/custom-website-design',
-      label: 'Learn More'
-    },
-    {
-      icon: "zap",
-      title: 'AI Development',
-      description: 'Comprehensive websites with a page for every service and location — built faster than you thought possible',
-      href: '/ai-website-development',
-      label: 'Learn More'
-    },
-    {
-      icon: "trending-up",
-      title: 'SEO Services',
-      description: 'We\'ll optimize your existing site on any platform — WordPress, Wix, Squarespace, or custom',
-      href: '/seo-services',
-      label: 'Learn More'
-    }
-  ]
-};
+// Canonical service data - three-card format
+const services = [
+  {
+    title: 'Custom Web Design',
+    headline: 'Beautiful & Fast',
+    description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
+    bullets: ['Timeline: Weeks, not months', 'Mobile-responsive design', 'Custom Quote'],
+    href: '/custom-website-design'
+  },
+  {
+    title: 'AI Development',
+    headline: '100+ Pages That Dominate',
+    description: 'Comprehensive websites with a page for every service and location — built faster than you thought possible',
+    bullets: ['Strategic Coverage', 'SEO-optimized content', 'Custom Quote'],
+    href: '/ai-website-development',
+    featured: true
+  },
+  {
+    title: 'SEO Services',
+    headline: 'Keep Your Website, Add Power',
+    description: 'We\'ll optimize your existing site on any platform — WordPress, Wix, Squarespace, or custom',
+    bullets: ['Monthly Service', 'No rebuild required', 'Works with any platform'],
+    href: '/seo-services'
+  }
+];
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -115,7 +112,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <slot />
     
     <!-- Auto-inject ServiceCards on marketing routes -->
-    {showServiceCards && <ServiceCards {...serviceCardData} />}
+    {showServiceCards && <ServiceCards services={services} />}
   </body>
 </html>
 

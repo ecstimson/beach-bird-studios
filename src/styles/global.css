@@ -7,6 +7,23 @@
   body { @apply bg-white text-beach-dark antialiased; }
 }
 
+/* Global rule: white text on dark backgrounds */
+.gradient-hero,
+.gradient-hero *,
+[class*="gradient-to-b"],
+[class*="bg-gradient"],
+.bg-beach-dark,
+.bg-beach-blue {
+  color: white !important;
+}
+
+.gradient-hero h1,
+.gradient-hero h2,
+.gradient-hero h3,
+.gradient-hero p {
+  color: white !important;
+}
+
 /* ============================================
    LOGO SVG FIX FOR MOBILE
    ============================================ */

@@ -33,7 +33,7 @@ const {
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center max-w-4xl mx-auto">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fadeInUp" set:html={headline}>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fadeInUp text-white" set:html={headline}>
       </h1>
       {subheadline && (
         <p class="text-xl md:text-2xl text-white mb-10 animate-fadeInUp stagger-1">
@@ -49,9 +49,9 @@ const {
             </a>
           )}
           {secondaryCTA && (
-            <a href={secondaryCTA.href} class="btn-secondary inline-flex items-center justify-center">
-              <span style="color: #0C3745 !important;">{secondaryCTA.text}</span>
-              <i data-lucide="play-circle" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
+            <a href={secondaryCTA.href} class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-beach-dark font-semibold hover:bg-gray-100 transition">
+              {secondaryCTA.text}
+              <i data-lucide="play-circle" class="w-5 h-5 ml-2"></i>
             </a>
           )}
         </div>
