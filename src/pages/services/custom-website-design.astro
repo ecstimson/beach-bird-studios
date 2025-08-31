@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/SEO.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
-// import ServiceCard from '../../components/ServiceCard.astro'; // Unused
 import FeatureGrid from '../../components/FeatureGrid.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
 import CTASection from '../../components/CTASection.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -211,48 +211,10 @@ const comparisonData = [
     </section>
     
     <!-- Related Services -->
-    <section class="section-padding bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
-            Explore Our Other Services
-          </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Not sure if custom design is right for you? Check out our other solutions.
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <a href="/services/ai-website-development" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
-            <div class="flex items-start">
-              <i data-lucide="cpu" class="w-8 h-8 text-beach-blue mr-4 flex-shrink-0"></i>
-              <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">AI Website Development</h3>
-                <p class="text-gray-600 mb-2">Need 100+ pages to dominate your market? Our AI development creates comprehensive websites faster than you thought possible.</p>
-                <span class="text-beach-blue font-semibold flex items-center">
-                  Learn More
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </span>
-              </div>
-            </div>
-          </a>
-          
-          <a href="/services/seo-services" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
-            <div class="flex items-start">
-              <i data-lucide="search" class="w-8 h-8 text-beach-blue mr-4 flex-shrink-0"></i>
-              <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">SEO Services</h3>
-                <p class="text-gray-600 mb-2">Already have a website? We'll optimize it for search engines without requiring a rebuild. Works with any platform.</p>
-                <span class="text-beach-blue font-semibold flex items-center">
-                  Learn More
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+    <RelatedServices 
+      excludeService="custom-website-design"
+      subtitle="Not sure if custom design is right for you? Check out our other solutions."
+    />
     
     <!-- Final CTA -->
     <CTASection

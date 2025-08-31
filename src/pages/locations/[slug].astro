@@ -408,42 +408,108 @@ const locationFeatures = [
       );
     })}
     
-    <!-- Services CTA -->
-    <section class="section-padding bg-gray-50">
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-gray-900 mb-4">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style="font-family: var(--font-heading);">
             Our Services for {cityName} Businesses
           </h2>
+          <p class="text-lg text-gray-600" style="font-family: var(--font-body);">
+            Choose the solution that fits your business goals and budget
+          </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <a href="/services/custom-website-design" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="palette" class="w-6 h-6 text-beach-blue"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Custom Web Design Card -->
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all">
+            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="palette" class="w-6 h-6 text-ocean-blue"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Web Design</h3>
-            <p class="text-gray-600 mb-4">Beautiful, fast websites built specifically for your business.</p>
-            <span class="text-beach-blue font-semibold">Learn More →</span>
-          </a>
-          
-          <a href="/services/ai-website-development" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="cpu" class="w-6 h-6 text-beach-blue"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: var(--font-heading);">Custom Web Design</h3>
+            <p class="text-ocean-blue font-medium mb-4" style="font-family: var(--font-body);">Beautiful & Fast</p>
+            <p class="text-gray-600 mb-6" style="font-family: var(--font-body);">
+              Perfect for businesses wanting a stunning, manageable website without the complexity
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                <span class="text-gray-700" style="font-family: var(--font-body);">Timeline: Weeks, not months</span>
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                <span class="text-gray-700" style="font-family: var(--font-body);">Mobile-responsive design</span>
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                <span class="text-gray-700" style="font-family: var(--font-body);">Custom Quote</span>
+              </li>
+            </ul>
+            <a href="/custom-website-design" class="w-full btn-secondary inline-flex items-center justify-center">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+          </div>
+
+          <!-- AI Development Card (Featured) -->
+          <div class="investment-card rounded-xl p-8 relative transform scale-105">
+            <div class="absolute -top-2 -right-2 bg-beach-sun text-deep-ocean px-4 py-1 rounded-full text-sm font-semibold">
+              FEATURED
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">AI Website Development</h3>
-            <p class="text-gray-600 mb-4">100+ page websites to dominate search results.</p>
-            <span class="text-beach-blue font-semibold">Learn More →</span>
-          </a>
-          
-          <a href="/services/seo-services" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="search" class="w-6 h-6 text-beach-blue"></i>
+            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">SEO Services</h3>
-            <p class="text-gray-600 mb-4">Optimize your existing website for better rankings.</p>
-            <span class="text-beach-blue font-semibold">Learn More →</span>
-          </a>
+            <h3 class="text-xl font-semibold text-white mb-2" style="font-family: var(--font-heading);">AI Development</h3>
+            <p class="text-beach-sun font-medium mb-4" style="font-family: var(--font-body);">100+ Pages That Dominate</p>
+            <p class="text-white/90 mb-6" style="font-family: var(--font-body);">
+              Comprehensive websites with a page for every service and location - built faster than you thought possible
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-beach-sun mr-3"></i>
+                <span class="text-white" style="font-family: var(--font-body);">Strategic Coverage</span>
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-beach-sun mr-3"></i>
+                <span class="text-white" style="font-family: var(--font-body);">SEO-optimized content</span>
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-beach-sun mr-3"></i>
+                <span class="text-white" style="font-family: var(--font-body);">Custom Quote</span>
+              </li>
+            </ul>
+            <a href="/ai-website-development" class="w-full btn-primary inline-flex items-center justify-center">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+          </div>
+
+          <!-- SEO Services Card -->
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all">
+            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="search" class="w-6 h-6 text-ocean-blue"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: var(--font-heading);">SEO Services</h3>
+            <p class="text-ocean-blue font-medium mb-4" style="font-family: var(--font-body);">Keep Your Website, Add Power</p>
+            <p class="text-gray-600 mb-6" style="font-family: var(--font-body);">
+              We'll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                <span class="text-gray-700" style="font-family: var(--font-body);">Monthly Service</span>
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                <span class="text-gray-700" style="font-family: var(--font-body);">No rebuild required</span>
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                <span class="text-gray-700" style="font-family: var(--font-body);">Works with any platform</span>
+              </li>
+            </ul>
+            <a href="/seo-services" class="w-full btn-secondary inline-flex items-center justify-center">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>

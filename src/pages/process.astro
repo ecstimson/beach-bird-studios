@@ -2,239 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import ProcessTimeline from '../components/ProcessTimeline.astro';
+import CTASection from '../components/CTASection.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = 'Our Process - How We Build Successful Websites | Beach Bird Studios';
 const pageDescription = 'Discover Beach Bird Studios\' proven process for web design, AI development, and SEO services. Clear timelines, transparent communication, and guaranteed results.';
-
-const overallProcess = [
-  {
-    step: 1,
-    title: 'Discovery & Strategy',
-    description: 'We start by understanding your business, goals, target audience, and competitive landscape.',
-    duration: '1-2 weeks',
-    deliverables: ['Business analysis', 'Competitor research', 'Target audience insights', 'Project roadmap']
-  },
-  {
-    step: 2,
-    title: 'Design & Planning',
-    description: 'Create wireframes, design concepts, and detailed project specifications.',
-    duration: '2-3 weeks',
-    deliverables: ['Wireframes', 'Design mockups', 'Content strategy', 'Technical specifications']
-  },
-  {
-    step: 3,
-    title: 'Development & Build',
-    description: 'Transform designs into a fully functional, optimized website.',
-    duration: '3-6 weeks',
-    deliverables: ['Responsive website', 'Content management', 'SEO optimization', 'Performance testing']
-  },
-  {
-    step: 4,
-    title: 'Review & Launch',
-    description: 'Final testing, client review, training, and successful launch.',
-    duration: '1-2 weeks',
-    deliverables: ['Quality assurance', 'Client training', 'Launch preparation', 'Go-live support']
-  },
-  {
-    step: 5,
-    title: 'Ongoing Support',
-    description: 'Continued optimization, maintenance, and growth-focused improvements.',
-    duration: 'Ongoing',
-    deliverables: ['Performance monitoring', 'Security updates', 'Content updates', 'Growth strategies']
-  }
-];
-
-const customDesignProcess = [
-  {
-    phase: 'Discovery',
-    tasks: [
-      'Business goals assessment',
-      'Brand analysis and guidelines',
-      'User experience planning',
-      'Content strategy development'
-    ],
-    timeline: '5-7 days'
-  },
-  {
-    phase: 'Design',
-    tasks: [
-      'Wireframe creation',
-      'Visual design concepts',
-      'Mobile responsive layouts',
-      'Interactive prototyping'
-    ],
-    timeline: '10-14 days'
-  },
-  {
-    phase: 'Development',
-    tasks: [
-      'Frontend development',
-      'CMS integration',
-      'Performance optimization',
-      'Cross-browser testing'
-    ],
-    timeline: '14-21 days'
-  },
-  {
-    phase: 'Launch',
-    tasks: [
-      'Final review and testing',
-      'Client training session',
-      'Domain and hosting setup',
-      'Go-live deployment'
-    ],
-    timeline: '3-5 days'
-  }
-];
-
-const aiDevelopmentProcess = [
-  {
-    phase: 'Business Analysis',
-    tasks: [
-      'Industry research and analysis',
-      'Keyword strategy development',
-      'Content structure planning',
-      'Competitive landscape review'
-    ],
-    timeline: '3-5 days'
-  },
-  {
-    phase: 'AI Content Generation',
-    tasks: [
-      '100+ page content creation',
-      'SEO optimization integration',
-      'Local business focus',
-      'Industry-specific customization'
-    ],
-    timeline: '7-10 days'
-  },
-  {
-    phase: 'Website Build',
-    tasks: [
-      'Template customization',
-      'Content integration',
-      'Navigation optimization',
-      'Performance enhancement'
-    ],
-    timeline: '10-14 days'
-  },
-  {
-    phase: 'Optimization',
-    tasks: [
-      'Search engine optimization',
-      'Speed and performance tuning',
-      'Mobile responsiveness',
-      'Analytics implementation'
-    ],
-    timeline: '5-7 days'
-  }
-];
-
-const seoProcess = [
-  {
-    phase: 'SEO Audit',
-    tasks: [
-      'Technical SEO analysis',
-      'Current ranking assessment',
-      'Competitor analysis',
-      'Opportunity identification'
-    ],
-    timeline: '3-5 days'
-  },
-  {
-    phase: 'Strategy Development',
-    tasks: [
-      'Keyword research and selection',
-      'Content optimization plan',
-      'Technical improvement roadmap',
-      'Local SEO strategy (if applicable)'
-    ],
-    timeline: '5-7 days'
-  },
-  {
-    phase: 'Implementation',
-    tasks: [
-      'On-page optimization',
-      'Technical SEO improvements',
-      'Content optimization',
-      'Link building strategy'
-    ],
-    timeline: '14-21 days'
-  },
-  {
-    phase: 'Monitoring',
-    tasks: [
-      'Performance tracking',
-      'Ranking monitoring',
-      'Traffic analysis',
-      'Ongoing optimization'
-    ],
-    timeline: 'Ongoing'
-  }
-];
-
-const communicationPrinciples = [
-  {
-    icon: 'calendar',
-    title: 'Regular Updates',
-    description: 'Weekly progress reports and milestone updates to keep you informed every step of the way.'
-  },
-  {
-    icon: 'message-circle',
-    title: 'Direct Communication',
-    description: 'Direct access to your project manager and development team via email, phone, or video calls.'
-  },
-  {
-    icon: 'eye',
-    title: 'Full Transparency',
-    description: 'Complete visibility into project progress, challenges, and timeline adjustments.'
-  },
-  {
-    icon: 'shield-check',
-    title: 'Quality Assurance',
-    description: 'Rigorous testing and review processes to ensure everything meets our high standards.'
-  }
-];
-
-const qualityStandards = [
-  {
-    category: 'Performance',
-    standards: [
-      'Page load times under 3 seconds',
-      'Mobile-first responsive design',
-      'Cross-browser compatibility',
-      'Optimized images and assets'
-    ]
-  },
-  {
-    category: 'SEO',
-    standards: [
-      'Clean, semantic HTML structure',
-      'Optimized meta tags and descriptions',
-      'Schema markup implementation',
-      'Site speed optimization'
-    ]
-  },
-  {
-    category: 'User Experience',
-    standards: [
-      'Intuitive navigation structure',
-      'Clear call-to-action placement',
-      'Accessibility compliance',
-      'User-friendly content management'
-    ]
-  },
-  {
-    category: 'Security',
-    standards: [
-      'SSL certificate implementation',
-      'Regular security updates',
-      'Secure hosting environment',
-      'Backup and recovery systems'
-    ]
-  }
-];
 ---
 
 <Layout 
@@ -264,369 +37,124 @@ const qualityStandards = [
   />
 
   <main>
-    <!-- Overall Process Overview -->
-    <section class="py-20 bg-white">
+    <!-- Process Timeline Component -->
+    <ProcessTimeline />
+    
+    <!-- Communication Standards -->
+    <section class="section-padding bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
-            How We Work Together
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
+            Communication & Support Standards
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our proven 5-step process ensures your project is completed on time, on budget, and exceeds your expectations.
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            We believe in transparent communication and being available when you need us.
           </p>
         </div>
-
-        <div class="space-y-8">
-          {overallProcess.map((step, index) => (
-            <div class={`flex flex-col lg:flex-row gap-8 items-center animate-fadeInUp stagger-${index + 1}`}>
-              <!-- Step Number -->
-              <div class={`flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <span class="text-2xl font-bold text-white">{step.step}</span>
-              </div>
-              
-              <!-- Step Content -->
-              <div class={`flex-1 ${index % 2 === 1 ? 'lg:order-1 lg:text-right' : ''}`}>
-                <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-                  <div class="flex items-center gap-4 mb-4">
-                    <h3 class="text-2xl font-bold text-dark">{step.title}</h3>
-                    <span class="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
-                      {step.duration}
-                    </span>
-                  </div>
-                  <p class="text-gray-600 mb-6">{step.description}</p>
-                  
-                  <div>
-                    <h4 class="font-semibold text-dark mb-3">Key Deliverables:</h4>
-                    <div class="grid sm:grid-cols-2 gap-2">
-                      {step.deliverables.map((deliverable) => (
-                        <div class="flex items-center gap-2">
-                          <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>
-                          <span class="text-sm text-gray-600">{deliverable}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="calendar" class="w-6 h-6 text-beach-blue"></i>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Service-Specific Processes -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
-            Service-Specific Workflows
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Each service has its own optimized workflow designed for maximum efficiency and results.
-          </p>
-        </div>
-
-        <!-- Process Tabs -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-          <button class="process-tab active px-6 py-3 bg-primary text-white rounded-full font-semibold" data-tab="custom-design">
-            Custom Web Design
-          </button>
-          <button class="process-tab px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-primary/10" data-tab="ai-development">
-            AI Website Development
-          </button>
-          <button class="process-tab px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-primary/10" data-tab="seo-services">
-            SEO Services
-          </button>
-        </div>
-
-        <!-- Custom Design Process -->
-        <div id="custom-design-process" class="process-content">
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {customDesignProcess.map((phase, index) => (
-              <div class={`bg-white rounded-xl p-6 shadow-lg animate-fadeInUp stagger-${index + 1}`}>
-                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <span class="text-primary font-bold">{index + 1}</span>
-                </div>
-                <h3 class="text-xl font-bold text-dark mb-3">{phase.phase}</h3>
-                <div class="text-sm text-primary font-medium mb-4">{phase.timeline}</div>
-                <ul class="space-y-2">
-                  {phase.tasks.map((task) => (
-                    <li class="flex items-start gap-2 text-sm text-gray-600">
-                      <i data-lucide="arrow-right" class="w-3 h-3 text-primary flex-shrink-0 mt-1"></i>
-                      {task}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Weekly Updates</h3>
+            <p class="text-gray-600">Regular progress updates every Friday with detailed status reports and next steps.</p>
           </div>
-        </div>
-
-        <!-- AI Development Process -->
-        <div id="ai-development-process" class="process-content hidden">
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aiDevelopmentProcess.map((phase, index) => (
-              <div class={`bg-white rounded-xl p-6 shadow-lg animate-fadeInUp stagger-${index + 1}`}>
-                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <span class="text-primary font-bold">{index + 1}</span>
-                </div>
-                <h3 class="text-xl font-bold text-dark mb-3">{phase.phase}</h3>
-                <div class="text-sm text-primary font-medium mb-4">{phase.timeline}</div>
-                <ul class="space-y-2">
-                  {phase.tasks.map((task) => (
-                    <li class="flex items-start gap-2 text-sm text-gray-600">
-                      <i data-lucide="arrow-right" class="w-3 h-3 text-primary flex-shrink-0 mt-1"></i>
-                      {task}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="message-circle" class="w-6 h-6 text-beach-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Direct Access</h3>
+            <p class="text-gray-600">Direct phone and email access to your project team. No middlemen or account managers.</p>
           </div>
-        </div>
-
-        <!-- SEO Process -->
-        <div id="seo-services-process" class="process-content hidden">
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {seoProcess.map((phase, index) => (
-              <div class={`bg-white rounded-xl p-6 shadow-lg animate-fadeInUp stagger-${index + 1}`}>
-                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <span class="text-primary font-bold">{index + 1}</span>
-                </div>
-                <h3 class="text-xl font-bold text-dark mb-3">{phase.phase}</h3>
-                <div class="text-sm text-primary font-medium mb-4">{phase.timeline}</div>
-                <ul class="space-y-2">
-                  {phase.tasks.map((task) => (
-                    <li class="flex items-start gap-2 text-sm text-gray-600">
-                      <i data-lucide="arrow-right" class="w-3 h-3 text-primary flex-shrink-0 mt-1"></i>
-                      {task}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="clock" class="w-6 h-6 text-beach-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">24/7 Support</h3>
+            <p class="text-gray-600">Round-the-clock technical support for critical issues and emergency assistance.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Communication & Collaboration -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
-            Communication & Collaboration
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            We believe great projects are built on great communication. Here's how we keep you informed and involved.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {communicationPrinciples.map((principle, index) => (
-            <div class={`text-center animate-fadeInUp stagger-${index + 1}`}>
-              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <i data-lucide={principle.icon} class="w-10 h-10 text-primary"></i>
-              </div>
-              <h3 class="text-xl font-bold text-dark mb-4">{principle.title}</h3>
-              <p class="text-gray-600">{principle.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <!-- Communication Timeline -->
-        <div class="mt-16 bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8">
-          <h3 class="text-2xl font-bold text-dark mb-8 text-center">Communication Timeline</h3>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="clock" class="w-8 h-8 text-white"></i>
-              </div>
-              <h4 class="font-bold text-dark mb-2">Weekly Updates</h4>
-              <p class="text-gray-600 text-sm">Detailed progress reports every Friday with next week's goals</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="video" class="w-8 h-8 text-dark"></i>
-              </div>
-              <h4 class="font-bold text-dark mb-2">Milestone Reviews</h4>
-              <p class="text-gray-600 text-sm">Video calls at each major milestone for feedback and approval</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="check-circle" class="w-8 h-8 text-white"></i>
-              </div>
-              <h4 class="font-bold text-dark mb-2">24/7 Support</h4>
-              <p class="text-gray-600 text-sm">Email support with response within 24 hours (usually much faster)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- Quality Standards -->
-    <section class="py-20 bg-gray-50">
+    <section class="section-padding bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-chillax font-bold text-beach-dark mb-4">
             Our Quality Standards
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Every project must meet these rigorous standards before launch. No exceptions.
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Every project meets our rigorous quality standards before launch.
           </p>
         </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {qualityStandards.map((category, index) => (
-            <div class={`bg-white rounded-xl p-8 shadow-lg animate-fadeInUp stagger-${index + 1}`}>
-              <h3 class="text-xl font-bold text-dark mb-6">{category.category}</h3>
-              <ul class="space-y-3">
-                {category.standards.map((standard) => (
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="shield-check" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i>
-                    <span class="text-gray-600 text-sm leading-relaxed">{standard}</span>
-                  </li>
-                ))}
-              </ul>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-beach-blue/5 to-beach-blue/10 rounded-xl p-8">
+            <div class="w-12 h-12 bg-beach-blue rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Project Timeline Examples -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
-            Typical Project Timelines
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Realistic timelines based on hundreds of completed projects. We deliver when promised.
-          </p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 animate-fadeInUp">
-            <div class="text-center mb-6">
-              <i data-lucide="palette" class="w-16 h-16 text-primary mx-auto mb-4"></i>
-              <h3 class="text-2xl font-bold text-dark">Custom Web Design</h3>
-            </div>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Small Business Site</span>
-                <span class="font-semibold text-primary">4-6 weeks</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Medium Business Site</span>
-                <span class="font-semibold text-primary">6-8 weeks</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Large Business Site</span>
-                <span class="font-semibold text-primary">8-12 weeks</span>
-              </div>
-            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Performance Standards</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">Page load speed under 3 seconds</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">Mobile-first responsive design</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">Cross-browser compatibility testing</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">Accessibility compliance (WCAG 2.1)</span>
+              </li>
+            </ul>
           </div>
-
-          <div class="bg-gradient-to-br from-accent/10 to-accent/20 rounded-xl p-8 animate-fadeInUp stagger-1">
-            <div class="text-center mb-6">
-              <i data-lucide="cpu" class="w-16 h-16 text-dark mx-auto mb-4"></i>
-              <h3 class="text-2xl font-bold text-dark">AI Website Development</h3>
+          
+          <div class="bg-gradient-to-br from-beach-yellow/5 to-beach-yellow/10 rounded-xl p-8">
+            <div class="w-12 h-12 bg-beach-yellow rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="shield" class="w-6 h-6 text-black"></i>
             </div>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Service Business</span>
-                <span class="font-semibold text-dark">3-4 weeks</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Professional Practice</span>
-                <span class="font-semibold text-dark">4-5 weeks</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Multi-Location Business</span>
-                <span class="font-semibold text-dark">5-6 weeks</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 animate-fadeInUp stagger-2">
-            <div class="text-center mb-6">
-              <i data-lucide="trending-up" class="w-16 h-16 text-green-600 mx-auto mb-4"></i>
-              <h3 class="text-2xl font-bold text-dark">SEO Services</h3>
-            </div>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">SEO Audit & Setup</span>
-                <span class="font-semibold text-green-600">2-3 weeks</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Initial Results</span>
-                <span class="font-semibold text-green-600">3-6 months</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600">Significant Growth</span>
-                <span class="font-semibold text-green-600">6-12 months</span>
-              </div>
-            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Security & SEO Standards</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">SSL certificate implementation</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">SEO optimization built-in</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">Regular security updates</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600">Backup and recovery systems</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-primary to-dark text-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Experience Our Process?
-        </h2>
-        <p class="text-xl mb-8 text-white/90">
-          Let's start with a free consultation to understand your needs and show you exactly how we'll help your business grow.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="btn-primary bg-accent hover:bg-accent/90">
-            <span style="color: #0C3745 !important;">Start Your Project</span>
-            <i data-lucide="arrow-right" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
-          </a>
-          <a href="/pricing" class="btn-secondary bg-white/10 hover:bg-white/20 text-white border-white/30">
-            View Pricing
-            <i data-lucide="dollar-sign" class="w-5 h-5 ml-2"></i>
-          </a>
-        </div>
-      </div>
-    </section>
+    <CTASection
+      headline="Ready to Start Your Project?"
+      description="Let's discuss your goals and create a timeline that works for you"
+      primaryCTA={{ text: 'Schedule Free Consultation', href: '/contact' }}
+      secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990' }}
+      variant="gradient"
+    />
   </main>
-
+  
   <Footer />
 </Layout>
-
-<script>
-  // Process tabs functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.process-tab');
-    const contents = document.querySelectorAll('.process-content');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        const targetTab = target.getAttribute('data-tab');
-
-        // Update active tab
-        tabs.forEach(t => {
-          t.classList.remove('active', 'bg-primary', 'text-white');
-          t.classList.add('bg-white', 'text-gray-700');
-        });
-        target.classList.remove('bg-white', 'text-gray-700');
-        target.classList.add('active', 'bg-primary', 'text-white');
-
-        // Show/hide content
-        contents.forEach(content => {
-          if (content.id === targetTab + '-process') {
-            content.classList.remove('hidden');
-          } else {
-            content.classList.add('hidden');
-          }
-        });
-      });
-    });
-  });
-</script>

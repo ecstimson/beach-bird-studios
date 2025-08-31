@@ -1199,3 +1199,95 @@ p {
     page-break-after: avoid;
   }
 }
+
+/* ============================================
+   BEACH BIRD STUDIOS COLOR UTILITIES
+   ============================================ */
+
+/* Background Colors */
+.bg-beach-blue {
+  background-color: #47A7EB;
+}
+
+.bg-beach-yellow {
+  background-color: #FFC107;
+}
+
+.bg-beach-dark {
+  background-color: #0C3745;
+}
+
+.bg-beach-cream {
+  background-color: #F5E6D3;
+}
+
+/* Text Colors */
+.text-beach-blue {
+  color: #47A7EB;
+}
+
+.text-beach-yellow {
+  color: #FFC107;
+}
+
+.text-beach-dark {
+  color: #0C3745;
+}
+
+.text-beach-cream {
+  color: #F5E6D3;
+}
+
+/* Enhanced Gradient Utilities */
+.bg-gradient-radial {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 138, 101, 0.2) 0%,
+    rgba(255, 165, 0, 0.12) 40%,
+    rgba(255, 218, 185, 0.06) 70%,
+    transparent 100%
+  );
+}
+
+/* Button Styling Fixes */
+.btn-primary {
+  background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
+  color: #000000 !important; /* Black text on yellow */
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #FFB300 0%, #FFA000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+  color: #000000 !important;
+}
+
+.btn-secondary {
+  background: white;
+  color: #47A7EB;
+  border: 2px solid #47A7EB;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background: #47A7EB;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(71, 167, 235, 0.4);
+}

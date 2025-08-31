@@ -1,0 +1,86 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  excludeService?: string; // Service to exclude from the list
+}
+
+const { 
+  title = "Explore Our Other Services",
+  subtitle = "Need something different? We offer the full spectrum of web development services.",
+  excludeService 
+} = Astro.props;
+
+// All services data matching ServiceCards component styling
+const allServices = [
+  {
+    href: '/custom-website-design',
+    icon: 'palette',
+    title: 'Custom Web Design',
+    tagline: 'Beautiful & Fast',
+    description: 'Perfect for businesses wanting a stunning, manageable website without the complexity'
+  },
+  {
+    href: '/ai-website-development',
+    icon: 'cpu', 
+    title: 'AI Development',
+    tagline: '100+ Pages That Dominate',
+    description: 'Comprehensive websites with a page for every service and location - built faster than you thought possible'
+  },
+  {
+    href: '/seo-services',
+    icon: 'search',
+    title: 'SEO Services', 
+    tagline: 'Keep Your Website, Add Power',
+    description: 'We\'ll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom'
+  }
+];
+
+// Filter out the excluded service
+const relatedServices = allServices.filter(service => {
+  if (excludeService === 'custom-website-design') return service.href !== '/custom-website-design';
+  if (excludeService === 'ai-website-development') return service.href !== '/ai-website-development';
+  if (excludeService === 'seo-services') return service.href !== '/seo-services';
+  return true;
+});
+---
+
+<section class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style="font-family: var(--font-heading);">
+        {title}
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto" style="font-family: var(--font-body);">
+        {subtitle}
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {relatedServices.map((service) => (
+        <a href={service.href} class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <i data-lucide={service.icon} class="w-6 h-6 text-ocean-blue"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-1" style="font-family: var(--font-heading);">
+                {service.title}
+              </h3>
+              <p class="text-ocean-blue font-medium mb-2 text-sm" style="font-family: var(--font-body);">
+                {service.tagline}
+              </p>
+              <p class="text-gray-600 mb-3" style="font-family: var(--font-body);">
+                {service.description}
+              </p>
+              <span class="text-ocean-blue font-semibold flex items-center" style="font-family: var(--font-body);">
+                Learn More
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
