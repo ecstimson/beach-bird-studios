@@ -71,7 +71,7 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    author: z.string().default('Beach Bird Studios'),
+    author: z.string().default('Eric Stimson'),
     publishDate: z.coerce.date(),
     updateDate: z.coerce.date().optional(),
     featured: z.boolean().default(false),
