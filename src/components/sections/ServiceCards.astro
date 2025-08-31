@@ -50,10 +50,15 @@ const { services = [] } = Astro.props
               {/* Icon puck */}
               <div class={`mb-5 grid h-12 w-12 place-items-center rounded-full
                           ${isFeatured ? 'bg-white/20' : 'bg-beach-blue/10'}`}>
-                <svg viewBox="0 0 24 24" width="24" height="24"
-                     class={isFeatured ? 'stroke-white/90' : 'stroke-beach-blue'} fill="none">
-                  <path d="M4 7h16M4 12h10M4 17h16" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+                {s.title === 'Custom Web Design' && (
+                  <i data-lucide="palette" class={`w-6 h-6 ${isFeatured ? 'text-white/90' : 'text-beach-blue'}`}></i>
+                )}
+                {s.title === 'AI Development' && (
+                  <i data-lucide="cpu" class={`w-6 h-6 ${isFeatured ? 'text-white/90' : 'text-beach-blue'}`}></i>
+                )}
+                {s.title === 'SEO Services' && (
+                  <i data-lucide="search" class={`w-6 h-6 ${isFeatured ? 'text-white/90' : 'text-beach-blue'}`}></i>
+                )}
               </div>
 
               <h3 class={`text-2xl font-heading font-bold leading-tight

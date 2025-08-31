@@ -10,17 +10,29 @@
 /* Global rule: white text on dark backgrounds */
 .gradient-hero,
 .gradient-hero *,
+.gradient-seamless,
+.gradient-seamless *,
 [class*="gradient-to-b"],
 [class*="bg-gradient"],
 .bg-beach-dark,
-.bg-beach-blue {
+.bg-beach-blue,
+.bg-gray-900 {
   color: white !important;
 }
 
 .gradient-hero h1,
 .gradient-hero h2,
 .gradient-hero h3,
-.gradient-hero p {
+.gradient-hero p,
+.gradient-seamless h1,
+.gradient-seamless h2,
+.gradient-seamless h3,
+.gradient-seamless p,
+.bg-gray-900 h1,
+.bg-gray-900 h2,
+.bg-gray-900 h3,
+.bg-gray-900 h4,
+.bg-gray-900 p {
   color: white !important;
 }
 
