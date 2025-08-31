@@ -1,7 +1,7 @@
 ---
 /** ServiceCards.astro
  * Beach Bird Studios canonical service cards
- * Three-card layout matching design system
+ * Three-card layout: Custom Design, AI Development (featured), SEO Services
  */
 export interface Service {
   title: string
@@ -30,18 +30,18 @@ const { services = [] } = Astro.props
         const isFeatured = !!s.featured
         return (
           <article
-            class={`relative rounded-2xl shadow-[0_8px_24px_rgba(12,55,69,.08)] border
+            class={`relative rounded-2xl shadow-[0_8px_24px_rgba(12,55,69,.08)] border overflow-hidden
               ${isFeatured
-                ? 'bg-gradient-to-b from-beach-blue to-[#2E7CC4] text-white border-transparent'
-                : 'bg-white text-beach-dark border-black/5'}
+                ? 'bg-[linear-gradient(180deg,#5DB3F1_0%,#3A87D9_100%)] text-white border-transparent'
+                : 'bg-white text-beach-dark border-[#E7EDF3]'}
             `}
           >
             {isFeatured && (
               <span class="pointer-events-none absolute right-0 top-0 h-0 w-0">
                 <span
-                  class="absolute -right-10 top-6 rotate-45 bg-beach-yellow px-8 py-1 text-[11px] font-semibold text-beach-dark shadow"
+                  class="absolute -right-8 top-6 rotate-45 bg-beach-yellow px-6 py-1 text-[10px] font-semibold text-beach-dark shadow whitespace-nowrap"
                 >
-                  {s.ribbon ?? 'FEATURED'}
+                  FEATURED
                 </span>
               </span>
             )}
@@ -51,13 +51,13 @@ const { services = [] } = Astro.props
               <div class={`mb-5 grid h-12 w-12 place-items-center rounded-full
                           ${isFeatured ? 'bg-white/20' : 'bg-beach-blue/10'}`}>
                 {s.title === 'Custom Web Design' && (
-                  <i data-lucide="palette" class={`w-6 h-6 ${isFeatured ? 'text-white/90' : 'text-beach-blue'}`}></i>
+                  <i data-lucide="palette" class={`w-6 h-6 ${isFeatured ? 'text-white' : 'text-beach-blue'}`}></i>
                 )}
                 {s.title === 'AI Development' && (
-                  <i data-lucide="cpu" class={`w-6 h-6 ${isFeatured ? 'text-white/90' : 'text-beach-blue'}`}></i>
+                  <i data-lucide="cpu" class={`w-6 h-6 ${isFeatured ? 'text-white' : 'text-beach-blue'}`}></i>
                 )}
                 {s.title === 'SEO Services' && (
-                  <i data-lucide="search" class={`w-6 h-6 ${isFeatured ? 'text-white/90' : 'text-beach-blue'}`}></i>
+                  <i data-lucide="search" class={`w-6 h-6 ${isFeatured ? 'text-white' : 'text-beach-blue'}`}></i>
                 )}
               </div>
 
@@ -68,7 +68,7 @@ const { services = [] } = Astro.props
 
               {s.headline && (
                 <p class={`mt-2 text-base font-semibold
-                           ${isFeatured ? 'text-beach-yellow' : 'text-[#1E4BF1]'}`
+                           ${isFeatured ? 'text-beach-yellow' : 'text-beach-blue'}`
                 }>
                   {s.headline}
                 </p>
@@ -81,12 +81,12 @@ const { services = [] } = Astro.props
 
               <ul class="mt-6 space-y-2">
                 {s.bullets.map((b) => (
-                  <li class="flex items-start gap-3">
-                    <svg viewBox="0 0 20 20" width="20" height="20"
-                         class={isFeatured ? 'text-beach-yellow' : 'text-green-500'} fill="none">
+                  <li class="flex items-start gap-3 text-sm leading-6">
+                    <svg viewBox="0 0 20 20" width="16" height="16"
+                         class={`mt-0.5 ${isFeatured ? 'text-beach-yellow' : 'text-green-500'}`} fill="none">
                       <path d="M6 10.5l2.2 2.2L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class={`text-sm ${isFeatured ? 'text-white' : 'text-beach-dark/80'}`}>{b}</span>
+                    <span class={isFeatured ? 'text-white/90' : 'text-beach-dark/80'}>{b}</span>
                   </li>
                 ))}
               </ul>
@@ -94,7 +94,7 @@ const { services = [] } = Astro.props
               <a href={s.href}
                  class={`mt-8 inline-flex h-12 items-center justify-center rounded-xl px-5 text-[15px] font-semibold transition w-full
                          ${isFeatured
-                           ? 'bg-beach-yellow text-beach-dark hover:shadow-lg'
+                           ? 'bg-beach-yellow text-beach-dark hover:bg-yellow-500 hover:shadow-lg'
                            : 'border border-beach-blue text-beach-blue hover:bg-beach-blue hover:text-white hover:shadow-md'}`}>
                 Learn More <span class="ml-2">→</span>
               </a>

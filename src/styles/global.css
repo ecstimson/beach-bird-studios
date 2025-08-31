@@ -9,9 +9,7 @@
 
 /* Global rule: white text on dark backgrounds */
 .gradient-hero,
-.gradient-hero *,
 .gradient-seamless,
-.gradient-seamless *,
 [class*="gradient-to-b"],
 [class*="bg-gradient"],
 .bg-beach-dark,
@@ -34,6 +32,14 @@
 .bg-gray-900 h4,
 .bg-gray-900 p {
   color: white !important;
+}
+
+/* Exception: buttons on dark backgrounds should maintain their own colors */
+.gradient-hero .bg-white,
+.gradient-hero .bg-white *,
+.gradient-seamless .bg-white,
+.gradient-seamless .bg-white * {
+  color: #0C3745 !important;
 }
 
 /* ============================================
