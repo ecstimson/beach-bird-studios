@@ -1,6 +1,7 @@
 ---
 title: "Freelancer vs Agency"
 description: "Compare freelancer vs agency. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Freelancer vs Agency

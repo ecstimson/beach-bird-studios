@@ -36,14 +36,6 @@ interface Section {
   features?: string[];
 }
 
-interface PricingCard {
-  title: string;
-  tagline?: string;
-  description?: string;
-  features: string[];
-  featured?: boolean;
-  packageType?: string;
-}
 
 interface Industry {
   title: string;
@@ -165,14 +157,9 @@ for (let i = 0; i < lines.length; i++) {
   else if (line.startsWith('#### ')) {
     currentSection.content.push({ type: 'h4', text: line.substring(5).trim() });
   }
-  // Bold headers that might be card titles (entire line is bold)
+  // Bold headers - treat as regular paragraphs
   else if (line.startsWith('**') && line.includes('**') && line.indexOf('**', 2) > 2) {
-    // This handles "**Starter Site** - Perfect for small businesses"
     currentSection.content.push({ type: 'paragraph', text: line });
-    // If this is in a pricing section, it's likely a card title
-    if (currentSection.type === 'pricing') {
-      currentSection.content[currentSection.content.length - 1].type = 'card-title';
-    }
   }
   // Bullet points 
   else if (line.startsWith('- ') || line.startsWith('* ')) {
@@ -252,104 +239,6 @@ const processFeatures = (features: any[], section: Section) => {
   });
 };
 
-// Process pricing sections
-const processPricingCards = (section: Section): { grouped: Record<string, PricingCard[]>, ungrouped: PricingCard[] } => {
-  const cards: PricingCard[] = [];
-  let currentCard: PricingCard | null = null;
-  let collectingFeatures = false;
-  let currentPackageTitle: string | null = null;
-  
-  // Look through all content and features
-  const allItems = [...section.content];
-  if (section.features) {
-    section.features.forEach(f => allItems.push({ type: 'feature', text: f }));
-  }
-  
-  allItems.forEach((item) => {
-    // H3 headers indicate package categories in Investment Options
-    if (item.type === 'h3') {
-      currentPackageTitle = item.text;
-      collectingFeatures = false;
-    }
-    // Check for H4 headers (used in SEO services for pricing tiers)
-    else if (item.type === 'h4') {
-      if (currentCard) cards.push(currentCard);
-      
-      const parts = item.text.split(' - ');
-      currentCard = {
-        title: parts[0].trim(),
-        tagline: parts[1]?.trim() || '',
-        features: [],
-        description: '',
-        packageType: currentPackageTitle || ''
-      };
-      collectingFeatures = true;
-    }
-    // Check for bold card titles like "**Starter Site**" or as fallback
-    else if (item.type === 'card-title' || 
-        (item.type === 'paragraph' && item.text.startsWith('**') && item.text.includes('**'))) {
-      
-      if (currentCard) cards.push(currentCard);
-      
-      let titleText = item.text;
-      if (titleText.startsWith('**')) {
-        titleText = titleText.replace(/\*\*/g, '');
-      }
-      
-      const parts = titleText.split(' - ');
-      currentCard = {
-        title: parts[0].trim(),
-        tagline: parts[1]?.trim() || '',
-        features: [],
-        description: ''
-      };
-      collectingFeatures = true;
-    } 
-    // Collect bullet points as features
-    else if ((item.type === 'bullet' || item.type === 'feature') && currentCard && collectingFeatures) {
-      currentCard.features.push(typeof item === 'string' ? item : item.text);
-    } 
-    // Non-bold paragraph might be description or signal end of card
-    else if (item.type === 'paragraph' && !item.text.startsWith('**')) {
-      if (currentCard && !currentCard.description && item.text.length < 100) {
-        currentCard.description = item.text;
-      } else if (!currentCard) {
-        // Might be description under H3 header
-        collectingFeatures = false;
-      }
-    }
-  });
-  
-  if (currentCard) cards.push(currentCard);
-  
-  // Group cards by package type if they have one
-  const groupedCards: Record<string, PricingCard[]> = {};
-  const ungroupedCards: PricingCard[] = [];
-  
-  cards.forEach(card => {
-    if (card.packageType) {
-      if (!groupedCards[card.packageType]) {
-        groupedCards[card.packageType] = [];
-      }
-      groupedCards[card.packageType].push(card);
-    } else {
-      ungroupedCards.push(card);
-    }
-  });
-  
-  // Mark middle cards as featured
-  Object.values(groupedCards).forEach(group => {
-    if (group.length === 3) {
-      group[1].featured = true;
-    }
-  });
-  
-  if (ungroupedCards.length === 3) {
-    ungroupedCards[1].featured = true;
-  }
-  
-  return { grouped: groupedCards, ungrouped: ungroupedCards };
-};
 
 // Process industry sections
 const processIndustries = (section: Section): Industry[] => {

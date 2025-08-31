@@ -1,6 +1,7 @@
 ---
 title: "Monthly SEO vs One Time"
 description: "Compare monthly seo vs one time. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Monthly SEO vs One Time

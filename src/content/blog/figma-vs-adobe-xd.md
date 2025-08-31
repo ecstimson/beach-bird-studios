@@ -1,6 +1,7 @@
 ---
 title: "Figma vs Adobe XD: Which Design Tool Reigns Supreme in 2025?"
 description: "Compare Figma and Adobe XD for UI/UX design projects. Detailed analysis of features, collaboration, pricing, and which design tool fits your workflow best."
+publishDate: "2025-01-01"
 ---
 
 # Figma vs Adobe XD: Which Design Tool Reigns Supreme in 2025?

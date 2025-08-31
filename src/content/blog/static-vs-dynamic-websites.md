@@ -1,6 +1,7 @@
 ---
 title: "Static vs Dynamic Websites"
 description: "Compare static vs dynamic websites. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Static vs Dynamic Websites

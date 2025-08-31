@@ -1,6 +1,7 @@
 ---
 title: "Responsive vs Mobile First"
 description: "Compare responsive vs mobile first. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Responsive vs Mobile First

@@ -1,6 +1,7 @@
 ---
 title: "Claude Code vs Traditional Development: The Future of Web Development"
 description: "Compare AI-powered Claude Code development with traditional coding methods. Discover speed, cost, and quality differences for modern web development projects."
+publishDate: "2025-01-01"
 ---
 
 # Claude Code vs Traditional Development: The Future of Web Development

@@ -1,6 +1,7 @@
 ---
 title: "Squarespace vs Wordpress"
 description: "Compare squarespace vs wordpress. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Squarespace vs Wordpress

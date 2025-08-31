@@ -1,6 +1,7 @@
 ---
 title: "Modern Platforms vs Legacy CMS: Why It's Time to Evolve Your Website"
 description: "Compare modern web platforms like Framer and Webflow with legacy CMS systems like WordPress and Drupal. Discover performance, security, and cost benefits of modernization."
+publishDate: "2025-01-01"
 ---
 
 # Modern Platforms vs Legacy CMS: Why It's Time to Evolve Your Website

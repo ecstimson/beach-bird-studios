@@ -1,6 +1,7 @@
 ---
 title: "Beach Bird vs Competitors"
 description: "Compare beach bird vs competitors. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Beach Bird vs Competitors

@@ -1,6 +1,7 @@
 ---
 title: "Framer vs WordPress: Which Platform is Right for Your Business?"
 description: "Compare Framer and WordPress for your website needs. Expert analysis of features, costs, ease of use, and which platform fits your business goals in 2025."
+publishDate: "2025-01-01"
 ---
 
 # Framer vs WordPress: Which Platform is Right for Your Business?

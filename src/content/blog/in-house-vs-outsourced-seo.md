@@ -1,6 +1,7 @@
 ---
 title: "In House vs Outsourced SEO"
 description: "Compare in house vs outsourced seo. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # In House vs Outsourced SEO

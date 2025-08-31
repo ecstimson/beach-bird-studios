@@ -1,6 +1,7 @@
 ---
 title: "WordPress vs Wix: Which Platform is Right for Your Business in 2025?"
 description: "Compare WordPress and Wix for your business website. Detailed analysis of features, costs, ease of use, SEO, and scalability to help you choose the right platform."
+publishDate: "2025-01-01"
 ---
 
 # WordPress vs Wix: Which Platform is Right for Your Business in 2025?

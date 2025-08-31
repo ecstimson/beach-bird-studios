@@ -1,6 +1,7 @@
 ---
 title: "Framer vs Webflow: Which No-Code Platform Wins in 2025?"
 description: "Compare Framer and Webflow for professional website development. Detailed analysis of design capabilities, performance, pricing, and which platform suits your business needs."
+publishDate: "2025-01-01"
 ---
 
 # Framer vs Webflow: Which No-Code Platform Wins in 2025?

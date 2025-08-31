@@ -1,6 +1,7 @@
 ---
 title: "Web Design Pricing Comparison"
 description: "Compare web design pricing comparison. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # Web Design Pricing Comparison

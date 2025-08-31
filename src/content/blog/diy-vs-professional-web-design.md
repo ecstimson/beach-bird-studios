@@ -1,6 +1,7 @@
 ---
 title: "DIY vs Professional Web Design"
 description: "Compare diy vs professional web design. Make informed decisions for your business website and digital marketing."
+publishDate: "2025-01-01"
 ---
 
 # DIY vs Professional Web Design
