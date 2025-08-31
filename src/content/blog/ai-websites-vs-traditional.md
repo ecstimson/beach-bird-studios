@@ -1,6 +1,7 @@
 ---
 title: "AI Website Development vs Traditional Web Design: Which is Right for You?"
 description: "Compare AI-powered website development with traditional web design. Learn the pros, cons, costs, and which approach fits your business needs."
+publishDate: "2024-12-01"
 ---
 
 # AI Website Development vs Traditional Web Design

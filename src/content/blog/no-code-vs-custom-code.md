@@ -1,6 +1,7 @@
 ---
 title: "No-Code vs Custom Code: Which Development Approach Wins?"
 description: "Compare no-code platforms with custom development. Learn the pros, cons, costs, and scalability of each approach to choose the right solution for your business."
+publishDate: "2024-12-01"
 ---
 
 # No-Code vs Custom Code: Which Development Approach Wins?

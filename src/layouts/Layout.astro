@@ -106,7 +106,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }} 
     />
   </head>
-  <body>
+  <body class="bg-bg text-text antialiased">
     <slot />
     
     <!-- Auto-inject ServiceCards on marketing routes -->
@@ -115,6 +115,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </html>
 
 <style is:global>
+  @import '../styles/tokens.css';
   @import '../styles/global.css';
 </style>
 

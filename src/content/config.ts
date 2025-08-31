@@ -112,40 +112,6 @@ const homepageCollection = defineCollection({
   }),
 });
 
-// Schema for design principals
-const designPrincipalsCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    category: z.string().optional(),
-    principles: z.array(z.object({
-      name: z.string(),
-      description: z.string(),
-    })).optional(),
-  }),
-});
-
-// Schema for comparison pages
-const comparisonsCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    category: z.enum([
-      'platforms',
-      'services',
-      'strategies',
-      'business-models',
-    ]).optional(),
-    seo: z.object({
-      metaTitle: z.string().optional(),
-      metaDescription: z.string().max(160).optional(),
-      keywords: z.array(z.string()).optional(),
-    }).optional(),
-  }),
-});
-
 // Export all collections
 export const collections = {
   'services': servicesCollection,
@@ -153,6 +119,4 @@ export const collections = {
   'industry': industryCollection,
   'blog': blogCollection,
   'homepage': homepageCollection,
-  'design-principals': designPrincipalsCollection,
-  'comparisons': comparisonsCollection,
 };

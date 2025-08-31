@@ -1,6 +1,7 @@
 ---
 title: "Local vs National SEO"
 description: "Compare local vs national seo. Make informed decisions for your business website and digital marketing."
+publishDate: "2024-12-01"
 ---
 
 # Local vs National SEO

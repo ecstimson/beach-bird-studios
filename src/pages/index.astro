@@ -1,171 +1,180 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import FeatureGrid from '../components/FeatureGrid.astro';
-import ServiceCards from '../components/ServiceCards.astro';
-import ProcessTimeline from '../components/ProcessTimeline.astro';
-import CTASection from '../components/CTASection.astro';
-import Footer from '../components/Footer.astro';
+layout: "@/layouts/Layout.astro"
+title: "Wilmington Web Design - 100+ Page Websites Fast | Beach Bird Studios"
+description: "Wilmington web design & SEO services that actually work. Custom sites, 100+ page AI development, or SEO for any platform. Free consultation available."
 
-const pageTitle = 'Wilmington Web Design - 100+ Page Websites Fast | Beach Bird Studios';
-const pageDescription = 'Wilmington web design & SEO services that actually work. Custom sites, 100+ page AI development, or SEO for any platform. Free consultation available.';
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import ProcessTimeline from "../components/ProcessTimeline.astro";
+import CTASection from "../components/CTASection.astro";
+import Footer from "../components/Footer.astro";
+
+// The layout will auto-inject <ServiceCards /> on marketing routes,
+// so we do NOT import or render it here.
 
 const deliverables = [
   {
-    icon: 'zap',
-    title: 'Lightning-Fast Development',
-    description: 'We deliver complete websites in weeks while others take months. Your business can\'t afford to wait half a year to start generating leads.',
-    iconColor: 'yellow'
+    icon: "zap",
+    title: "Lightning-Fast Development",
+    description:
+      "We deliver complete websites in weeks while others take months. Your business can't afford to wait half a year to start generating leads.",
+    iconColor: "yellow",
   },
   {
-    icon: 'layers',
-    title: 'Flexible Solutions',
-    description: 'Three distinct paths to online success - choose what fits your needs and budget. Custom design, AI-powered development, or SEO for your current site.',
-    iconColor: 'blue'
+    icon: "layers",
+    title: "Flexible Solutions",
+    description:
+      "Three distinct paths to online success - choose what fits your needs and budget. Custom design, AI-powered development, or SEO for your current site.",
+    iconColor: "blue",
   },
   {
-    icon: 'trending-up',
-    title: 'Built for Results',
-    description: 'Every website and SEO campaign is designed to convert visitors into customers. Beautiful design means nothing if it doesn\'t grow your business.',
-    iconColor: 'green'
+    icon: "trending-up",
+    title: "Built for Results",
+    description:
+      "Every website and SEO campaign is designed to convert visitors into customers. Beautiful design means nothing if it doesn't grow your business.",
+    iconColor: "green",
   },
   {
-    icon: 'map',
-    title: 'Local Expertise',
-    description: 'Based in Wilmington, we understand the coastal market and what local customers are searching for.',
-    iconColor: 'cyan'
-  }
+    icon: "map",
+    title: "Local Expertise",
+    description:
+      "Based in Wilmington, we understand the coastal market and what local customers are searching for.",
+    iconColor: "cyan",
+  },
 ];
-
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
-  <Header />
-  
-  <Hero
-    headline="Websites That Work<br>As Hard As You Do"
-    subheadline="Premium web design & SEO for North Carolina businesses. Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website"
-    primaryCTA={{ text: 'Start Your Project', href: '#contact' }}
-    secondaryCTA={{ text: 'See Our Process', href: '#process' }}
-  />
-  
-  <FeatureGrid
-    title="What We Deliver"
-    subtitle="Real results for North Carolina businesses, not empty promises"
-    features={deliverables}
-  />
-  
-  <ServiceCards />
-  
+<Header />
+
+<Hero
+  headline="Websites That Work<br>As Hard As You Do"
+  subheadline="Premium web design & SEO for North Carolina businesses. Three ways to grow online: Beautiful custom sites, AI-powered development, or SEO for your existing website"
+  primaryCTA={{ text: "Start Your Project", href: "#contact" }}
+  secondaryCTA={{ text: "See Our Process", href: "#process" }}
+/>
+
+<FeatureGrid
+  title="What We Deliver"
+  subtitle="Real results for North Carolina businesses, not empty promises"
+  features={deliverables}
+/>
+
+<!-- The ServiceCards section is auto-injected by the layout on the homepage. -->
+
+<!-- Optional: keep the process on the homepage -->
+<section id="process">
   <ProcessTimeline />
-  
-  <!-- Success Metrics Section -->
-  <section id="success" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Success Looks Like</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Real results our clients experience every day
+</section>
+
+<!-- Success Metrics Section (brand colors) -->
+<section id="success" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-beach-dark mb-4">What Success Looks Like</h2>
+      <p class="text-xl text-beach-dark/70 max-w-3xl mx-auto">
+        Real results our clients experience every day
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Ranking Improvements -->
+      <div class="bg-gradient-to-br from-beach-cream to-white rounded-2xl p-8">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-beach-blue rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-beach-dark mb-2">Dramatic Ranking Improvements</h3>
+            <p class="text-beach-dark/70">From buried on page 5 to dominating position #1 in local searches</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead Generation -->
+      <div class="bg-gradient-to-br from-beach-cream to-white rounded-2xl p-8">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-beach-blue rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="users" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-beach-dark mb-2">Lead Generation That Works</h3>
+            <p class="text-beach-dark/70">Transform your lead generation with strategies that deliver real results</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speed That Converts -->
+      <div class="bg-gradient-to-br from-beach-cream to-white rounded-2xl p-8">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-beach-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="zap" class="w-6 h-6 text-beach-dark"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-beach-dark mb-2">Speed That Converts</h3>
+            <p class="text-beach-dark/70">Fast-loading websites that keep visitors engaged and buying</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Leadership -->
+      <div class="bg-gradient-to-br from-beach-cream to-white rounded-2xl p-8">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-beach-blue rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="crown" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-beach-dark mb-2">Market Leadership</h3>
+            <p class="text-beach-dark/70">Become the obvious choice when customers search for your services</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 bg-beach-cream">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-beach-dark mb-4">Common Questions</h2>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Question 1 -->
+      <div class="bg-white rounded-xl p-6 shadow-soft">
+        <h3 class="text-xl font-bold text-beach-dark mb-2">Do I really need a new website?</h3>
+        <p class="text-beach-dark/70">Not always. If your current site works, we can add SEO without touching it.</p>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="bg-white rounded-xl p-6 shadow-soft">
+        <h3 class="text-xl font-bold text-beach-dark mb-2">How is AI development different?</h3>
+        <p class="text-beach-dark/70">
+          We can create 100+ unique pages targeting every service and location — something that would normally take months.
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Ranking Improvements -->
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Dramatic Ranking Improvements</h3>
-              <p class="text-gray-600">From buried on page 5 to dominating position #1 in local searches</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Lead Generation -->
-        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="users" class="w-6 h-6 text-white"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Lead Generation That Works</h3>
-              <p class="text-gray-600">Transform your lead generation with strategies that deliver real results</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Speed That Converts -->
-        <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Speed That Converts</h3>
-              <p class="text-gray-600">Fast-loading websites that keep visitors engaged and buying</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Market Leadership -->
-        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="crown" class="w-6 h-6 text-white"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Market Leadership</h3>
-              <p class="text-gray-600">Become the obvious choice when customers search for your services</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- FAQ Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Common Questions</h2>
-      </div>
-      
-      <div class="space-y-6">
-        <!-- Question 1 -->
-        <div class="bg-white rounded-xl p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Do I really need a new website?</h3>
-          <p class="text-gray-600">Not always. If your current site works, we can add SEO without touching it.</p>
-        </div>
-        
-        <!-- Question 2 -->
-        <div class="bg-white rounded-xl p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">How is AI development different?</h3>
-          <p class="text-gray-600">We can create 100+ unique pages targeting every service and location - something that would normally take months.</p>
-        </div>
-        
-        <!-- Question 3 -->
-        <div class="bg-white rounded-xl p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">What makes you different?</h3>
-          <p class="text-gray-600">We're the only NC agency offering all three solutions. Pick what works for your business.</p>
-        </div>
-      </div>
-      
-      <div class="text-center mt-8">
-        <a href="/faq" class="text-primary font-semibold hover:underline">View All FAQs →</a>
-      </div>
-    </div>
-  </section>
-  
-  <CTASection
-    title="Ready to Stop Losing Customers Online?"
-    subtitle="Every day you wait, competitors are stealing your customers. Let's fix that."
-    primaryCTA={{ text: 'Get Your Free Website Evaluation', href: '/contact' }}
-    secondaryCTA={{ text: 'Call 910-512-6990', href: 'tel:910-512-6990', phone: true }}
-  />
-  
-  <Footer />
-</Layout>
 
+      <!-- Question 3 -->
+      <div class="bg-white rounded-xl p-6 shadow-soft">
+        <h3 class="text-xl font-bold text-beach-dark mb-2">What makes you different?</h3>
+        <p class="text-beach-dark/70">
+          We're the only NC agency offering all three solutions. Pick what works for your business.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/faq" class="text-primary font-semibold hover:underline">View All FAQs →</a>
+    </div>
+  </div>
+</section>
+
+<CTASection
+  title="Ready to Stop Losing Customers Online?"
+  subtitle="Every day you wait, competitors are stealing your customers. Let's fix that."
+  primaryCTA={{ text: "Get Your Free Website Evaluation", href: "/contact" }}
+  secondaryCTA={{ text: "Call 910-512-6990", href: "tel:910-512-6990", phone: true }}
+/>
+
+<Footer />

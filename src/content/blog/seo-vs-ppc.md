@@ -1,6 +1,7 @@
 ---
 title: "SEO vs PPC"
 description: "Compare seo vs ppc. Make informed decisions for your business website and digital marketing."
+publishDate: "2024-12-01"
 ---
 
 # SEO vs PPC

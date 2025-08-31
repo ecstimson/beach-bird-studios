@@ -24,27 +24,28 @@ npm run preview    # Preview build locally
 │   │   ├── services/  # Service & platform pages
 │   │   ├── locations/ # Geographic location pages
 │   │   ├── industry/  # Industry-specific pages
-│   │   └── blog/      # Blog articles
+│   │   └── blog/      # Blog articles (includes comparisons + thought leadership)
 │   ├── layouts/       # Page layouts
 │   └── pages/         # Static pages & dynamic routes
 │       └── services/
 │           └── [slug].astro  # Dynamic page generator
-└── CLAUDE.md         # AI assistant guidelines
+└── DESIGN_SYSTEMS.md  # Canonical brand, tokens, and component rules
 ```
 
 ## 🎯 Development Workflow
 
 ### For Building New Pages (200+ remaining)
 
-1. **Check the sitemap** - See `sitemap.md` for complete page list
-2. **Check existing pages** - Review `/src/content/` to avoid duplicates
-3. **Create markdown files** in appropriate folder:
-   - Service pages → `/src/content/services/`
-   - Location pages → `/src/content/locations/`
-   - Industry pages → `/src/content/industry/`
-   - Blog posts → `/src/content/blog/`
+1. **Check the sitemap** – See `sitemap.md` for complete page list  
+2. **Check existing pages** – Review `/src/content/` to avoid duplicates  
+3. **Create markdown files** in appropriate folder:  
+   - Service pages → `/src/content/services/`  
+   - Location pages → `/src/content/locations/`  
+   - Industry pages → `/src/content/industry/`  
+   - Blog posts (comparisons & thought leadership) → `/src/content/blog/`  
 
-4. **Use the template structure**:
+4. **Use this template structure:**
+
 ```markdown
 ---
 title: "Page Title"
@@ -62,35 +63,19 @@ description: "SEO meta description"
 Description of first step
 ```
 
-**Note**: ServiceCards and ProcessTimeline are enforced by the layout for consistency. See `/DESIGN_SYSTEM.md` for complete brand guidelines.
+**Note:** `ServiceCards` and `ProcessTimeline` are enforced by the layout for consistency. See `/DESIGN_SYSTEMS.md` for canonical implementation and brand tokens.  
 
-5. **The magic happens automatically** - `[slug].astro` transforms markdown into beautiful pages
+5. **Rendering:** `[slug].astro` (and related routes) transform markdown into styled sections automatically.
 
-### Design System
-All brand tokens, colors, typography, and components are defined in `/DESIGN_SYSTEM.md`. Follow this single source of truth for consistency.
+## 🎨 Design System (Authoritative)
 
-### Page Creation Priority
+All brand tokens, colors, typography, and component rules live in `/DESIGN_SYSTEMS.md`.  
+Follow this single source of truth:
 
-**Phase 1: Core Services** (50+ pages)
-- Platform pages (Framer, Webflow, AI tools)
-- SEO services for each platform
-- Website design variations
-
-**Phase 2: Locations** (30+ pages)
-- Wilmington area beaches
-- Major NC cities
-- Regional service pages
-
-**Phase 3: Industries** (70+ pages)
-- Medical/Healthcare
-- Legal Services
-- Home Services
-- Real Estate
-- Professional Services
-
-See `content-creation-guidelines.md` for detailed page lists.
-
-## 🎨 Design System
+- Use `ServiceCards` for service promo blocks (layout auto-injects them on key marketing routes).  
+- Use `ProcessTimeline` for process sections.  
+- **Never generate pricing tables or packages — all services are custom quotes only.**  
+- Do not fabricate testimonials or metrics.  
 
 ### Brand Colors
 - **Primary Blue**: #47A7EB (Ocean)
@@ -103,94 +88,93 @@ See `content-creation-guidelines.md` for detailed page lists.
 - **Headlines**: Chillax (Semibold)
 - **Body**: Synonym (Regular)
 
-### Dynamic Content Components
+## 📑 Page Creation Priority
 
-The `[slug].astro` file automatically creates different visual components based on markdown patterns:
+**Phase 1: Core Services** (50+ pages)  
+- Platform pages (Framer, Webflow, AI tools)  
+- SEO services for each platform  
+- Website design variations  
 
-| Markdown Pattern | Visual Result |
-|-----------------|---------------|
-| `## Package Names` with bullet lists | 3-column pricing cards |
-| `- Feature: Description` | Feature grid with icons |
-| `### Subsections` | Industry/service cards |
-| `## Our Process` sections | Numbered step circles |
-| Regular content | Alternating background sections |
+**Phase 2: Locations** (30+ pages)  
+- Wilmington area beaches  
+- Major NC cities  
+- Regional service pages  
 
-## ⚠️ CRITICAL RULES
+**Phase 3: Industries** (70+ pages)  
+- Medical/Healthcare  
+- Legal Services  
+- Home Services  
+- Real Estate  
+- Professional Services  
 
-### Content Integrity
-- **NEVER** create fake testimonials or reviews
-- **NEVER** invent metrics like "300% increase"
-- **ONLY** use verified client data
-- Use general benefits instead of fake specifics
+See `content-creation-guidelines.md` for detailed page lists.
 
-### When Creating Pages
-1. **Read existing content first** - Check `/src/content/` folders
-2. **Follow the patterns** - Use existing pages as templates
-3. **Keep it real** - No fake data, testimonials, or metrics
-4. **Focus on value** - Emphasize real benefits and capabilities
+## ⚠️ Content Integrity (Critical)
+
+- **NEVER** create fake testimonials or reviews  
+- **NEVER** invent metrics like “300% increase”  
+- **ONLY** use verified client data  
+- Prefer honest benefits and capabilities over specifics when data isn’t verified
 
 ## 📝 Content Management
 
-### For Ongoing Development
+### Batch Creation Strategy
+1. Create pages in batches of 10–20  
+2. Focus on one category at a time  
+3. Use consistent patterns within categories  
+4. Test locally before committing  
 
-**Batch Creation Strategy**:
-1. Create pages in batches of 10-20
-2. Focus on one category at a time
-3. Use consistent patterns within categories
-4. Test locally before committing
-
-**Blog Content**:
-- Create in `/src/content/blog/`
-- Follow format: `yyyy-mm-dd-slug.md`
-- Include meta descriptions
-- Target local SEO keywords
+### Blog Content
+- Create in `/src/content/blog/`  
+- Recommended filename format: `yyyy-mm-dd-slug.md`  
+- Include meta descriptions  
+- Target local SEO keywords  
+- *Optional:* set `category: "Comparison"` in frontmatter for head‑to‑head posts
 
 ### Using AI Assistants
-
-When using Claude or other AI tools:
-1. Reference `CLAUDE.md` for guidelines
-2. Provide context from existing pages
-3. Create in batches for consistency
-4. Always verify no duplicates exist
+- Provide context from existing pages  
+- Create in batches for consistency  
+- Always verify no duplicates exist  
 
 ## 🚢 Deployment
 
-The site auto-deploys via GitHub Actions when pushing to main branch.
+The site auto-deploys via GitHub Actions when pushing to the `main` branch.
 
 ```sh
 git add .
-git commit -m "Add new service pages"
+git commit -m "Add pages"
 git push origin main
 ```
 
-## 📊 Page Status Tracking
+## 📊 Page Status Tracking (example)
 
-| Category | Total | Created | Remaining |
-|----------|-------|---------|-----------|
-| Services | 94 | 3 | 91 |
-| Locations | 56 | 1 | 55 |
-| Industries | 73 | 1 | 72 |
-| Blog | ∞ | 1 | Ongoing |
-| **Total** | **223+** | **6** | **217+** |
+| Category   | Total | Created | Remaining |
+|------------|-------|---------|-----------|
+| Services   | 94    | 3       | 91        |
+| Locations  | 56    | 1       | 55        |
+| Industries | 73    | 1       | 72        |
+| Blog (incl. Comparisons) | ∞ | — | Ongoing |
+| **Total**  | **223+** | **—** | **—** |
 
-## 🛠️ Tools & Resources
+> Update numbers as work progresses.
 
-- **Local Dev**: `npm run dev`
-- **Check Build**: `npm run build`
-- **Preview**: `npm run preview`
-- **Content Location**: `/src/content/`
-- **Page Generator**: `/src/pages/services/[slug].astro`
-- **Guidelines**: `CLAUDE.md`, `content-creation-guidelines.md`
+## 🛠️ Useful Commands
+
+- **Local Dev:** `npm run dev`  
+- **Build Check:** `npm run build`  
+- **Preview Build:** `npm run preview`  
+- **Content Root:** `/src/content/`  
+- **Service Renderer:** `/src/pages/services/[slug].astro`  
 
 ## 📞 Support
 
-**Beach Bird Studios**
-- Owner: Eric Stimson
-- Phone: 910-512-6990
-- Email: eric@beachbirdstudios.com
-- Location: Wilmington, NC
+**Beach Bird Studios**  
+Owner: Eric Stimson  
+Phone: 910-512-6990  
+Email: eric@beachbirdstudios.com  
+Location: Wilmington, NC
 
 ---
 
-*For AI assistants: See `CLAUDE.md` for detailed implementation guidelines.*
-*For content creators: See `content-creation-guidelines.md` for page lists and templates.*
+*For design/dev rules: see `DESIGN_SYSTEMS.md`.*  
+*For content planning: see `sitemap.md` and `content-creation-guidelines.md`.*

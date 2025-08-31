@@ -1,6 +1,7 @@
 ---
 title: "Framer vs Webflow vs WordPress: The Ultimate Platform Comparison Guide"
 description: "Compare Framer, Webflow, and WordPress in detail. Comprehensive analysis of features, performance, costs, and use cases to choose the perfect platform for your website."
+publishDate: "2024-12-01"
 ---
 
 # Framer vs Webflow vs WordPress: The Ultimate Platform Comparison Guide
