@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}",
+    "./public/**/*.html"
+  ],
+  safelist: [
+    "bg-surface","bg-elevated","text-text","text-muted",
+    "border-border","rounded-[var(--radius-md)]","rounded-[var(--radius-xl)]",
+    "shadow-[var(--shadow-sm)]","shadow-[var(--shadow-md)]"
+  ],
   theme: {
     extend: {
       colors: {

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root { /* keep empty; tokens come from tokens.css */ }
+  body { @apply bg-bg text-text antialiased; }
+}
+
 /* ============================================
    LOGO SVG FIX FOR MOBILE
    ============================================ */

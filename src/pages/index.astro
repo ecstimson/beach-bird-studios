@@ -1,8 +1,5 @@
 ---
-layout: "@/layouts/Layout.astro"
-title: "Wilmington Web Design - 100+ Page Websites Fast | Beach Bird Studios"
-description: "Wilmington web design & SEO services that actually work. Custom sites, 100+ page AI development, or SEO for any platform. Free consultation available."
-
+import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
@@ -45,6 +42,7 @@ const deliverables = [
 ];
 ---
 
+<Layout title="Wilmington Web Design - 100+ Page Websites Fast | Beach Bird Studios" description="Wilmington web design & SEO services that actually work. Custom sites, 100+ page AI development, or SEO for any platform. Free consultation available.">
 <Header />
 
 <Hero
@@ -178,3 +176,4 @@ const deliverables = [
 />
 
 <Footer />
+</Layout>

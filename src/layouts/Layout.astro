@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+import '../styles/tokens.css';
 import StructuredData from '../components/StructuredData.astro';
 import ServiceCards from '../components/ServiceCards.astro';
 
@@ -117,10 +119,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </body>
 </html>
 
-<style is:global>
-  @import '../styles/tokens.css';
-  @import '../styles/global.css';
-</style>
 
 <script is:inline>
   // Initialize Lucide icons on page load
