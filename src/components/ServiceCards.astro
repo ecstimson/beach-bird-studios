@@ -1,108 +1,99 @@
 ---
-// No props needed - this is your standard service cards
+/** ServiceCards.astro
+ * Beach Bird Studios canonical service cards
+ * Usage:
+ *  <ServiceCards services={[ ...see example below... ]} />
+ */
+export interface Service {
+  title: string
+  headline?: string               // e.g. “100+ Pages That Dominate”
+  description: string
+  bullets: string[]               // 3 items
+  href: string
+  featured?: boolean
+  ribbon?: string                 // default: "FEATURED"
+}
+
+const { services = [] } = Astro.props as { services: Service[] }
 ---
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style="font-family: var(--font-heading);">
-        Our Services
-      </h2>
-      <p class="text-lg text-gray-600" style="font-family: var(--font-body);">
-        Choose the solution that fits your business goals and budget
-      </p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Custom Web Design Card -->
-      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all">
-        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
-          <i data-lucide="palette" class="w-6 h-6 text-ocean-blue"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: var(--font-heading);">Custom Web Design</h3>
-        <p class="text-ocean-blue font-medium mb-4" style="font-family: var(--font-body);">Beautiful & Fast</p>
-        <p class="text-gray-600 mb-6" style="font-family: var(--font-body);">
-          Perfect for businesses wanting a stunning, manageable website without the complexity
-        </p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
-            <span class="text-gray-700" style="font-family: var(--font-body);">Timeline: Weeks, not months</span>
-          </li>
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
-            <span class="text-gray-700" style="font-family: var(--font-body);">Mobile-responsive design</span>
-          </li>
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
-            <span class="text-gray-700" style="font-family: var(--font-body);">Custom Quote</span>
-          </li>
-        </ul>
-        <a href="/custom-website-design" class="w-full btn-secondary inline-flex items-center justify-center">
-          Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-        </a>
-      </div>
+<section class="py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-center text-4xl md:text-5xl font-heading font-extrabold text-beach-dark">Our Services</h2>
+    <p class="mt-3 text-center text-lg text-beach-dark/70">Choose the solution that fits your business goals and budget</p>
 
-      <!-- AI Development Card (Featured) -->
-      <div class="investment-card rounded-xl p-8 relative transform scale-105">
-        <div class="absolute -top-2 -right-2 bg-beach-sun text-deep-ocean px-4 py-1 rounded-full text-sm font-semibold">
-          FEATURED
-        </div>
-        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
-          <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-white mb-2" style="font-family: var(--font-heading);">AI Development</h3>
-        <p class="text-beach-sun font-medium mb-4" style="font-family: var(--font-body);">100+ Pages That Dominate</p>
-        <p class="text-white/90 mb-6" style="font-family: var(--font-body);">
-          Comprehensive websites with a page for every service and location - built faster than you thought possible
-        </p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-beach-sun mr-3"></i>
-            <span class="text-white" style="font-family: var(--font-body);">Strategic Coverage</span>
-          </li>
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-beach-sun mr-3"></i>
-            <span class="text-white" style="font-family: var(--font-body);">SEO-optimized content</span>
-          </li>
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-beach-sun mr-3"></i>
-            <span class="text-white" style="font-family: var(--font-body);">Custom Quote</span>
-          </li>
-        </ul>
-        <a href="/ai-website-development" class="w-full btn-primary inline-flex items-center justify-center">
-          Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-        </a>
-      </div>
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      {services.map((s, i) => {
+        const isFeatured = !!s.featured
+        return (
+          <article
+            class={`relative rounded-2xl shadow-[0_8px_24px_rgba(12,55,69,.08)] border
+              ${isFeatured
+                ? 'bg-gradient-to-b from-beach-blue to-[#2E7CC4] text-white border-transparent'
+                : 'bg-white text-beach-dark border-black/5'}
+            `}
+          >
+            {isFeatured && (
+              <span class="pointer-events-none absolute right-0 top-0 h-0 w-0">
+                <span
+                  class="absolute -right-10 top-6 rotate-45 bg-beach-yellow px-8 py-1 text-[11px] font-semibold text-beach-dark shadow"
+                >
+                  {s.ribbon ?? 'FEATURED'}
+                </span>
+              </span>
+            )}
 
-      <!-- SEO Services Card -->
-      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all">
-        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
-          <i data-lucide="search" class="w-6 h-6 text-ocean-blue"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: var(--font-heading);">SEO Services</h3>
-        <p class="text-ocean-blue font-medium mb-4" style="font-family: var(--font-body);">Keep Your Website, Add Power</p>
-        <p class="text-gray-600 mb-6" style="font-family: var(--font-body);">
-          We'll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom
-        </p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
-            <span class="text-gray-700" style="font-family: var(--font-body);">Monthly Service</span>
-          </li>
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
-            <span class="text-gray-700" style="font-family: var(--font-body);">No rebuild required</span>
-          </li>
-          <li class="flex items-center">
-            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
-            <span class="text-gray-700" style="font-family: var(--font-body);">Works with any platform</span>
-          </li>
-        </ul>
-        <a href="/seo-services" class="w-full btn-secondary inline-flex items-center justify-center">
-          Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-        </a>
-      </div>
+            <div class="p-8">
+              {/* Icon puck */}
+              <div class={`mb-5 grid h-12 w-12 place-items-center rounded-full
+                          ${isFeatured ? 'bg-white/20' : 'bg-beach-blue/10'}`}>
+                <svg viewBox="0 0 24 24" width="24" height="24"
+                     class={isFeatured ? 'stroke-white/90' : 'stroke-beach-blue'} fill="none">
+                  <path d="M4 7h16M4 12h10M4 17h16" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <h3 class={`text-2xl font-heading font-bold leading-tight
+                          ${isFeatured ? 'text-white' : 'text-beach-dark'}`}>
+                {s.title}
+              </h3>
+
+              {s.headline && (
+                <p class={`mt-2 text-base font-semibold
+                           ${isFeatured ? 'text-beach-yellow' : 'text-[#1E4BF1]'}`
+                }>
+                  {s.headline}
+                </p>
+              )}
+
+              <p class={`mt-3 text-[15px] leading-7
+                         ${isFeatured ? 'text-white/90' : 'text-beach-dark/70'}`}>
+                {s.description}
+              </p>
+
+              <ul class="mt-6 space-y-2">
+                {s.bullets.map((b) => (
+                  <li class="flex items-start gap-3">
+                    <svg viewBox="0 0 20 20" width="20" height="20"
+                         class={isFeatured ? '' : 'text-green-500'} fill="none">
+                      <path d="M6 10.5l2.2 2.2L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class={`text-sm ${isFeatured ? 'text-white' : 'text-beach-dark/80'}`}>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href={s.href}
+                 class={`mt-8 inline-flex h-12 items-center justify-center rounded-xl px-5 text-[15px] font-semibold transition
+                         ${isFeatured
+                           ? 'bg-beach-yellow text-beach-dark hover:shadow-lg'
+                           : 'border border-black/10 text-beach-dark hover:shadow-md'}`}>
+                Learn More <span class="ml-2">→</span>
+              </a>
+            </div>
+          </article>
+        )
+      })}
     </div>
   </div>
 </section>

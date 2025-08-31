@@ -1,5 +1,6 @@
 ---
 import StructuredData from '../components/StructuredData.astro';
+import ServiceCards from '../components/ServiceCards.astro';
 
 // Prerender all pages using this layout (except API routes)
 export const prerender = true;
@@ -10,6 +11,7 @@ export interface Props {
   ogImage?: string;
   structuredDataType?: 'LocalBusiness' | 'WebPage' | 'BreadcrumbList' | 'FAQPage' | 'Service';
   structuredData?: any;
+  hideServiceCards?: boolean;
 }
 
 const { 
@@ -17,8 +19,41 @@ const {
   description = 'Beach Bird Studios - Premium Websites & SEO That Actually Work', 
   ogImage = '/og-image.jpg',
   structuredDataType = 'WebPage',
-  structuredData = {}
+  structuredData = {},
+  hideServiceCards = false
 } = Astro.props;
+
+const path = Astro.url.pathname;
+
+// Auto-inject ServiceCards on marketing routes
+const MARKETING_ROUTES = [/^\/$/, /^\/services(\/|$)/, /^\/industry(\/|$)/, /^\/locations(\/|$)/, /^\/about(\/|$)/];
+const showServiceCards = !hideServiceCards && MARKETING_ROUTES.some(rx => rx.test(path));
+
+// Canonical service data - single source of truth
+const services = [
+  {
+    title: 'Custom Web Design',
+    headline: 'Beautiful & Fast',
+    description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
+    bullets: ['Timeline: Weeks, not months', 'Mobile-responsive design', 'Custom Quote'],
+    href: '/custom-website-design'
+  },
+  {
+    title: 'AI Development',
+    headline: '100+ Pages That Dominate',
+    description: 'Comprehensive websites with a page for every service and location — built faster than you thought possible',
+    bullets: ['Strategic Coverage', 'SEO-optimized content', 'Custom Quote'],
+    href: '/ai-website-development',
+    featured: true
+  },
+  {
+    title: 'SEO Services',
+    headline: 'Keep Your Website, Add Power',
+    description: 'We\'ll optimize your existing site on any platform — WordPress, Wix, Squarespace, or custom',
+    bullets: ['Monthly Service', 'No rebuild required', 'Works with any platform'],
+    href: '/seo-services'
+  }
+];
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -73,6 +108,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+    
+    <!-- Auto-inject ServiceCards on marketing routes -->
+    {showServiceCards && <ServiceCards services={services} />}
   </body>
 </html>
 

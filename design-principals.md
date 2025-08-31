@@ -1,4 +1,9 @@
-# Beach Bird Studios - Design Principles
+# Beach Bird Studios Design Principles
+
+## Design System Reference
+**All brand tokens, colors, typography, and components are defined in `/DESIGN_SYSTEM.md`**
+
+This file contains general design principles. For implementation details, see the master design system.
 
 ## Brand Overview
 Beach Bird Studios is a premium web design and SEO agency based in Wilmington, NC, serving businesses throughout North Carolina. The brand combines coastal elegance with technical excellence.
@@ -16,43 +21,6 @@ Beach Bird Studios is a premium web design and SEO agency based in Wilmington, N
 - Color variations: Full color, white (for dark backgrounds)
 - Clear space: Minimum 20px around logo
 
-### Color Palette
-
-#### Primary Colors
-- **Beach Blue**: `#47A7EB` - Primary brand color, trust and professionalism
-- **Beach Dark**: `#0C3745` - Navy blue for text and high contrast
-- **Beach Yellow**: `#FFC107` - Accent color for CTAs and highlights
-
-#### Secondary Colors
-- **Beach Cream**: `#F5E6D3` - Soft background color
-- **Beach Sand**: `#FFF8E1` - Light accent backgrounds
-- **Beach Light Blue**: `#B6DCF7` - Soft blue for subtle accents
-
-#### Neutral Colors
-- **White**: `#FFFFFF` - Primary background
-- **Gray 50**: `#F9FAFB` - Light backgrounds
-- **Gray 600**: `#4B5563` - Body text
-- **Gray 900**: `#111827` - Headings
-
-### Typography
-
-#### Font Families
-- **Headings**: Chillax (Semibold)
-  - Display: 4.5-7rem
-  - H1: 3-4rem
-  - H2: 2-3rem
-  - H3: 1.5-2rem
-
-- **Body**: Synonym (Regular)
-  - Body: 1rem (16px)
-  - Large: 1.125rem (18px)
-  - Small: 0.875rem (14px)
-
-#### Font Usage
-- Headlines: Semibold, tight letter-spacing (-0.025em)
-- Body text: Regular weight, normal spacing
-- CTAs: Medium to semi-bold weight
-- All text should have proper contrast ratios (WCAG AA compliant)
 
 ### Critical Text Color Rules
 - **On gradient backgrounds**: H1, H2, H3 must use `!text-white` or `!text-beach-yellow`

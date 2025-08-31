@@ -43,6 +43,10 @@ As you work, keep the plan updated. After you complete a task, append a detailed
 - When in doubt, leave it out
 - Always prefer general value propositions over specific unverified claims
 
+## Design System
+
+**Authoritative source is `/DESIGN_SYSTEM.md` - follow its tokens and components.**
+
 ## Brand Identity
 
 ### Colors
@@ -148,23 +152,26 @@ The `/src/pages/services/[slug].astro` file automatically transforms markdown co
 3. **Visual Sections**: Each `## H2` header creates a new section with alternating backgrounds
 4. **Smart Component Conversion**: Different markdown patterns become different visual components
 
-### Markdown Patterns for Visual Components
+## Component Usage
 
-#### Creating Pricing Cards
-```markdown
-## [Any]thing Packages
-
-**Package Name** - Tagline here
-- Feature one
-- Feature two
-- Feature three
-
-**Another Package** - Different tagline
-- Feature one
-- Feature two
-- Feature three
+### ServiceCards Component
+Use `<ServiceCards services={...} />` for service promotions (normally auto-provided by layout):
+```astro
+<ServiceCards services={[
+  { title: 'Custom Web Design', headline: 'Beautiful & Fast', 
+    description: '...', bullets: [...], href: '/custom-website-design' },
+  { title: 'AI Development', headline: '100+ Pages That Dominate', featured: true, ... },
+  { title: 'SEO Services', headline: 'Keep Your Website, Add Power', ... }
+]} />
 ```
-Result: 3-column pricing cards with the middle one featured
+
+### ProcessTimeline Component  
+Use `<ProcessTimeline />` for process explanations (auto-included on service pages):
+```astro
+<ProcessTimeline />
+```
+
+### Markdown Patterns for Visual Components
 
 #### Creating Feature Grids
 ```markdown
@@ -202,12 +209,13 @@ Result: Numbered circles with descriptions
 
 ### Section Type Detection
 The system automatically detects section types based on H2 keywords:
-- Contains "package", "investment", "pricing" → Pricing cards
 - Contains "perfect for", "industries" → Industry grid
 - Contains "process" → Process steps
 - Contains "vs", "comparison" → Comparison cards
 - Bullet points with colons → Feature grid
 - Everything else → Regular content section
+
+**Note**: Pricing/package detection has been removed. Use custom quotes only.
 
 ### Background Rotation
 Sections automatically alternate backgrounds:

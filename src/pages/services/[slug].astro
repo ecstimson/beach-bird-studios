@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
+import ProcessTimeline from '../../components/ProcessTimeline.astro';
 // import ServiceCard from '../../components/ServiceCard.astro'; // Unused
 import CTASection from '../../components/CTASection.astro';
 import Footer from '../../components/Footer.astro';
@@ -136,9 +137,7 @@ for (let i = 0; i < lines.length; i++) {
     };
     
     // Check for special section types
-    if (title.toLowerCase().includes('package') || title.toLowerCase().includes('investment') || title.toLowerCase().includes('pricing')) {
-      currentSection.type = 'pricing';
-    } else if (title.toLowerCase().includes('perfect for')) {
+    if (title.toLowerCase().includes('perfect for')) {
       currentSection.type = 'industries';
     } else if (title.toLowerCase().includes('process')) {
       currentSection.type = 'process';
@@ -417,84 +416,6 @@ service: {
             </div>
           )}
           
-          {/* Pricing/Package Cards */}
-          {section.type === 'pricing' && (() => {
-            const pricingData = processPricingCards(section);
-            const hasGroups = Object.keys(pricingData.grouped).length > 0;
-            
-            if (hasGroups) {
-              // Render grouped cards with H3 headers
-              return (
-                <div class="space-y-12">
-                  {Object.entries(pricingData.grouped).map(([packageType, cards]) => (
-                    <div>
-                      <h3 class="text-2xl font-bold text-gray-900 mb-6">{packageType}</h3>
-                      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {cards.map((card) => (
-                          <div class={`rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow ${card.featured ? 'bg-gradient-to-br from-beach-blue to-beach-blue/90 text-white scale-105' : 'bg-white border border-gray-100'}`}>
-                            <h4 class={`text-xl font-bold mb-2 ${card.featured ? 'text-white' : 'text-gray-900'}`}>
-                              {card.title}
-                            </h4>
-                            {card.tagline && (
-                              <p class={`mb-4 text-sm ${card.featured ? 'text-white/90' : 'text-gray-600'}`}>{card.tagline}</p>
-                            )}
-                            {card.description && (
-                              <p class={`mb-6 ${card.featured ? 'text-white/80' : 'text-gray-600'}`}>{card.description}</p>
-                            )}
-                            <ul class="space-y-3">
-                              {card.features.map((feature) => (
-                                <li class="flex items-start">
-                                  <i data-lucide="check-circle" class={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${card.featured ? 'text-beach-yellow' : 'text-beach-blue'}`}></i>
-                                  <span class={card.featured ? 'text-white' : 'text-gray-700'}>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <a href="/contact" class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center ${card.featured ? 'btn-primary' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
-                              Get Quote
-                            </a>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              );
-            } else {
-              // Render ungrouped cards
-              return (
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {pricingData.ungrouped.map((card, cardIdx) => {
-                    // Make middle card featured for ungrouped cards
-                    const isFeatured = pricingData.ungrouped.length === 3 ? cardIdx === 1 : card.featured;
-                    return (
-                      <div class={`rounded-xl p-8 ${isFeatured ? 'investment-card' : 'bg-white shadow-lg'}`}>
-                        <h3 class={`text-2xl font-bold mb-2 ${isFeatured ? 'text-white' : 'text-gray-900'}`}>
-                          {card.title}
-                        </h3>
-                        {card.tagline && (
-                          <p class={`mb-4 ${isFeatured ? 'text-white/90' : 'text-gray-600'}`}>{card.tagline}</p>
-                        )}
-                        {card.description && (
-                          <p class={`mb-6 ${isFeatured ? 'text-white/80' : 'text-gray-600'}`}>{card.description}</p>
-                        )}
-                        <ul class="space-y-3">
-                          {card.features.map((feature) => (
-                            <li class="flex items-start">
-                              <i data-lucide="check-circle" class={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${isFeatured ? 'text-beach-yellow' : 'text-beach-blue'}`}></i>
-                              <span class={isFeatured ? 'text-white' : 'text-gray-700'}>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <a href="/contact" class={`mt-8 w-full py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center ${isFeatured ? 'btn-primary' : 'bg-beach-blue text-white hover:bg-blue-600'}`}>
-                          Get Quote
-                        </a>
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            }
-          })()}
           
           {/* Feature Grid Section */}
           {section.type === 'features' && (
@@ -749,6 +670,8 @@ service: {
     );
   })}
   
+  <!-- Process Timeline -->
+  <ProcessTimeline />
   
   <!-- CTA Section with Beach Bird gradient -->
   <CTASection

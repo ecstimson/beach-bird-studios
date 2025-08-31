@@ -57,17 +57,17 @@ description: "SEO meta description"
 - Feature One: Description here
 - Feature Two: Another description
 
-## Pricing Packages
-**Starter Package** - Perfect for small businesses
-- Feature list
-- Another feature
-
 ## Our Process
 ### Step 1
 Description of first step
 ```
 
+**Note**: ServiceCards and ProcessTimeline are enforced by the layout for consistency. See `/DESIGN_SYSTEM.md` for complete brand guidelines.
+
 5. **The magic happens automatically** - `[slug].astro` transforms markdown into beautiful pages
+
+### Design System
+All brand tokens, colors, typography, and components are defined in `/DESIGN_SYSTEM.md`. Follow this single source of truth for consistency.
 
 ### Page Creation Priority
 
