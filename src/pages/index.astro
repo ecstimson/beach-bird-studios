@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
+import ServiceCards from "../components/sections/ServiceCards.astro";
 import ProcessTimeline from "../components/sections/ProcessTimeline.astro";
 import CTASection from "../components/CTASection.astro";
 import Footer from "../components/Footer.astro";
@@ -58,11 +59,40 @@ const deliverables = [
   features={deliverables}
 />
 
-<!-- The ServiceCards section is auto-injected by the layout on the homepage. -->
+<!-- ServiceCards positioned above ProcessTimeline per design system -->
+<section id="services">
+  <ServiceCards 
+    title="Our Services"
+    intro="Choose the solution that fits your business goals and budget"
+    items={[
+      {
+        icon: "globe",
+        title: 'Custom Web Design',
+        description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
+        href: '/custom-website-design',
+        label: 'Learn More'
+      },
+      {
+        icon: "zap", 
+        title: 'AI Development',
+        description: 'Comprehensive websites with a page for every service and location — built faster than you thought possible',
+        href: '/ai-website-development',
+        label: 'Learn More'
+      },
+      {
+        icon: "trending-up",
+        title: 'SEO Services', 
+        description: 'We\'ll optimize your existing site on any platform — WordPress, Wix, Squarespace, or custom',
+        href: '/seo-services',
+        label: 'Learn More'
+      }
+    ]}
+  />
+</section>
 
-<!-- Optional: keep the process on the homepage -->
+<!-- Process section with peach glow background -->
 <section id="process">
-  <ProcessTimeline />
+  <ProcessTimeline variant="peach" />
 </section>
 
 <!-- Success Metrics Section (brand colors) -->

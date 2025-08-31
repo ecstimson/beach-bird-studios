@@ -34,7 +34,7 @@ const navItems = [
 ];
 ---
 
-<header class={`fixed top-0 left-0 right-0 ${variant === 'transparent' ? 'bg-transparent' : 'bg-surface/80 backdrop-blur-md border-b border-border'} z-50`}>
+<header class={`sticky top-0 z-50 ${variant === 'transparent' ? 'bg-transparent' : 'bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-[#E7EDF3]'}`}>
   <nav class="container mx-auto max-w-screen-xl px-4 md:px-6">
     <div class="flex justify-between items-center h-20">
       <!-- Logo -->
@@ -54,15 +54,15 @@ const navItems = [
         {navItems.map((item) => (
           item.dropdown ? (
             <div class="relative group">
-              <button class="flex items-center text-text font-semibold hover:text-primary-400 transition-colors" aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>
+              <button class="flex items-center text-beach-dark font-semibold hover:text-beach-dark/80 transition-colors" aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>
                 {item.label}
                 <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
               </button>
-              <div class="absolute top-full left-0 mt-2 w-64 bg-elevated rounded-[var(--radius-md)] shadow-[var(--shadow-md)] border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-[#E7EDF3] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 {item.dropdown.map((subItem) => (
                   <a 
                     href={subItem.href} 
-                    class="block px-4 py-3 text-muted font-medium hover:text-primary-400 hover:bg-white/5 transition-colors first:rounded-t-[var(--radius-md)] last:rounded-b-[var(--radius-md)]"
+                    class="block px-4 py-3 text-beach-dark/70 font-medium hover:text-beach-dark hover:bg-gray-50 transition-colors first:rounded-t-[var(--radius-md)] last:rounded-b-[var(--radius-md)]"
                   >
                     {subItem.label}
                   </a>
@@ -70,7 +70,7 @@ const navItems = [
               </div>
             </div>
           ) : (
-            <a href={item.href} class="text-text font-semibold hover:text-primary-400 transition-colors" aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>
+            <a href={item.href} class="text-beach-dark font-semibold hover:text-beach-dark/80 transition-colors" aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>
               {item.label}
             </a>
           )
@@ -91,7 +91,7 @@ const navItems = [
   </nav>
   
   <!-- Mobile Menu -->
-  <div class="hidden md:hidden bg-surface/80 backdrop-blur-md border-t border-border" id="mobile-menu">
+  <div class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-[#E7EDF3]" id="mobile-menu">
     <div class="px-4 py-2 space-y-1">
       {navItems.map((item) => (
         item.dropdown ? (
@@ -102,7 +102,7 @@ const navItems = [
             </button>
             <div class="hidden pl-4 space-y-1 mobile-dropdown-menu">
               {item.dropdown.map((subItem) => (
-                <a href={subItem.href} class="block px-4 py-3 min-h-[48px] flex items-center text-muted font-medium hover:text-primary-400 hover:bg-white/5 rounded-[var(--radius-md)] transition-colors">
+                <a href={subItem.href} class="block px-4 py-3 min-h-[48px] flex items-center text-beach-dark/70 font-medium hover:text-beach-dark hover:bg-gray-50 rounded-[var(--radius-md)] transition-colors">
                   {subItem.label}
                 </a>
               ))}

@@ -19,6 +19,10 @@
 * Component library: **Custom**, with light usage of Tailwind utilities and minimal bespoke CSS.
 * Global CSS variables live in `src/styles/tokens.css` (or equivalent) and are consumed by Tailwind via `theme.extend`.
 
+### 1.1 Theme Policy
+
+**Light theme only.** No dark styles, data-theme, prefers-color-scheme or .dark classes. All content must be readable on light backgrounds with proper contrast ratios.
+
 ---
 
 ## 2) Design Tokens
@@ -37,19 +41,23 @@
   --color-primary-400: #6BA0C7;
   --color-accent-600: #0EA5E9; /* Accent (sky) */
 
-  /* Neutrals */
-  --color-bg: #0b0c0f;          /* App background (dark UI) */
-  --color-surface: #111318;     /* Card/section surface */
-  --color-elevated: #171923;    /* Elevated layers */
-  --color-border: #262b36;      /* Subtle borders */
-  --color-muted: #9AA3B2;       /* Muted text */
-  --color-text: #E6EAF0;        /* Primary text */
-  --color-inverse: #f7f7f8;     /* Light surfaces ("White Smoke") */
+  /* Light Theme Base */
+  --bg: #FFFFFF;                /* App background */
+  --text: #0C3745;              /* Body text (beach-dark) */
+  --muted: rgba(12,55,69,0.72); /* Muted text (70% opacity) */
+  
+  /* Light Theme Surfaces */
+  --bg-peach-from: #FDF3E7;     /* Peach glow start */
+  --bg-peach-to: #FFEFD9;       /* Peach glow end */
+  --bg-sand: rgba(245,230,211,0.30); /* Sand background */
+  
+  /* Light Theme Borders */
+  --border-light: #E7EDF3;      /* Light borders */
 
   /* Semantic */
   --color-success: #22c55e;
   --color-warning: #f59e0b;
-  --color-danger:  #ef4444;
+  --color-danger: #ef4444;
 }
 ```
 
@@ -135,10 +143,22 @@ Use: `rounded-[var(--radius-xl)] shadow-[var(--shadow-md)]` on elevated cards.
 
 ## 3) Layout
 
-* **Background**: `bg-bg text-text` on `<body>`.
+* **Background**: `bg-white text-beach-dark` on `<body>`.
 * **Section**: wrapper `container mx-auto max-w-screen-xl px-4 md:px-6`.
-* **Card surface**: `bg-surface/80 backdrop-blur border border-border`.
-* **Elevated overlays**: `bg-elevated`.
+* **Card surface**: `bg-white border border-[#E7EDF3] shadow-[0_10px_30px_rgba(12,55,69,0.06)]`.
+
+### 3.1 Text Colors
+
+* **Body text**: `text-beach-dark` (~#0C3745)
+* **Muted text** (captions): `text-beach-dark/70` 
+* **NEVER** use `text-gray-500` on white backgrounds
+
+### 3.2 Section Backgrounds
+
+* **Default**: `white`
+* **Peach glow**: `bg-[linear-gradient(180deg,var(--bg-peach-from)_0%,var(--bg-peach-to)_100%)]`
+* **Sand**: `bg-sand` (rgba(245,230,211,0.30))
+* **Rotation**: white → peach → sand → repeat
 
 ---
 
@@ -169,9 +189,10 @@ Variants & base classes:
 
 ### 4.4 Navigation (Header)
 
-* Container: sticky top-0, backdrop, border-bottom.
-* Active link: add `aria-current="page"` and style via `[aria-current="page"]:text-primary-400`.
-* Mobile: slide-over with focus trap.
+* Container: `sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-[#E7EDF3]`
+* Links: `text-beach-dark hover:text-beach-dark/80`
+* Active link: `[aria-current="page"] font-semibold`
+* Mobile: slide-over with focus trap
 
 ### 4.5 Footer
 
@@ -304,7 +325,20 @@ Variants & base classes:
 
 ---
 
-## 9) Example usage
+## 9) Component Order & Page Structure
+
+### 9.1 Homepage Component Order
+
+Hero → Trust bar → "What We Deliver" → **ServiceCards** → ProcessTimeline → Results/FAQ → Footer
+
+### 9.2 ProcessTimeline Variants
+
+* **Default**: Light theme with standard background
+* **Peach**: `variant="peach"` applies warm peach glow gradient background
+
+---
+
+## 10) Example usage
 
 ```astro
 ---

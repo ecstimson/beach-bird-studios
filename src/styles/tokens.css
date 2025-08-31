@@ -1,7 +1,7 @@
 /**
  * DESIGN TOKENS - Beach Bird Studios
  * Single source of truth for design tokens
- * Based on DESIGN_SYSTEM.md specification
+ * Light theme only - no dark mode
  */
 
 :root {
@@ -18,16 +18,26 @@
   --color-accent-600: #0EA5E9; /* Accent (sky) */
 
   /* ============================================
-     NEUTRALS (Dark UI Theme)
+     LIGHT THEME BASE
      ============================================ */
   
-  --color-bg: #0b0c0f;          /* App background (dark UI) */
-  --color-surface: #111318;     /* Card/section surface */
-  --color-elevated: #171923;    /* Elevated layers */
-  --color-border: #262b36;      /* Subtle borders */
-  --color-muted: #9AA3B2;       /* Muted text */
-  --color-text: #E6EAF0;        /* Primary text */
-  --color-inverse: #f7f7f8;     /* Light surfaces ("White Smoke") */
+  --bg: #FFFFFF;                /* App background */
+  --text: #0C3745;              /* Body text (beach-dark) */
+  --muted: rgba(12,55,69,0.72); /* Muted text (70% opacity) */
+  
+  /* ============================================
+     LIGHT THEME SURFACES
+     ============================================ */
+  
+  --bg-peach-from: #FDF3E7;     /* Peach glow start */
+  --bg-peach-to: #FFEFD9;       /* Peach glow end */
+  --bg-sand: rgba(245,230,211,0.30); /* Sand background */
+  
+  /* ============================================
+     LIGHT THEME BORDERS
+     ============================================ */
+  
+  --border-light: #E7EDF3;      /* Light borders */
 
   /* ============================================
      SEMANTIC COLORS

@@ -4,7 +4,7 @@
 
 @layer base {
   :root { /* keep empty; tokens come from tokens.css */ }
-  body { @apply bg-bg text-text antialiased; }
+  body { @apply bg-white text-beach-dark antialiased; }
 }
 
 /* ============================================
@@ -122,27 +122,6 @@
   --z-toast: 500;
 }
 
-/* Dark Mode Variables */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #5BB4F2;
-    --primary-dark: #47A7EB;
-    --primary-light: #2C8FD6;
-    --accent: #FFD54F;
-    --accent-dark: #FFC107;
-    
-    --gray-50: #1F2937;
-    --gray-100: #374151;
-    --gray-200: #4B5563;
-    --gray-300: #6B7280;
-    --gray-400: #9CA3AF;
-    --gray-500: #D1D5DB;
-    --gray-600: #E5E7EB;
-    --gray-700: #F3F4F6;
-    --gray-800: #F9FAFB;
-    --gray-900: #FFFFFF;
-  }
-}
 
 /* ============================================
    BASE STYLES & RESETS

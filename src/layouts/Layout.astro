@@ -27,8 +27,8 @@ const {
 
 const path = Astro.url.pathname;
 
-// Auto-inject ServiceCards on marketing routes
-const MARKETING_ROUTES = [/^\/$/, /^\/services(\/|$)/, /^\/industry(\/|$)/, /^\/locations(\/|$)/, /^\/about(\/|$)/];
+// Auto-inject ServiceCards on marketing routes (excluding homepage - it has manual control)
+const MARKETING_ROUTES = [/^\/services(\/|$)/, /^\/industry(\/|$)/, /^\/locations(\/|$)/, /^\/about(\/|$)/];
 const showServiceCards = !hideServiceCards && MARKETING_ROUTES.some(rx => rx.test(path));
 
 // Canonical service data - matches DESIGN_SYSTEMS.md ServiceCards spec
@@ -111,7 +111,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }} 
     />
   </head>
-  <body class="bg-bg text-text antialiased">
+  <body class="bg-white text-beach-dark antialiased">
     <slot />
     
     <!-- Auto-inject ServiceCards on marketing routes -->
