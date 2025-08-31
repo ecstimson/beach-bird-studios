@@ -67,7 +67,7 @@ const readTime = Math.ceil(entry.body.length / 1000) + ' min read';
         <!-- Article Meta -->
         <div class="flex items-center justify-between mb-8 pb-8 border-b border-gray-200">
           <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-beach-blue to-beach-blue/70 rounded-full flex items-center justify-center">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
               <i data-lucide="user" class="w-6 h-6 text-white"></i>
             </div>
             <div>
@@ -79,7 +79,7 @@ const readTime = Math.ceil(entry.body.length / 1000) + ' min read';
           {entry.data.tags && (
             <div class="flex flex-wrap gap-2">
               {entry.data.tags.slice(0, 3).map(tag => (
-                <span class="px-3 py-1 bg-beach-blue/10 text-beach-blue rounded-full text-sm font-medium">
+                <span class="px-3 py-1 bg-primary-600/10 text-primary-400 rounded-full text-sm font-medium">
                   {tag}
                 </span>
               ))}
@@ -129,36 +129,36 @@ const readTime = Math.ceil(entry.body.length / 1000) + ' min read';
     <!-- Related Posts -->
     <section class="section-padding bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-chillax font-bold text-beach-dark mb-8 text-center">
+        <h2 class="text-3xl font-heading font-bold text-text mb-8 text-center">
           Related Articles
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <a href="/blog" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="book-open" class="w-6 h-6 text-beach-blue"></i>
+            <div class="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="book-open" class="w-6 h-6 text-primary-400"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">Read More Articles</h3>
             <p class="text-gray-600 mb-4">Explore our complete library of web design and SEO insights.</p>
-            <span class="text-beach-blue font-semibold">View All Posts →</span>
+            <span class="text-primary-400 font-semibold">View All Posts →</span>
           </a>
           
           <a href="/services" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="zap" class="w-6 h-6 text-beach-blue"></i>
+            <div class="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="zap" class="w-6 h-6 text-primary-400"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">Our Services</h3>
             <p class="text-gray-600 mb-4">Custom web design, AI development, and SEO services.</p>
-            <span class="text-beach-blue font-semibold">Learn More →</span>
+            <span class="text-primary-400 font-semibold">Learn More →</span>
           </a>
           
           <a href="/contact" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-12 h-12 bg-beach-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="phone" class="w-6 h-6 text-beach-blue"></i>
+            <div class="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="phone" class="w-6 h-6 text-primary-400"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">Get Started</h3>
             <p class="text-gray-600 mb-4">Ready to improve your online presence? Let's talk.</p>
-            <span class="text-beach-blue font-semibold">Contact Us →</span>
+            <span class="text-primary-400 font-semibold">Contact Us →</span>
           </a>
         </div>
       </div>
@@ -184,15 +184,15 @@ const readTime = Math.ceil(entry.body.length / 1000) + ' min read';
   }
   
   .prose h1 {
-    @apply text-4xl font-chillax font-bold text-beach-dark mb-6;
+    @apply text-4xl font-heading font-bold text-text mb-6;
   }
   
   .prose h2 {
-    @apply text-3xl font-chillax font-semibold text-beach-dark mb-4 mt-12;
+    @apply text-3xl font-heading font-semibold text-text mb-4 mt-12;
   }
   
   .prose h3 {
-    @apply text-2xl font-chillax font-semibold text-gray-800 mb-3 mt-8;
+    @apply text-2xl font-heading font-semibold text-text mb-3 mt-8;
   }
   
   .prose h4 {
@@ -212,11 +212,11 @@ const readTime = Math.ceil(entry.body.length / 1000) + ' min read';
   }
   
   .prose blockquote {
-    @apply border-l-4 border-beach-blue pl-4 italic text-gray-600 my-6;
+    @apply border-l-4 border-primary-400 pl-4 italic my-6 text-muted;
   }
   
   .prose a {
-    @apply text-beach-blue hover:text-blue-700 font-medium transition-colors;
+    @apply text-primary-400 hover:text-primary-500 font-medium transition-colors;
   }
   
   .prose strong {
