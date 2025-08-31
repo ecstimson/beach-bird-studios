@@ -43,30 +43,27 @@ Develop SEO-optimized category pages, collection descriptions, and blog content 
 ### Performance Tracking and Growth
 Monitor your store's search performance improvements with detailed reporting on rankings, traffic growth, and revenue attribution from organic search.
 
-## E-commerce SEO Investment Packages
+## Custom Shopify SEO Solutions
 
-**Starter Package** - Essential optimization for growing online stores
-- Complete Shopify SEO audit and technical fixes
-- Homepage and 5 key category pages optimized
-- 25 product pages fully optimized for search
-- Basic schema markup implementation
-- Monthly performance reporting
+Every Shopify store has unique product catalogs, target markets, and competition levels. Beach Bird Studios creates custom SEO strategies based on your specific e-commerce goals and market position.
 
-**Growth Package** - Comprehensive optimization for competitive markets  
-- Everything in Starter Package
-- Up to 100 product pages optimized
-- Blog content strategy and optimization
-- Advanced schema markup for rich snippets
-- Local SEO setup for retail locations
-- Bi-weekly strategy consultations
+**What influences your custom Shopify SEO quote:**
+- Store size and product catalog complexity
+- Current search performance and technical issues
+- Competition level in your product categories
+- Content creation and optimization needs
+- Local vs national market targeting
+- Timeline and growth objectives
 
-**Enterprise Package** - Maximum visibility for large online retailers
-- Everything in Growth Package
-- Unlimited product page optimization
-- Custom content creation and marketing strategy
-- Advanced conversion tracking and attribution
-- Priority support and weekly optimization
-- Competitor monitoring and strategy adjustments
+**Our Shopify SEO services typically include:**
+- Complete technical SEO audit and optimization
+- Product page optimization for search visibility
+- Category and homepage optimization
+- Schema markup for rich search results
+- Performance monitoring and reporting
+- Ongoing strategy adjustments
+
+Contact Beach Bird Studios for a custom Shopify SEO strategy and quote tailored to your online store.
 
 ## Perfect For These Shopify Businesses
 

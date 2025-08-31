@@ -50,28 +50,27 @@ Explore complex functionality including CMS collections, e-commerce setup, and a
 ### Portfolio Development
 Complete training with professional portfolio projects that demonstrate your new Webflow capabilities.
 
-## Webflow Training Investment Packages
+## Custom Webflow Training Solutions
 
-**Beginner Bootcamp** - Complete foundation training
-- 12 hours of structured training
-- Build 3 complete websites
-- Responsive design mastery
-- CMS basics and collections
-- Resource library access
+Every team and individual has unique learning needs, current skill levels, and training objectives. Beach Bird Studios provides custom Webflow training based on your specific goals and experience level.
 
-**Advanced Developer** - Expert-level skills
-- 16 hours of advanced training
-- E-commerce implementation
-- Complex interactions and animations
-- Custom code integration
-- Client handoff best practices
+**What influences your custom training quote:**
+- Current skill level and experience with design tools
+- Training format preferences (individual, team, or group)
+- Specific Webflow features and techniques to focus on
+- Project-based learning and hands-on requirements
+- Timeline and scheduling flexibility needs
+- Ongoing support and follow-up requirements
 
-**Certification Prep** - Official exam preparation
-- Exam-focused curriculum
-- Practice projects and assessments
-- Mock exam sessions
-- Study materials and resources
-- Certification success guarantee
+**Our Webflow training typically includes:**
+- Customized curriculum based on your skill level and goals
+- Hands-on project-based learning approach
+- Live instruction with expert guidance and feedback
+- Resource library and template access
+- Follow-up support and Q&A sessions
+- Progress tracking and skill development milestones
+
+Contact Beach Bird Studios for a custom Webflow training quote designed for your learning objectives.
 
 ## Perfect For These Professionals
 

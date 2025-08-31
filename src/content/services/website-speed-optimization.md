@@ -94,32 +94,27 @@ We set up advanced caching systems that dramatically reduce server load and impr
 - Database caching optimization
 - Cache invalidation strategies
 
-## Speed Optimization Investment Packages
+## Custom Website Speed Optimization Solutions
 
-**Basic Speed Boost** - Quick Wins
-- Image optimization and compression
-- Basic caching implementation
-- Code minification
-- Performance report with recommendations
-- 30-day monitoring
+Every website has unique performance bottlenecks and optimization opportunities. Beach Bird Studios provides custom speed optimization strategies based on your specific technical issues and performance goals.
 
-**Complete Speed Overhaul** - Comprehensive Solution
-- Full performance audit and optimization
-- Advanced caching systems
+**What influences your custom optimization quote:**
+- Current site performance and specific issues
+- Platform and hosting environment considerations
+- Optimization complexity and technical requirements
+- Content and media optimization needs
+- Monitoring and reporting requirements
+- Timeline and performance improvement goals
+
+**Our speed optimization services typically include:**
+- Comprehensive performance audit and analysis
+- Image and media optimization
+- Code optimization and caching implementation
 - CDN setup and configuration
-- Database optimization
-- Mobile speed improvements
-- 60-day performance monitoring
-- Ongoing support
+- Database and hosting optimization
+- Ongoing monitoring and support
 
-**Enterprise Speed Solutions** - Maximum Performance
-- Custom optimization strategy
-- Advanced server configuration
-- Multiple CDN setup
-- Database architecture improvements
-- Ongoing performance monitoring
-- Priority technical support
-- Monthly optimization reports
+Contact Beach Bird Studios for a custom quote designed specifically for your website speed optimization needs.
 
 ## Technical Improvements We Implement
 

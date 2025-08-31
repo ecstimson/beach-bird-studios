@@ -17,39 +17,27 @@ seo:
 
 Understanding website pricing can be challenging. Our transparent calculator helps you estimate costs based on your specific needs and goals.
 
-## Website Investment Calculator
+## Understanding Website Investment Factors
 
-### Basic Website Package
-**Perfect for new businesses or simple online presence**
-- 5-8 pages of custom content
-- Mobile-responsive design
-- Basic SEO optimization
-- Contact forms and social integration
-- 6 months of support included
+Every website project is unique, with different requirements, complexity levels, and business goals. Beach Bird Studios provides custom quotes based on your specific needs rather than preset packages.
 
-**Starting at $2,500 - $4,500**
+### What Beach Bird Studios Offers
+**Custom website solutions tailored to your business**
+- Strategic planning and consultation
+- Custom design and development
+- SEO optimization foundation
+- Mobile-responsive implementation
+- Training and ongoing support
+- Performance optimization
 
-### Professional Package
-**Ideal for growing businesses and service providers**
-- 10-15 pages of strategic content
-- Custom design and branding
-- Advanced SEO implementation
-- Lead capture and conversion optimization
-- Content management system
-- 12 months of support and training
+**All projects include:**
+- Initial consultation and planning
+- Custom design reflecting your brand
+- Professional development and testing
+- Launch support and training
+- Post-launch optimization period
 
-**Investment Range: $4,500 - $8,000**
-
-### Enterprise Solution
-**For businesses requiring advanced functionality**
-- Unlimited pages and complex features
-- E-commerce capabilities
-- Custom integrations and databases
-- Comprehensive SEO strategy
-- Ongoing content and marketing support
-- Priority support and maintenance
-
-**Investment Range: $8,000 - $25,000+**
+**Get Your Custom Quote:** Contact Beach Bird Studios to discuss your project requirements and receive a personalized quote designed for your specific business needs.
 
 ## What Affects Your Investment?
 
@@ -93,20 +81,19 @@ Understanding website pricing can be challenging. Our transparent calculator hel
 
 ## Return on Investment
 
-### Local Service Business Example
-- **Website Investment**: $5,000
-- **Monthly New Customers**: 8-12
-- **Average Job Value**: $750
-- **Monthly Revenue Increase**: $6,000-9,000
-- **Annual ROI**: 1,440-2,160%
+### Local Service Business Benefits
+- Increased online visibility and credibility
+- More qualified leads and customer inquiries
+- Improved customer experience and satisfaction
+- Better competitive positioning
+- Enhanced local search presence
 
-### Professional Services Example  
-- **Website Investment**: $7,500
-- **Monthly New Leads**: 15-25
-- **Conversion Rate**: 20%
-- **Average Client Value**: $2,500
-- **Monthly Revenue Increase**: $7,500-12,500
-- **Annual ROI**: 1,200-2,000%
+### Professional Services Benefits  
+- Stronger professional authority and trust
+- More qualified prospect inquiries
+- Improved client conversion rates
+- Enhanced service presentation and communication
+- Better market positioning and differentiation
 
 ## Smart Budget Strategies
 
@@ -127,23 +114,23 @@ Start with core functionality and add features over time:
 - Plan for long-term growth and expansion
 - Consider ongoing maintenance and SEO
 
-## What's Included in Our Packages
+## What's Included in Beach Bird Studios Website Projects
 
-### All Packages Include
+### Every Project Includes
 - Mobile-responsive design
 - Search engine optimization basics
 - Google Analytics setup
 - Contact form integration  
 - Social media links
-- Basic training and documentation
+- Professional training and documentation
 
-### Professional & Enterprise Include
-- Custom content strategy
-- Conversion optimization
+### Advanced Projects May Include
+- Custom content strategy development
+- Conversion optimization analysis
 - Advanced SEO implementation
-- Comprehensive training
-- Extended support periods
-- Performance monitoring
+- Comprehensive training and support
+- Extended support and maintenance
+- Performance monitoring and optimization
 
 ## Get Your Custom Quote
 

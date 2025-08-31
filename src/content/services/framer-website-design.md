@@ -127,28 +127,27 @@ Rigorous testing across browsers and devices. Performance optimization ensures l
 ### 6. Launch & Training
 Deploying your website and providing comprehensive training on managing your new Framer site.
 
-## Framer Website Packages
+## Custom Framer Website Solutions
 
-**Starter Site** - Perfect for small businesses
-- 5-7 page custom Framer website
-- Mobile responsive design
-- Basic animations
-- Contact forms
-- 3-week delivery
+Every Framer website project has unique design requirements, animation needs, and business objectives. Beach Bird Studios provides custom quotes based on your specific project complexity and design goals.
 
-**Professional Site** - Ideal for growing companies
-- 10-15 page Framer website
-- Advanced animations
-- CMS integration
-- Blog system
-- 4-week delivery
+**What influences your custom Framer quote:**
+- Website size and page requirements
+- Animation and interaction complexity
+- CMS and content management needs
+- Custom functionality requirements
+- Timeline and delivery preferences
+- Training and ongoing support needs
 
-**Enterprise Site** - For larger organizations
-- 20+ pages
-- Complex CMS setup
-- Custom interactions
-- Multiple content types
-- 6-week delivery
+**Our Framer website services typically include:**
+- Custom design and brand implementation
+- Professional animation and interaction development
+- Mobile-responsive optimization
+- CMS setup and content management training
+- Performance optimization and testing
+- Launch support and ongoing assistance
+
+Contact Beach Bird Studios for a custom Framer website quote tailored to your design and business needs.
 
 ## Frequently Asked Questions
 

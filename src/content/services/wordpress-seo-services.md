@@ -98,28 +98,27 @@ Systematic optimization using WordPress best practices and platform-specific tec
 ### Monitoring & Refinement
 Ongoing WordPress-specific monitoring and adjustments for sustained growth.
 
-## WordPress SEO Investment Packages
+## Custom WordPress SEO Solutions
 
-**WordPress Starter** - Foundation Optimization
-- Complete WordPress SEO audit
-- Essential plugin optimization
-- Core Web Vitals improvement
-- Basic content optimization
-- Monthly progress reports
+Every WordPress website has unique technical configurations, content structures, and optimization needs. Beach Bird Studios creates custom SEO strategies designed specifically for WordPress sites and business goals.
 
-**WordPress Professional** - Comprehensive Enhancement
-- Everything in Starter
-- Advanced plugin configuration
-- Custom field SEO optimization
-- Category and tag enhancement
-- Bi-weekly performance reviews
+**What influences your custom WordPress SEO quote:**
+- Current WordPress setup and plugin configuration
+- Site size and content complexity
+- Technical issues and optimization needs
+- Content strategy and creation requirements
+- Competition level and market positioning
+- Timeline and performance objectives
 
-**WordPress Enterprise** - Maximum Performance
-- Everything in Professional
-- Custom schema implementation
-- Advanced WordPress features
-- Priority technical support
-- Weekly monitoring and updates
+**Our WordPress SEO services typically include:**
+- Complete WordPress technical SEO audit
+- Plugin optimization and configuration
+- Core Web Vitals and performance improvements
+- Content optimization and strategy development
+- Schema markup and rich snippet setup
+- Ongoing monitoring and performance tracking
+
+Contact Beach Bird Studios for a custom WordPress SEO strategy and quote tailored to your website.
 
 [Get Your WordPress SEO Quote]
 

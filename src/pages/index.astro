@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import ProcessTimeline from '../components/ProcessTimeline.astro';
 import CTASection from '../components/CTASection.astro';
 import Footer from '../components/Footer.astro';
 
@@ -37,35 +38,6 @@ const deliverables = [
   }
 ];
 
-const services = [
-  {
-    title: 'Custom Web Design',
-    tagline: 'Beautiful & Fast',
-    description: 'Perfect for businesses wanting a stunning, manageable website without the complexity',
-    features: ['Timeline: Weeks, not months', 'Mobile-responsive design', 'Custom Quote'],
-    href: '/services/custom-website-design',
-    icon: 'palette',
-    featured: false
-  },
-  {
-    title: 'AI Development',
-    tagline: '100+ Pages That Dominate',
-    description: 'Comprehensive websites with a page for every service and location - built faster than you thought possible',
-    features: ['Strategic Coverage', 'SEO-optimized content', 'Custom Quote'],
-    href: '/services/ai-website-development',
-    icon: 'cpu',
-    featured: true
-  },
-  {
-    title: 'SEO Services',
-    tagline: 'Keep Your Website, Add Power',
-    description: 'We\'ll optimize your existing site on any platform - WordPress, Wix, Squarespace, or custom',
-    features: ['Monthly Service', 'No rebuild required', 'Works with any platform'],
-    href: '/services/seo-services',
-    icon: 'search',
-    featured: false
-  }
-];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -84,95 +56,9 @@ const services = [
     features={deliverables}
   />
   
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Choose the solution that fits your business goals and budget
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {services.map((service) => (
-          <ServiceCard {...service} />
-        ))}
-      </div>
-    </div>
-  </section>
+  <ServiceCards />
   
-  <!-- How It Works Section -->
-  <section id="process" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Simple, transparent process from start to finish
-        </p>
-      </div>
-      
-      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
-        <!-- Step 1 -->
-        <div class="text-center max-w-xs">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span class="text-2xl font-bold text-primary">1</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Choose Your Path</h3>
-          <p class="text-gray-600">Pick the solution that fits your needs and budget</p>
-        </div>
-        
-        <!-- Arrow -->
-        <div class="hidden md:block">
-          <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
-        </div>
-        
-        <!-- Step 2 -->
-        <div class="text-center max-w-xs">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span class="text-2xl font-bold text-primary">2</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Strategy Call</h3>
-          <p class="text-gray-600">We'll map out your project and timeline</p>
-        </div>
-        
-        <!-- Arrow -->
-        <div class="hidden md:block">
-          <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="text-center max-w-xs">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span class="text-2xl font-bold text-primary">3</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">We Build</h3>
-          <p class="text-gray-600">Sit back while we create your online presence</p>
-        </div>
-        
-        <!-- Arrow -->
-        <div class="hidden md:block">
-          <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
-        </div>
-        
-        <!-- Step 4 -->
-        <div class="text-center max-w-xs">
-          <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Dominate</h3>
-          <p class="text-gray-600">Watch as customers find you instead of competitors</p>
-        </div>
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="/contact" class="btn-primary inline-flex items-center">
-          <span style="color: #0C3745 !important;">Schedule Free Consultation</span>
-          <i data-lucide="calendar" class="w-5 h-5 ml-2" style="color: #0C3745 !important;"></i>
-        </a>
-      </div>
-    </div>
-  </section>
+  <ProcessTimeline />
   
   <!-- Success Metrics Section -->
   <section id="success" class="py-20 bg-white">

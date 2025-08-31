@@ -43,28 +43,27 @@ For Wilmington, NC businesses, we optimize your Google Business Profile, local c
 ### Ongoing Monitoring
 Monthly reports track your search performance improvements with clear metrics showing increased visibility, traffic, and lead generation.
 
-## SEO Investment Packages
+## Custom Wix SEO Optimization Solutions
 
-**Foundation Package** - Essential optimization for immediate improvements
-- Complete technical SEO audit and fixes
-- Homepage and 5 key pages optimized
-- Local SEO setup and optimization
-- Google Analytics and Search Console setup
-- Monthly performance report
+Every Wix website has unique SEO challenges and optimization opportunities. Beach Bird Studios creates custom Wix SEO strategies optimized for the platform's capabilities and your business goals.
 
-**Growth Package** - Comprehensive optimization for competitive markets
-- Everything in Foundation Package
-- Up to 15 pages optimized for target keywords
-- Content strategy and recommendations
-- Competitor analysis and gap identification
-- Bi-weekly performance monitoring
+**What influences your custom Wix SEO quote:**
+- Current Wix site performance and technical issues
+- Content volume and optimization requirements
+- Competition level and market analysis needs
+- Local vs national targeting strategy
+- Timeline and performance improvement goals
+- Ongoing optimization and support requirements
 
-**Domination Package** - Maximum visibility for industry leaders
-- Everything in Growth Package
-- Unlimited page optimization
-- Advanced schema markup implementation
-- Custom content creation and optimization
-- Weekly strategy calls and reporting
+**Our Wix SEO services typically include:**
+- Complete Wix technical SEO audit and optimization
+- Platform-specific SEO implementation
+- Content optimization and strategy development
+- Local SEO setup for geographic targeting
+- Performance tracking and reporting
+- Ongoing optimization and strategy refinement
+
+Contact Beach Bird Studios for a custom Wix SEO optimization quote tailored to your business.
 
 ## Perfect For These Wix Users
 

@@ -47,27 +47,27 @@ We build interactive prototypes that demonstrate how users will navigate and int
 ### Design System Documentation
 Every project includes a comprehensive style guide and component library that serves as a reference for current and future development work.
 
-## Figma Design Investment Packages
+## Custom Figma Web Design Solutions
 
-**Startup Design Package** - Perfect for new businesses
-- Complete 5-page website design
-- Basic component library
-- Mobile and desktop versions
-- Developer handoff files
+Every Figma design project has unique visual requirements, brand considerations, and development goals. Beach Bird Studios creates custom Figma designs based on your specific brand needs and user experience objectives.
 
-**Professional Design Package** - Ideal for growing companies
-- Complete 10-page website design
-- Comprehensive design system
-- Interactive prototypes
-- Multiple device breakpoints
-- Detailed developer specifications
+**What influences your custom Figma design quote:**
+- Design complexity and page requirements
+- Component library and design system needs
+- Prototype and interaction requirements
+- Brand development and visual design complexity
+- Developer handoff and specification needs
+- Timeline and revision requirements
 
-**Enterprise Design Package** - For established businesses
-- Unlimited page designs
-- Advanced component systems
-- Complex interaction prototypes
-- Multi-brand design systems
-- Ongoing design support
+**Our Figma design services typically include:**
+- Custom website design and visual development
+- Component library and design system creation
+- Interactive prototypes and user flow design
+- Multi-device responsive design layouts
+- Developer handoff files and specifications
+- Style guide and brand documentation
+
+Contact Beach Bird Studios for a custom Figma web design quote tailored to your brand and project needs.
 
 ## Perfect For These Industries
 

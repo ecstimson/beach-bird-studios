@@ -218,33 +218,27 @@ Webflow represents professional web development made accessible - combining visu
 
 **Professional Launch**: Domain transfer and DNS management with comprehensive monitoring.
 
-## Investment Packages
+## Custom Squarespace to Webflow Migration Solutions
 
-**Essential Webflow Migration** - Professional Platform Upgrade
-- Complete Squarespace content migration with enhanced presentation
-- Custom Webflow design that breaks free from template limitations
-- Mobile-responsive design optimized for all devices and screen sizes
-- Basic SEO optimization and performance improvements
-- Professional contact forms with enhanced functionality and design
-- 30-day post-launch support and essential Webflow training
+Every Squarespace to Webflow migration involves unique content structures, design goals, and business requirements. Beach Bird Studios provides custom quotes based on your specific migration complexity and enhancement objectives.
 
-**Professional Webflow Migration** - Advanced Development & Features
-- Everything in Essential Migration
-- Advanced design system development with custom components and animations
-- Comprehensive CMS setup for efficient content management and workflow
-- Professional animations and micro-interactions throughout the site
-- Third-party integrations with marketing automation and business tools
-- Advanced SEO implementation with comprehensive technical optimization
-- 60-day post-launch support and advanced Webflow training
+**What influences your custom migration quote:**
+- Current Squarespace site structure and content volume
+- Design enhancement and modernization goals
+- SEO preservation and improvement requirements
+- Custom functionality and feature needs
+- Integration requirements (CRM, marketing tools, etc.)
+- Timeline and business continuity considerations
 
-**Enterprise Webflow Migration** - Complete Digital Transformation
-- Everything in Professional Migration
-- Custom functionality development with advanced interactive features
-- E-commerce implementation with conversion-optimized checkout experience
-- Marketing automation and CRM integration with advanced data synchronization
-- Team collaboration workflow setup with role-based access and permissions
-- Performance monitoring and monthly optimization with strategic consultation
-- 90-day priority support with dedicated account management
+**Our migrations typically include:**
+- Complete content and media migration
+- Enhanced Webflow design implementation
+- SEO preservation with proper redirects
+- Performance optimization and improvement
+- CMS setup and team training
+- Post-migration support and optimization
+
+Contact Beach Bird Studios for a custom quote designed specifically for your Squarespace to Webflow migration.
 
 [Get Your Custom Webflow Migration Quote]
 

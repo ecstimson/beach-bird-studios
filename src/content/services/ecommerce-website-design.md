@@ -83,34 +83,27 @@ We build your store using reliable ecommerce platforms and integrate all necessa
 ### Testing & Launch
 Before launching, we thoroughly test every aspect of your store to ensure a smooth shopping experience for your customers.
 
-## Ecommerce Investment Packages
+## Custom Ecommerce Solutions
 
-**Starter Store** - Perfect for New Online Businesses
-- Up to 50 product catalog
-- Essential ecommerce features
-- Mobile-responsive design
-- Secure payment processing
-- Basic SEO optimization
-- Content management training
+Every online store has unique product requirements, customer needs, and business goals. Beach Bird Studios creates custom ecommerce solutions tailored to your specific retail business.
 
-**Growth Store** - For Expanding Businesses
-- Up to 200 product catalog
-- Advanced product features
-- Customer account system
-- Email marketing integration
-- Enhanced SEO optimization
-- Analytics and reporting setup
-- 60-day post-launch support
+**What influences your custom quote:**
+- Product catalog size and complexity
+- Inventory management requirements
+- Payment and shipping needs
+- Customer account and loyalty features
+- Integration requirements (email, analytics, etc.)
+- Design and branding complexity
 
-**Enterprise Store** - For Established Retailers
-- Unlimited product catalog
-- Advanced inventory management
-- Multi-location shipping
-- Customer loyalty programs
-- Advanced analytics integration
-- Custom functionality development
-- Ongoing maintenance included
-- Priority support access
+**Our ecommerce websites typically include:**
+- Professional product catalog design
+- Secure payment processing setup
+- Mobile-responsive shopping experience
+- Inventory and order management
+- SEO optimization for products
+- Analytics and conversion tracking
+
+Contact Beach Bird Studios for a custom quote designed specifically for your ecommerce needs.
 
 ## Perfect For These Types of Businesses
 

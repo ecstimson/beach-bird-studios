@@ -71,28 +71,27 @@ Building your site in Webflow with clean structure, proper SEO setup, and third-
 ### Testing & Launch
 Rigorous testing across devices, performance optimization, and smooth deployment to production.
 
-## Webflow Website Packages
+## Custom Webflow Website Solutions
 
-**Starter Business** - Perfect for small companies
-- 5-10 page Webflow website
-- Basic CMS setup
-- Mobile responsive
-- Contact forms
-- 3-week delivery
+Every Webflow website project has unique design requirements, functionality needs, and business objectives. Beach Bird Studios provides custom quotes based on your specific project complexity and goals.
 
-**Professional Platform** - Ideal for growing businesses
-- 15-25 page website
-- Advanced CMS collections
-- E-commerce ready
-- Custom interactions
-- 5-week delivery
+**What influences your custom Webflow quote:**
+- Website size and page requirements
+- CMS complexity and content management needs
+- E-commerce and advanced functionality requirements
+- Custom interaction and animation needs
+- Integration requirements (APIs, third-party tools)
+- Timeline and delivery preferences
 
-**Enterprise Solution** - For complex requirements
-- 30+ pages
-- Multiple CMS collections
-- Advanced filtering
-- API integrations
-- 8-week delivery
+**Our Webflow website services typically include:**
+- Custom design and professional development
+- CMS setup and content management training
+- Mobile-responsive optimization
+- Interactive elements and user experience design
+- Performance optimization and testing
+- Launch support and ongoing assistance
+
+Contact Beach Bird Studios for a custom Webflow website quote tailored to your business needs.
 
 ## Advanced Webflow Features
 

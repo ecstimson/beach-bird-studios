@@ -126,68 +126,35 @@ Quarterly reviews ensure your website continues to support your evolving busines
 - Technology roadmap and update planning
 - Growth strategy and expansion planning
 
-## Maintenance Service Tiers
+## Custom Website Maintenance Solutions
 
-### Essential Maintenance Package
+Every website has unique maintenance needs based on complexity, business requirements, and growth objectives. Beach Bird Studios provides custom maintenance solutions tailored to your specific website and business needs.
 
-**Core Protection and Performance**
-Our essential package provides fundamental maintenance for basic website protection.
+**What influences your custom maintenance quote:**
+- Website complexity and technical requirements
+- Update frequency and content management needs
+- Security monitoring and protection requirements
+- Performance optimization and monitoring needs
+- Support response time and availability requirements
+- Strategic consulting and growth support needs
 
-**Included Services:**
-- Daily uptime and security monitoring
-- Weekly backup creation and verification
-- Monthly security updates and patches
-- Quarterly performance review and optimization
-- Basic technical support for critical issues
-- Annual security audit and vulnerability assessment
+**Core Maintenance Services:**
+- Security monitoring and protection
+- Regular backups and update management
+- Performance monitoring and optimization
+- Technical support and issue resolution
+- Analytics tracking and reporting
+- Strategic consultation and planning
 
-**Perfect For:**
-- Small businesses with basic websites
-- Simple brochure sites with minimal complexity
-- Businesses with limited budgets requiring basic protection
-- Static websites with infrequent content changes
+**Enhanced Maintenance May Include:**
+- Real-time monitoring with immediate response
+- Content creation and optimization support
+- Advanced security and threat protection
+- Feature development and enhancement
+- Dedicated account management
+- Strategic growth planning and consultation
 
-### Professional Maintenance Package
-
-**Comprehensive Care and Optimization**
-Our professional package provides complete maintenance with proactive optimization.
-
-**Included Services:**
-- All essential package services
-- Daily performance monitoring and optimization
-- Weekly content and SEO optimization
-- Monthly comprehensive maintenance and updates
-- Priority technical support with rapid response
-- Quarterly strategic reviews and planning
-- Analytics reporting and business insights
-- Content update assistance and optimization
-
-**Perfect For:**
-- Growing businesses with active websites
-- Service providers requiring consistent online presence
-- Businesses focused on search engine performance
-- Companies requiring regular content updates
-
-### Enterprise Maintenance Package
-
-**Strategic Partnership and Growth Support**
-Our enterprise package provides strategic maintenance that supports business growth.
-
-**Included Services:**
-- All professional package services
-- Real-time monitoring with immediate issue resolution
-- Advanced security protection and threat response
-- Weekly content creation and optimization
-- Monthly feature development and enhancement
-- Comprehensive analytics and business intelligence
-- Strategic consultation and growth planning
-- Dedicated account management and priority support
-
-**Perfect For:**
-- Large businesses with complex websites
-- E-commerce sites requiring constant optimization
-- Companies with aggressive growth objectives
-- Businesses requiring strategic digital partnership
+Contact Beach Bird Studios for a custom website maintenance quote designed for your specific needs.
 
 ## Maintenance Quality Standards
 

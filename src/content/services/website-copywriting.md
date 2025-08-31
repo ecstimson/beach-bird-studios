@@ -98,30 +98,27 @@ We write compelling, conversion-focused copy that guides visitors through your s
 ### Testing & Optimization
 We provide recommendations for A/B testing different copy variations and optimizing based on performance data.
 
-## Website Copywriting Investment Options
+## Custom Website Copywriting Solutions
 
-**Essential Copy Package** - Core pages that drive results
-- Homepage copy rewrite
-- 3 key service/product pages
-- About page optimization
-- Contact page enhancement
-- Basic SEO optimization
+Every business has unique messaging needs, target audiences, and conversion goals. Beach Bird Studios provides custom copywriting based on your specific brand voice and business objectives.
 
-**Complete Site Package** - Comprehensive copy overhaul
-- Full website copy audit
-- Homepage and all main pages
-- Service/product page optimization
-- Blog post templates
-- Email sequence copy
-- Ongoing copy consultation
+**What influences your custom copywriting quote:**
+- Number of pages and content volume requirements
+- Research and brand voice development needs
+- SEO optimization and keyword integration requirements
+- Conversion optimization and testing needs
+- Industry complexity and specialized knowledge requirements
+- Timeline and revision preferences
 
-**Premium Conversion Package** - Maximum conversion focus
-- Complete copywriting strategy
-- All website pages and sections
-- Landing page creation
-- A/B testing recommendations
-- Conversion rate optimization
-- Dedicated account management
+**Our website copywriting services typically include:**
+- Brand voice and messaging strategy development
+- Professional web copy creation and optimization
+- SEO keyword integration and optimization
+- Conversion-focused content development
+- Content strategy and performance recommendations
+- Ongoing copy optimization and support
+
+Contact Beach Bird Studios for a custom website copywriting quote designed for your brand and conversion goals.
 
 ## Frequently Asked Questions
 

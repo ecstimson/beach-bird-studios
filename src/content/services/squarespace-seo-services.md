@@ -43,28 +43,27 @@ We optimize your site's loading speed and user experience metrics within Squares
 ### Local Market Domination
 For Wilmington area businesses, we implement comprehensive local SEO strategies that help you outrank competitors in location-based searches.
 
-## SEO Investment Packages
+## Custom Squarespace SEO Solutions
 
-**Essential Package** - Foundation optimization for immediate improvements
-- Complete Squarespace SEO audit
-- Homepage and 5 primary pages optimized
-- Technical SEO configuration and fixes
-- Local SEO setup for Wilmington, NC market
-- Monthly performance tracking and reporting
+Every Squarespace website has unique content, target audiences, and competition levels. Beach Bird Studios creates custom SEO strategies optimized specifically for Squarespace's platform capabilities and your business goals.
 
-**Professional Package** - Comprehensive optimization for competitive industries
-- Everything in Essential Package
-- Up to 15 pages fully optimized
-- Blog content strategy and optimization
-- Competitor analysis and positioning
-- Advanced analytics setup and monitoring
+**What influences your custom Squarespace SEO quote:**
+- Current site structure and content volume
+- Technical SEO issues and optimization needs
+- Target market and competition analysis
+- Content creation and optimization requirements
+- Local vs national targeting strategy
+- Timeline and performance objectives
 
-**Enterprise Package** - Maximum visibility for market leaders
-- Everything in Professional Package
-- Unlimited page and content optimization
-- Custom SEO strategy development
-- Priority support and weekly consultations
-- Advanced conversion tracking and reporting
+**Our Squarespace SEO services typically include:**
+- Complete Squarespace technical SEO audit
+- Platform-specific optimization techniques
+- Content strategy and page optimization
+- Local SEO setup for geographic targeting
+- Performance tracking and reporting
+- Ongoing strategy refinements
+
+Contact Beach Bird Studios for a custom Squarespace SEO strategy and quote tailored to your business.
 
 ## Perfect For These Squarespace Users
 

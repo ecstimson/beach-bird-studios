@@ -218,33 +218,27 @@ Framer represents the future of web design - unlimited creative freedom with pro
 
 **Professional Launch**: Domain transfer and DNS management with monitoring and support.
 
-## Investment Packages
+## Custom Squarespace to Framer Migration Solutions
 
-**Essential Framer Migration** - Professional Design Upgrade
-- Complete Squarespace content migration with enhanced presentation
-- Custom Framer design that breaks free from template limitations
-- Mobile-responsive design optimized for all device types
-- Basic animations and improved user experience elements
-- SEO optimization and performance improvements
-- 30-day post-launch support and basic Framer training
+Every Squarespace to Framer migration has unique design goals, content requirements, and business objectives. Beach Bird Studios provides custom quotes based on your specific migration complexity and enhancement needs.
 
-**Professional Framer Migration** - Advanced Design & Animation
-- Everything in Essential Migration
-- Advanced design system development with custom components
-- Sophisticated animations and micro-interactions throughout
-- Enhanced CMS setup for efficient content management
-- Third-party integrations and marketing automation connections
-- Comprehensive SEO implementation and technical optimization
-- 60-day post-launch support and advanced training
+**What influences your custom migration quote:**
+- Current Squarespace site structure and content volume
+- Design enhancement and animation requirements
+- SEO preservation and improvement goals
+- Custom functionality and integration needs
+- Timeline and business continuity considerations
+- Training and ongoing support requirements
 
-**Premium Framer Migration** - Complete Digital Transformation
-- Everything in Professional Migration
-- Custom functionality development and advanced interactive features
-- E-commerce optimization with conversion-focused design
-- Marketing automation and CRM integration setup
-- Team collaboration workflow optimization
-- Performance monitoring and monthly optimization reviews
-- 90-day priority support and strategic consultation
+**Our migrations typically include:**
+- Complete content and media migration
+- Enhanced Framer design with modern interactions
+- SEO preservation with proper redirects
+- Performance optimization and improvements
+- CMS setup and team training
+- Post-migration support and optimization
+
+Contact Beach Bird Studios for a custom quote designed specifically for your Squarespace to Framer migration.
 
 [Get Your Custom Framer Migration Quote]
 

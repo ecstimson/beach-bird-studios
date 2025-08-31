@@ -209,33 +209,27 @@ Framer represents professional web development - unlimited design freedom, advan
 
 **Launch Coordination**: Domain transfer and DNS setup with minimal downtime.
 
-## Investment Packages
+## Custom Wix to Framer Migration Solutions
 
-**Essential Framer Migration** - Professional Website Upgrade
-- Complete Wix content migration with enhanced presentation
-- Modern design implementation beyond template limitations
-- Mobile-optimized responsive design
-- Basic animations and improved user experience
-- SEO optimization and performance improvements
-- 30-day post-launch support and basic training
+Every Wix to Framer migration involves unique content structures, design goals, and business requirements. Beach Bird Studios provides custom quotes based on your specific migration complexity and enhancement objectives.
 
-**Professional Framer Migration** - Advanced Design & Functionality
-- Everything in Essential Migration
-- Custom design system development and brand enhancement
-- Advanced animations and micro-interactions
-- Enhanced content management system setup
-- Third-party integrations and marketing tool connections
-- Comprehensive SEO implementation and optimization
-- 60-day post-launch support and advanced training
+**What influences your custom migration quote:**
+- Current Wix site structure and content volume
+- Design enhancement and animation requirements
+- SEO preservation and improvement goals
+- Custom functionality and integration needs
+- Timeline and business continuity considerations
+- Training and ongoing support requirements
 
-**Premium Framer Migration** - Complete Digital Transformation
-- Everything in Professional Migration
-- Custom functionality development and advanced features
-- E-commerce capabilities with superior user experience
-- Marketing automation and CRM integrations
-- Team collaboration setup and workflow optimization
-- Performance monitoring and ongoing optimization
-- 90-day priority support and strategic consultation
+**Our migrations typically include:**
+- Complete content and media migration
+- Enhanced Framer design with modern interactions
+- SEO preservation with proper redirects
+- Performance optimization and improvements
+- CMS setup and team training
+- Post-migration support and optimization
+
+Contact Beach Bird Studios for a custom quote designed specifically for your Wix to Framer migration.
 
 [Get Your Custom Framer Migration Quote]
 

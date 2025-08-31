@@ -161,32 +161,27 @@ Coordinated launch with immediate monitoring to ensure everything works perfectl
 - **Learning Management** - Educational and training platforms
 - **Portfolio Platforms** - Creative and professional showcases
 
-## Investment Packages
+## Custom Platform Migration Solutions
 
-**Essential Migration** - Basic Platform Transfer
-- Complete content migration
-- Basic design recreation
-- SEO redirect setup
-- Form functionality transfer
-- Testing and launch
-- 30-day post-launch support
+Every platform migration involves unique content structures, functionality requirements, and business goals. Beach Bird Studios provides custom quotes based on your specific migration complexity and enhancement needs.
 
-**Professional Migration** - Enhanced Transfer
-- Everything in Essential
-- Design improvements during migration
-- Advanced SEO optimization
-- Third-party integration setup
-- Performance optimization
-- 60-day post-launch support
+**What influences your custom migration quote:**
+- Current platform complexity and content volume
+- Target platform requirements and capabilities
+- SEO preservation and improvement goals
+- Custom functionality and integration needs
+- Design enhancement requirements during migration
+- Timeline and business continuity considerations
 
-**Enterprise Migration** - Complete Transformation
-- Everything in Professional
-- Custom functionality development
-- Advanced integrations
-- Multi-environment setup
-- Training and documentation
-- 90-day post-launch support
-- Priority maintenance included
+**Our platform migrations typically include:**
+- Complete content and media migration
+- SEO preservation with proper redirect mapping
+- Enhanced design and user experience
+- Functionality recreation and improvement
+- Testing and performance optimization
+- Training and post-migration support
+
+Contact Beach Bird Studios for a custom platform migration quote tailored to your specific needs.
 
 [Get Your Custom Migration Quote]
 

@@ -132,47 +132,24 @@ Each page we create has a specific purpose and gets the attention it needs - inc
 - Strategy refinement
 - Next phase planning
 
-## Investment Options
+## Custom SEO Solutions
 
-### Local SEO Packages
+Every business has unique SEO challenges and opportunities. Beach Bird Studios creates customized SEO strategies based on your specific industry, competition, and goals.
 
-#### Starter - Core 30 Foundation
-- Core 30 page development
-- Basic link building
-- Monthly rank tracking
-- Google Business optimization
+**What influences your custom SEO quote:**
+- Current website performance and technical issues
+- Industry competitiveness and market analysis
+- Geographic targeting requirements (local vs national)
+- Content development needs and existing assets
+- Timeline and growth objectives
+- Integration with existing marketing efforts
 
-#### Growth - Authority Building
-- Core 30 + topical relevance
-- Advanced link building
-- Bi-weekly reporting
-- Review management
+**Our SEO approach is built around the three-phase system:**
+- **Phase 1:** Core 30 Foundation - Essential pages for immediate impact
+- **Phase 2:** Topical Relevance - Industry authority development  
+- **Phase 3:** Complete Domination - Market leadership positioning
 
-#### Domination - Full Coverage
-- All three phases as needed
-- Aggressive content creation
-- Weekly rank map updates
-- Complete digital presence
-
-### National SEO Packages
-
-#### Foundation
-- Core service pages
-- Essential topic clusters
-- Monthly reporting
-- Technical optimization
-
-#### Authority
-- Comprehensive topic coverage
-- Resource development
-- Content leadership
-- Advanced link building
-
-#### Market Leader
-- Full topical dominance
-- Thought leadership content
-- Industry authority building
-- Competitive displacement
+Contact Beach Bird Studios for a custom SEO strategy and quote tailored to your business needs.
 
 ## FAQs
 

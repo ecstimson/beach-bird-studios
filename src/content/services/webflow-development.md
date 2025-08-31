@@ -100,32 +100,19 @@ Teaching your team how to manage and update your Webflow site effectively.
 ### Ongoing Maintenance
 Regular updates, backups, and optimization to keep your site running perfectly.
 
-## Investment Packages
+## Custom Webflow Development Solutions
 
-**Essential Package** - Professional Webflow Site
-- Custom Webflow design and development
-- Basic CMS setup for easy updates
-- Contact forms and lead capture
-- Mobile-responsive design
-- SEO optimization
-- 3-4 week delivery
+Every business has unique requirements, and your Webflow website should be tailored to your specific needs. Beach Bird Studios provides custom quotes based on your project specifications.
 
-**Professional Package** - Advanced CMS & Features
-- Everything in Essential
-- Advanced CMS with multiple content types
-- Custom interactions and animations
-- Third-party integrations
-- Blog setup with advanced features
-- Priority support
+**What influences your custom quote:**
+- Website complexity and page count
+- CMS requirements and content types
+- Custom interaction and animation needs
+- Third-party integration requirements
+- E-commerce functionality needs
+- Timeline and delivery preferences
 
-**Enterprise Package** - Complete Business Solution
-- Everything in Professional
-- E-commerce functionality
-- Advanced member portals
-- Complex database relationships
-- Custom API integrations
-- Ongoing maintenance included
-- 2-week delivery guarantee
+Contact Beach Bird Studios for a custom quote designed specifically for your Webflow development project.
 
 [Get Your Custom Quote]
 

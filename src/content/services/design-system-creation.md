@@ -50,28 +50,27 @@ Create and refine each component with multiple states, responsive behavior, and 
 ### Documentation & Training
 Develop comprehensive guides and provide team training to ensure successful adoption and proper implementation.
 
-## Design System Investment Packages
+## Custom Design System Solutions
 
-**Startup System** - Essential components for growing brands
-- Core component library (20+ components)
-- Basic brand guidelines
-- Color and typography systems
-- Simple documentation
-- Implementation guidelines
+Every organization has unique brand requirements, team structures, and design complexity needs. Beach Bird Studios creates custom design systems based on your specific brand goals and implementation requirements.
 
-**Professional System** - Comprehensive design foundation
-- Advanced component library (50+ components)
-- Detailed brand guidelines
-- Responsive design patterns
-- Interactive documentation
-- Team training sessions
+**What influences your custom design system quote:**
+- Brand complexity and component requirements
+- Team size and training needs
+- Documentation and maintenance requirements
+- Platform and technology integration needs
+- Implementation timeline and support requirements
+- Ongoing maintenance and evolution needs
 
-**Enterprise System** - Complete design ecosystem
-- Extensive component library (100+ components)
-- Multi-brand system support
-- Advanced documentation platform
-- Custom implementation tools
-- Ongoing maintenance retainer
+**Our design systems typically include:**
+- Custom component library development
+- Brand guidelines and documentation
+- Responsive design pattern creation
+- Team training and implementation support
+- Documentation platform setup
+- Ongoing maintenance and updates
+
+Contact Beach Bird Studios for a custom design system quote tailored to your brand and team needs.
 
 ## Perfect For These Organizations
 

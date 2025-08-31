@@ -82,28 +82,27 @@ Building your website using no-code tools with professional standards and best p
 ### Testing & Optimization
 Ensuring perfect functionality across all devices and optimizing for performance.
 
-## No-Code Development Packages
+## Custom No-Code Development Solutions
 
-**Starter Website** - Perfect for small businesses
-- 5-7 page no-code website
-- Responsive design
-- Contact forms
-- Basic SEO setup
-- 2-week delivery
+Every business has unique requirements for their no-code website development. Beach Bird Studios provides custom quotes based on your specific functionality needs and project complexity.
 
-**Professional Platform** - Growing businesses
-- 10-15 page website
-- CMS integration
-- Advanced features
-- E-commerce ready
-- 3-week delivery
+**What influences your custom no-code quote:**
+- Website size and page requirements
+- Functionality and integration complexity
+- Design customization and branding needs
+- Content management system requirements
+- Timeline and delivery preferences
+- Training and ongoing support needs
 
-**Enterprise Solution** - Complex requirements
-- 25+ pages
-- Multiple integrations
-- Custom workflows
-- Advanced functionality
-- 4-5 week delivery
+**Our no-code development typically includes:**
+- Strategic planning and platform selection
+- Custom design and responsive development
+- Content management system setup
+- Integration with business tools
+- Testing and optimization
+- Training and launch support
+
+Contact Beach Bird Studios for a custom no-code development quote tailored to your business needs.
 
 ## Popular No-Code Platforms We Use
 

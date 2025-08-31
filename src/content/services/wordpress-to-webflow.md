@@ -216,33 +216,27 @@ Webflow represents modern web development - combining visual design freedom with
 
 **Post-launch Support**: Immediate assistance and performance monitoring.
 
-## Investment Packages
+## Custom WordPress to Webflow Migration Solutions
 
-**Essential Webflow Migration** - Core Platform Transfer
-- Complete WordPress content and media migration
+Every WordPress to Webflow migration involves unique content structures, design requirements, and business goals. Beach Bird Studios provides custom quotes based on your specific migration complexity and enhancement needs.
+
+**What influences your custom migration quote:**
+- Current WordPress site structure and content volume
+- Design enhancement and modernization goals
+- SEO preservation and improvement requirements
+- Custom functionality and integration needs
+- Content optimization and restructuring requirements
+- Timeline and business continuity considerations
+
+**Our migrations typically include:**
+- Complete content and media migration
 - Professional Webflow design implementation
-- SEO preservation with redirect mapping
-- Form and basic functionality recreation
-- Performance optimization and testing
-- 30-day post-launch support and training
+- SEO preservation with proper redirects
+- Enhanced performance and user experience
+- CMS setup and team training
+- Post-migration support and optimization
 
-**Professional Webflow Migration** - Enhanced Modern Website
-- Everything in Essential Migration
-- Advanced design system and component development
-- Custom animations and interaction design
-- Enhanced CMS setup and content optimization
-- Third-party integration configuration
-- Advanced SEO implementation and optimization
-- 60-day post-launch support and optimization
-
-**Enterprise Webflow Migration** - Complete Digital Transformation
-- Everything in Professional Migration
-- Custom functionality development and advanced features
-- Marketing automation and CRM integration
-- Team collaboration setup and advanced training
-- Multi-environment development workflow
-- Performance monitoring and monthly optimization
-- 90-day priority support and strategic consultation
+Contact Beach Bird Studios for a custom quote designed specifically for your WordPress to Webflow migration project.
 
 [Get Your Custom Webflow Migration Quote]
 

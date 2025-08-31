@@ -214,34 +214,27 @@ Framer represents the future of web design - combining powerful visual design to
 
 **Post-launch Monitoring**: Immediate support and issue resolution.
 
-## Investment Packages
+## Custom WordPress to Framer Migration Solutions
 
-**Essential Framer Migration** - Core Platform Transfer
-- Complete WordPress content migration
+Every WordPress to Framer migration has unique requirements based on your current site structure, content, and business goals. Beach Bird Studios provides custom quotes tailored to your specific migration needs.
+
+**What influences your custom migration quote:**
+- Current WordPress site size and complexity
+- Content migration and restructuring needs
+- Design enhancement and modernization requirements
+- SEO preservation and improvement goals
+- Custom functionality and integration needs
+- Timeline and business continuity requirements
+
+**Our migrations typically include:**
+- Complete content and media migration
 - Professional Framer design implementation
-- SEO preservation with redirect setup
-- Form and basic functionality transfer
-- Performance optimization
-- 30-day post-launch support
+- SEO preservation with proper redirects
+- Enhanced user experience and performance
+- Training and ongoing support
+- Post-migration optimization
 
-**Professional Framer Migration** - Enhanced Modern Website
-- Everything in Essential Migration
-- Advanced design system development
-- Custom animations and interactions
-- Enhanced user experience optimization
-- Third-party integrations setup
-- Advanced SEO implementation
-- 60-day post-launch support
-
-**Premium Framer Migration** - Complete Digital Transformation
-- Everything in Professional Migration
-- Custom component development
-- Advanced CMS setup and training
-- Marketing automation integration
-- Multi-language support
-- Team collaboration setup
-- 90-day priority support
-- Monthly optimization reviews
+Contact Beach Bird Studios for a custom quote designed specifically for your WordPress to Framer migration.
 
 [Get Your Custom Framer Migration Quote]
 

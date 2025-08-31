@@ -69,33 +69,27 @@ We help optimize your content for search engines and conversions, ensuring your 
 ### Launch & Training
 Once your website is live, we provide comprehensive training so you can easily update content and make the most of your new online presence.
 
-## Small Business Website Investment Packages
+## Custom Small Business Website Solutions
 
-**Starter Package** - Perfect for New Businesses
-- Custom 5-page website design
+Every small business has unique needs and budget considerations. Beach Bird Studios provides custom quotes tailored to your specific business requirements and goals.
+
+**What influences your custom quote:**
+- Website size and complexity requirements
+- E-commerce and online functionality needs
+- SEO and marketing integration requirements
+- Content creation and copywriting needs
+- Timeline and delivery preferences
+- Ongoing maintenance and support needs
+
+**Our small business websites typically include:**
+- Custom design reflecting your brand
 - Mobile-responsive layout
-- Basic SEO optimization
-- Contact form integration
+- SEO optimization foundation
+- Contact and lead capture forms
 - Social media integration
-- 2 rounds of revisions
+- Training and ongoing support
 
-**Growth Package** - Most Popular Choice
-- Custom 8-page website design
-- Advanced SEO optimization
-- Blog setup and training
-- Google Analytics integration
-- Email marketing integration
-- 3 rounds of revisions
-- 30 days post-launch support
-
-**Complete Package** - For Established Businesses
-- Custom 12-page website design
-- E-commerce functionality
-- Advanced analytics setup
-- Custom contact forms
-- Review integration system
-- Ongoing maintenance included
-- Priority support access
+Contact Beach Bird Studios for a custom quote designed specifically for your small business needs.
 
 ## Perfect For These Small Businesses
 

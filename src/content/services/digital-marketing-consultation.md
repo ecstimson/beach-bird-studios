@@ -117,34 +117,27 @@ We establish systems to track performance and provide ongoing recommendations fo
 - Emerging opportunity alerts
 - Quarterly strategy reviews
 
-## Digital Marketing Consultation Investment Packages
+## Custom Digital Marketing Consultation Solutions
 
-**Strategic Foundation** - Essential strategy development
-- Comprehensive digital marketing audit
-- Target audience research and personas
-- 90-day implementation roadmap
-- Channel strategy recommendations
-- Performance tracking setup
-- Two strategy sessions with follow-up support
+Every business has unique marketing challenges, resources, and growth objectives. Beach Bird Studios provides custom digital marketing consultation based on your specific market position and strategic goals.
 
-**Growth Accelerator** - Complete strategic transformation
-- In-depth competitive analysis
-- Multi-channel marketing funnel design
-- 6-month implementation roadmap
-- Team training and best practices guide
-- Advanced analytics and reporting setup
-- Monthly optimization consultations
-- Quarterly strategic planning sessions
+**What influences your custom consultation quote:**
+- Current marketing performance and challenges
+- Business size and industry complexity
+- Digital presence and asset evaluation needs
+- Strategy development and implementation requirements
+- Team training and support needs
+- Ongoing consultation and optimization requirements
 
-**Enterprise Strategic Partnership** - Comprehensive ongoing support
-- Complete digital ecosystem analysis
-- Custom marketing automation workflows
-- 12-month strategic roadmap
-- Dedicated account management
-- Weekly performance monitoring
-- Monthly strategy optimization
-- Quarterly competitive intelligence reports
-- Annual strategic planning retreat
+**Our digital marketing consultation typically includes:**
+- Comprehensive digital marketing audit and analysis
+- Target audience research and strategy development
+- Implementation roadmap and priority recommendations
+- Performance tracking and analytics setup
+- Team training and best practices guidance
+- Ongoing strategy optimization and support
+
+Contact Beach Bird Studios for a custom digital marketing consultation quote designed for your business needs.
 
 ## Perfect For These Business Situations
 

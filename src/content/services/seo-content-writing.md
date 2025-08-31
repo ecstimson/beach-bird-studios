@@ -95,30 +95,27 @@ Technical SEO integration including schema markup, internal linking, and perform
 ### Performance Monitoring
 Ongoing analysis and content improvements based on search performance and user engagement.
 
-## SEO Content Investment Packages
+## Custom SEO Content Writing Solutions
 
-**Content Foundation** - Essential SEO Content
-- Complete content audit
-- 4 optimized service pages
-- 8 strategic blog posts
-- FAQ section development
-- Basic keyword optimization
+Every business has unique content needs, target audiences, and competitive landscapes. Beach Bird Studios creates custom content strategies based on your specific industry and marketing objectives.
 
-**Content Professional** - Comprehensive Strategy
-- Everything in Foundation
-- 12 blog posts per month
-- Location-based content creation
-- Advanced keyword targeting
-- Content performance reporting
-- Social media content adaptation
+**What influences your custom content quote:**
+- Current content audit and optimization needs
+- Content volume and frequency requirements
+- Industry complexity and competition level
+- Target audience and keyword strategy
+- Content types needed (pages, blogs, social, etc.)
+- Timeline and delivery preferences
 
-**Content Authority** - Market Leadership
-- Everything in Professional
-- 16 blog posts per month
-- In-depth pillar content
-- Video script writing
-- Email content integration
-- Comprehensive content marketing
+**Our SEO content services typically include:**
+- Complete content audit and strategy development
+- Keyword research and optimization planning
+- Professional content creation and optimization
+- Content performance tracking and analysis
+- Ongoing content strategy refinement
+- Integration with overall marketing efforts
+
+Contact Beach Bird Studios for a custom SEO content writing quote tailored to your business needs.
 
 [Get Your Content Strategy Quote]
 

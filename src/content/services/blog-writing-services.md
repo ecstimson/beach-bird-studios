@@ -90,28 +90,27 @@ Our experienced writers create engaging, authoritative content that positions yo
 ### Optimization & Publishing
 We handle the technical SEO aspects and can publish directly to your website or provide formatted content for your team.
 
-## Blog Writing Investment Packages
+## Custom Blog Writing Solutions
 
-**Startup Blog Package** - Get started with consistent content
-- 4 blog posts per month
-- Basic keyword research
-- SEO optimization
-- WordPress publishing
-- Monthly performance report
+Every business has unique content marketing needs, target audiences, and publishing requirements. Beach Bird Studios creates custom blog writing strategies based on your specific industry and content goals.
 
-**Growth Blog Package** - Accelerate your content marketing
-- 8 blog posts per month
-- Advanced keyword research
-- Topic cluster development
-- Social media post creation
-- Detailed analytics and optimization
+**What influences your custom blog writing quote:**
+- Content frequency and volume requirements
+- Industry complexity and research needs
+- SEO optimization and keyword targeting requirements
+- Content types and formats needed
+- Publishing platform and integration needs
+- Performance tracking and optimization requirements
 
-**Authority Blog Package** - Dominate your industry online
-- 12 blog posts per month
-- Comprehensive content strategy
-- Video content recommendations
-- Lead magnet creation
-- Dedicated account management
+**Our blog writing services typically include:**
+- Strategic content planning and calendar development
+- Professional research and writing
+- SEO optimization and keyword integration
+- Publishing and technical setup
+- Performance tracking and analysis
+- Ongoing content strategy optimization
+
+Contact Beach Bird Studios for a custom blog writing quote tailored to your content marketing needs.
 
 ## Frequently Asked Questions
 

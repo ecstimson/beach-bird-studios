@@ -218,33 +218,27 @@ Webflow represents the evolution beyond website builders - professional visual d
 
 **Launch Coordination**: Domain transfer and DNS setup with monitoring.
 
-## Investment Packages
+## Custom Wix to Webflow Migration Solutions
 
-**Essential Webflow Migration** - Professional Website Upgrade
-- Complete Wix content migration with professional presentation
-- Custom Webflow design that breaks free from template limitations
-- Mobile-responsive design optimized for all devices
-- Basic SEO optimization and performance improvements
-- Contact form recreation with enhanced functionality
-- 30-day post-launch support and basic Webflow training
+Every Wix to Webflow migration involves unique content structures, design goals, and business requirements. Beach Bird Studios provides custom quotes based on your specific migration complexity and enhancement objectives.
 
-**Professional Webflow Migration** - Advanced Development & Features  
-- Everything in Essential Migration
-- Advanced design system development with custom components
-- Professional animations and micro-interactions
-- Comprehensive SEO implementation and optimization
-- CMS setup for easy content management
-- Third-party integrations and marketing tool connections
-- 60-day post-launch support and advanced training
+**What influences your custom migration quote:**
+- Current Wix site structure and content volume
+- Design enhancement and functionality requirements
+- SEO preservation and improvement goals
+- Custom features and integration needs
+- Timeline and business continuity considerations
+- Training and ongoing support requirements
 
-**Enterprise Webflow Migration** - Complete Digital Transformation
-- Everything in Professional Migration
-- Custom functionality development and advanced features
-- E-commerce implementation with superior user experience
-- Marketing automation and CRM integrations
-- Team collaboration setup and workflow optimization
-- Performance monitoring and monthly optimization
-- 90-day priority support and strategic consultation
+**Our migrations typically include:**
+- Complete content and media migration
+- Enhanced Webflow design implementation
+- SEO preservation with proper redirects
+- Performance optimization and improvements
+- CMS setup and team training
+- Post-migration support and optimization
+
+Contact Beach Bird Studios for a custom quote designed specifically for your Wix to Webflow migration.
 
 [Get Your Custom Webflow Migration Quote]
 

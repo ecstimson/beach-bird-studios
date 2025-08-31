@@ -50,28 +50,27 @@ Our team handles setup and configuration while training your staff to manage and
 ### Ongoing Optimization & Support
 Continuous monitoring and improvement ensures your no-code solutions evolve with your business needs.
 
-## No-Code Consulting Investment Packages
+## Custom No-Code Consulting Solutions
 
-**Discovery Package** - Strategic assessment and planning
-- Business process analysis
-- No-code opportunity identification
-- Platform recommendations
-- Implementation roadmap
-- ROI projections
+Every business has unique processes, challenges, and automation opportunities. Beach Bird Studios provides custom no-code consulting based on your specific business needs and transformation goals.
 
-**Implementation Package** - Hands-on solution development
-- Custom workflow automation
-- System integration setup
-- Team training sessions
-- Documentation and best practices
-- Initial optimization period
+**What influences your custom consulting quote:**
+- Business process complexity and automation opportunities
+- Current systems and integration requirements
+- Team size and training needs
+- Implementation timeline and support requirements
+- Ongoing consulting and optimization needs
+- Platform selection and complexity considerations
 
-**Enterprise Package** - Comprehensive no-code transformation
-- Multi-department analysis
-- Complex system integrations
-- Advanced automation workflows
-- Ongoing consulting retainer
-- Regular strategy reviews
+**Our no-code consulting typically includes:**
+- Business process analysis and opportunity assessment
+- Platform recommendations and strategy development
+- Custom workflow automation and system setup
+- Team training and documentation
+- Implementation support and optimization
+- Ongoing consulting and strategy refinement
+
+Contact Beach Bird Studios for a custom no-code consulting quote tailored to your business transformation needs.
 
 ## Perfect For These Organizations
 

@@ -46,30 +46,27 @@ Build connections with Wilmington, NC business organizations, chambers of commer
 ### Monitoring and Reporting
 Track new backlinks, monitor link quality, and provide detailed reports showing authority growth and search ranking improvements.
 
-## Link Building Investment Packages
+## Custom Link Building Solutions
 
-**Foundation Package** - Essential link building for new websites
-- Complete link profile audit and cleanup
-- 5-10 high-quality backlinks per month
-- Local business directory optimization
-- Basic content asset creation
-- Monthly reporting and strategy updates
+Every website has unique link building opportunities and competitive challenges. Beach Bird Studios creates custom link building strategies based on your specific industry, authority goals, and competitive landscape.
 
-**Growth Package** - Aggressive link building for competitive markets
-- Everything in Foundation Package  
-- 10-20 high-quality backlinks per month
-- Advanced content marketing and outreach
-- Digital PR and media relationship building
-- Competitor link opportunity analysis
-- Bi-weekly progress consultations
+**What influences your custom link building quote:**
+- Current backlink profile and authority assessment
+- Industry competition and link opportunity analysis
+- Target authority and ranking improvement goals
+- Content creation and outreach requirements
+- Geographic targeting and market focus
+- Timeline and ongoing campaign requirements
 
-**Authority Package** - Maximum link building for industry leaders
-- Everything in Growth Package
-- 20+ high-quality backlinks per month
-- Custom research and linkable asset creation
-- National publication outreach and placement
-- Advanced link recovery and optimization
-- Weekly strategy calls and priority support
+**Our link building services typically include:**
+- Complete link profile audit and analysis
+- Strategic link opportunity research and planning
+- High-quality content creation and outreach
+- Relationship building and digital PR
+- Performance tracking and reporting
+- Ongoing strategy optimization and refinement
+
+Contact Beach Bird Studios for a custom link building strategy and quote tailored to your authority goals.
 
 ## Perfect For These Business Types
 

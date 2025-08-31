@@ -77,33 +77,19 @@ Launch with a memorable web presence that captures attention and builds credibil
 ### Event Companies
 Interactive galleries, smooth transitions, and engaging animations that bring events to life online.
 
-## Investment Packages
+## Custom Framer Development Solutions
 
-**Starter Package** - Essential Interactive Features
-- Custom Framer site with basic animations
-- Mobile-responsive design
-- Contact form integration
-- CMS setup for easy updates
-- Performance optimization
-- 3-4 week delivery
+Every business has unique needs, and your Framer website should reflect that. Beach Bird Studios provides custom quotes tailored to your specific project requirements.
 
-**Professional Package** - Advanced Interactions
-- Everything in Starter
-- Advanced scroll animations
-- Custom component library
-- Advanced CMS capabilities
-- SEO optimization
-- Email marketing integration
-- Priority support
+**What influences your custom quote:**
+- Site complexity and number of pages
+- Custom animation requirements
+- Advanced interaction needs
+- Content management system requirements
+- Timeline and delivery preferences
+- Integration requirements
 
-**Enterprise Package** - Complete Interactive Experience
-- Everything in Professional
-- Complex multi-step animations
-- Custom code components
-- Advanced analytics integration
-- E-commerce capabilities
-- Ongoing maintenance included
-- 1-week delivery guarantee
+Contact Beach Bird Studios for a custom quote designed specifically for your Framer development project.
 
 [Get Your Custom Quote]
 

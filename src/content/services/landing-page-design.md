@@ -108,31 +108,27 @@ We create a custom design optimized for conversions and build it using fast-load
 ### Testing & Optimization
 After launch, we can set up A/B testing to continuously improve your landing page performance.
 
-## Landing Page Investment Options
+## Custom Landing Page Design Solutions
 
-**Single Landing Page** - For Focused Campaigns
-- One custom landing page design
-- Mobile-responsive development
-- Basic conversion optimization
-- Contact form integration
-- Analytics setup
-- 2 rounds of revisions
+Every campaign and conversion goal has unique requirements and target audiences. Beach Bird Studios provides custom landing page solutions based on your specific marketing objectives and conversion needs.
 
-**Campaign Package** - For Multiple Variations
-- Up to 3 landing page variations
-- A/B testing setup and analysis
-- Advanced conversion tracking
-- Email integration
-- Thank you page included
-- 3 rounds of revisions per page
+**What influences your custom landing page quote:**
+- Number of pages and campaign variations needed
+- Design complexity and conversion optimization requirements
+- A/B testing and analytics integration needs
+- Email marketing and funnel integration requirements
+- Timeline and campaign launch deadlines
+- Ongoing optimization and support needs
 
-**Conversion System** - Complete Funnel
-- Multiple landing pages
-- Email sequence integration
-- Advanced analytics setup
-- Conversion funnel optimization
-- Ongoing performance monitoring
-- Monthly optimization reports
+**Our landing page design services typically include:**
+- Strategic campaign analysis and conversion planning
+- Custom landing page design and development
+- Mobile-responsive optimization and testing
+- Analytics and tracking setup
+- Conversion optimization and A/B testing recommendations
+- Post-launch optimization and support
+
+Contact Beach Bird Studios for a custom landing page design quote tailored to your campaign goals.
 
 ## Perfect For These Marketing Goals
 

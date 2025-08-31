@@ -73,25 +73,27 @@ Convert designs to code with meticulous attention to detail and design accuracy.
 ### Quality Assurance
 Test across devices and browsers, ensuring perfect rendering and functionality everywhere.
 
-## Figma Conversion Packages
+## Custom Figma to Website Conversion Solutions
 
-**Landing Page** - Single page perfection
-- One page conversion
-- Responsive design
-- Basic animations
-- 3-day delivery
+Every Figma conversion project has unique complexity, functionality requirements, and business objectives. Beach Bird Studios provides custom quotes based on your specific design conversion needs.
 
-**Marketing Site** - Multi-page solution
-- 5-10 page conversion
-- Full responsiveness
-- Interactive elements
-- 1-week delivery
+**What influences your custom conversion quote:**
+- Number of pages and design complexity
+- Interactive elements and animation requirements
+- CMS and content management needs
+- Custom functionality and integration requirements
+- Timeline and delivery preferences
+- Testing and optimization requirements
 
-**Complete Platform** - Full conversion
-- Unlimited pages
-- CMS integration
-- Advanced interactions
-- 2-3 week delivery
+**Our Figma conversion services typically include:**
+- Pixel-perfect design implementation
+- Mobile-responsive development and optimization
+- Interactive element and animation development
+- CMS setup and content management integration
+- Testing across devices and browsers
+- Launch support and training
+
+Contact Beach Bird Studios for a custom Figma to website conversion quote tailored to your project.
 
 ## What We Need From You
 

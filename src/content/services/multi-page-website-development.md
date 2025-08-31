@@ -82,36 +82,27 @@ Our developers build robust, scalable multi-page websites using modern technolog
 ### Content Integration & Testing
 We integrate your content, test all functionality across devices and browsers, and ensure every page works perfectly before launch.
 
-## Multi-Page Website Investment Packages
+## Custom Multi-Page Website Solutions
 
-**Professional Package** - 10-15 Page Business Website
-- Custom multi-page website design
+Every multi-page website has unique content architecture and functionality requirements. Beach Bird Studios provides custom quotes based on your specific site complexity and business needs.
+
+**What influences your custom quote:**
+- Number of pages and content complexity
+- Content management system requirements
+- E-commerce and user functionality needs
+- Database and integration requirements
+- Custom functionality and feature needs
+- Timeline and delivery preferences
+
+**Our multi-page websites typically include:**
+- Custom site architecture and navigation
 - Content management system
-- Contact forms and integrations
-- Basic e-commerce capabilities
 - SEO optimization for all pages
-- Mobile responsive design
-- 30 days post-launch support
-
-**Growth Package** - 20-30 Page Comprehensive Website
-- Advanced multi-page website development
-- User account and login systems
-- Advanced search functionality
-- Blog and resource sections
-- Email marketing integration
+- Mobile-responsive design
+- Contact and conversion forms
 - Analytics and tracking setup
-- Social media integration
-- 60 days post-launch support
 
-**Enterprise Package** - 40+ Page Advanced Website
-- Complex multi-page website development
-- Custom functionality development
-- Advanced database integration
-- API integrations and automation
-- Multi-user content management
-- Advanced analytics and reporting
-- Priority support and maintenance
-- Ongoing optimization and updates
+Contact Beach Bird Studios for a custom quote designed specifically for your multi-page website project.
 
 ## Perfect For These Business Types
 

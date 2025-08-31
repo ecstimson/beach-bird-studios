@@ -98,30 +98,27 @@ We write compelling email copy and design templates that reflect your brand whil
 ### Testing & Launch
 We thoroughly test all automations and sequences before launch, ensuring everything works perfectly from day one.
 
-## Email Marketing Setup Investment Packages
+## Custom Email Marketing Setup Solutions
 
-**Starter Setup** - Essential email marketing foundation
-- Platform setup and configuration
-- Basic welcome email sequence (3 emails)
-- Contact form integration
-- Simple list segmentation
-- Template design and branding
+Every business has unique email marketing needs, audience segments, and automation requirements. Beach Bird Studios creates custom email marketing strategies based on your specific customer journey and business goals.
 
-**Growth Setup** - Comprehensive email marketing system
-- Complete platform configuration
-- Welcome series (5-7 emails)
-- Lead nurturing campaign
-- Behavioral automation setup
-- Advanced segmentation
-- Monthly optimization review
+**What influences your custom email setup quote:**
+- Platform selection and configuration complexity
+- Email sequence and automation requirements
+- List segmentation and targeting needs
+- Template design and branding requirements
+- Integration needs (CRM, website, etc.)
+- Training and ongoing support requirements
 
-**Enterprise Setup** - Advanced email marketing automation
-- Full platform configuration
-- Multiple email sequences
-- Advanced behavioral triggers
-- CRM integration
-- A/B testing setup
-- Ongoing strategy and optimization
+**Our email marketing setup services typically include:**
+- Platform selection and complete configuration
+- Email template design and branding
+- Automated sequence development and testing
+- List segmentation and targeting strategy
+- Integration with website and other tools
+- Training and ongoing optimization support
+
+Contact Beach Bird Studios for a custom email marketing setup quote tailored to your business needs.
 
 ## Frequently Asked Questions
 

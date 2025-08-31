@@ -50,28 +50,27 @@ Dive deep into Framer's powerful features including CMS integration, forms, e-co
 ### Workflow Optimization
 Learn efficient workflows and best practices that will make you productive and confident in Framer.
 
-## Framer Training Investment Packages
+## Custom Framer Training Solutions
 
-**Individual Intensive** - Personal skill development
-- 8 hours of one-on-one training
-- Customized curriculum design
-- Project-based learning approach
-- Resource library and templates
-- 30 days of follow-up support
+Every team and individual has unique learning needs, skill levels, and training objectives. Beach Bird Studios provides custom Framer training based on your specific goals and experience level.
 
-**Team Workshop** - Group skill building
-- Full-day team training session
-- Collaborative project exercises
-- Team workflow development
-- Shared resource library
-- Group follow-up sessions
+**What influences your custom training quote:**
+- Training format preferences (individual vs team vs group)
+- Current skill level and experience with design tools
+- Specific Framer features and techniques to focus on
+- Project-based learning and hands-on requirements
+- Timeline and scheduling considerations
+- Ongoing support and follow-up needs
 
-**Masterclass Series** - Advanced skill development
-- Multiple specialized workshops
-- Advanced animation techniques
-- Component system mastery
-- Custom code integration
-- Ongoing mentorship program
+**Our Framer training typically includes:**
+- Customized curriculum based on your goals
+- Hands-on project-based learning approach
+- Live instruction with expert guidance
+- Resource library and template access
+- Follow-up support and Q&A sessions
+- Progress tracking and skill development
+
+Contact Beach Bird Studios for a custom Framer training quote designed for your learning objectives.
 
 ## Perfect For These Professionals
 

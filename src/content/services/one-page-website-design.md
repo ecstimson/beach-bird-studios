@@ -79,33 +79,27 @@ Our designers create a stunning visual narrative that supports your content stra
 ### Development & Optimization
 We build your one page website with clean code, fast loading speeds, and mobile-first responsiveness to ensure exceptional performance across all devices.
 
-## One Page Website Investment Packages
+## Custom One Page Website Solutions
 
-**Launch Package** - Quick Professional Presence
-- Custom one page website design
-- 5-7 strategic content sections
+Every one-page website serves a unique purpose and audience. Beach Bird Studios creates custom quotes based on your specific conversion goals and design requirements.
+
+**What influences your custom quote:**
+- Design complexity and visual requirements
+- Content sections and messaging strategy
+- Interactive elements and animations needed
+- Integration requirements (email, analytics, etc.)
+- SEO optimization level required
+- Timeline and delivery preferences
+
+**Our one-page websites typically include:**
+- Strategic content section design
 - Mobile-responsive layout
-- Contact form integration
-- Basic SEO optimization
+- Conversion-focused elements
+- Contact and lead capture forms
+- SEO optimization foundation
 - Social media integration
 
-**Growth Package** - Enhanced Conversion Focus
-- Advanced one page website design
-- 8-10 optimized content sections
-- Advanced animation and interactions
-- Multiple conversion points
-- Email marketing integration
-- Analytics and tracking setup
-- 30 days post-launch optimization
-
-**Premium Package** - Maximum Impact Solution
-- Custom illustrated one page website
-- Advanced interactive elements
-- Video integration capabilities
-- A/B testing setup for conversions
-- Advanced SEO optimization
-- Ongoing performance monitoring
-- Priority support and updates
+Contact Beach Bird Studios for a custom quote designed specifically for your one-page website project.
 
 ## Perfect For These Business Scenarios
 

@@ -447,7 +447,7 @@
 - `/about` - About Beach Bird Studios
 - `/portfolio` - Our Work
 - `/process` - Our Process
-- `/pricing` - Investment Options
+- ~~`/pricing` - Investment Options~~ (REMOVED - Fictitious content)
 - `/contact` - Contact Us
 - `/blog` - Blog & Resources
 - `/privacy-policy` - Privacy Policy

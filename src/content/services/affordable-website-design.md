@@ -78,31 +78,27 @@ Our development focuses on essential functionality and performance, ensuring you
 ### Training & Launch
 We provide training on managing your affordable website and ensure you're comfortable updating content and basic maintenance.
 
-## Affordable Website Investment Options
+## Affordable Custom Website Solutions
 
-**Starter Package** - Essential Business Presence
-- Custom 3-page website design
-- Mobile-responsive layout
-- Contact form integration
-- Basic SEO optimization
-- Social media integration
+Beach Bird Studios makes professional web design accessible to businesses of all sizes. Every project receives a custom quote based on your specific needs and budget considerations.
+
+**What influences your custom quote:**
+- Website size and page requirements
+- Design complexity and customization needs
+- Content creation and copywriting requirements
+- SEO optimization level desired
+- Integration needs (forms, email, analytics)
+- Timeline and delivery preferences
+
+**Our affordable websites include:**
+- Custom design reflecting your brand
+- Mobile-responsive development
+- SEO optimization foundation
+- Contact and lead capture forms
 - Content management training
+- Post-launch support period
 
-**Business Package** - Complete Professional Website
-- Custom 5-page website design
-- Blog setup and training
-- Email integration
-- Google Analytics setup
-- Enhanced SEO optimization
-- 30 days post-launch support
-
-**Growth Package** - Expandable Business Website
-- Custom 8-page website design
-- E-commerce ready structure
-- Advanced contact forms
-- Email marketing integration
-- Comprehensive SEO setup
-- 60 days post-launch support
+Contact Beach Bird Studios for a custom quote designed to fit your budget and business needs.
 
 ## Perfect For These Budget-Conscious Businesses
 

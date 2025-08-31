@@ -123,33 +123,27 @@ We establish ongoing monitoring systems and provide continuous optimization reco
 - Team development and capability enhancement
 - Quarterly strategic reviews and planning sessions
 
-## Online Business Consultation Investment Packages
+## Custom Online Business Consultation Solutions
 
-**Growth Foundation** - Essential business strategy development
+Every business has unique challenges, growth opportunities, and strategic requirements. Beach Bird Studios provides custom online business consultation based on your specific market position and growth objectives.
+
+**What influences your custom consultation quote:**
+- Business size and current performance analysis needs
+- Strategic planning and growth objective complexity
+- Market analysis and competitive research requirements
+- System integration and automation needs
+- Team training and development requirements
+- Ongoing consultation and support preferences
+
+**Our online business consultation typically includes:**
 - Comprehensive business assessment and analysis
-- Strategic growth plan development
+- Strategic growth planning and roadmap development
 - Digital strategy integration and optimization
 - Performance tracking and measurement setup
-- 90-day implementation roadmap
-- Monthly consultation calls for initial guidance
+- Implementation guidance and support
+- Ongoing strategic consultation and refinement
 
-**Business Accelerator** - Complete strategic transformation
-- In-depth market analysis and competitive positioning
-- Advanced customer acquisition and retention systems
-- Integrated digital marketing and sales strategies
-- Financial optimization and profitability improvement
-- Team development and training programs
-- Weekly strategic consultation for 90 days
-- Quarterly strategic planning and review sessions
-
-**Enterprise Growth Partnership** - Comprehensive ongoing support
-- Complete business ecosystem analysis and optimization
-- Advanced market expansion and scaling strategies
-- Custom system development and automation
-- Dedicated strategic account management
-- Weekly performance monitoring and optimization
-- Monthly strategic planning and execution support
-- Annual strategic retreats and comprehensive planning
+Contact Beach Bird Studios for a custom online business consultation quote designed for your growth needs.
 
 ## Perfect For These Business Situations
 

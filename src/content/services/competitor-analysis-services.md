@@ -123,33 +123,27 @@ We create detailed action plans that enable you to capitalize on competitive ins
 - Team training and competitive awareness development
 - Ongoing optimization and strategy refinement
 
-## Competitor Analysis Investment Packages
+## Custom Competitor Analysis Solutions
 
-**Market Intelligence Foundation** - Essential competitive insights
-- Comprehensive competitive landscape analysis
-- Top 5 competitor deep-dive analysis
-- Market opportunity identification report
+Every business faces unique competitive challenges and market conditions. Beach Bird Studios provides custom competitor analysis based on your specific industry, market position, and strategic objectives.
+
+**What influences your custom analysis quote:**
+- Market complexity and number of competitors to analyze
+- Depth of analysis and research requirements
+- Strategic planning and implementation support needs
+- Ongoing monitoring and intelligence requirements
+- Timeline and delivery preferences
+- Integration with overall business strategy needs
+
+**Our competitor analysis services typically include:**
+- Comprehensive competitive landscape assessment
+- Strategic competitor research and analysis
+- Market opportunity identification and recommendations
 - Competitive positioning and differentiation strategy
-- Action plan with priority recommendations
-- 30-day follow-up consultation for implementation guidance
+- Implementation planning and priority guidance
+- Ongoing competitive monitoring and updates
 
-**Strategic Intelligence Pro** - Complete competitive advantage development
-- In-depth analysis of top 10 competitors
-- Advanced market segmentation and opportunity analysis
-- Customer acquisition strategy intelligence
-- Pricing and positioning optimization recommendations
-- Monthly competitive intelligence reports for 6 months
-- Quarterly strategy sessions and competitive response planning
-- Competitive monitoring and alert system setup
-
-**Enterprise Intelligence Partnership** - Ongoing competitive advantage
-- Complete market ecosystem analysis and monitoring
-- Real-time competitive intelligence and alerts
-- Advanced market research and trend analysis
-- Competitive response strategy development
-- Monthly competitive intelligence briefings
-- Quarterly competitive strategy planning sessions
-- Annual competitive landscape assessment and strategic planning
+Contact Beach Bird Studios for a custom competitor analysis quote designed for your strategic planning needs.
 
 ## Perfect For These Strategic Situations
 

@@ -99,30 +99,27 @@ Implementation of review generation strategies and professional response protoco
 ### Ongoing Optimization
 Regular Google Posts, photo updates, and performance monitoring to maintain competitive advantage.
 
-## Google My Business Investment Packages
+## Custom Google My Business Optimization Solutions
 
-**GMB Foundation** - Complete Profile Optimization
-- Comprehensive profile audit and setup
-- Category and attribute optimization
-- Professional business description
-- Photo strategy and initial uploads
-- Basic review management setup
+Every business has unique local market conditions and Google My Business optimization needs. Beach Bird Studios creates custom GMB strategies based on your specific market position and local competition.
 
-**GMB Professional** - Enhanced Visibility
-- Everything in Foundation
-- Advanced photo optimization
-- Google Posts content calendar
-- Review generation campaign
-- Q&A section optimization
-- Monthly performance reports
+**What influences your custom GMB optimization quote:**
+- Current Google My Business profile status
+- Local competition and market conditions
+- Review management and reputation needs
+- Content creation and posting requirements
+- Photo and visual asset optimization needs
+- Integration with overall local SEO strategy
 
-**GMB Domination** - Market Leadership
-- Everything in Professional
-- Competitive analysis and strategy
-- Advanced citation management
-- Priority review response service
-- Weekly Google Posts
-- Comprehensive local SEO integration
+**Our GMB optimization services typically include:**
+- Complete profile audit and optimization
+- Professional business description and category setup
+- Photo strategy and visual content optimization
+- Review management and response strategy
+- Google Posts content calendar development
+- Performance tracking and reporting
+
+Contact Beach Bird Studios for a custom Google My Business optimization quote tailored to your local market needs.
 
 [Get Your GMB Optimization Quote]
 

@@ -167,32 +167,27 @@ Helpful information for local customers, establishing your business as a trusted
 ### Community Involvement
 Content showcasing your involvement in the Wilmington community and local events.
 
-## Investment Packages
+## Custom Local SEO Solutions
 
-**Local Starter** - Essential Local SEO
+Every local business has unique market conditions, competition levels, and growth goals. Beach Bird Studios creates custom local SEO strategies based on your specific geographic market and business objectives.
+
+**What influences your custom local SEO quote:**
+- Geographic market size and competition level
+- Current online presence and ranking positions
+- Citation and review management needs
+- Content development requirements
+- Google Business Profile optimization needs
+- Timeline and growth objectives
+
+**Our local SEO services typically include:**
 - Google Business Profile optimization
-- Basic citation building (25 directories)
+- Local citation building and management
 - On-page local optimization
-- Monthly rank tracking
-- Review management setup
-- 3-month minimum commitment
+- Review management and reputation building
+- Local content creation and optimization
+- Rank tracking and performance reporting
 
-**Local Professional** - Comprehensive Local SEO
-- Everything in Local Starter
-- Advanced citation building (50+ directories)
-- Local content creation (5 pages/month)
-- Advanced review management
-- Local link building campaign
-- Bi-weekly reporting and updates
-
-**Local Domination** - Complete Market Control
-- Everything in Local Professional
-- Core 30 page development
-- Advanced competitor analysis
-- Aggressive content creation (10+ pages/month)
-- Premium citation building (100+ directories)
-- Weekly rank map updates
-- Priority support and consultation
+Contact Beach Bird Studios for a custom local SEO strategy and quote tailored to your market and business goals.
 
 [Get Your Custom Local SEO Quote]
 
